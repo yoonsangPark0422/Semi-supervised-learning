@@ -84,26 +84,43 @@ def get_cifar100(args, root):
     return train_labeled_dataset, train_unlabeled_dataset, test_dataset
 
 
+
 def x_u_split(args, labels):
-    label_per_class = args.num_labeled // args.num_classes
     labels = np.array(labels)
     labeled_idx = []
-    # unlabeled data: all data (https://github.com/kekmodel/FixMatch-pytorch/issues/10)
+
+    # imbalance 설정
+    imbalance_ratio = 100
+
+    labels_per_class = []
+    for i in range(args.num_classes):
+        num = int((imbalance_ratio ** (-i / (args.num_classes - 1))) *
+                  (args.num_labeled / args.num_classes))
+        labels_per_class.append(max(num, 1))
+
+    print("labels_per_class:", labels_per_class)
+
+    # unlabeled data
     unlabeled_idx = np.array(range(len(labels)))
+
     for i in range(args.num_classes):
         idx = np.where(labels == i)[0]
-        idx = np.random.choice(idx, label_per_class, False)
+        idx = np.random.choice(idx, labels_per_class[i], False)
         labeled_idx.extend(idx)
+
     labeled_idx = np.array(labeled_idx)
-    assert len(labeled_idx) == args.num_labeled
 
-    if args.expand_labels or args.num_labeled < args.batch_size:
+    # ⚠️ 기존 assert 삭제 (이제 개수 안 맞음)
+    # assert len(labeled_idx) == args.num_labeled
+
+    if args.expand_labels or len(labeled_idx) < args.batch_size:
         num_expand_x = math.ceil(
-            args.batch_size * args.eval_step / args.num_labeled)
+            args.batch_size * args.eval_step / len(labeled_idx))
         labeled_idx = np.hstack([labeled_idx for _ in range(num_expand_x)])
-    np.random.shuffle(labeled_idx)
-    return labeled_idx, unlabeled_idx
 
+    np.random.shuffle(labeled_idx)
+
+    return labeled_idx, unlabeled_idx
 
 class TransformFixMatch(object):
     def __init__(self, mean, std):
