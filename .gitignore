@@ -1,0 +1,34 @@
+# Python cache
+__pycache__/
+*.py[cod]
+
+# Local environments
+.venv/
+venv/
+env/
+
+# Datasets and downloaded archives
+data/
+**/data/
+*.tar
+*.tar.gz
+*.zip
+cifar-10-batches-py/
+**/cifar-10-batches-py/
+
+# Training outputs
+result/
+results/
+**/result/
+**/results/
+baseline_compare*/
+*.pth
+*.pth.tar
+*.pt
+*.ckpt
+events.out.tfevents.*
+
+# Runtime logs and temporary files
+*.log
+*.err
+*.out
