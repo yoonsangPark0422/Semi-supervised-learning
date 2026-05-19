@@ -1,11 +1,40 @@
 # Python cache
 __pycache__/
 *.py[cod]
+*$py.class
+*.so
 
-# Local environments
+# Local environments and editor settings
+.env
 .venv/
-venv/
 env/
+venv/
+ENV/
+.vscode/
+.python-version
+
+# Python packaging and test outputs
+build/
+dist/
+downloads/
+eggs/
+.eggs/
+lib/
+lib64/
+parts/
+sdist/
+var/
+wheels/
+*.egg-info/
+*.egg
+.pytest_cache/
+.mypy_cache/
+.coverage
+.coverage.*
+htmlcov/
+
+# Jupyter
+.ipynb_checkpoints/
 
 # Datasets and downloaded archives
 data/
@@ -32,3 +61,5 @@ events.out.tfevents.*
 *.log
 *.err
 *.out
+*.manifest
+*.spec
