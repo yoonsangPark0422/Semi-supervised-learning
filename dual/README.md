@@ -10,7 +10,7 @@ Kept components:
 - Class-wise pseudo-label selection
 - Cross pseudo-supervision between major and minor models
 
-Run:
+Run one training:
 
 ```powershell
 cd C:\Users\FORYOUCOM\Desktop\Semi-supervised-learning-main\Semi-supervised-learning-main\dual
@@ -20,8 +20,22 @@ cd C:\Users\FORYOUCOM\Desktop\Semi-supervised-learning-main\Semi-supervised-lear
 Equivalent direct command:
 
 ```powershell
-python train.py --dataset cifar10 --num-labeled 4000 --arch wideresnet --batch-size 64 --lr 0.03 --expand-labels --imb-ratio 100 --seed 5 --out results\dual_cifar10_imb100
+python train.py --dataset cifar10 --num-labeled 4000 --arch wideresnet --batch-size 64 --lr 0.03 --expand-labels --imb-ratio 100 --dual-train-mode dual_sampler_weighted_ce --seed 5 --out results\dual_cifar10_imb100
 ```
 
 Main tunable arguments are `--major-top-ratio`, `--classwise-quota`, `--minority-threshold-gamma`, `--min-threshold`, `--minority-bias-strength`, `--minority-supervised-gamma`, `--max-minority-weight`, `--minority-bias-warmup`, `--pseudo-warmup`, `--unsup-warmup`, and `--ensemble-minor-weight`.
+## Sampling and Weighted CE Comparison
+
+Use `--dual-train-mode` to isolate whether minority emphasis comes from the sampler, the supervised loss, or both:
+
+- `dual`: no minor balanced sampler, no minor weighted CE
+- `dual_sampler`: minor balanced sampler only
+- `dual_sampler_weighted_ce`: minor balanced sampler plus minor weighted CE
+
+Run all three modes:
+
+```powershell
+.\run_dual_mode_compare.ps1
+```
+
 

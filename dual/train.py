@@ -483,6 +483,10 @@ def parse_args():
     parser.add_argument('--lambda-u', default=1, type=float)
     parser.add_argument('--T', default=1, type=float)
     parser.add_argument('--threshold', default=0.95, type=float)
+    parser.add_argument('--dual-train-mode', default='dual_sampler_weighted_ce',
+                        choices=['dual', 'dual_sampler',
+                                 'dual_sampler_weighted_ce'],
+                        help='Controls minor-model labeled sampling and CE weighting.')
     parser.add_argument('--imb-ratio', default=1.0, type=float)
     parser.add_argument('--imb-type', default='exp', choices=['exp', 'step'])
     parser.add_argument('--major-top-ratio', default=0.2, type=float)
@@ -510,6 +514,10 @@ def parse_args():
     args = parser.parse_args()
     if args.no_ema:
         args.use_ema = False
+    args.use_minor_balanced_sampler = args.dual_train_mode in [
+        'dual_sampler', 'dual_sampler_weighted_ce']
+    args.use_minor_weighted_ce = \
+        args.dual_train_mode == 'dual_sampler_weighted_ce'
     return args
 
 
@@ -573,14 +581,16 @@ def main():
 
     labeled_targets = np.asarray(labeled_dataset.targets)
     class_sample_count = reconcile_labeled_class_counts(args, labeled_dataset)
-    sample_weights = 1.0 / class_sample_count[labeled_targets]
-    minor_labeled_trainloader = DataLoader(
-        labeled_dataset,
-        sampler=WeightedRandomSampler(torch.DoubleTensor(sample_weights),
-                                      num_samples=len(sample_weights),
-                                      replacement=True),
-        batch_size=args.batch_size, num_workers=args.num_workers,
-        drop_last=True)
+    minor_labeled_trainloader = None
+    if args.use_minor_balanced_sampler:
+        sample_weights = 1.0 / class_sample_count[labeled_targets]
+        minor_labeled_trainloader = DataLoader(
+            labeled_dataset,
+            sampler=WeightedRandomSampler(torch.DoubleTensor(sample_weights),
+                                          num_samples=len(sample_weights),
+                                          replacement=True),
+            batch_size=args.batch_size, num_workers=args.num_workers,
+            drop_last=True)
 
     unlabeled_trainloader = DataLoader(
         unlabeled_dataset, sampler=train_sampler(unlabeled_dataset),
@@ -658,6 +668,7 @@ def main():
     logger.info('  Batch size per GPU = %s', args.batch_size)
     logger.info('  Total train batch size = %s', args.batch_size * args.world_size)
     logger.info('  Total optimization steps = %s', args.total_steps)
+    logger.info('  Dual train mode = %s', args.dual_train_mode)
 
     train_dual_bias(args, labeled_trainloader, minor_labeled_trainloader,
                     unlabeled_trainloader, test_loader, model, model_minor,
@@ -737,8 +748,10 @@ def train_dual_bias(args, labeled_trainloader, minor_labeled_trainloader,
             logits_u_w_minor, logits_u_s_minor = logits_minor[batch_size:].chunk(2)
 
             bias_ramp = linear_rampup(global_step, args.minority_bias_warmup)
-            minor_sup_weight = ramped_class_weights(
-                class_counts, args, bias_ramp).to(args.device)
+            minor_sup_weight = None
+            if args.use_minor_weighted_ce:
+                minor_sup_weight = ramped_class_weights(
+                    class_counts, args, bias_ramp).to(args.device)
             Lx_major = F.cross_entropy(logits_x_major, targets_x, reduction='mean')
             Lx_minor = F.cross_entropy(logits_x_minor, targets_x_minor,
                                        weight=minor_sup_weight, reduction='mean')
@@ -841,7 +854,7 @@ def train_dual_bias(args, labeled_trainloader, minor_labeled_trainloader,
         log_pseudo_group_scalars(args, 'minor', pseudo_stats_minor, epoch)
         eval_f1 = getattr(args, 'eval_macro_f1', {})
         write_train_metrics(args, epoch, {
-            'mode': 'dual',
+            'mode': args.dual_train_mode,
             'epoch_time_sec': time.time() - epoch_start,
             'peak_allocated_mb': peak_allocated,
             'peak_reserved_mb': peak_reserved,
