@@ -83,8 +83,27 @@ def linear_rampup(current, rampup_length):
     return float(np.clip(current / rampup_length, 0.0, 1.0))
 
 
+def checked_class_counts(class_counts, args, device=None):
+    if device is not None:
+        class_counts = class_counts.to(device)
+    counts = class_counts.float()
+    if counts.numel() != args.num_classes:
+        raise ValueError(
+            'Expected %d class counts, got %d.' %
+            (args.num_classes, counts.numel()))
+    missing = torch.nonzero(counts.le(0), as_tuple=False).view(-1)
+    if missing.numel() > 0:
+        missing_classes = ', '.join(str(i) for i in missing.cpu().tolist())
+        raise ValueError(
+            'No labeled samples for class(es): %s. Adjust --num-labeled, '
+            '--imb-ratio, or the labeled split before using balanced sampling, '
+            'class-weighted loss, or minority-biased pseudo-labels.' %
+            missing_classes)
+    return counts
+
+
 def minority_class_weights(class_counts, args):
-    counts = class_counts.float().clamp_min(1.0)
+    counts = checked_class_counts(class_counts, args)
     weights = torch.pow(counts.max() / counts, args.minority_supervised_gamma)
     weights = torch.clamp(weights, max=args.max_minority_weight)
     return weights / weights.mean().clamp_min(1e-12)
@@ -98,7 +117,7 @@ def ramped_class_weights(class_counts, args, ramp):
 
 def classwise_topk_mask(max_probs, targets, class_counts, args, min_conf=None):
     mask = torch.zeros_like(max_probs)
-    counts = class_counts.to(max_probs.device).float().clamp_min(1.0)
+    counts = checked_class_counts(class_counts, args, max_probs.device)
     max_count = counts.max()
     pred_hist = torch.bincount(targets, minlength=args.num_classes).float()
     majority_pred = max(1, int(pred_hist.max().item()))
@@ -124,7 +143,7 @@ def classwise_topk_mask(max_probs, targets, class_counts, args, min_conf=None):
 
 
 def minority_biased_probs(logits, class_counts, args, bias_scale=1.0):
-    counts = class_counts.to(logits.device).float().clamp_min(1.0)
+    counts = checked_class_counts(class_counts, args, logits.device)
     prior = counts / counts.sum()
     biased_logits = logits.detach() / args.T - \
         bias_scale * args.minority_bias_strength * torch.log(prior.view(1, -1))
@@ -625,7 +644,8 @@ def train_dual_bias(args, labeled_trainloader, minor_labeled_trainloader,
     minor_labeled_iter = iter(minor_labeled_trainloader) \
         if minor_labeled_trainloader is not None else None
     unlabeled_iter = iter(unlabeled_trainloader)
-    class_counts = torch.tensor(args.labeled_class_counts, dtype=torch.float)
+    class_counts = checked_class_counts(
+        torch.tensor(args.labeled_class_counts, dtype=torch.float), args)
     global_step = args.start_epoch * args.eval_step
     end = time.time()
 
