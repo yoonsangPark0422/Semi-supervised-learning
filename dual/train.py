@@ -102,6 +102,38 @@ def checked_class_counts(class_counts, args, device=None):
     return counts
 
 
+def reconcile_labeled_class_counts(args, labeled_dataset):
+    actual = np.bincount(
+        np.asarray(labeled_dataset.targets),
+        minlength=args.num_classes).astype(np.float32)
+    checked_class_counts(torch.from_numpy(actual), args)
+
+    if hasattr(args, 'labeled_class_counts'):
+        expected = np.asarray(args.labeled_class_counts, dtype=np.float32)
+        checked_class_counts(torch.from_numpy(expected), args)
+        if expected.shape[0] != actual.shape[0]:
+            raise ValueError(
+                'labeled_class_counts length does not match actual labeled '
+                'dataset class count length.')
+        scale = actual / expected
+        if not np.allclose(scale, scale[0], rtol=1e-5, atol=1e-5):
+            raise ValueError(
+                'Mismatch between args.labeled_class_counts and labeled '
+                'dataset targets. expected=%s actual=%s' %
+                (expected.astype(int).tolist(), actual.astype(int).tolist()))
+        if not np.allclose(actual, expected):
+            logger.info(
+                'Using expanded labeled dataset class counts for dual training: '
+                '%s. Original split counts were: %s',
+                actual.astype(int).tolist(), expected.astype(int).tolist())
+    else:
+        logger.info('Using labeled dataset class counts: %s',
+                    actual.astype(int).tolist())
+
+    args.labeled_class_counts = actual.astype(int).tolist()
+    return actual
+
+
 def minority_class_weights(class_counts, args):
     counts = checked_class_counts(class_counts, args)
     weights = torch.pow(counts.max() / counts, args.minority_supervised_gamma)
@@ -539,10 +571,9 @@ def main():
         batch_size=args.batch_size, num_workers=args.num_workers,
         drop_last=True)
 
-    labeled_targets = np.array(labeled_dataset.targets)
-    class_sample_count = np.bincount(
-        labeled_targets, minlength=args.num_classes).astype(np.float32)
-    sample_weights = 1.0 / np.maximum(class_sample_count[labeled_targets], 1.0)
+    labeled_targets = np.asarray(labeled_dataset.targets)
+    class_sample_count = reconcile_labeled_class_counts(args, labeled_dataset)
+    sample_weights = 1.0 / class_sample_count[labeled_targets]
     minor_labeled_trainloader = DataLoader(
         labeled_dataset,
         sampler=WeightedRandomSampler(torch.DoubleTensor(sample_weights),
