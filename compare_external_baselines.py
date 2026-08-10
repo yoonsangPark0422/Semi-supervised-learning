@@ -51,7 +51,6 @@ def find_dual_dir():
             'PseudoLabelStats. Got: %s' % path)
 
     candidates = [
-        ROOT / 'dual 수정',
         ROOT / 'dual',
         ROOT / 'baseline compare',
     ]
