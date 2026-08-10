@@ -123,29 +123,13 @@ def classwise_topk_mask(max_probs, targets, class_counts, args, min_conf=None):
     return mask
 
 
-def daso_minority_probs(logits, class_counts, pseudo_dist, args, bias_scale=1.0):
+def minority_biased_probs(logits, class_counts, args, bias_scale=1.0):
     counts = class_counts.to(logits.device).float().clamp_min(1.0)
     prior = counts / counts.sum()
-    linear_probs = torch.softmax(logits.detach() / args.T, dim=-1)
-    minority_logits = logits.detach() / args.T - \
+    biased_logits = logits.detach() / args.T - \
         bias_scale * args.minority_bias_strength * torch.log(prior.view(1, -1))
-    semantic_proxy = torch.softmax(minority_logits, dim=-1)
+    return torch.softmax(biased_logits, dim=-1)
 
-    dist = pseudo_dist.to(logits.device).float().clamp_min(1e-6)
-    rarity = 1.0 - dist / dist.max()
-    blend = bias_scale * torch.clamp(
-        args.daso_blend_base + rarity * args.daso_blend_scale,
-        min=0.0, max=1.0)
-    probs = (1.0 - blend.view(1, -1)) * linear_probs + \
-        blend.view(1, -1) * semantic_proxy
-    return probs / probs.sum(dim=-1, keepdim=True).clamp_min(1e-12)
-
-
-def update_pseudo_dist(pseudo_dist, targets, args):
-    hist = torch.bincount(targets, minlength=args.num_classes).float()
-    hist = hist / hist.sum().clamp_min(1.0)
-    pseudo_dist.mul_(args.pseudo_dist_momentum).add_(
-        hist.cpu(), alpha=1.0 - args.pseudo_dist_momentum)
 
 
 def append_csv_row(path, fieldnames, row):
@@ -233,22 +217,6 @@ class PseudoDiversityStats(object):
         self.both_accepted += both.sum().item()
 
 
-def normalized_hist(hist):
-    hist = hist.float()
-    return hist / hist.sum().clamp_min(1.0)
-
-
-def distribution_divergence(hist_a, hist_b):
-    p = normalized_hist(hist_a).clamp_min(1e-12)
-    q = normalized_hist(hist_b).clamp_min(1e-12)
-    m = 0.5 * (p + q)
-    js = 0.5 * (p * (p / m).log()).sum() + \
-        0.5 * (q * (q / m).log()).sum()
-    l1 = torch.abs(p - q).sum()
-    cosine = torch.dot(p, q) / (p.norm() * q.norm()).clamp_min(1e-12)
-    return js.item(), l1.item(), cosine.item()
-
-
 def write_pseudo_stats(args, epoch, model_name, stats):
     path = os.path.join(args.out, 'pseudo_stats.csv')
     fields = ['epoch', 'model', 'class', 'pseudo_hist', 'accepted_hist',
@@ -271,6 +239,22 @@ def write_pseudo_stats(args, epoch, model_name, stats):
             'accepted_pseudo_acc': accepted_correct / accepted_total
             if accepted_total > 0 else 0.0,
         })
+
+
+def normalized_hist(hist):
+    hist = hist.float()
+    return hist / hist.sum().clamp_min(1.0)
+
+
+def distribution_divergence(hist_a, hist_b):
+    p = normalized_hist(hist_a).clamp_min(1e-12)
+    q = normalized_hist(hist_b).clamp_min(1e-12)
+    m = 0.5 * (p + q)
+    js = 0.5 * (p * (p / m).log()).sum() + \
+        0.5 * (q * (q / m).log()).sum()
+    l1 = torch.abs(p - q).sum()
+    cosine = torch.dot(p, q) / (p.norm() * q.norm()).clamp_min(1e-12)
+    return js.item(), l1.item(), cosine.item()
 
 
 def write_pseudo_diversity(args, epoch, major_stats, minor_stats, diversity):
@@ -404,55 +388,6 @@ def write_eval_stats(args, epoch, model_name, class_correct, class_total,
     return per_class, macro_f1
 
 
-def extract_features(args, loader, model, epoch, model_name):
-    if not args.export_features:
-        return
-    features = []
-    labels = []
-    preds = []
-
-    def hook(module, inputs, output):
-        features.append(inputs[0].detach().cpu())
-
-    classifier = None
-    if hasattr(model, 'fc'):
-        classifier = model.fc
-    elif hasattr(model, 'classifier'):
-        classifier = model.classifier
-    if classifier is None:
-        logger.warning('Feature export skipped: no final classifier found.')
-        return
-
-    was_training = model.training
-    model.eval()
-    handle = classifier.register_forward_hook(hook)
-    seen = 0
-    with torch.no_grad():
-        for inputs, targets in loader:
-            inputs = inputs.to(args.device)
-            outputs = model(inputs)
-            preds.append(outputs.argmax(dim=1).cpu())
-            labels.append(targets.cpu())
-            seen += inputs.shape[0]
-            if seen >= args.feature_export_max:
-                break
-    handle.remove()
-    if was_training:
-        model.train()
-    if not features:
-        return
-    feature_tensor = torch.cat(features, dim=0)[:args.feature_export_max]
-    label_tensor = torch.cat(labels, dim=0)[:args.feature_export_max]
-    pred_tensor = torch.cat(preds, dim=0)[:args.feature_export_max]
-    feature_dir = os.path.join(args.out, 'features')
-    os.makedirs(feature_dir, exist_ok=True)
-    np.savez(os.path.join(feature_dir, '%s_epoch_%03d.npz' %
-                          (model_name, epoch + 1)),
-             features=feature_tensor.numpy(),
-             labels=label_tensor.numpy(),
-             preds=pred_tensor.numpy())
-
-
 def build_model(args):
     if args.arch == 'wideresnet':
         import models.wideresnet as models
@@ -472,7 +407,8 @@ def build_model(args):
 
 
 def parse_args():
-    parser = argparse.ArgumentParser(description='PyTorch FixMatch Training')
+    parser = argparse.ArgumentParser(
+        description='Major-Minor Dual FixMatch Training')
     parser.add_argument('--gpu-id', default='0', type=int)
     parser.add_argument('--num-workers', type=int, default=0)
     parser.add_argument('--dataset', default='cifar10', type=str,
@@ -485,14 +421,6 @@ def parse_args():
     parser.add_argument('--eval-step', default=1024, type=int)
     parser.add_argument('--start-epoch', default=0, type=int)
     parser.add_argument('--batch-size', default=64, type=int)
-    parser.add_argument('--fast-ablation', action='store_true',
-                        help='Use a lightweight debug config for ablations.')
-    parser.add_argument('--small-wrn', action='store_true',
-                        help='Use WRN-16-1 for quick experiments.')
-    parser.add_argument('--fast-total-steps', default=512, type=int)
-    parser.add_argument('--fast-eval-step', default=128, type=int)
-    parser.add_argument('--fast-batch-size', default=16, type=int)
-    parser.add_argument('--fast-mu', default=1, type=int)
     parser.add_argument('--lr', '--learning-rate', default=0.03, type=float)
     parser.add_argument('--warmup', default=0, type=float)
     parser.add_argument('--wdecay', default=5e-4, type=float)
@@ -504,13 +432,6 @@ def parse_args():
     parser.add_argument('--lambda-u', default=1, type=float)
     parser.add_argument('--T', default=1, type=float)
     parser.add_argument('--threshold', default=0.95, type=float)
-    parser.add_argument('--ablation-preset', default='fixmatch',
-                        choices=['full', 'fixmatch', 'dual_only',
-                                 'dual_sampler', 'dual_sampler_weight',
-                                 'dual_sampler_weight_bias',
-                                 'dual_sampler_weight_bias_topk',
-                                 'dual_agreement_consistency'])
-    parser.add_argument('--dual-bias-cotrain', action='store_true')
     parser.add_argument('--imb-ratio', default=1.0, type=float)
     parser.add_argument('--imb-type', default='exp', choices=['exp', 'step'])
     parser.add_argument('--major-top-ratio', default=0.2, type=float)
@@ -520,30 +441,9 @@ def parse_args():
     parser.add_argument('--min-threshold', default=0.5, type=float)
     parser.add_argument('--minority-bias-strength', default=1.0, type=float)
     parser.add_argument('--minority-supervised-gamma', default=1.0, type=float)
-    parser.add_argument('--minor-balanced-labeled', action='store_true',
-                        default=True)
-    parser.add_argument('--no-minor-balanced-labeled', action='store_true')
-    parser.add_argument('--no-minor-class-weight', action='store_true')
-    parser.add_argument('--no-minority-pseudo-bias', action='store_true')
-    parser.add_argument('--no-classwise-pseudo-mask', action='store_true')
-    parser.add_argument('--no-dual-agreement', action='store_true')
-    parser.add_argument('--no-dual-consistency', action='store_true')
     parser.add_argument('--max-minority-weight', default=10.0, type=float)
     parser.add_argument('--minority-bias-warmup', default=2048, type=int)
-    parser.add_argument('--daso-blend-base', default=0.2, type=float)
-    parser.add_argument('--daso-blend-scale', default=0.6, type=float)
-    parser.add_argument('--pseudo-dist-momentum', default=0.999, type=float)
-    parser.add_argument('--agreement-threshold', default=0.5, type=float)
-    parser.add_argument('--consistency-weight', default=0.1, type=float)
     parser.add_argument('--ensemble-minor-weight', default=0.7, type=float)
-    parser.add_argument('--dual-final-predictor', default='ensemble',
-                        choices=['major', 'minor', 'ensemble', 'conf',
-                                 'major_adjusted', 'minor_gate'])
-    parser.add_argument('--final-logit-adjust-tau', default=1.6, type=float)
-    parser.add_argument('--selection-metric', default='final',
-                        choices=['final', 'ensemble', 'best'])
-    parser.add_argument('--export-features', action='store_true')
-    parser.add_argument('--feature-export-max', default=2000, type=int)
     parser.add_argument('--unsup-warmup', default=1024, type=int)
     parser.add_argument('--pseudo-warmup', default=512, type=int)
     parser.add_argument('--out', default='result')
@@ -559,45 +459,6 @@ def parse_args():
     args = parser.parse_args()
     if args.no_ema:
         args.use_ema = False
-    if args.no_minor_balanced_labeled:
-        args.minor_balanced_labeled = False
-    if args.fast_ablation:
-        args.total_steps = args.fast_total_steps
-        args.eval_step = args.fast_eval_step
-        args.batch_size = args.fast_batch_size
-        args.mu = args.fast_mu
-        args.pseudo_warmup = min(args.pseudo_warmup,
-                                 max(1, args.fast_eval_step // 2))
-        args.unsup_warmup = min(args.unsup_warmup,
-                                max(1, args.fast_eval_step))
-        args.minority_bias_warmup = min(args.minority_bias_warmup,
-                                        max(1, args.fast_eval_step))
-        args.small_wrn = True
-        args.no_progress = True
-    if args.ablation_preset == 'fixmatch':
-        args.dual_bias_cotrain = False
-    elif args.ablation_preset == 'full':
-        args.dual_bias_cotrain = True
-    elif args.ablation_preset != 'full':
-        args.dual_bias_cotrain = True
-        args.minor_balanced_labeled = args.ablation_preset in [
-            'dual_sampler', 'dual_sampler_weight',
-            'dual_sampler_weight_bias', 'dual_sampler_weight_bias_topk',
-            'dual_agreement_consistency']
-        args.no_minor_class_weight = args.ablation_preset not in [
-            'dual_sampler_weight', 'dual_sampler_weight_bias',
-            'dual_sampler_weight_bias_topk', 'dual_agreement_consistency']
-        args.no_minority_pseudo_bias = args.ablation_preset not in [
-            'dual_sampler_weight_bias', 'dual_sampler_weight_bias_topk',
-            'dual_agreement_consistency']
-        args.no_classwise_pseudo_mask = \
-            args.ablation_preset not in [
-                'dual_sampler_weight_bias_topk',
-                'dual_agreement_consistency']
-        args.no_dual_agreement = \
-            args.ablation_preset != 'dual_agreement_consistency'
-        args.no_dual_consistency = \
-            args.ablation_preset != 'dual_agreement_consistency'
     return args
 
 
@@ -645,9 +506,6 @@ def main():
             args.model_cardinality = 8
             args.model_depth = 29
             args.model_width = 64
-    if args.small_wrn and args.arch == 'wideresnet':
-        args.model_depth = 16
-        args.model_width = 1
 
     if args.local_rank in [-1, 0]:
         os.makedirs(args.out, exist_ok=True)
@@ -662,19 +520,17 @@ def main():
         batch_size=args.batch_size, num_workers=args.num_workers,
         drop_last=True)
 
-    minor_labeled_trainloader = None
-    if args.dual_bias_cotrain and args.minor_balanced_labeled:
-        labeled_targets = np.array(labeled_dataset.targets)
-        class_sample_count = np.bincount(
-            labeled_targets, minlength=args.num_classes).astype(np.float32)
-        sample_weights = 1.0 / np.maximum(class_sample_count[labeled_targets], 1.0)
-        minor_labeled_trainloader = DataLoader(
-            labeled_dataset,
-            sampler=WeightedRandomSampler(torch.DoubleTensor(sample_weights),
-                                          num_samples=len(sample_weights),
-                                          replacement=True),
-            batch_size=args.batch_size, num_workers=args.num_workers,
-            drop_last=True)
+    labeled_targets = np.array(labeled_dataset.targets)
+    class_sample_count = np.bincount(
+        labeled_targets, minlength=args.num_classes).astype(np.float32)
+    sample_weights = 1.0 / np.maximum(class_sample_count[labeled_targets], 1.0)
+    minor_labeled_trainloader = DataLoader(
+        labeled_dataset,
+        sampler=WeightedRandomSampler(torch.DoubleTensor(sample_weights),
+                                      num_samples=len(sample_weights),
+                                      replacement=True),
+        batch_size=args.batch_size, num_workers=args.num_workers,
+        drop_last=True)
 
     unlabeled_trainloader = DataLoader(
         unlabeled_dataset, sampler=train_sampler(unlabeled_dataset),
@@ -685,20 +541,19 @@ def main():
         batch_size=args.batch_size, num_workers=args.num_workers)
 
     model = build_model(args).to(args.device)
-    model_minor = build_model(args).to(args.device) if args.dual_bias_cotrain else None
+    model_minor = build_model(args).to(args.device)
     optimizer = create_optimizer(args, model)
-    optimizer_minor = create_optimizer(args, model_minor) if args.dual_bias_cotrain else None
+    optimizer_minor = create_optimizer(args, model_minor)
     args.epochs = math.ceil(args.total_steps / args.eval_step)
     scheduler = get_cosine_schedule_with_warmup(
         optimizer, args.warmup, args.total_steps)
     scheduler_minor = get_cosine_schedule_with_warmup(
-        optimizer_minor, args.warmup, args.total_steps) if args.dual_bias_cotrain else None
+        optimizer_minor, args.warmup, args.total_steps)
 
     if args.use_ema:
         from models.ema import ModelEMA
         ema_model = ModelEMA(args, model, args.ema_decay)
-        ema_model_minor = ModelEMA(args, model_minor, args.ema_decay) \
-            if args.dual_bias_cotrain else None
+        ema_model_minor = ModelEMA(args, model_minor, args.ema_decay)
     else:
         ema_model = None
         ema_model_minor = None
@@ -707,12 +562,10 @@ def main():
         checkpoint = torch.load(args.init_checkpoint, map_location='cpu')
         init_state = checkpoint.get('ema_state_dict', checkpoint.get('state_dict'))
         model.load_state_dict(init_state)
-        if model_minor is not None:
-            model_minor.load_state_dict(init_state)
+        model_minor.load_state_dict(init_state)
         if args.use_ema:
             ema_model.ema.load_state_dict(init_state)
-            if ema_model_minor is not None:
-                ema_model_minor.ema.load_state_dict(init_state)
+            ema_model_minor.ema.load_state_dict(init_state)
 
     if args.resume:
         logger.info('==> Resuming from checkpoint..')
@@ -721,45 +574,31 @@ def main():
         args.start_epoch = checkpoint.get('epoch', 0)
         model.load_state_dict(checkpoint.get('state_dict_major',
                                              checkpoint.get('state_dict')))
-        if model_minor is not None:
-            model_minor.load_state_dict(checkpoint.get('state_dict_minor',
-                                                       checkpoint.get('state_dict')))
+        model_minor.load_state_dict(checkpoint.get('state_dict_minor',
+                                                   checkpoint.get('state_dict')))
         if args.use_ema:
             ema_model.ema.load_state_dict(checkpoint.get(
                 'ema_state_dict_major', checkpoint.get('ema_state_dict')))
-            if ema_model_minor is not None:
-                ema_model_minor.ema.load_state_dict(checkpoint.get(
-                    'ema_state_dict_minor', checkpoint.get('ema_state_dict')))
+            ema_model_minor.ema.load_state_dict(checkpoint.get(
+                'ema_state_dict_minor', checkpoint.get('ema_state_dict')))
         if not args.eval_only:
             if 'optimizer' in checkpoint:
                 optimizer.load_state_dict(checkpoint['optimizer'])
-            if optimizer_minor is not None and 'optimizer_minor' in checkpoint:
+            if 'optimizer_minor' in checkpoint:
                 optimizer_minor.load_state_dict(checkpoint['optimizer_minor'])
             if 'scheduler' in checkpoint:
                 scheduler.load_state_dict(checkpoint['scheduler'])
-            if scheduler_minor is not None and 'scheduler_minor' in checkpoint:
+            if 'scheduler_minor' in checkpoint:
                 scheduler_minor.load_state_dict(checkpoint['scheduler_minor'])
 
     if args.eval_only:
-        if args.dual_bias_cotrain:
-            major = ema_model.ema if args.use_ema else model
-            minor = ema_model_minor.ema if args.use_ema else model_minor
-            _, acc_major = test(args, test_loader, major, 0)
-            _, acc_minor = test(args, test_loader, minor, 0)
-            _, acc_ens = test_ensemble(args, test_loader, major, minor)
-            if args.dual_final_predictor == 'major':
-                acc_final = acc_major
-            elif args.dual_final_predictor == 'minor':
-                acc_final = acc_minor
-            elif args.dual_final_predictor == 'ensemble':
-                acc_final = acc_ens
-            else:
-                _, acc_final = test_dual_final(args, test_loader, major, minor)
-            logger.info('Eval major/minor/ensemble top-1: %.2f / %.2f / %.2f',
-                        acc_major, acc_minor, acc_ens)
-            logger.info('Eval final top-1: %.2f', acc_final)
-        else:
-            test(args, test_loader, ema_model.ema if args.use_ema else model, 0)
+        major = ema_model.ema if args.use_ema else model
+        minor = ema_model_minor.ema if args.use_ema else model_minor
+        _, acc_major = test(args, test_loader, major, 0, 'major')
+        _, acc_minor = test(args, test_loader, minor, 0, 'minor')
+        _, acc_ens = test_ensemble(args, test_loader, major, minor)
+        logger.info('Eval major/minor/ensemble top-1: %.2f / %.2f / %.2f',
+                    acc_major, acc_minor, acc_ens)
         args.writer.close()
         return
 
@@ -770,136 +609,10 @@ def main():
     logger.info('  Total train batch size = %s', args.batch_size * args.world_size)
     logger.info('  Total optimization steps = %s', args.total_steps)
 
-    if args.dual_bias_cotrain:
-        train_dual_bias(args, labeled_trainloader, minor_labeled_trainloader,
-                        unlabeled_trainloader, test_loader, model, model_minor,
-                        optimizer, optimizer_minor, ema_model, ema_model_minor,
-                        scheduler, scheduler_minor)
-    else:
-        train(args, labeled_trainloader, unlabeled_trainloader, test_loader,
-              model, optimizer, ema_model, scheduler)
-
-
-def train(args, labeled_trainloader, unlabeled_trainloader, test_loader,
-          model, optimizer, ema_model, scheduler):
-    global best_acc
-    test_accs = []
-    labeled_iter = iter(labeled_trainloader)
-    unlabeled_iter = iter(unlabeled_trainloader)
-    end = time.time()
-
-    for epoch in range(args.start_epoch, args.epochs):
-        reset_peak_memory(args)
-        epoch_start = time.time()
-        pseudo_stats = PseudoLabelStats(args.num_classes)
-        model.train()
-        losses = AverageMeter()
-        losses_x = AverageMeter()
-        losses_u = AverageMeter()
-        mask_probs = AverageMeter()
-        data_time = AverageMeter()
-        batch_time = AverageMeter()
-        p_bar = tqdm(range(args.eval_step), disable=args.no_progress)
-        for batch_idx in range(args.eval_step):
-            try:
-                inputs_x, targets_x = next(labeled_iter)
-            except StopIteration:
-                labeled_iter = iter(labeled_trainloader)
-                inputs_x, targets_x = next(labeled_iter)
-            try:
-                (inputs_u_w, inputs_u_s), targets_u_true = next(unlabeled_iter)
-            except StopIteration:
-                unlabeled_iter = iter(unlabeled_trainloader)
-                (inputs_u_w, inputs_u_s), targets_u_true = next(unlabeled_iter)
-
-            data_time.update(time.time() - end)
-            batch_size = inputs_x.shape[0]
-            inputs = interleave(torch.cat((inputs_x, inputs_u_w, inputs_u_s)),
-                                2 * args.mu + 1).to(args.device)
-            targets_x = targets_x.to(args.device)
-            targets_u_true = targets_u_true.to(args.device)
-            logits = de_interleave(model(inputs), 2 * args.mu + 1)
-            logits_x = logits[:batch_size]
-            logits_u_w, logits_u_s = logits[batch_size:].chunk(2)
-
-            Lx = F.cross_entropy(logits_x, targets_x, reduction='mean')
-            pseudo_label = torch.softmax(logits_u_w.detach() / args.T, dim=-1)
-            max_probs, targets_u = torch.max(pseudo_label, dim=-1)
-            mask = max_probs.ge(args.threshold).float()
-            pseudo_stats.update(targets_u, targets_u_true, mask)
-            Lu = (F.cross_entropy(logits_u_s, targets_u,
-                                  reduction='none') * mask).mean()
-            loss = Lx + args.lambda_u * Lu
-            loss.backward()
-            optimizer.step()
-            scheduler.step()
-            if args.use_ema:
-                ema_model.update(model)
-            model.zero_grad()
-
-            losses.update(loss.item())
-            losses_x.update(Lx.item())
-            losses_u.update(Lu.item())
-            mask_probs.update(mask.mean().item())
-            batch_time.update(time.time() - end)
-            end = time.time()
-            if not args.no_progress:
-                p_bar.set_description(
-                    'Train Epoch: {}/{}. Iter: {}/{}. LR: {:.4f}. Loss: {:.4f}. '
-                    'Loss_x: {:.4f}. Loss_u: {:.4f}. Mask: {:.2f}.'.format(
-                        epoch + 1, args.epochs, batch_idx + 1, args.eval_step,
-                        scheduler.get_last_lr()[0], losses.avg, losses_x.avg,
-                        losses_u.avg, mask_probs.avg))
-                p_bar.update()
-        if not args.no_progress:
-            p_bar.close()
-
-        test_model = ema_model.ema if args.use_ema else model
-        test_loss, test_acc = test(args, test_loader, test_model, epoch,
-                                   'fixmatch')
-        args.writer.add_scalar('train/1.train_loss', losses.avg, epoch)
-        args.writer.add_scalar('train/2.train_loss_x', losses_x.avg, epoch)
-        args.writer.add_scalar('train/3.train_loss_u', losses_u.avg, epoch)
-        args.writer.add_scalar('train/4.mask', mask_probs.avg, epoch)
-        args.writer.add_scalar('test/1.test_acc', test_acc, epoch)
-        args.writer.add_scalar('test/2.test_loss', test_loss, epoch)
-        peak_allocated, peak_reserved = get_peak_memory(args)
-        write_pseudo_stats(args, epoch, 'fixmatch', pseudo_stats)
-        write_train_metrics(args, epoch, {
-            'mode': 'fixmatch',
-            'epoch_time_sec': time.time() - epoch_start,
-            'peak_allocated_mb': peak_allocated,
-            'peak_reserved_mb': peak_reserved,
-            'param_count_m': count_parameters(model),
-            'train_loss': losses.avg,
-            'train_loss_x': losses_x.avg,
-            'train_loss_u': losses_u.avg,
-            'mask': mask_probs.avg,
-            'test_acc': test_acc,
-            'macro_f1': getattr(args, 'eval_macro_f1', {}).get('fixmatch', ''),
-        })
-        log_pseudo_group_scalars(args, 'fixmatch', pseudo_stats, epoch)
-        extract_features(args, test_loader, test_model, epoch, 'fixmatch')
-
-        is_best = test_acc > best_acc
-        best_acc = max(test_acc, best_acc)
-        model_to_save = model.module if hasattr(model, 'module') else model
-        ema_to_save = ema_model.ema.module if args.use_ema and hasattr(
-            ema_model.ema, 'module') else (ema_model.ema if args.use_ema else None)
-        if not args.no_save_checkpoint:
-            save_checkpoint({
-                'epoch': epoch + 1,
-                'state_dict': model_to_save.state_dict(),
-                'ema_state_dict': ema_to_save.state_dict() if args.use_ema else None,
-                'acc': test_acc,
-                'best_acc': best_acc,
-                'optimizer': optimizer.state_dict(),
-                'scheduler': scheduler.state_dict(),
-            }, is_best, args.out)
-        test_accs.append(test_acc)
-        logger.info('Best top-1 acc: %.2f', best_acc)
-        logger.info('Mean top-1 acc: %.2f\n', np.mean(test_accs[-20:]))
-    args.writer.close()
+    train_dual_bias(args, labeled_trainloader, minor_labeled_trainloader,
+                    unlabeled_trainloader, test_loader, model, model_minor,
+                    optimizer, optimizer_minor, ema_model, ema_model_minor,
+                    scheduler, scheduler_minor)
 
 
 def train_dual_bias(args, labeled_trainloader, minor_labeled_trainloader,
@@ -913,7 +626,6 @@ def train_dual_bias(args, labeled_trainloader, minor_labeled_trainloader,
         if minor_labeled_trainloader is not None else None
     unlabeled_iter = iter(unlabeled_trainloader)
     class_counts = torch.tensor(args.labeled_class_counts, dtype=torch.float)
-    pseudo_dist = torch.ones(args.num_classes) / args.num_classes
     global_step = args.start_epoch * args.eval_step
     end = time.time()
 
@@ -974,47 +686,31 @@ def train_dual_bias(args, labeled_trainloader, minor_labeled_trainloader,
             logits_u_w_minor, logits_u_s_minor = logits_minor[batch_size:].chunk(2)
 
             bias_ramp = linear_rampup(global_step, args.minority_bias_warmup)
-            minor_sup_weight = None if args.no_minor_class_weight else \
-                ramped_class_weights(class_counts, args, bias_ramp).to(args.device)
+            minor_sup_weight = ramped_class_weights(
+                class_counts, args, bias_ramp).to(args.device)
             Lx_major = F.cross_entropy(logits_x_major, targets_x, reduction='mean')
             Lx_minor = F.cross_entropy(logits_x_minor, targets_x_minor,
                                        weight=minor_sup_weight, reduction='mean')
 
             probs_major = torch.softmax(logits_u_w_major.detach() / args.T, dim=-1)
             max_major, targets_major = torch.max(probs_major, dim=-1)
-            if args.no_minority_pseudo_bias:
-                probs_minor = torch.softmax(
-                    logits_u_w_minor.detach() / args.T, dim=-1)
-            else:
-                probs_minor = daso_minority_probs(
-                    logits_u_w_minor, class_counts, pseudo_dist, args, bias_ramp)
+            probs_minor = minority_biased_probs(
+                logits_u_w_minor, class_counts, args, bias_ramp)
             max_minor, targets_minor = torch.max(probs_minor, dim=-1)
 
             threshold_ramp = linear_rampup(global_step - args.pseudo_warmup,
                                            args.minority_bias_warmup)
             confidence_floor = args.threshold - \
                 (args.threshold - args.min_threshold) * threshold_ramp
-            if args.no_classwise_pseudo_mask:
-                mask_major = max_major.ge(confidence_floor).float()
-                mask_minor = max_minor.ge(confidence_floor).float()
-            else:
-                mask_major = classwise_topk_mask(
-                    max_major, targets_major, class_counts, args, confidence_floor)
-                mask_minor = classwise_topk_mask(
-                    max_minor, targets_minor, class_counts, args, confidence_floor)
+            mask_major = classwise_topk_mask(
+                max_major, targets_major, class_counts, args, confidence_floor)
+            mask_minor = classwise_topk_mask(
+                max_minor, targets_minor, class_counts, args, confidence_floor)
 
-            if not args.no_dual_agreement:
-                agree = targets_major.eq(targets_minor)
-                agree_conf = torch.minimum(max_major, max_minor).ge(
-                    args.agreement_threshold)
-                mask_union = torch.maximum(mask_major, mask_minor)
-                mask_major = torch.where(agree & agree_conf, mask_union, mask_major)
-                mask_minor = torch.where(agree & agree_conf, mask_union, mask_minor)
             if global_step < args.pseudo_warmup:
                 mask_major = torch.zeros_like(mask_major)
                 mask_minor = torch.zeros_like(mask_minor)
 
-            update_pseudo_dist(pseudo_dist, targets_minor.cpu(), args)
             pseudo_stats_major.update(targets_major, targets_u_true, mask_major)
             pseudo_stats_minor.update(targets_minor, targets_u_true, mask_minor)
             pseudo_diversity.update(
@@ -1024,22 +720,12 @@ def train_dual_bias(args, labeled_trainloader, minor_labeled_trainloader,
             Lu_minor = (F.cross_entropy(logits_u_s_minor, targets_major,
                                         reduction='none') * mask_major).mean()
 
-            prob_s_major = torch.softmax(logits_u_s_major, dim=-1)
-            prob_s_minor = torch.softmax(logits_u_s_minor, dim=-1)
-            consistency = 0.5 * (
-                F.kl_div(torch.log(prob_s_major.clamp_min(1e-12)),
-                         prob_s_minor.detach(), reduction='batchmean') +
-                F.kl_div(torch.log(prob_s_minor.clamp_min(1e-12)),
-                         prob_s_major.detach(), reduction='batchmean'))
 
             Lx = Lx_major + Lx_minor
             Lu = Lu_major + Lu_minor
             ramp = linear_rampup(global_step - args.pseudo_warmup,
                                  args.unsup_warmup)
-            consistency_weight = 0.0 if args.no_dual_consistency else \
-                args.consistency_weight
-            loss = Lx + ramp * args.lambda_u * Lu + \
-                ramp * consistency_weight * consistency
+            loss = Lx + ramp * args.lambda_u * Lu
             loss.backward()
             optimizer_major.step()
             optimizer_minor.step()
@@ -1080,32 +766,10 @@ def train_dual_bias(args, labeled_trainloader, minor_labeled_trainloader,
             args, test_loader, test_model_minor, epoch, 'minor')
         test_loss_ens, test_acc_ens = test_ensemble(
             args, test_loader, test_model_major, test_model_minor, epoch)
-        if args.dual_final_predictor == 'major':
-            test_loss_final, test_acc_final = test_loss_major, test_acc_major
-            getattr(args, 'eval_macro_f1', {})['final'] = \
-                getattr(args, 'eval_macro_f1', {}).get('major', '')
-        elif args.dual_final_predictor == 'minor':
-            test_loss_final, test_acc_final = test_loss_minor, test_acc_minor
-            getattr(args, 'eval_macro_f1', {})['final'] = \
-                getattr(args, 'eval_macro_f1', {}).get('minor', '')
-        elif args.dual_final_predictor == 'ensemble':
-            test_loss_final, test_acc_final = test_loss_ens, test_acc_ens
-            getattr(args, 'eval_macro_f1', {})['final'] = \
-                getattr(args, 'eval_macro_f1', {}).get('ensemble', '')
-        else:
-            test_loss_final, test_acc_final = test_dual_final(
-                args, test_loader, test_model_major, test_model_minor, epoch)
-
-        if args.selection_metric == 'best':
-            candidates = [(test_acc_major, test_loss_major),
-                          (test_acc_minor, test_loss_minor),
-                          (test_acc_ens, test_loss_ens),
-                          (test_acc_final, test_loss_final)]
-            test_acc, test_loss = max(candidates, key=lambda item: item[0])
-        elif args.selection_metric == 'ensemble':
-            test_acc, test_loss = test_acc_ens, test_loss_ens
-        else:
-            test_acc, test_loss = test_acc_final, test_loss_final
+        test_loss_final, test_acc_final = test_loss_ens, test_acc_ens
+        getattr(args, 'eval_macro_f1', {})['final'] = \
+            getattr(args, 'eval_macro_f1', {}).get('ensemble', '')
+        test_acc, test_loss = test_acc_final, test_loss_final
 
         args.writer.add_scalar('train/1.train_loss', losses.avg, epoch)
         args.writer.add_scalar('train/2.train_loss_x', losses_x.avg, epoch)
@@ -1124,8 +788,6 @@ def train_dual_bias(args, labeled_trainloader, minor_labeled_trainloader,
             pseudo_diversity)
         log_pseudo_group_scalars(args, 'major', pseudo_stats_major, epoch)
         log_pseudo_group_scalars(args, 'minor', pseudo_stats_minor, epoch)
-        extract_features(args, test_loader, test_model_major, epoch, 'major')
-        extract_features(args, test_loader, test_model_minor, epoch, 'minor')
         eval_f1 = getattr(args, 'eval_macro_f1', {})
         write_train_metrics(args, epoch, {
             'mode': 'dual',
@@ -1277,71 +939,6 @@ def test_ensemble(args, test_loader, model_major, model_minor, epoch=0):
     if not hasattr(args, 'eval_macro_f1'):
         args.eval_macro_f1 = {}
     args.eval_macro_f1['ensemble'] = macro_f1
-    return losses.avg, top1.avg
-
-
-def test_dual_final(args, test_loader, model_major, model_minor, epoch=0):
-    losses = AverageMeter()
-    top1 = AverageMeter()
-    top5 = AverageMeter()
-    class_correct = torch.zeros(args.num_classes)
-    class_total = torch.zeros(args.num_classes)
-    confusion = torch.zeros(args.num_classes, args.num_classes)
-    model_major.eval()
-    model_minor.eval()
-    counts = None
-    log_prior = None
-    if hasattr(args, 'labeled_class_counts'):
-        counts = torch.tensor(args.labeled_class_counts, dtype=torch.float,
-                              device=args.device).clamp_min(1.0)
-        log_prior = torch.log((counts / counts.sum()).view(1, -1))
-    with torch.no_grad():
-        for inputs, targets in test_loader:
-            inputs = inputs.to(args.device)
-            targets = targets.to(args.device)
-            outputs_major = model_major(inputs)
-            outputs_minor = model_minor(inputs)
-            if args.dual_final_predictor == 'major_adjusted':
-                outputs = outputs_major - args.final_logit_adjust_tau * log_prior
-            elif args.dual_final_predictor == 'minor_gate':
-                pred_minor = outputs_minor.argmax(dim=1, keepdim=True)
-                counts_cpu = torch.tensor(args.labeled_class_counts,
-                                          dtype=torch.float)
-                sorted_counts = torch.sort(counts_cpu, descending=True).values
-                threshold = sorted_counts[max(0, args.num_classes // 2 - 1)]
-                tail_mask = counts[pred_minor].lt(threshold).to(outputs_major.device)
-                outputs = torch.where(tail_mask, outputs_minor, outputs_major)
-            else:
-                probs_major = torch.softmax(outputs_major, dim=1)
-                probs_minor = torch.softmax(outputs_minor, dim=1)
-                conf_major, _ = torch.max(probs_major, dim=1, keepdim=True)
-                conf_minor, _ = torch.max(probs_minor, dim=1, keepdim=True)
-                outputs = torch.where(conf_minor.ge(conf_major),
-                                      outputs_minor, outputs_major)
-            loss = F.cross_entropy(outputs, targets)
-            preds = torch.argmax(outputs, dim=1)
-            for class_idx in range(args.num_classes):
-                class_mask = targets.eq(class_idx)
-                class_total[class_idx] += class_mask.sum().cpu()
-                class_correct[class_idx] += preds[class_mask].eq(
-                    targets[class_mask]).sum().cpu()
-            for true_class, pred_class in zip(targets.cpu(), preds.cpu()):
-                confusion[true_class.long(), pred_class.long()] += 1
-            prec1, prec5 = accuracy(outputs, targets, topk=(1, 5))
-            losses.update(loss.item(), inputs.shape[0])
-            top1.update(prec1.item(), inputs.shape[0])
-            top5.update(prec5.item(), inputs.shape[0])
-    logger.info('%s final top-1 acc: %.2f', args.dual_final_predictor, top1.avg)
-    logger.info('%s final top-5 acc: %.2f', args.dual_final_predictor, top5.avg)
-    per_class, macro_f1 = write_eval_stats(
-        args, epoch, 'final', class_correct, class_total, confusion)
-    logger.info('%s final per-class acc: %s', args.dual_final_predictor,
-                [round(v, 2) for v in per_class.tolist()])
-    logger.info('%s final macro F1: %.2f', args.dual_final_predictor, macro_f1)
-    log_groups(args, per_class, args.dual_final_predictor + ' final ')
-    if not hasattr(args, 'eval_macro_f1'):
-        args.eval_macro_f1 = {}
-    args.eval_macro_f1['final'] = macro_f1
     return losses.avg, top1.avg
 
 
