@@ -1,4 +1,4 @@
-﻿param(
+param(
     [int[]]$Seeds = @(5),
     [string]$ResultRoot = "results\dual_mode_compare",
     [int]$Epochs = 200,
@@ -9,8 +9,9 @@
 
 $ErrorActionPreference = "Stop"
 
-$Python = "C:\Users\FORYOUCOM\.cache\codex-runtimes\codex-primary-runtime\dependencies\python\python.exe"
-if (-not (Test-Path $Python)) {
+if ($env:PYTHON) {
+    $Python = $env:PYTHON
+} else {
     $Python = "python"
 }
 
@@ -64,3 +65,4 @@ foreach ($Seed in $Seeds) {
             Tee-Object -FilePath $Log -Append
     }
 }
+
