@@ -1,0 +1,5 @@
+"ratio","method","out","status","exit_code","last_epoch","best_acc","final_acc","macro_f1","macro_f1_final","started_at","finished_at"
+"50","baseline","results/fixmatch_vs_dual_imb50_100_e50_s512_seed5/imb50/baseline_fixmatch","done","0","50","81.56","81.56","81.69721364974976","","2026-08-13T13:37:40","2026-08-13T15:35:28"
+"50","dual","results/fixmatch_vs_dual_imb50_100_e50_s512_seed5/imb50/dual_sampler_weighted_ce","done","0","50","88.55","88.55","88.61230611801147","88.61230611801147","2026-08-13T15:35:28","2026-08-13T18:49:09"
+"100","baseline","results/fixmatch_vs_dual_imb50_100_e50_s512_seed5/imb100/baseline_fixmatch","done","0","50","76.69","76.69","76.5668272972107","","2026-08-13T18:49:09","2026-08-13T20:43:37"
+"100","dual","results/fixmatch_vs_dual_imb50_100_e50_s512_seed5/imb100/dual_sampler_weighted_ce","done","0","50","87.95","87.95","88.05133700370789","88.05133700370789","2026-08-13T20:43:37","2026-08-13T23:53:37"
