@@ -1,84 +1,133 @@
-# FixMatch
-This is an unofficial PyTorch implementation of [FixMatch: Simplifying Semi-Supervised Learning with Consistency and Confidence](https://arxiv.org/abs/2001.07685).
-The official Tensorflow implementation is [here](https://github.com/google-research/fixmatch).
+# Major-Minor Dual FixMatch
 
-This code is only available in FixMatch (RandAugment).
+This repository contains the cleaned dual-model training code used for the
+imbalanced semi-supervised learning experiments.
 
-## Repository Layout
+## What This Code Does
 
-- `train.py`: original FixMatch baseline training entry point.
-- `dual/`: dual major/minor training code and ablation scripts.
-- `dual/train.py`: main dual training implementation.
-- `dual/train_minor_weighted_balanced.py`: dual training variant where only the minor model uses balanced sampling and weighted CE.
-- `dual/train_exchange_direction_ablation.py`: compares no exchange, major-to-minor, minor-to-major, and bidirectional pseudo-label exchange.
-- `scripts/compare_external_baselines.py`: helper script for evaluating external baselines with the same metrics.
+The dual version trains two FixMatch models at the same time:
 
-## Results
+- `major` model: standard FixMatch-style training focused on high-confidence
+  pseudo-labels.
+- `minor` model: minority-aware FixMatch training that can use balanced labeled
+  sampling and class-weighted supervised CE.
+- Cross pseudo-supervision: each model also learns from the other model's
+  pseudo-labels on unlabeled data.
+- Minority-biased pseudo-label probabilities: the minor model adjusts pseudo
+  probabilities using labeled class counts.
+- Class-wise pseudo-label selection: pseudo-labels are selected per predicted
+  class instead of by one global threshold only.
+- Per-class pseudo-label statistics and train metrics are written during
+  training.
 
-### CIFAR10
-| #Labels | 40 | 250 | 4000 |
-|:---:|:---:|:---:|:---:|
-| Paper (RA) | 86.19 ± 3.37 | 94.93 ± 0.65 | 95.74 ± 0.05 |
-| This code | 93.60 | 95.31 | 95.77 |
-| Acc. curve | [link](https://tensorboard.dev/experiment/YcLQA52kQ1KZIgND8bGijw/) | [link](https://tensorboard.dev/experiment/GN36hbbRTDaBPy7z8alE1A/) | [link](https://tensorboard.dev/experiment/5flaQd1WQyS727hZ70ebbA/) |
+The current implementation validates labeled class counts before using balanced
+sampling, weighted CE, or minority-biased pseudo-labels. If any labeled class is
+missing, training stops with a clear error instead of silently clamping the
+count.
 
-\* November 2020. Retested after fixing EMA issues.
-### CIFAR100
-| #Labels | 400 | 2500 | 10000 |
-|:---:|:---:|:---:|:---:|
-| Paper (RA) | 51.15 ± 1.75 | 71.71 ± 0.11 | 77.40 ± 0.12 |
-| This code | 57.50 | 72.93 | 78.12 |
-| Acc. curve | [link](https://tensorboard.dev/experiment/y4Mmz3hRTQm6rHDlyeso4Q/) | [link](https://tensorboard.dev/experiment/mY3UExn5RpOanO1Hx1vOxg/) | [link](https://tensorboard.dev/experiment/EDb13xzJTWu5leEyVf2qfQ/) |
+## Main Files
 
-\* Training using the following options `--amp --opt_level O2 --wdecay 0.001`
+- `dual/train.py`: main dual training entry point.
+- `dual/run_dual.ps1`: single CIFAR-10-LT dual run.
+- `dual/run_dual_mode_compare.ps1`: runs the three sampler / weighted-CE ablation
+  modes under the same setting.
+- `dual/models/`, `dual/dataset/`, `dual/utils/`: model, dataset, and utility code for
+  the dual experiment folder.
 
-## Usage
+## Single Training Run
 
-### Train
-Train the model by 4000 labeled data of CIFAR-10 dataset:
+From the `dual/` folder:
 
-```
-python train.py --dataset cifar10 --num-labeled 4000 --arch wideresnet --batch-size 64 --lr 0.03 --expand-labels --seed 5 --out results/cifar10@4000.5
-```
-
-Train the model by 10000 labeled data of CIFAR-100 dataset by using DistributedDataParallel:
-```
-python -m torch.distributed.launch --nproc_per_node 4 ./train.py --dataset cifar100 --num-labeled 10000 --arch wideresnet --batch-size 16 --lr 0.03 --wdecay 0.001 --expand-labels --seed 5 --out results/cifar100@10000
+```powershell
+cd dual
+.\run_dual.ps1
 ```
 
-### Monitoring training progress
+Equivalent direct command:
+
+```powershell
+python train.py --dataset cifar10 --num-labeled 4000 --arch wideresnet --batch-size 64 --lr 0.03 --expand-labels --imb-ratio 100 --dual-train-mode dual_sampler_weighted_ce --seed 5 --out results\dual_cifar10_imb100
 ```
-tensorboard --logdir=<your out_dir>
+
+`run_dual.ps1` uses the default `train.py` dual mode, which is currently
+`dual_sampler_weighted_ce`.
+
+## Sampler / Weighted-CE Ablation
+
+Use `--dual-train-mode` to isolate where the minor model's minority emphasis
+comes from:
+
+- `dual`: no minor balanced sampler and no minor weighted CE.
+- `dual_sampler`: minor balanced sampler only.
+- `dual_sampler_weighted_ce`: minor balanced sampler plus minor weighted CE.
+
+Run all three modes:
+
+```powershell
+.\run_dual_mode_compare.ps1
 ```
 
-## Requirements
-- python 3.6+
-- torch 1.4
-- torchvision 0.5
-- tensorboard
-- numpy
-- tqdm
-- apex (optional)
+Default comparison settings:
 
-## My other implementations
-- [Meta Pseudo Labels](https://github.com/kekmodel/MPL-pytorch)
-- [UDA for images](https://github.com/kekmodel/UDA-pytorch)
+- dataset: CIFAR-10
+- labeled samples: 4000
+- imbalance ratio: 100
+- architecture: WideResNet
+- epochs: 200
+- eval step: 1024
+- seed: 5
+- output root: `results\dual_mode_compare`
 
+You can change them with PowerShell parameters:
 
-## References
-- [Official TensorFlow implementation of FixMatch](https://github.com/google-research/fixmatch)
-- [Unofficial PyTorch implementation of MixMatch](https://github.com/YU1ut/MixMatch-pytorch)
-- [Unofficial PyTorch Reimplementation of RandAugment](https://github.com/ildoonet/pytorch-randaugment)
-- [PyTorch image models](https://github.com/rwightman/pytorch-image-models)
-
-## Citations
+```powershell
+.\run_dual_mode_compare.ps1 -Seeds 1,2,3 -Epochs 200 -BatchSize 64 -ResultRoot results\dual_mode_compare
 ```
-@misc{jd2020fixmatch,
-  author = {Jungdae Kim},
-  title = {PyTorch implementation of FixMatch},
-  year = {2020},
-  publisher = {GitHub},
-  journal = {GitHub repository},
-  howpublished = {\url{https://github.com/kekmodel/FixMatch-pytorch}}
-}
+
+## Important Arguments
+
+- `--dual-train-mode`: chooses the ablation mode.
+- `--major-top-ratio`: base top-k ratio for class-wise pseudo-label selection.
+- `--classwise-quota`: class-wise quota strategy.
+- `--minority-threshold-gamma`: increases pseudo-label quota for minority
+  classes.
+- `--min-threshold`: confidence floor used after class-wise top-k selection.
+- `--minority-bias-strength`: strength of the minor model's prior correction.
+- `--minority-supervised-gamma`: class-weight exponent for minor supervised CE.
+- `--max-minority-weight`: maximum class weight for minor supervised CE.
+- `--minority-bias-warmup`: warmup steps for minority bias and weighted CE.
+- `--pseudo-warmup`: warmup steps for cross pseudo-supervision.
+- `--unsup-warmup`: warmup steps for unsupervised FixMatch loss.
+- `--ensemble-minor-weight`: minor-model weight used in evaluation ensemble.
+
+## Outputs
+
+Each run writes checkpoints, logs, TensorBoard events, and CSV metrics under
+`--out`.
+
+Useful files include:
+
+- `checkpoint.pth.tar`: latest checkpoint.
+- `model_best.pth.tar`: best checkpoint by validation accuracy.
+- `log.txt`: training log.
+- `train_metrics.csv`: epoch-level loss, pseudo-label, memory, and timing
+  metrics.
+- pseudo-label group scalar logs for the major and minor models.
+
+For mode comparison, each mode is saved separately:
+
+```text
+results\dual_mode_compare\seed_5\01_dual
+results\dual_mode_compare\seed_5\02_dual_sampler
+results\dual_mode_compare\seed_5\03_dual_sampler_weighted_ce
 ```
+
+## Notes
+
+- Use `--expand-labels` with the provided CIFAR-10-LT setting unless you are
+  intentionally testing another labeled split.
+- The code reconciles expanded labeled dataset counts with the original split
+  counts before computing sampler weights or class weights.
+- If `--dual-train-mode dual` is selected, the minor model uses the normal
+  labeled loader and unweighted supervised CE, while the rest of the dual
+  pseudo-labeling logic remains active.
