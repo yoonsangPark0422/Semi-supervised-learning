@@ -18,7 +18,8 @@ from torch.utils.tensorboard import SummaryWriter
 from tqdm import tqdm
 
 
-ROOT = Path(__file__).resolve().parent
+SCRIPT_DIR = Path(__file__).resolve().parent
+ROOT = SCRIPT_DIR.parent if SCRIPT_DIR.name == 'scripts' else SCRIPT_DIR
 
 
 def _early_dual_dir_arg():

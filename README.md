@@ -4,6 +4,15 @@ The official Tensorflow implementation is [here](https://github.com/google-resea
 
 This code is only available in FixMatch (RandAugment).
 
+## Repository Layout
+
+- `train.py`: original FixMatch baseline training entry point.
+- `dual/`: dual major/minor training code and ablation scripts.
+- `dual/train.py`: main dual training implementation.
+- `dual/train_minor_weighted_balanced.py`: dual training variant where only the minor model uses balanced sampling and weighted CE.
+- `dual/train_exchange_direction_ablation.py`: compares no exchange, major-to-minor, minor-to-major, and bidirectional pseudo-label exchange.
+- `scripts/compare_external_baselines.py`: helper script for evaluating external baselines with the same metrics.
+
 ## Results
 
 ### CIFAR10
