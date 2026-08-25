@@ -25,9 +25,6 @@ sampling, weighted CE, or minority-biased pseudo-labels. If any labeled class is
 missing, training stops with a clear error instead of silently clamping the
 count.
 
-## Algorithm Files
-
-See [docs/ALGORITHMS.md](docs/ALGORITHMS.md) for a file-by-file algorithm guide.
 
 ## Main Files
 
