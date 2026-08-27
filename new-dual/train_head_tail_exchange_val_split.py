@@ -148,17 +148,27 @@ def ramped_class_weights(class_counts, args, ramp):
 
 
 
-def class_group_masks(class_counts, args):
+def class_group_indices(class_counts, args):
     counts = checked_class_counts(class_counts, args)
     order = torch.argsort(counts, descending=True)
     num_head = max(1, int(math.ceil(args.num_classes * args.head_class_ratio)))
     num_tail = max(1, int(math.ceil(args.num_classes * args.tail_class_ratio)))
+    if num_head + num_tail > args.num_classes:
+        num_tail = max(0, args.num_classes - num_head)
+    head = order[:num_head]
+    tail = order[args.num_classes - num_tail:] if num_tail > 0 else order[:0]
+    middle = order[num_head:args.num_classes - num_tail]
+    return head, middle, tail
+
+
+def class_group_masks(class_counts, args):
+    counts = checked_class_counts(class_counts, args)
+    head, _, tail = class_group_indices(counts, args)
     head_mask = torch.zeros(args.num_classes, dtype=torch.bool, device=counts.device)
     tail_mask = torch.zeros(args.num_classes, dtype=torch.bool, device=counts.device)
-    head_mask[order[:num_head]] = True
-    tail_mask[order[-num_tail:]] = True
+    head_mask[head] = True
+    tail_mask[tail] = True
     return head_mask, tail_mask
-
 
 def target_group_mask(targets, class_counts, args, group):
     counts = checked_class_counts(class_counts, args, targets.device)
@@ -402,12 +412,9 @@ def count_parameters(model):
 def class_groups(args):
     if not hasattr(args, 'labeled_class_counts'):
         return [], [], []
-    sorted_cls = sorted(range(args.num_classes),
-                        key=lambda i: args.labeled_class_counts[i],
-                        reverse=True)
-    group = max(1, args.num_classes // 3)
-    return sorted_cls[:group], sorted_cls[group:2 * group], sorted_cls[2 * group:]
-
+    counts = torch.tensor(args.labeled_class_counts, dtype=torch.float)
+    head, middle, tail = class_group_indices(counts, args)
+    return head.cpu().tolist(), middle.cpu().tolist(), tail.cpu().tolist()
 
 def log_group_scalars(args, tag_prefix, values, epoch):
     head, mid, tail = class_groups(args)
