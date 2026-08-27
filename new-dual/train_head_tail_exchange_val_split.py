@@ -443,22 +443,30 @@ def log_pseudo_group_scalars(args, model_name, stats, epoch):
                                stats.accepted_hist[class_idx].item(), epoch)
 
 
-def compute_macro_f1(confusion):
+def compute_per_class_metrics(confusion):
     confusion = confusion.float()
     tp = confusion.diag()
     fp = confusion.sum(dim=0) - tp
     fn = confusion.sum(dim=1) - tp
+    support = confusion.sum(dim=1)
     precision = tp / (tp + fp).clamp_min(1.0)
     recall = tp / (tp + fn).clamp_min(1.0)
     f1 = 2 * precision * recall / (precision + recall).clamp_min(1e-12)
-    return f1.mean().item() * 100.0, f1 * 100.0
+    return precision * 100.0, recall * 100.0, f1 * 100.0, support
 
+
+def compute_macro_f1(confusion):
+    _, _, f1, _ = compute_per_class_metrics(confusion)
+    return f1.mean().item(), f1
 
 def write_eval_stats(args, epoch, model_name, class_correct, class_total,
                      confusion):
     per_class = class_correct / class_total.clamp_min(1.0) * 100.0
-    macro_f1, per_class_f1 = compute_macro_f1(confusion)
-    fields = ['epoch', 'model', 'class', 'accuracy', 'f1', 'support']
+    per_class_precision, per_class_recall, per_class_f1, support = \
+        compute_per_class_metrics(confusion)
+    macro_f1 = per_class_f1.mean().item()
+    fields = ['epoch', 'model', 'class', 'accuracy', 'precision',
+              'recall', 'f1', 'support']
     path = os.path.join(args.out, 'per_class_eval.csv')
     for class_idx in range(args.num_classes):
         append_csv_row(path, fields, {
@@ -466,13 +474,14 @@ def write_eval_stats(args, epoch, model_name, class_correct, class_total,
             'model': model_name,
             'class': class_idx,
             'accuracy': per_class[class_idx].item(),
+            'precision': per_class_precision[class_idx].item(),
+            'recall': per_class_recall[class_idx].item(),
             'f1': per_class_f1[class_idx].item(),
-            'support': class_total[class_idx].item(),
+            'support': support[class_idx].item(),
         })
     log_group_scalars(args, 'eval_acc/' + model_name, per_class, epoch)
     args.writer.add_scalar('eval_macro_f1/' + model_name, macro_f1, epoch)
     return per_class, macro_f1
-
 
 def build_model(args):
     if args.arch == 'wideresnet':
