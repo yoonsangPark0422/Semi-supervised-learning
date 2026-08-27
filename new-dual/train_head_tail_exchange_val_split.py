@@ -160,30 +160,6 @@ def class_group_masks(class_counts, args):
     return head_mask, tail_mask
 
 
-def head_class_weights(class_counts, args, ramp=1.0):
-    counts = checked_class_counts(class_counts, args)
-    head_mask, _ = class_group_masks(counts, args)
-    weights = torch.ones(args.num_classes, dtype=torch.float, device=counts.device)
-    weights[head_mask] = 1.0 + ramp * args.major_head_lambda
-    return weights / weights.mean().clamp_min(1e-12)
-
-
-def tail_class_weights(class_counts, args, ramp=1.0):
-    counts = checked_class_counts(class_counts, args)
-    _, tail_mask = class_group_masks(counts, args)
-    weights = torch.ones(args.num_classes, dtype=torch.float, device=counts.device)
-    weights[tail_mask] = 1.0 + ramp * args.minor_tail_lambda
-    return weights / weights.mean().clamp_min(1e-12)
-
-
-def head_biased_probs(logits, class_counts, args, bias_scale=1.0):
-    counts = checked_class_counts(class_counts, args, logits.device)
-    prior = counts / counts.sum()
-    biased_logits = logits.detach() / args.T + \
-        bias_scale * args.major_head_bias_strength * torch.log(prior.view(1, -1))
-    return torch.softmax(biased_logits, dim=-1)
-
-
 def target_group_mask(targets, class_counts, args, group):
     counts = checked_class_counts(class_counts, args, targets.device)
     head_mask, tail_mask = class_group_masks(counts, args)
@@ -548,9 +524,6 @@ def parse_args():
     parser.add_argument('--major-top-ratio', default=0.2, type=float)
     parser.add_argument('--head-class-ratio', default=0.3, type=float)
     parser.add_argument('--tail-class-ratio', default=0.3, type=float)
-    parser.add_argument('--major-head-lambda', default=1.0, type=float)
-    parser.add_argument('--minor-tail-lambda', default=1.0, type=float)
-    parser.add_argument('--major-head-bias-strength', default=1.0, type=float)
     parser.add_argument('--classwise-quota', default='global',
                         choices=['global', 'batch'])
     parser.add_argument('--minority-threshold-gamma', default=1.0, type=float)
@@ -811,53 +784,29 @@ def train_dual_bias(args, labeled_trainloader, minor_labeled_trainloader,
             bias_ramp = linear_rampup(global_step, args.minority_bias_warmup)
             minor_sup_weight = None
             if args.use_minor_weighted_ce:
-                base_minor_weight = ramped_class_weights(
+                minor_sup_weight = ramped_class_weights(
                     class_counts, args, bias_ramp).to(args.device)
-                tail_weight = tail_class_weights(
-                    class_counts, args, bias_ramp).to(args.device)
-                minor_sup_weight = base_minor_weight * tail_weight
-                minor_sup_weight = minor_sup_weight / minor_sup_weight.mean().clamp_min(1e-12)
-            major_sup_weight = head_class_weights(
-                class_counts, args, bias_ramp).to(args.device)
-            Lx_major = F.cross_entropy(logits_x_major, targets_x,
-                                       weight=major_sup_weight, reduction='mean')
+            Lx_major = F.cross_entropy(logits_x_major, targets_x, reduction='mean')
             Lx_minor = F.cross_entropy(logits_x_minor, targets_x_minor,
                                        weight=minor_sup_weight, reduction='mean')
 
-            probs_major_self = torch.softmax(
-                logits_u_w_major.detach() / args.T, dim=-1)
-            max_major_self, targets_major_self = torch.max(
-                probs_major_self, dim=-1)
-            probs_minor_self = minority_biased_probs(
+            probs_major = torch.softmax(logits_u_w_major.detach() / args.T, dim=-1)
+            max_major, targets_major = torch.max(probs_major, dim=-1)
+            probs_minor = minority_biased_probs(
                 logits_u_w_minor, class_counts, args, bias_ramp)
-            max_minor_self, targets_minor_self = torch.max(
-                probs_minor_self, dim=-1)
-
-            probs_major_cross = head_biased_probs(
-                logits_u_w_major, class_counts, args, bias_ramp)
-            max_major_cross, targets_major_cross = torch.max(
-                probs_major_cross, dim=-1)
-            probs_minor_cross = minority_biased_probs(
-                logits_u_w_minor, class_counts, args, bias_ramp)
-            max_minor_cross, targets_minor_cross = torch.max(
-                probs_minor_cross, dim=-1)
+            max_minor, targets_minor = torch.max(probs_minor, dim=-1)
 
             threshold_ramp = linear_rampup(global_step - args.pseudo_warmup,
                                            args.minority_bias_warmup)
             confidence_floor = args.threshold - \
                 (args.threshold - args.min_threshold) * threshold_ramp
-            mask_major_self = classwise_topk_mask(
-                max_major_self, targets_major_self, class_counts, args,
-                confidence_floor)
+            mask_major_self = max_major.ge(args.threshold).float()
             mask_minor_self = classwise_topk_mask(
-                max_minor_self, targets_minor_self, class_counts, args,
-                confidence_floor)
-            head_mask_major = max_major_cross.ge(args.tau_major_cross) * \
-                target_group_mask(targets_major_cross, class_counts, args,
-                                  'head')
-            tail_mask_minor = max_minor_cross.ge(args.tau_minor_cross) * \
-                target_group_mask(targets_minor_cross, class_counts, args,
-                                  'tail')
+                max_minor, targets_minor, class_counts, args, confidence_floor)
+            head_mask_major = max_major.ge(args.tau_major_cross) * \
+                target_group_mask(targets_major, class_counts, args, 'head')
+            tail_mask_minor = max_minor.ge(args.tau_minor_cross) * \
+                target_group_mask(targets_minor, class_counts, args, 'tail')
 
             if global_step < args.pseudo_warmup:
                 mask_major_self = torch.zeros_like(mask_major_self)
@@ -866,44 +815,42 @@ def train_dual_bias(args, labeled_trainloader, minor_labeled_trainloader,
                 tail_mask_minor = torch.zeros_like(tail_mask_minor)
 
             pseudo_stats_major.update(
-                targets_major_cross, targets_u_true, head_mask_major.float())
+                targets_major, targets_u_true, head_mask_major.float())
             pseudo_stats_minor.update(
-                targets_minor_cross, targets_u_true, tail_mask_minor.float())
+                targets_minor, targets_u_true, tail_mask_minor.float())
             pseudo_diversity.update(
-                targets_major_cross, targets_minor_cross,
+                targets_major, targets_minor,
                 head_mask_major.float(), tail_mask_minor.float())
             L_major_self = masked_mean_loss(
-                F.cross_entropy(logits_u_s_major, targets_major_self,
+                F.cross_entropy(logits_u_s_major, targets_major,
                                 reduction='none'),
                 mask_major_self)
             L_minor_self = masked_mean_loss(
-                F.cross_entropy(logits_u_s_minor, targets_minor_self,
+                F.cross_entropy(logits_u_s_minor, targets_minor,
                                 reduction='none'),
                 mask_minor_self)
             L_minor_to_major = masked_mean_loss(
-                F.cross_entropy(logits_u_s_major, targets_minor_cross,
+                F.cross_entropy(logits_u_s_major, targets_minor,
                                 reduction='none'),
                 tail_mask_minor)
             L_major_to_minor = masked_mean_loss(
-                F.cross_entropy(logits_u_s_minor, targets_major_cross,
+                F.cross_entropy(logits_u_s_minor, targets_major,
                                 reduction='none'),
                 head_mask_major)
-            L_major_cross = L_minor_to_major
-            L_minor_cross = L_major_to_minor
             mask_major = head_mask_major.float()
             mask_minor = tail_mask_minor.float()
 
 
             Lx = Lx_major + Lx_minor
             Lu_self = L_major_self + L_minor_self
-            Lu_cross = L_major_cross + L_minor_cross
+            Lu_cross = L_minor_to_major + L_major_to_minor
             Lu = Lu_self + Lu_cross
             ramp = linear_rampup(global_step - args.pseudo_warmup,
                                  args.unsup_warmup)
             L_major = Lx_major + ramp * args.lambda_u * L_major_self + \
-                ramp * args.lambda_cross * L_major_cross
+                ramp * args.lambda_cross * L_minor_to_major
             L_minor = Lx_minor + ramp * args.lambda_u * L_minor_self + \
-                ramp * args.lambda_cross * L_minor_cross
+                ramp * args.lambda_cross * L_major_to_minor
             loss = L_major + L_minor
             loss.backward()
             optimizer_major.step()
