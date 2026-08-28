@@ -252,14 +252,19 @@ class PseudoLabelStats(object):
         self.accepted_hist = torch.zeros(num_classes, dtype=torch.long)
         self.true_total = torch.zeros(num_classes, dtype=torch.long)
         self.true_correct = torch.zeros(num_classes, dtype=torch.long)
+        self.pred_correct = torch.zeros(num_classes, dtype=torch.long)
         self.accepted_true_total = torch.zeros(num_classes, dtype=torch.long)
         self.accepted_true_correct = torch.zeros(num_classes, dtype=torch.long)
+        self.accepted_pred_correct = torch.zeros(num_classes, dtype=torch.long)
 
     def update(self, preds, true_targets, mask=None):
         preds = preds.detach().cpu().long()
         true_targets = true_targets.detach().cpu().long()
         self.pred_hist += torch.bincount(preds, minlength=self.num_classes)
         correct = preds.eq(true_targets)
+        if correct.any():
+            self.pred_correct += torch.bincount(
+                preds[correct], minlength=self.num_classes)
         for class_idx in range(self.num_classes):
             class_mask = true_targets.eq(class_idx)
             self.true_total[class_idx] += class_mask.sum()
@@ -273,6 +278,9 @@ class PseudoLabelStats(object):
             accepted_correct = accepted_preds.eq(accepted_true)
             self.accepted_hist += torch.bincount(
                 accepted_preds, minlength=self.num_classes)
+            if accepted_correct.any():
+                self.accepted_pred_correct += torch.bincount(
+                    accepted_preds[accepted_correct], minlength=self.num_classes)
             for class_idx in range(self.num_classes):
                 class_mask = accepted_true.eq(class_idx)
                 self.accepted_true_total[class_idx] += class_mask.sum()
@@ -308,20 +316,31 @@ class PseudoDiversityStats(object):
 
 def write_pseudo_stats(args, epoch, model_name, stats):
     path = os.path.join(args.out, 'pseudo_stats.csv')
-    fields = ['epoch', 'model', 'class', 'pseudo_hist', 'accepted_hist',
-              'true_count', 'pseudo_acc', 'accepted_true_count',
-              'accepted_pseudo_acc']
+    fields = ['epoch', 'model', 'class', 'pseudo_hist', 'raw_tp',
+              'raw_precision', 'accepted_hist', 'accepted_tp',
+              'accepted_precision', 'true_count', 'pseudo_acc',
+              'accepted_true_count', 'accepted_pseudo_acc']
     for class_idx in range(args.num_classes):
         total = stats.true_total[class_idx].item()
         correct = stats.true_correct[class_idx].item()
+        raw_pred_total = stats.pred_hist[class_idx].item()
+        raw_tp = stats.pred_correct[class_idx].item()
+        accepted_pred_total = stats.accepted_hist[class_idx].item()
+        accepted_tp = stats.accepted_pred_correct[class_idx].item()
         accepted_total = stats.accepted_true_total[class_idx].item()
         accepted_correct = stats.accepted_true_correct[class_idx].item()
         append_csv_row(path, fields, {
             'epoch': epoch + 1,
             'model': model_name,
             'class': class_idx,
-            'pseudo_hist': stats.pred_hist[class_idx].item(),
-            'accepted_hist': stats.accepted_hist[class_idx].item(),
+            'pseudo_hist': raw_pred_total,
+            'raw_tp': raw_tp,
+            'raw_precision': raw_tp / raw_pred_total
+            if raw_pred_total > 0 else 0.0,
+            'accepted_hist': accepted_pred_total,
+            'accepted_tp': accepted_tp,
+            'accepted_precision': accepted_tp / accepted_pred_total
+            if accepted_pred_total > 0 else 0.0,
             'true_count': total,
             'pseudo_acc': correct / total if total > 0 else 0.0,
             'accepted_true_count': accepted_total,
