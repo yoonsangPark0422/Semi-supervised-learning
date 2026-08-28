@@ -393,7 +393,9 @@ def write_train_metrics(args, epoch, row):
               'peak_reserved_mb', 'param_count_m', 'param_count_major_m',
               'param_count_minor_m', 'train_loss', 'train_loss_x',
               'train_loss_u', 'mask', 'mask_major', 'mask_minor',
-              'test_acc', 'test_acc_major', 'test_acc_minor',
+              'cross_major_to_minor_pre', 'cross_minor_to_major_pre',
+              'cross_conflict', 'cross_major_to_minor_post',
+              'cross_minor_to_major_post', 'test_acc', 'test_acc_major', 'test_acc_minor',
               'test_acc_ensemble', 'test_acc_final', 'macro_f1',
               'macro_f1_major', 'macro_f1_minor', 'macro_f1_ensemble',
               'macro_f1_final', 'pseudo_pred_js', 'pseudo_pred_l1',
@@ -754,6 +756,11 @@ def train_dual_bias(args, labeled_trainloader, minor_labeled_trainloader,
         losses_u = AverageMeter()
         mask_major_probs = AverageMeter()
         mask_minor_probs = AverageMeter()
+        cross_major_to_minor_pre = AverageMeter()
+        cross_minor_to_major_pre = AverageMeter()
+        cross_conflict_meter = AverageMeter()
+        cross_major_to_minor_post = AverageMeter()
+        cross_minor_to_major_post = AverageMeter()
         p_bar = tqdm(range(args.eval_step), disable=args.no_progress)
         for batch_idx in range(args.eval_step):
             try:
@@ -823,10 +830,18 @@ def train_dual_bias(args, labeled_trainloader, minor_labeled_trainloader,
                 target_group_mask(targets_major, class_counts, args, 'head')
             tail_mask_minor = max_minor.ge(args.tau_minor_cross) * \
                 target_group_mask(targets_minor, class_counts, args, 'tail')
+            head_mask_major_pre = head_mask_major.bool()
+            tail_mask_minor_pre = tail_mask_minor.bool()
+            cross_conflict = head_mask_major_pre & tail_mask_minor_pre
+            head_mask_major = head_mask_major_pre & ~cross_conflict
+            tail_mask_minor = tail_mask_minor_pre & ~cross_conflict
 
             if global_step < args.pseudo_warmup:
                 mask_major_self = torch.zeros_like(mask_major_self)
                 mask_minor_self = torch.zeros_like(mask_minor_self)
+                head_mask_major_pre = torch.zeros_like(head_mask_major_pre)
+                tail_mask_minor_pre = torch.zeros_like(tail_mask_minor_pre)
+                cross_conflict = torch.zeros_like(cross_conflict)
                 head_mask_major = torch.zeros_like(head_mask_major)
                 tail_mask_minor = torch.zeros_like(tail_mask_minor)
 
@@ -885,6 +900,11 @@ def train_dual_bias(args, labeled_trainloader, minor_labeled_trainloader,
             losses_u.update(Lu.item())
             mask_major_probs.update(mask_major.mean().item())
             mask_minor_probs.update(mask_minor.mean().item())
+            cross_major_to_minor_pre.update(head_mask_major_pre.float().sum().item())
+            cross_minor_to_major_pre.update(tail_mask_minor_pre.float().sum().item())
+            cross_conflict_meter.update(cross_conflict.float().sum().item())
+            cross_major_to_minor_post.update(mask_major.sum().item())
+            cross_minor_to_major_post.update(mask_minor.sum().item())
             if not args.no_progress:
                 p_bar.set_description(
                     'Train Epoch: {}/{}. Iter: {}/{}. LR: {:.4f}. Loss: {:.4f}. '
@@ -918,6 +938,15 @@ def train_dual_bias(args, labeled_trainloader, minor_labeled_trainloader,
         args.writer.add_scalar('train/3.train_loss_u', losses_u.avg, epoch)
         args.writer.add_scalar('train/4.mask_major', mask_major_probs.avg, epoch)
         args.writer.add_scalar('train/5.mask_minor', mask_minor_probs.avg, epoch)
+        args.writer.add_scalar('cross/major_to_minor_pre', cross_major_to_minor_pre.avg, epoch)
+        args.writer.add_scalar('cross/minor_to_major_pre', cross_minor_to_major_pre.avg, epoch)
+        args.writer.add_scalar('cross/conflict', cross_conflict_meter.avg, epoch)
+        args.writer.add_scalar('cross/major_to_minor_post', cross_major_to_minor_post.avg, epoch)
+        args.writer.add_scalar('cross/minor_to_major_post', cross_minor_to_major_post.avg, epoch)
+        logger.info('cross samples pre major->minor: %.2f, pre minor->major: %.2f, conflict: %.2f, post major->minor: %.2f, post minor->major: %.2f',
+                    cross_major_to_minor_pre.avg, cross_minor_to_major_pre.avg,
+                    cross_conflict_meter.avg, cross_major_to_minor_post.avg,
+                    cross_minor_to_major_post.avg)
         args.writer.add_scalar('test/1.test_acc_final', test_acc_final, epoch)
         args.writer.add_scalar('test/2.test_acc_major', test_acc_major, epoch)
         args.writer.add_scalar('test/3.test_acc_minor', test_acc_minor, epoch)
@@ -945,6 +974,11 @@ def train_dual_bias(args, labeled_trainloader, minor_labeled_trainloader,
             'train_loss_u': losses_u.avg,
             'mask_major': mask_major_probs.avg,
             'mask_minor': mask_minor_probs.avg,
+            'cross_major_to_minor_pre': cross_major_to_minor_pre.avg,
+            'cross_minor_to_major_pre': cross_minor_to_major_pre.avg,
+            'cross_conflict': cross_conflict_meter.avg,
+            'cross_major_to_minor_post': cross_major_to_minor_post.avg,
+            'cross_minor_to_major_post': cross_minor_to_major_post.avg,
             'test_acc_major': test_acc_major,
             'test_acc_minor': test_acc_minor,
             'test_acc_ensemble': test_acc_ens,
