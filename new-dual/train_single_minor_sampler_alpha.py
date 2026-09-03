@@ -105,7 +105,7 @@ def parse_args():
     parser.add_argument('--gpu-id', default='0', type=int)
     parser.add_argument('--num-workers', type=int, default=0)
     parser.add_argument('--dataset', default='cifar10', type=str,
-                        choices=['cifar10', 'cifar100'])
+                        choices=['cifar10', 'cifar100', 'svhn'])
     parser.add_argument('--num-labeled', type=int, default=4000)
     parser.add_argument('--expand-labels', action='store_true')
     parser.add_argument('--arch', default='wideresnet', type=str,
@@ -162,7 +162,7 @@ def parse_args():
 
 
 def setup_dataset_and_model(args):
-    if args.dataset == 'cifar10':
+    if args.dataset in ['cifar10', 'svhn']:
         args.num_classes = 10
         args.model_depth = 28
         args.model_width = 2
