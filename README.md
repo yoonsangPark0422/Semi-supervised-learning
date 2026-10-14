@@ -132,3 +132,11 @@ results\dual_mode_compare\seed_5\03_dual_sampler_weighted_ce
 - If `--dual-train-mode dual` is selected, the minor model uses the normal
   labeled loader and unweighted supervised CE, while the rest of the dual
   pseudo-labeling logic remains active.
+
+## Alpha=1.2 experiment reports
+
+- Held-out validation results: [`reports/validation-alpha12/`](reports/validation-alpha12/README.md)
+- Official test results: [`reports/official-test-alpha12/`](reports/official-test-alpha12/README.md)
+
+The validation and official-test reports are kept separate because they use
+different data splits and seed counts.
