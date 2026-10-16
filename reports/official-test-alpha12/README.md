@@ -20,10 +20,30 @@ standard deviation over seeds 1, 2, and 3.
 | Minor-only | 94.9844 +/- 0.2806 | 94.6884 +/- 0.3158 | 94.1554 +/- 0.2504 | 92.9314 +/- 0.2602 |
 | DeCon | 92.2263 +/- 0.2470 | 91.0050 +/- 0.2214 | 87.5768 +/- 0.1946 | 85.0899 +/- 0.2589 |
 
+## Class-level official-test metrics
+
+The original final-epoch class-level CSV files are included under
+`per-class/<dataset>/<method>/seed_<n>.csv` for both datasets, all three
+methods, and seeds 1, 2, and 3.
+
+```text
+per-class/
+  cifar10/{dual,minor,decon}/seed_{1,2,3}.csv
+  svhn/{dual,minor,decon}/seed_{1,2,3}.csv
+```
+
+The Dual files contain separate rows for the jointly trained `major` and
+`minor` branches and for the reported `ensemble` output. The Minor-only and
+DeCon files contain their respective single-model rows. Each row identifies
+the final epoch, model, class index, class accuracy/recall, F1, and support.
+Dual and Minor-only files also store precision and recall explicitly; the
+original DeCon output stores accuracy, F1, and support.
+
 ## Included data
 
 - `aggregate_summary.csv`: three-seed mean and standard deviation
 - `run_summary.csv`: per-seed final metrics and original output paths
+- `per-class/`: original per-class final metrics for all 18 official-test runs
 
 The reported Dual result is the ensemble output. Within the jointly trained
 Dual model, the Minor branch alone reached 88.9767% mean accuracy on CIFAR-10
