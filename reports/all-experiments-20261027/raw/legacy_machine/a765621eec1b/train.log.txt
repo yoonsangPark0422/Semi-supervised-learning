@@ -1,0 +1,35 @@
+05/16/2026 13:52:46 - WARNING - __main__ -   Process rank: -1, device: cuda:0, n_gpu: 1, distributed training: False, 16-bits training: False
+05/16/2026 13:52:46 - INFO - __main__ -   {'gpu_id': 0, 'num_workers': 0, 'dataset': 'cifar10', 'num_labeled': 4000, 'expand_labels': True, 'arch': 'wideresnet', 'total_steps': 1, 'eval_step': 1, 'start_epoch': 0, 'batch_size': 4, 'fast_ablation': False, 'small_wrn': False, 'fast_total_steps': 512, 'fast_eval_step': 128, 'fast_batch_size': 16, 'fast_mu': 1, 'lr': 0.03, 'warmup': 0, 'wdecay': 0.0005, 'nesterov': True, 'use_ema': True, 'no_ema': False, 'ema_decay': 0.999, 'mu': 1, 'lambda_u': 1, 'T': 1, 'threshold': 0.95, 'ablation_preset': 'full', 'dual_bias_cotrain': True, 'imb_ratio': 100.0, 'imb_type': 'exp', 'major_top_ratio': 0.2, 'classwise_quota': 'global', 'minority_threshold_gamma': 1.0, 'min_threshold': 0.5, 'minority_bias_strength': 1.0, 'minority_supervised_gamma': 1.0, 'minor_balanced_labeled': True, 'no_minor_balanced_labeled': False, 'no_minor_class_weight': False, 'no_minority_pseudo_bias': False, 'no_classwise_pseudo_mask': False, 'no_dual_agreement': False, 'no_dual_consistency': False, 'max_minority_weight': 10.0, 'minority_bias_warmup': 2048, 'daso_blend_base': 0.2, 'daso_blend_scale': 0.6, 'pseudo_dist_momentum': 0.999, 'agreement_threshold': 0.5, 'consistency_weight': 0.1, 'ensemble_minor_weight': 0.7, 'dual_final_predictor': 'ensemble', 'final_logit_adjust_tau': 1.6, 'selection_metric': 'final', 'export_features': False, 'feature_export_max': 2000, 'unsup_warmup': 1024, 'pseudo_warmup': 512, 'out': 'C:\\Users\\FORYOUCOM\\Desktop\\졸업논문 코드\\baseline compare\\result\\smoke\\seed_5\\proposed', 'resume': '', 'init_checkpoint': '', 'eval_only': False, 'no_save_checkpoint': False, 'seed': 5, 'amp': False, 'opt_level': 'O1', 'local_rank': -1, 'no_progress': True, 'device': device(type='cuda', index=0), 'world_size': 1, 'n_gpu': 1}
+05/16/2026 13:52:46 - INFO - dataset.cifar -   Labeled class counts: [1612, 967, 580, 348, 209, 124, 74, 44, 26, 16]
+05/16/2026 13:52:47 - INFO - models.wideresnet -   Model: WideResNet 28x2
+05/16/2026 13:52:47 - INFO - __main__ -   Total params: 1.47M
+05/16/2026 13:52:47 - INFO - models.wideresnet -   Model: WideResNet 28x2
+05/16/2026 13:52:47 - INFO - __main__ -   Total params: 1.47M
+05/16/2026 13:52:47 - INFO - __main__ -   ***** Running training *****
+05/16/2026 13:52:47 - INFO - __main__ -     Task = cifar10@4000
+05/16/2026 13:52:47 - INFO - __main__ -     Num Epochs = 1
+05/16/2026 13:52:47 - INFO - __main__ -     Batch size per GPU = 4
+05/16/2026 13:52:47 - INFO - __main__ -     Total train batch size = 4
+05/16/2026 13:52:47 - INFO - __main__ -     Total optimization steps = 1
+05/16/2026 13:53:04 - INFO - __main__ -   top-1 acc: 9.29
+05/16/2026 13:53:04 - INFO - __main__ -   top-5 acc: 51.67
+05/16/2026 13:53:04 - INFO - __main__ -   per-class acc: [0.0, 0.0, 0.0, 87.7, 1.6, 0.0, 0.0, 0.0, 0.0, 3.6]
+05/16/2026 13:53:04 - INFO - __main__ -   macro F1: 2.42
+05/16/2026 13:53:04 - INFO - __main__ -   head/mid/tail acc: 0.00 / 29.77 / 0.90
+05/16/2026 13:53:21 - INFO - __main__ -   top-1 acc: 10.00
+05/16/2026 13:53:21 - INFO - __main__ -   top-5 acc: 49.58
+05/16/2026 13:53:21 - INFO - __main__ -   per-class acc: [0.0, 0.0, 0.0, 100.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0]
+05/16/2026 13:53:21 - INFO - __main__ -   macro F1: 1.82
+05/16/2026 13:53:21 - INFO - __main__ -   head/mid/tail acc: 0.00 / 33.33 / 0.00
+05/16/2026 13:53:43 - INFO - __main__ -   ensemble top-1 acc: 10.00
+05/16/2026 13:53:43 - INFO - __main__ -   ensemble top-5 acc: 50.20
+05/16/2026 13:53:43 - INFO - __main__ -   ensemble per-class acc: [0.0, 0.0, 0.0, 100.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0]
+05/16/2026 13:53:43 - INFO - __main__ -   ensemble macro F1: 1.82
+05/16/2026 13:53:43 - INFO - __main__ -   ensemble head/mid/tail acc: 0.00 / 33.33 / 0.00
+05/16/2026 13:53:43 - INFO - __main__ -   Major top-1 acc: 9.29
+05/16/2026 13:53:43 - INFO - __main__ -   Minor top-1 acc: 10.00
+05/16/2026 13:53:43 - INFO - __main__ -   Ensemble top-1 acc: 10.00
+05/16/2026 13:53:43 - INFO - __main__ -   Final top-1 acc: 10.00
+05/16/2026 13:53:43 - INFO - __main__ -   Best final top-1 acc: 10.00
+05/16/2026 13:53:43 - INFO - __main__ -   Mean final top-1 acc: 10.00
+

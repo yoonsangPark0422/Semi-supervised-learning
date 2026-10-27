@@ -1,0 +1,116 @@
+usage: train.py [-h] [--gpu-id GPU_ID] [--num-workers NUM_WORKERS]
+                [--dataset {cifar10,cifar100}] [--num-labeled NUM_LABELED]
+                [--expand-labels] [--arch {wideresnet,resnext}]
+                [--total-steps TOTAL_STEPS] [--eval-step EVAL_STEP]
+                [--start-epoch START_EPOCH] [--batch-size BATCH_SIZE]
+                [--lr LR] [--warmup WARMUP] [--wdecay WDECAY] [--nesterov]
+                [--use-ema] [--ema-decay EMA_DECAY] [--mu MU]
+                [--lambda-u LAMBDA_U] [--T T] [--threshold THRESHOLD]
+                [--dual-bias-cotrain] [--imb-ratio IMB_RATIO]
+                [--imb-type {exp,step}] [--major-top-ratio MAJOR_TOP_RATIO]
+                [--classwise-quota {global,batch}]
+                [--minority-threshold-gamma MINORITY_THRESHOLD_GAMMA]
+                [--min-threshold MIN_THRESHOLD]
+                [--minority-bias-strength MINORITY_BIAS_STRENGTH]
+                [--minority-supervised-gamma MINORITY_SUPERVISED_GAMMA]
+                [--max-minority-weight MAX_MINORITY_WEIGHT]
+                [--daso-blend-base DASO_BLEND_BASE]
+                [--daso-blend-scale DASO_BLEND_SCALE]
+                [--pseudo-dist-momentum PSEUDO_DIST_MOMENTUM]
+                [--agreement-threshold AGREEMENT_THRESHOLD]
+                [--consistency-weight CONSISTENCY_WEIGHT]
+                [--unsup-warmup UNSUP_WARMUP] [--pseudo-warmup PSEUDO_WARMUP]
+                [--out OUT] [--resume RESUME] [--seed SEED] [--amp]
+                [--opt_level OPT_LEVEL] [--local_rank LOCAL_RANK]
+                [--no-progress]
+
+PyTorch FixMatch Training
+
+options:
+  -h, --help            show this help message and exit
+  --gpu-id GPU_ID       id(s) for CUDA_VISIBLE_DEVICES
+  --num-workers NUM_WORKERS
+                        number of workers
+  --dataset {cifar10,cifar100}
+                        dataset name
+  --num-labeled NUM_LABELED
+                        number of labeled data
+  --expand-labels       expand labels to fit eval steps
+  --arch {wideresnet,resnext}
+                        dataset name
+  --total-steps TOTAL_STEPS
+                        number of total steps to run
+  --eval-step EVAL_STEP
+                        number of eval steps to run
+  --start-epoch START_EPOCH
+                        manual epoch number (useful on restarts)
+  --batch-size BATCH_SIZE
+                        train batchsize
+  --lr LR, --learning-rate LR
+                        initial learning rate
+  --warmup WARMUP       warmup epochs (unlabeled data based)
+  --wdecay WDECAY       weight decay
+  --nesterov            use nesterov momentum
+  --use-ema             use EMA model
+  --ema-decay EMA_DECAY
+                        EMA decay rate
+  --mu MU               coefficient of unlabeled batch size
+  --lambda-u LAMBDA_U   coefficient of unlabeled loss
+  --T T                 pseudo label temperature
+  --threshold THRESHOLD
+                        pseudo label threshold
+  --dual-bias-cotrain   train majority-biased and minority-biased models with
+                        cross pseudo labels
+  --imb-ratio IMB_RATIO
+                        labeled long-tail imbalance ratio; 1 keeps the
+                        original balanced split
+  --imb-type {exp,step}
+                        labeled imbalance shape
+  --major-top-ratio MAJOR_TOP_RATIO
+                        top confidence ratio kept for majority pseudo labels
+  --classwise-quota {global,batch}
+                        global uses majority predicted quota; batch uses per-
+                        class predicted quota
+  --minority-threshold-gamma MINORITY_THRESHOLD_GAMMA
+                        larger values keep more minority pseudo labels in
+                        class-wise top-k filtering
+  --min-threshold MIN_THRESHOLD
+                        minimum confidence after class-wise top-k filtering
+  --minority-bias-strength MINORITY_BIAS_STRENGTH
+                        logit-adjustment strength for the DASO-style minority
+                        branch
+  --minority-supervised-gamma MINORITY_SUPERVISED_GAMMA
+                        class-balanced supervised loss strength for the
+                        minority-biased branch
+  --max-minority-weight MAX_MINORITY_WEIGHT
+                        cap for minority supervised class weights before
+                        normalization
+  --daso-blend-base DASO_BLEND_BASE
+                        minimum minority-adjusted pseudo-label blend
+  --daso-blend-scale DASO_BLEND_SCALE
+                        extra DASO-style blend for under-predicted classes
+  --pseudo-dist-momentum PSEUDO_DIST_MOMENTUM
+                        EMA momentum for predicted class distribution in the
+                        minority branch
+  --agreement-threshold AGREEMENT_THRESHOLD
+                        minimum confidence for accepting agreeing dual-model
+                        pseudo labels
+  --consistency-weight CONSISTENCY_WEIGHT
+                        symmetric KL consistency weight between the two
+                        branches
+  --unsup-warmup UNSUP_WARMUP
+                        steps to linearly ramp unlabeled and consistency
+                        losses
+  --pseudo-warmup PSEUDO_WARMUP
+                        steps before cross-model pseudo-label training starts
+  --out OUT             directory to output the result
+  --resume RESUME       path to latest checkpoint (default: none)
+  --seed SEED           random seed
+  --amp                 use 16-bit (mixed) precision through NVIDIA apex AMP
+  --opt_level OPT_LEVEL
+                        apex AMP optimization level selected in ['O0', 'O1',
+                        'O2', and 'O3'].See details at
+                        https://nvidia.github.io/apex/amp.html
+  --local_rank LOCAL_RANK
+                        For distributed training: local_rank
+  --no-progress         don't use progress bar

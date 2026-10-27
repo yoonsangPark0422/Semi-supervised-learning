@@ -1,0 +1,24 @@
+[2026-09-10T11:55:17] BEGIN missing SVHN seed1-5 completion
+[2026-09-10T11:55:17] START decon_seed_2
+[2026-09-10T11:56:28] BEGIN missing SVHN seed1-5 completion
+[2026-09-10T11:56:28] START decon_seed_2
+[2026-09-10T17:29:45] END decon_seed_2 code=0
+[2026-09-10T17:29:45] START minor_only_alpha12_seed_3
+[2026-09-10T21:16:05] END minor_only_alpha12_seed_3 code=0
+[2026-09-10T21:16:05] START dual_alpha12_seed_3
+[2026-09-11T04:00:05] END dual_alpha12_seed_3 code=0
+[2026-09-11T04:00:05] START decon_seed_3
+[2026-09-11T09:31:41] END decon_seed_3 code=0
+[2026-09-11T09:31:41] START minor_only_alpha12_seed_4
+[2026-09-11T13:20:27] END minor_only_alpha12_seed_4 code=0
+[2026-09-11T13:20:27] START dual_alpha12_seed_4
+[2026-09-13T17:39:10] END dual_alpha12_seed_4 code=0
+[2026-09-13T17:39:10] START decon_seed_4
+[2026-09-13T23:12:51] END decon_seed_4 code=0
+[2026-09-13T23:12:51] START minor_only_alpha12_seed_5
+[2026-09-14T03:01:58] END minor_only_alpha12_seed_5 code=0
+[2026-09-14T03:01:58] START dual_alpha12_seed_5
+[2026-09-14T09:11:37] END dual_alpha12_seed_5 code=0
+[2026-09-14T09:11:37] START decon_seed_5
+[2026-09-14T14:46:18] END decon_seed_5 code=0
+[2026-09-14T14:46:18] FINISHED missing SVHN seed1-5 completion

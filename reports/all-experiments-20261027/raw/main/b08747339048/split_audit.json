@@ -1,0 +1,26 @@
+{
+  "seed": 1,
+  "all_three_exact_indices_equal": true,
+  "labeled_unique_count": 4000,
+  "labeled_expanded_count": 20000,
+  "unlabeled_count": 50000,
+  "unlabeled_per_class": [
+    5000,
+    5000,
+    5000,
+    5000,
+    5000,
+    5000,
+    5000,
+    5000,
+    5000,
+    5000
+  ],
+  "labeled_expanded_sha256": "f656ebe37fa4d7b370379a5ae328877f74494b1047aad248227654f1008a450f",
+  "unlabeled_sha256": "33236cc6bd19fa6b89e06d441d3fcd8eb37dc8540f6a4f2b627b20af10894a41",
+  "loader_paths": {
+    "new_dual": "C:\\Users\\FORYOUCOM\\Desktop\\Semi-supervised-learning-main\\Semi-supervised-learning-main\\dual\\dataset\\cifar_val_split.py",
+    "real_last_2": "C:\\Users\\FORYOUCOM\\Desktop\\Semi-supervised-learning-upload-worktree\\dual real last\\dual real last-2\\dataset\\cifar_val_split.py",
+    "decon": "C:\\Users\\FORYOUCOM\\Desktop\\DeCon\\dataset\\data_dual_matched.py"
+  }
+}

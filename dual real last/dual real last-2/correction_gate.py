@@ -12,6 +12,8 @@ def suppress_conflicting_self(self_mask, gate):
     return self_mask * (~gate).to(self_mask.dtype)
 
 
-def reference_masked_mean(losses, active_mask, reference_mask):
+def reference_masked_mean(losses, active_mask, reference_mask, weights=None):
     # Keep every untouched sample's original coefficient.
+    if weights is not None:
+        losses = losses * weights.detach()
     return (losses * active_mask).sum() / reference_mask.sum().clamp_min(1.0)

@@ -1,0 +1,87 @@
+2026-08-29 14:28:49.898764: I tensorflow/core/util/port.cc:153] oneDNN custom operations are on. You may see slightly different numerical results due to floating-point round-off errors from different computation orders. To turn them off, set the environment variable `TF_ENABLE_ONEDNN_OPTS=0`.
+2026-08-29 14:28:55.046871: I tensorflow/core/util/port.cc:153] oneDNN custom operations are on. You may see slightly different numerical results due to floating-point round-off errors from different computation orders. To turn them off, set the environment variable `TF_ENABLE_ONEDNN_OPTS=0`.
+08/29/2026 14:29:01 - WARNING - __main__ -   Process rank: -1, device: cpu, n_gpu: 0, distributed training: False, 16-bits training: False
+08/29/2026 14:29:01 - INFO - __main__ -   {'gpu_id': 0, 'num_workers': 0, 'dataset': 'cifar10', 'num_labeled': 4000, 'expand_labels': True, 'arch': 'wideresnet', 'total_steps': 25600, 'eval_step': 512, 'start_epoch': 0, 'batch_size': 32, 'lr': 0.03, 'warmup': 0, 'wdecay': 0.0005, 'nesterov': True, 'use_ema': True, 'no_ema': False, 'ema_decay': 0.999, 'mu': 7, 'lambda_u': 1, 'lambda_cross': 1.0, 'tau_major_cross': 0.95, 'tau_minor_cross': 0.95, 'major_cross_skip_minor_conf_threshold': 0.8, 'T': 1, 'threshold': 0.95, 'dual_train_mode': 'dual_sampler_weighted_ce', 'imb_ratio': 100.0, 'val_samples_per_class': 500, 'imb_type': 'exp', 'major_top_ratio': 0.2, 'head_class_ratio': 0.3, 'tail_class_ratio': 0.3, 'classwise_quota': 'global', 'minority_threshold_gamma': 1.0, 'min_threshold': 0.5, 'minority_bias_strength': 1.0, 'minority_supervised_gamma': 1.0, 'max_minority_weight': 10.0, 'minority_bias_warmup': 2048, 'ensemble_minor_weight': 0.8, 'unsup_warmup': 1024, 'pseudo_warmup': 512, 'out': 'C:\\Users\\FORYOUCOM\\Desktop\\Semi-supervised-learning-main\\Semi-supervised-learning-main\\results\\new_dual_skip_minor_conf08_ratio100_seed1_e50_s512', 'resume': '', 'init_checkpoint': '', 'eval_only': False, 'no_save_checkpoint': True, 'seed': 1, 'amp': False, 'opt_level': 'O1', 'local_rank': -1, 'no_progress': True, 'use_minor_balanced_sampler': True, 'use_minor_weighted_ce': True, 'device': device(type='cpu'), 'world_size': 1, 'n_gpu': 0}
+08/29/2026 14:29:01 - INFO - dataset.cifar_val_split -   Using 500 validation samples per class from CIFAR train split.
+08/29/2026 14:29:01 - INFO - dataset.cifar_val_split -   Labeled class counts: [1612, 967, 580, 348, 209, 124, 74, 44, 26, 16]
+08/29/2026 14:29:03 - INFO - __main__ -   Using expanded labeled dataset class counts for dual training: [8060, 4835, 2900, 1740, 1045, 620, 370, 220, 130, 80]. Original split counts were: [1612, 967, 580, 348, 209, 124, 74, 44, 26, 16]
+08/29/2026 14:29:03 - INFO - models.wideresnet -   Model: WideResNet 28x2
+08/29/2026 14:29:03 - INFO - __main__ -   Total params: 1.47M
+08/29/2026 14:29:03 - INFO - models.wideresnet -   Model: WideResNet 28x2
+08/29/2026 14:29:03 - INFO - __main__ -   Total params: 1.47M
+08/29/2026 14:29:03 - INFO - __main__ -   ***** Running training *****
+08/29/2026 14:29:03 - INFO - __main__ -     Task = cifar10@4000
+08/29/2026 14:29:03 - INFO - __main__ -     Num Epochs = 50
+08/29/2026 14:29:03 - INFO - __main__ -     Batch size per GPU = 32
+08/29/2026 14:29:03 - INFO - __main__ -     Total train batch size = 32
+08/29/2026 14:29:03 - INFO - __main__ -     Total optimization steps = 25600
+08/29/2026 14:29:03 - INFO - __main__ -     Dual train mode = dual_sampler_weighted_ce
+08/29/2026 15:04:37 - INFO - __main__ -   top-1 acc: 14.18
+08/29/2026 15:04:37 - INFO - __main__ -   top-5 acc: 60.70
+08/29/2026 15:04:37 - INFO - __main__ -   per-class acc: [50.0, 0.0, 91.6, 0.2, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0]
+08/29/2026 15:04:37 - INFO - __main__ -   macro F1: 6.25
+08/29/2026 15:04:37 - INFO - __main__ -   head/mid/tail acc: 47.20 / 0.07 / 0.00
+08/29/2026 15:04:42 - INFO - __main__ -   top-1 acc: 28.16
+08/29/2026 15:04:42 - INFO - __main__ -   top-5 acc: 74.22
+08/29/2026 15:04:42 - INFO - __main__ -   per-class acc: [22.2, 34.6, 17.6, 7.4, 32.0, 70.4, 35.8, 2.2, 58.0, 1.4]
+08/29/2026 15:04:42 - INFO - __main__ -   macro F1: 24.87
+08/29/2026 15:04:42 - INFO - __main__ -   head/mid/tail acc: 24.80 / 36.60 / 24.35
+08/29/2026 15:04:51 - INFO - __main__ -   ensemble top-1 acc: 24.90
+08/29/2026 15:04:51 - INFO - __main__ -   ensemble top-5 acc: 72.28
+08/29/2026 15:04:51 - INFO - __main__ -   ensemble per-class acc: [37.4, 17.4, 56.4, 13.2, 17.8, 48.4, 21.4, 0.0, 36.6, 0.4]
+08/29/2026 15:04:51 - INFO - __main__ -   ensemble macro F1: 22.99
+08/29/2026 15:04:51 - INFO - __main__ -   ensemble head/mid/tail acc: 37.07 / 26.47 / 14.60
+08/29/2026 15:04:51 - INFO - __main__ -   cross samples pre major->minor: 0.00, pre minor->major: 0.00, conflict: 0.00, skip minor-conf: 0.00, post major->minor: 0.00, post minor->major: 0.00
+08/29/2026 15:04:51 - INFO - __main__ -   Major top-1 acc: 14.18
+08/29/2026 15:04:51 - INFO - __main__ -   Minor top-1 acc: 28.16
+08/29/2026 15:04:51 - INFO - __main__ -   Ensemble top-1 acc: 24.90
+08/29/2026 15:04:51 - INFO - __main__ -   Final top-1 acc: 24.90
+08/29/2026 15:04:51 - INFO - __main__ -   Best final top-1 acc: 24.90
+08/29/2026 15:04:51 - INFO - __main__ -   Mean final top-1 acc: 24.90
+
+08/29/2026 15:37:34 - INFO - __main__ -   top-1 acc: 16.54
+08/29/2026 15:37:34 - INFO - __main__ -   top-5 acc: 69.30
+08/29/2026 15:37:34 - INFO - __main__ -   per-class acc: [65.4, 8.0, 90.2, 1.8, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0]
+08/29/2026 15:37:34 - INFO - __main__ -   macro F1: 8.08
+08/29/2026 15:37:34 - INFO - __main__ -   head/mid/tail acc: 54.53 / 0.60 / 0.00
+08/29/2026 15:37:39 - INFO - __main__ -   top-1 acc: 37.92
+08/29/2026 15:37:39 - INFO - __main__ -   top-5 acc: 81.14
+08/29/2026 15:37:39 - INFO - __main__ -   per-class acc: [46.8, 48.6, 31.8, 10.4, 52.0, 69.8, 41.4, 11.0, 52.6, 14.8]
+08/29/2026 15:37:39 - INFO - __main__ -   macro F1: 36.35
+08/29/2026 15:37:39 - INFO - __main__ -   head/mid/tail acc: 42.40 / 44.07 / 29.95
+08/29/2026 15:37:48 - INFO - __main__ -   ensemble top-1 acc: 34.54
+08/29/2026 15:37:48 - INFO - __main__ -   ensemble top-5 acc: 79.14
+08/29/2026 15:37:48 - INFO - __main__ -   ensemble per-class acc: [53.0, 41.8, 64.0, 18.4, 35.0, 50.4, 31.8, 3.6, 38.6, 8.8]
+08/29/2026 15:37:48 - INFO - __main__ -   ensemble macro F1: 33.05
+08/29/2026 15:37:48 - INFO - __main__ -   ensemble head/mid/tail acc: 52.93 / 34.60 / 20.70
+08/29/2026 15:37:48 - INFO - __main__ -   cross samples pre major->minor: 22.08, pre minor->major: 14.49, conflict: 1.30, skip minor-conf: 10.35, post major->minor: 10.44, post minor->major: 13.19
+08/29/2026 15:37:48 - INFO - __main__ -   Major top-1 acc: 16.54
+08/29/2026 15:37:48 - INFO - __main__ -   Minor top-1 acc: 37.92
+08/29/2026 15:37:48 - INFO - __main__ -   Ensemble top-1 acc: 34.54
+08/29/2026 15:37:48 - INFO - __main__ -   Final top-1 acc: 34.54
+08/29/2026 15:37:48 - INFO - __main__ -   Best final top-1 acc: 34.54
+08/29/2026 15:37:48 - INFO - __main__ -   Mean final top-1 acc: 29.72
+
+08/29/2026 16:12:05 - INFO - __main__ -   top-1 acc: 20.16
+08/29/2026 16:12:05 - INFO - __main__ -   top-5 acc: 73.44
+08/29/2026 16:12:05 - INFO - __main__ -   per-class acc: [68.6, 33.8, 90.6, 8.6, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0]
+08/29/2026 16:12:05 - INFO - __main__ -   macro F1: 12.49
+08/29/2026 16:12:05 - INFO - __main__ -   head/mid/tail acc: 64.33 / 2.87 / 0.00
+08/29/2026 16:12:11 - INFO - __main__ -   top-1 acc: 42.54
+08/29/2026 16:12:11 - INFO - __main__ -   top-5 acc: 85.36
+08/29/2026 16:12:11 - INFO - __main__ -   per-class acc: [46.8, 52.2, 23.0, 17.4, 64.8, 71.2, 50.6, 14.8, 53.6, 31.0]
+08/29/2026 16:12:11 - INFO - __main__ -   macro F1: 41.60
+08/29/2026 16:12:11 - INFO - __main__ -   head/mid/tail acc: 40.67 / 51.13 / 37.50
+08/29/2026 16:12:21 - INFO - __main__ -   ensemble top-1 acc: 42.20
+08/29/2026 16:12:21 - INFO - __main__ -   ensemble top-5 acc: 83.76
+08/29/2026 16:12:21 - INFO - __main__ -   ensemble per-class acc: [57.4, 53.8, 50.4, 30.8, 59.0, 52.4, 42.0, 10.4, 41.8, 24.0]
+08/29/2026 16:12:21 - INFO - __main__ -   ensemble macro F1: 41.64
+08/29/2026 16:12:21 - INFO - __main__ -   ensemble head/mid/tail acc: 53.87 / 47.40 / 29.55
+08/29/2026 16:12:21 - INFO - __main__ -   cross samples pre major->minor: 31.06, pre minor->major: 25.89, conflict: 3.77, skip minor-conf: 12.03, post major->minor: 15.25, post minor->major: 22.12
+08/29/2026 16:12:21 - INFO - __main__ -   Major top-1 acc: 20.16
+08/29/2026 16:12:21 - INFO - __main__ -   Minor top-1 acc: 42.54
+08/29/2026 16:12:21 - INFO - __main__ -   Ensemble top-1 acc: 42.20
+08/29/2026 16:12:21 - INFO - __main__ -   Final top-1 acc: 42.20
+08/29/2026 16:12:21 - INFO - __main__ -   Best final top-1 acc: 42.20
+08/29/2026 16:12:21 - INFO - __main__ -   Mean final top-1 acc: 33.88
+

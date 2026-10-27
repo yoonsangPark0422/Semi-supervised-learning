@@ -1,0 +1,2 @@
+Top1 acc	Best Top1 acc	
+91.959896	91.959896	

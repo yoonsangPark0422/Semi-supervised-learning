@@ -1,0 +1,359 @@
+09/10/2026 17:29:47 - WARNING - __main__ -   Process rank: -1, device: cuda:0, n_gpu: 1, distributed training: False
+09/10/2026 17:29:47 - INFO - __main__ -   {'gpu_id': 0, 'num_workers': 0, 'dataset': 'svhn', 'num_labeled': 4000, 'expand_labels': False, 'arch': 'wideresnet', 'total_steps': 25600, 'eval_step': 512, 'start_epoch': 0, 'batch_size': 64, 'lr': 0.03, 'warmup': 0, 'wdecay': 0.0005, 'nesterov': True, 'use_ema': True, 'no_ema': False, 'ema_decay': 0.999, 'mu': 7, 'lambda_u': 1, 'T': 1, 'threshold': 0.95, 'imb_ratio': 100.0, 'val_samples_per_class': 500, 'imb_type': 'exp', 'major_top_ratio': 0.2, 'classwise_quota': 'global', 'minority_threshold_gamma': 1.0, 'min_threshold': 0.5, 'minority_bias_strength': 1.0, 'minority_supervised_gamma': 1.0, 'minor_balanced_sampler_alpha': 1.2, 'max_minority_weight': 10.0, 'minority_bias_warmup': 2048, 'unsup_warmup': 1024, 'pseudo_warmup': 512, 'out': 'C:\\Users\\FORYOUCOM\\Desktop\\Semi-supervised-learning-main\\Semi-supervised-learning-main\\results\\svhn_lt_ratio100_seed1_5_e50_s512_optimized_v2\\minor_only_alpha12_seed_3', 'resume': '', 'init_checkpoint': '', 'eval_only': False, 'no_save_checkpoint': True, 'seed': 3, 'amp': False, 'opt_level': 'O1', 'local_rank': -1, 'no_progress': True, 'dual_train_mode': 'single_minor', 'use_minor_balanced_sampler': True, 'use_minor_weighted_ce': True, 'ensemble_minor_weight': 1.0, 'device': device(type='cuda', index=0), 'world_size': 1, 'n_gpu': 1}
+09/10/2026 17:29:49 - INFO - dataset.cifar_val_split -   Using 500 validation samples per class from train split.
+09/10/2026 17:29:49 - INFO - dataset.cifar_val_split -   Labeled class counts: [1612, 967, 580, 348, 209, 124, 74, 44, 26, 16]
+09/10/2026 17:29:52 - INFO - models.wideresnet -   Model: WideResNet 28x2
+09/10/2026 17:29:52 - INFO - train -   Total params: 1.47M
+09/10/2026 17:29:52 - INFO - __main__ -   ***** Running single minor training *****
+09/10/2026 17:29:52 - INFO - __main__ -     Num Epochs = 50
+09/10/2026 17:29:52 - INFO - __main__ -     Total optimization steps = 25600
+09/10/2026 17:34:26 - INFO - __main__ -   top-1 acc: 12.38
+09/10/2026 17:34:26 - INFO - __main__ -   per-class acc: [1.0, 0.4, 41.4, 33.0, 1.8, 7.4, 20.8, 7.2, 4.8, 6.0]
+09/10/2026 17:34:26 - INFO - __main__ -   macro F1: 9.32
+09/10/2026 17:34:26 - INFO - __main__ -   Single minor top-1 acc: 12.38
+09/10/2026 17:34:26 - INFO - __main__ -   Best single minor top-1 acc: 12.38
+09/10/2026 17:34:26 - INFO - __main__ -   Mean single minor top-1 acc: 12.38
+
+09/10/2026 17:39:00 - INFO - __main__ -   top-1 acc: 39.52
+09/10/2026 17:39:00 - INFO - __main__ -   per-class acc: [26.6, 88.4, 58.0, 59.6, 41.0, 22.4, 50.2, 29.8, 19.2, 0.0]
+09/10/2026 17:39:00 - INFO - __main__ -   macro F1: 37.01
+09/10/2026 17:39:00 - INFO - __main__ -   Single minor top-1 acc: 39.52
+09/10/2026 17:39:00 - INFO - __main__ -   Best single minor top-1 acc: 39.52
+09/10/2026 17:39:00 - INFO - __main__ -   Mean single minor top-1 acc: 25.95
+
+09/10/2026 17:43:35 - INFO - __main__ -   top-1 acc: 67.74
+09/10/2026 17:43:35 - INFO - __main__ -   per-class acc: [67.6, 94.8, 72.6, 78.8, 72.0, 76.4, 73.0, 75.0, 44.6, 22.6]
+09/10/2026 17:43:35 - INFO - __main__ -   macro F1: 67.26
+09/10/2026 17:43:35 - INFO - __main__ -   Single minor top-1 acc: 67.74
+09/10/2026 17:43:35 - INFO - __main__ -   Best single minor top-1 acc: 67.74
+09/10/2026 17:43:35 - INFO - __main__ -   Mean single minor top-1 acc: 39.88
+
+09/10/2026 17:48:09 - INFO - __main__ -   top-1 acc: 82.86
+09/10/2026 17:48:09 - INFO - __main__ -   per-class acc: [83.4, 89.8, 83.4, 79.8, 86.2, 86.8, 84.4, 90.8, 71.4, 72.6]
+09/10/2026 17:48:09 - INFO - __main__ -   macro F1: 82.98
+09/10/2026 17:48:09 - INFO - __main__ -   Single minor top-1 acc: 82.86
+09/10/2026 17:48:09 - INFO - __main__ -   Best single minor top-1 acc: 82.86
+09/10/2026 17:48:09 - INFO - __main__ -   Mean single minor top-1 acc: 50.62
+
+09/10/2026 17:52:42 - INFO - __main__ -   top-1 acc: 86.58
+09/10/2026 17:52:42 - INFO - __main__ -   per-class acc: [82.4, 84.6, 84.0, 83.6, 91.8, 89.6, 87.4, 92.2, 80.8, 89.4]
+09/10/2026 17:52:42 - INFO - __main__ -   macro F1: 86.63
+09/10/2026 17:52:42 - INFO - __main__ -   Single minor top-1 acc: 86.58
+09/10/2026 17:52:42 - INFO - __main__ -   Best single minor top-1 acc: 86.58
+09/10/2026 17:52:42 - INFO - __main__ -   Mean single minor top-1 acc: 57.82
+
+09/10/2026 17:57:13 - INFO - __main__ -   top-1 acc: 88.56
+09/10/2026 17:57:13 - INFO - __main__ -   per-class acc: [85.6, 83.6, 86.2, 88.6, 93.8, 91.4, 88.2, 92.2, 82.4, 93.6]
+09/10/2026 17:57:13 - INFO - __main__ -   macro F1: 88.62
+09/10/2026 17:57:13 - INFO - __main__ -   Single minor top-1 acc: 88.56
+09/10/2026 17:57:13 - INFO - __main__ -   Best single minor top-1 acc: 88.56
+09/10/2026 17:57:13 - INFO - __main__ -   Mean single minor top-1 acc: 62.94
+
+09/10/2026 18:01:43 - INFO - __main__ -   top-1 acc: 89.46
+09/10/2026 18:01:43 - INFO - __main__ -   per-class acc: [88.8, 81.6, 87.6, 91.6, 94.8, 91.4, 89.6, 93.0, 83.2, 93.0]
+09/10/2026 18:01:43 - INFO - __main__ -   macro F1: 89.49
+09/10/2026 18:01:43 - INFO - __main__ -   Single minor top-1 acc: 89.46
+09/10/2026 18:01:43 - INFO - __main__ -   Best single minor top-1 acc: 89.46
+09/10/2026 18:01:43 - INFO - __main__ -   Mean single minor top-1 acc: 66.73
+
+09/10/2026 18:06:15 - INFO - __main__ -   top-1 acc: 90.20
+09/10/2026 18:06:15 - INFO - __main__ -   per-class acc: [90.4, 83.2, 88.0, 93.2, 95.6, 91.2, 89.8, 93.8, 85.2, 91.6]
+09/10/2026 18:06:15 - INFO - __main__ -   macro F1: 90.21
+09/10/2026 18:06:15 - INFO - __main__ -   Single minor top-1 acc: 90.20
+09/10/2026 18:06:15 - INFO - __main__ -   Best single minor top-1 acc: 90.20
+09/10/2026 18:06:15 - INFO - __main__ -   Mean single minor top-1 acc: 69.66
+
+09/10/2026 18:10:45 - INFO - __main__ -   top-1 acc: 90.74
+09/10/2026 18:10:45 - INFO - __main__ -   per-class acc: [91.8, 84.4, 88.2, 94.0, 95.8, 93.0, 90.0, 92.8, 86.4, 91.0]
+09/10/2026 18:10:45 - INFO - __main__ -   macro F1: 90.74
+09/10/2026 18:10:45 - INFO - __main__ -   Single minor top-1 acc: 90.74
+09/10/2026 18:10:45 - INFO - __main__ -   Best single minor top-1 acc: 90.74
+09/10/2026 18:10:45 - INFO - __main__ -   Mean single minor top-1 acc: 72.00
+
+09/10/2026 18:15:17 - INFO - __main__ -   top-1 acc: 90.98
+09/10/2026 18:15:17 - INFO - __main__ -   per-class acc: [94.0, 84.8, 88.4, 94.4, 96.2, 92.6, 90.0, 92.8, 86.8, 89.8]
+09/10/2026 18:15:17 - INFO - __main__ -   macro F1: 90.98
+09/10/2026 18:15:17 - INFO - __main__ -   Single minor top-1 acc: 90.98
+09/10/2026 18:15:17 - INFO - __main__ -   Best single minor top-1 acc: 90.98
+09/10/2026 18:15:17 - INFO - __main__ -   Mean single minor top-1 acc: 73.90
+
+09/10/2026 18:19:48 - INFO - __main__ -   top-1 acc: 91.56
+09/10/2026 18:19:48 - INFO - __main__ -   per-class acc: [94.6, 86.6, 90.0, 93.8, 96.8, 92.8, 90.4, 92.2, 88.8, 89.6]
+09/10/2026 18:19:48 - INFO - __main__ -   macro F1: 91.56
+09/10/2026 18:19:48 - INFO - __main__ -   Single minor top-1 acc: 91.56
+09/10/2026 18:19:48 - INFO - __main__ -   Best single minor top-1 acc: 91.56
+09/10/2026 18:19:48 - INFO - __main__ -   Mean single minor top-1 acc: 75.51
+
+09/10/2026 18:24:19 - INFO - __main__ -   top-1 acc: 92.02
+09/10/2026 18:24:19 - INFO - __main__ -   per-class acc: [95.4, 88.2, 90.2, 93.8, 96.4, 94.0, 90.6, 92.2, 89.8, 89.6]
+09/10/2026 18:24:19 - INFO - __main__ -   macro F1: 92.01
+09/10/2026 18:24:19 - INFO - __main__ -   Single minor top-1 acc: 92.02
+09/10/2026 18:24:19 - INFO - __main__ -   Best single minor top-1 acc: 92.02
+09/10/2026 18:24:19 - INFO - __main__ -   Mean single minor top-1 acc: 76.88
+
+09/10/2026 18:28:51 - INFO - __main__ -   top-1 acc: 92.22
+09/10/2026 18:28:51 - INFO - __main__ -   per-class acc: [95.6, 88.4, 90.8, 93.8, 96.6, 94.0, 91.0, 92.2, 89.8, 90.0]
+09/10/2026 18:28:51 - INFO - __main__ -   macro F1: 92.21
+09/10/2026 18:28:51 - INFO - __main__ -   Single minor top-1 acc: 92.22
+09/10/2026 18:28:51 - INFO - __main__ -   Best single minor top-1 acc: 92.22
+09/10/2026 18:28:51 - INFO - __main__ -   Mean single minor top-1 acc: 78.06
+
+09/10/2026 18:33:23 - INFO - __main__ -   top-1 acc: 92.30
+09/10/2026 18:33:23 - INFO - __main__ -   per-class acc: [95.6, 89.0, 91.4, 94.0, 96.0, 93.6, 91.2, 92.4, 89.8, 90.0]
+09/10/2026 18:33:23 - INFO - __main__ -   macro F1: 92.30
+09/10/2026 18:33:23 - INFO - __main__ -   Single minor top-1 acc: 92.30
+09/10/2026 18:33:23 - INFO - __main__ -   Best single minor top-1 acc: 92.30
+09/10/2026 18:33:23 - INFO - __main__ -   Mean single minor top-1 acc: 79.08
+
+09/10/2026 18:37:54 - INFO - __main__ -   top-1 acc: 92.36
+09/10/2026 18:37:54 - INFO - __main__ -   per-class acc: [95.4, 88.6, 91.8, 93.8, 95.8, 93.8, 91.4, 92.4, 90.6, 90.0]
+09/10/2026 18:37:54 - INFO - __main__ -   macro F1: 92.36
+09/10/2026 18:37:54 - INFO - __main__ -   Single minor top-1 acc: 92.36
+09/10/2026 18:37:54 - INFO - __main__ -   Best single minor top-1 acc: 92.36
+09/10/2026 18:37:54 - INFO - __main__ -   Mean single minor top-1 acc: 79.97
+
+09/10/2026 18:42:26 - INFO - __main__ -   top-1 acc: 92.56
+09/10/2026 18:42:26 - INFO - __main__ -   per-class acc: [95.4, 88.6, 92.0, 93.8, 96.8, 94.2, 91.4, 92.0, 91.0, 90.4]
+09/10/2026 18:42:26 - INFO - __main__ -   macro F1: 92.55
+09/10/2026 18:42:26 - INFO - __main__ -   Single minor top-1 acc: 92.56
+09/10/2026 18:42:26 - INFO - __main__ -   Best single minor top-1 acc: 92.56
+09/10/2026 18:42:26 - INFO - __main__ -   Mean single minor top-1 acc: 80.75
+
+09/10/2026 18:46:57 - INFO - __main__ -   top-1 acc: 92.54
+09/10/2026 18:46:57 - INFO - __main__ -   per-class acc: [95.2, 89.0, 92.2, 94.0, 96.2, 94.2, 91.6, 91.8, 90.6, 90.6]
+09/10/2026 18:46:57 - INFO - __main__ -   macro F1: 92.54
+09/10/2026 18:46:57 - INFO - __main__ -   Single minor top-1 acc: 92.54
+09/10/2026 18:46:57 - INFO - __main__ -   Best single minor top-1 acc: 92.56
+09/10/2026 18:46:57 - INFO - __main__ -   Mean single minor top-1 acc: 81.45
+
+09/10/2026 18:51:29 - INFO - __main__ -   top-1 acc: 92.70
+09/10/2026 18:51:29 - INFO - __main__ -   per-class acc: [95.8, 88.6, 92.4, 94.2, 96.8, 94.6, 91.2, 91.8, 90.6, 91.0]
+09/10/2026 18:51:29 - INFO - __main__ -   macro F1: 92.69
+09/10/2026 18:51:29 - INFO - __main__ -   Single minor top-1 acc: 92.70
+09/10/2026 18:51:29 - INFO - __main__ -   Best single minor top-1 acc: 92.70
+09/10/2026 18:51:29 - INFO - __main__ -   Mean single minor top-1 acc: 82.07
+
+09/10/2026 18:56:01 - INFO - __main__ -   top-1 acc: 93.04
+09/10/2026 18:56:01 - INFO - __main__ -   per-class acc: [95.4, 90.0, 92.4, 94.6, 97.0, 94.6, 91.6, 92.4, 90.8, 91.6]
+09/10/2026 18:56:01 - INFO - __main__ -   macro F1: 93.04
+09/10/2026 18:56:01 - INFO - __main__ -   Single minor top-1 acc: 93.04
+09/10/2026 18:56:01 - INFO - __main__ -   Best single minor top-1 acc: 93.04
+09/10/2026 18:56:01 - INFO - __main__ -   Mean single minor top-1 acc: 82.65
+
+09/10/2026 19:00:32 - INFO - __main__ -   top-1 acc: 93.00
+09/10/2026 19:00:32 - INFO - __main__ -   per-class acc: [95.4, 90.0, 92.8, 94.4, 96.6, 94.4, 91.6, 91.8, 91.4, 91.6]
+09/10/2026 19:00:32 - INFO - __main__ -   macro F1: 93.00
+09/10/2026 19:00:32 - INFO - __main__ -   Single minor top-1 acc: 93.00
+09/10/2026 19:00:32 - INFO - __main__ -   Best single minor top-1 acc: 93.04
+09/10/2026 19:00:32 - INFO - __main__ -   Mean single minor top-1 acc: 83.17
+
+09/10/2026 19:05:03 - INFO - __main__ -   top-1 acc: 92.96
+09/10/2026 19:05:03 - INFO - __main__ -   per-class acc: [95.6, 91.0, 93.0, 94.4, 96.6, 94.6, 91.8, 91.0, 89.8, 91.8]
+09/10/2026 19:05:03 - INFO - __main__ -   macro F1: 92.96
+09/10/2026 19:05:03 - INFO - __main__ -   Single minor top-1 acc: 92.96
+09/10/2026 19:05:03 - INFO - __main__ -   Best single minor top-1 acc: 93.04
+09/10/2026 19:05:03 - INFO - __main__ -   Mean single minor top-1 acc: 87.20
+
+09/10/2026 19:09:35 - INFO - __main__ -   top-1 acc: 93.00
+09/10/2026 19:09:35 - INFO - __main__ -   per-class acc: [95.8, 90.2, 93.0, 94.2, 96.4, 94.8, 92.2, 91.2, 90.4, 91.8]
+09/10/2026 19:09:35 - INFO - __main__ -   macro F1: 93.01
+09/10/2026 19:09:35 - INFO - __main__ -   Single minor top-1 acc: 93.00
+09/10/2026 19:09:35 - INFO - __main__ -   Best single minor top-1 acc: 93.04
+09/10/2026 19:09:35 - INFO - __main__ -   Mean single minor top-1 acc: 89.87
+
+09/10/2026 19:14:06 - INFO - __main__ -   top-1 acc: 93.26
+09/10/2026 19:14:06 - INFO - __main__ -   per-class acc: [96.0, 91.2, 92.8, 95.2, 96.6, 94.6, 92.0, 91.4, 90.2, 92.6]
+09/10/2026 19:14:06 - INFO - __main__ -   macro F1: 93.27
+09/10/2026 19:14:06 - INFO - __main__ -   Single minor top-1 acc: 93.26
+09/10/2026 19:14:06 - INFO - __main__ -   Best single minor top-1 acc: 93.26
+09/10/2026 19:14:06 - INFO - __main__ -   Mean single minor top-1 acc: 91.14
+
+09/10/2026 19:18:37 - INFO - __main__ -   top-1 acc: 93.14
+09/10/2026 19:18:37 - INFO - __main__ -   per-class acc: [96.0, 90.4, 92.6, 94.6, 97.4, 94.6, 92.2, 91.4, 90.4, 91.8]
+09/10/2026 19:18:37 - INFO - __main__ -   macro F1: 93.14
+09/10/2026 19:18:38 - INFO - __main__ -   Single minor top-1 acc: 93.14
+09/10/2026 19:18:38 - INFO - __main__ -   Best single minor top-1 acc: 93.26
+09/10/2026 19:18:38 - INFO - __main__ -   Mean single minor top-1 acc: 91.66
+
+09/10/2026 19:23:09 - INFO - __main__ -   top-1 acc: 93.14
+09/10/2026 19:23:09 - INFO - __main__ -   per-class acc: [96.0, 91.0, 92.6, 94.8, 97.0, 94.2, 91.8, 91.2, 91.0, 91.8]
+09/10/2026 19:23:09 - INFO - __main__ -   macro F1: 93.15
+09/10/2026 19:23:09 - INFO - __main__ -   Single minor top-1 acc: 93.14
+09/10/2026 19:23:09 - INFO - __main__ -   Best single minor top-1 acc: 93.26
+09/10/2026 19:23:09 - INFO - __main__ -   Mean single minor top-1 acc: 91.99
+
+09/10/2026 19:27:40 - INFO - __main__ -   top-1 acc: 93.16
+09/10/2026 19:27:40 - INFO - __main__ -   per-class acc: [96.6, 91.0, 92.8, 94.4, 97.4, 94.6, 92.0, 91.0, 90.8, 91.0]
+09/10/2026 19:27:40 - INFO - __main__ -   macro F1: 93.17
+09/10/2026 19:27:40 - INFO - __main__ -   Single minor top-1 acc: 93.16
+09/10/2026 19:27:40 - INFO - __main__ -   Best single minor top-1 acc: 93.26
+09/10/2026 19:27:40 - INFO - __main__ -   Mean single minor top-1 acc: 92.22
+
+09/10/2026 19:32:10 - INFO - __main__ -   top-1 acc: 93.12
+09/10/2026 19:32:10 - INFO - __main__ -   per-class acc: [96.4, 90.8, 92.6, 94.6, 97.4, 94.4, 92.2, 90.4, 91.0, 91.4]
+09/10/2026 19:32:10 - INFO - __main__ -   macro F1: 93.12
+09/10/2026 19:32:10 - INFO - __main__ -   Single minor top-1 acc: 93.12
+09/10/2026 19:32:10 - INFO - __main__ -   Best single minor top-1 acc: 93.26
+09/10/2026 19:32:10 - INFO - __main__ -   Mean single minor top-1 acc: 92.40
+
+09/10/2026 19:36:41 - INFO - __main__ -   top-1 acc: 93.38
+09/10/2026 19:36:41 - INFO - __main__ -   per-class acc: [96.4, 90.6, 93.0, 95.0, 97.2, 94.8, 92.2, 91.4, 90.8, 92.4]
+09/10/2026 19:36:41 - INFO - __main__ -   macro F1: 93.38
+09/10/2026 19:36:42 - INFO - __main__ -   Single minor top-1 acc: 93.38
+09/10/2026 19:36:42 - INFO - __main__ -   Best single minor top-1 acc: 93.38
+09/10/2026 19:36:42 - INFO - __main__ -   Mean single minor top-1 acc: 92.56
+
+09/10/2026 19:41:12 - INFO - __main__ -   top-1 acc: 93.40
+09/10/2026 19:41:12 - INFO - __main__ -   per-class acc: [96.4, 91.4, 93.2, 94.8, 97.0, 94.6, 92.4, 91.8, 90.0, 92.4]
+09/10/2026 19:41:12 - INFO - __main__ -   macro F1: 93.41
+09/10/2026 19:41:12 - INFO - __main__ -   Single minor top-1 acc: 93.40
+09/10/2026 19:41:12 - INFO - __main__ -   Best single minor top-1 acc: 93.40
+09/10/2026 19:41:12 - INFO - __main__ -   Mean single minor top-1 acc: 92.69
+
+09/10/2026 19:45:43 - INFO - __main__ -   top-1 acc: 93.32
+09/10/2026 19:45:43 - INFO - __main__ -   per-class acc: [96.4, 91.2, 93.0, 94.8, 97.2, 94.0, 92.6, 91.6, 89.8, 92.6]
+09/10/2026 19:45:43 - INFO - __main__ -   macro F1: 93.33
+09/10/2026 19:45:43 - INFO - __main__ -   Single minor top-1 acc: 93.32
+09/10/2026 19:45:43 - INFO - __main__ -   Best single minor top-1 acc: 93.40
+09/10/2026 19:45:43 - INFO - __main__ -   Mean single minor top-1 acc: 92.81
+
+09/10/2026 19:50:14 - INFO - __main__ -   top-1 acc: 93.48
+09/10/2026 19:50:14 - INFO - __main__ -   per-class acc: [96.2, 91.8, 92.8, 95.2, 97.6, 94.4, 92.4, 91.6, 90.2, 92.6]
+09/10/2026 19:50:14 - INFO - __main__ -   macro F1: 93.49
+09/10/2026 19:50:14 - INFO - __main__ -   Single minor top-1 acc: 93.48
+09/10/2026 19:50:14 - INFO - __main__ -   Best single minor top-1 acc: 93.48
+09/10/2026 19:50:14 - INFO - __main__ -   Mean single minor top-1 acc: 92.91
+
+09/10/2026 19:54:45 - INFO - __main__ -   top-1 acc: 93.18
+09/10/2026 19:54:45 - INFO - __main__ -   per-class acc: [96.2, 91.4, 92.6, 95.0, 97.4, 94.4, 92.0, 90.8, 90.2, 91.8]
+09/10/2026 19:54:45 - INFO - __main__ -   macro F1: 93.19
+09/10/2026 19:54:45 - INFO - __main__ -   Single minor top-1 acc: 93.18
+09/10/2026 19:54:45 - INFO - __main__ -   Best single minor top-1 acc: 93.48
+09/10/2026 19:54:45 - INFO - __main__ -   Mean single minor top-1 acc: 92.96
+
+09/10/2026 19:59:16 - INFO - __main__ -   top-1 acc: 93.50
+09/10/2026 19:59:16 - INFO - __main__ -   per-class acc: [96.8, 91.4, 92.4, 95.2, 97.6, 94.4, 92.4, 91.4, 91.4, 92.0]
+09/10/2026 19:59:16 - INFO - __main__ -   macro F1: 93.51
+09/10/2026 19:59:16 - INFO - __main__ -   Single minor top-1 acc: 93.50
+09/10/2026 19:59:16 - INFO - __main__ -   Best single minor top-1 acc: 93.50
+09/10/2026 19:59:16 - INFO - __main__ -   Mean single minor top-1 acc: 93.03
+
+09/10/2026 20:03:47 - INFO - __main__ -   top-1 acc: 93.52
+09/10/2026 20:03:47 - INFO - __main__ -   per-class acc: [96.8, 91.2, 92.4, 94.8, 97.4, 94.6, 92.6, 92.0, 91.0, 92.4]
+09/10/2026 20:03:47 - INFO - __main__ -   macro F1: 93.53
+09/10/2026 20:03:47 - INFO - __main__ -   Single minor top-1 acc: 93.52
+09/10/2026 20:03:47 - INFO - __main__ -   Best single minor top-1 acc: 93.52
+09/10/2026 20:03:47 - INFO - __main__ -   Mean single minor top-1 acc: 93.09
+
+09/10/2026 20:08:18 - INFO - __main__ -   top-1 acc: 93.52
+09/10/2026 20:08:18 - INFO - __main__ -   per-class acc: [97.0, 91.8, 92.2, 95.0, 97.6, 94.4, 92.2, 91.8, 90.8, 92.4]
+09/10/2026 20:08:18 - INFO - __main__ -   macro F1: 93.53
+09/10/2026 20:08:18 - INFO - __main__ -   Single minor top-1 acc: 93.52
+09/10/2026 20:08:18 - INFO - __main__ -   Best single minor top-1 acc: 93.52
+09/10/2026 20:08:18 - INFO - __main__ -   Mean single minor top-1 acc: 93.15
+
+09/10/2026 20:12:49 - INFO - __main__ -   top-1 acc: 93.70
+09/10/2026 20:12:49 - INFO - __main__ -   per-class acc: [97.2, 93.0, 92.6, 95.2, 97.4, 94.6, 92.2, 91.6, 91.0, 92.2]
+09/10/2026 20:12:49 - INFO - __main__ -   macro F1: 93.71
+09/10/2026 20:12:49 - INFO - __main__ -   Single minor top-1 acc: 93.70
+09/10/2026 20:12:49 - INFO - __main__ -   Best single minor top-1 acc: 93.70
+09/10/2026 20:12:49 - INFO - __main__ -   Mean single minor top-1 acc: 93.20
+
+09/10/2026 20:17:20 - INFO - __main__ -   top-1 acc: 93.66
+09/10/2026 20:17:20 - INFO - __main__ -   per-class acc: [96.8, 93.2, 92.8, 95.2, 97.8, 94.2, 92.6, 91.2, 91.2, 91.6]
+09/10/2026 20:17:20 - INFO - __main__ -   macro F1: 93.67
+09/10/2026 20:17:20 - INFO - __main__ -   Single minor top-1 acc: 93.66
+09/10/2026 20:17:20 - INFO - __main__ -   Best single minor top-1 acc: 93.70
+09/10/2026 20:17:20 - INFO - __main__ -   Mean single minor top-1 acc: 93.26
+
+09/10/2026 20:21:51 - INFO - __main__ -   top-1 acc: 93.70
+09/10/2026 20:21:51 - INFO - __main__ -   per-class acc: [97.0, 93.0, 92.6, 95.4, 97.8, 94.4, 92.4, 91.0, 91.8, 91.6]
+09/10/2026 20:21:51 - INFO - __main__ -   macro F1: 93.71
+09/10/2026 20:21:51 - INFO - __main__ -   Single minor top-1 acc: 93.70
+09/10/2026 20:21:51 - INFO - __main__ -   Best single minor top-1 acc: 93.70
+09/10/2026 20:21:51 - INFO - __main__ -   Mean single minor top-1 acc: 93.31
+
+09/10/2026 20:26:22 - INFO - __main__ -   top-1 acc: 93.66
+09/10/2026 20:26:22 - INFO - __main__ -   per-class acc: [97.6, 92.6, 92.6, 95.2, 97.4, 94.6, 92.6, 90.6, 91.4, 92.0]
+09/10/2026 20:26:22 - INFO - __main__ -   macro F1: 93.67
+09/10/2026 20:26:22 - INFO - __main__ -   Single minor top-1 acc: 93.66
+09/10/2026 20:26:22 - INFO - __main__ -   Best single minor top-1 acc: 93.70
+09/10/2026 20:26:22 - INFO - __main__ -   Mean single minor top-1 acc: 93.34
+
+09/10/2026 20:30:53 - INFO - __main__ -   top-1 acc: 93.74
+09/10/2026 20:30:53 - INFO - __main__ -   per-class acc: [97.2, 93.2, 92.4, 95.6, 97.4, 94.4, 92.2, 91.4, 91.2, 92.4]
+09/10/2026 20:30:53 - INFO - __main__ -   macro F1: 93.75
+09/10/2026 20:30:53 - INFO - __main__ -   Single minor top-1 acc: 93.74
+09/10/2026 20:30:53 - INFO - __main__ -   Best single minor top-1 acc: 93.74
+09/10/2026 20:30:53 - INFO - __main__ -   Mean single minor top-1 acc: 93.38
+
+09/10/2026 20:35:24 - INFO - __main__ -   top-1 acc: 93.74
+09/10/2026 20:35:24 - INFO - __main__ -   per-class acc: [97.4, 93.4, 92.4, 95.4, 97.6, 94.6, 92.2, 91.6, 91.0, 91.8]
+09/10/2026 20:35:24 - INFO - __main__ -   macro F1: 93.76
+09/10/2026 20:35:24 - INFO - __main__ -   Single minor top-1 acc: 93.74
+09/10/2026 20:35:24 - INFO - __main__ -   Best single minor top-1 acc: 93.74
+09/10/2026 20:35:24 - INFO - __main__ -   Mean single minor top-1 acc: 93.42
+
+09/10/2026 20:39:55 - INFO - __main__ -   top-1 acc: 93.70
+09/10/2026 20:39:55 - INFO - __main__ -   per-class acc: [97.4, 93.4, 92.8, 95.2, 97.4, 94.4, 92.0, 91.2, 90.8, 92.4]
+09/10/2026 20:39:55 - INFO - __main__ -   macro F1: 93.72
+09/10/2026 20:39:55 - INFO - __main__ -   Single minor top-1 acc: 93.70
+09/10/2026 20:39:55 - INFO - __main__ -   Best single minor top-1 acc: 93.74
+09/10/2026 20:39:55 - INFO - __main__ -   Mean single minor top-1 acc: 93.45
+
+09/10/2026 20:44:26 - INFO - __main__ -   top-1 acc: 93.72
+09/10/2026 20:44:26 - INFO - __main__ -   per-class acc: [97.6, 93.4, 93.4, 95.0, 97.0, 94.6, 92.4, 90.8, 91.2, 91.8]
+09/10/2026 20:44:26 - INFO - __main__ -   macro F1: 93.74
+09/10/2026 20:44:26 - INFO - __main__ -   Single minor top-1 acc: 93.72
+09/10/2026 20:44:26 - INFO - __main__ -   Best single minor top-1 acc: 93.74
+09/10/2026 20:44:26 - INFO - __main__ -   Mean single minor top-1 acc: 93.47
+
+09/10/2026 20:48:57 - INFO - __main__ -   top-1 acc: 93.64
+09/10/2026 20:48:57 - INFO - __main__ -   per-class acc: [97.4, 93.8, 93.0, 95.0, 97.2, 94.4, 92.8, 90.6, 90.8, 91.4]
+09/10/2026 20:48:57 - INFO - __main__ -   macro F1: 93.66
+09/10/2026 20:48:57 - INFO - __main__ -   Single minor top-1 acc: 93.64
+09/10/2026 20:48:57 - INFO - __main__ -   Best single minor top-1 acc: 93.74
+09/10/2026 20:48:57 - INFO - __main__ -   Mean single minor top-1 acc: 93.50
+
+09/10/2026 20:53:28 - INFO - __main__ -   top-1 acc: 93.82
+09/10/2026 20:53:28 - INFO - __main__ -   per-class acc: [97.4, 94.0, 93.4, 95.0, 97.6, 94.6, 92.6, 90.4, 90.8, 92.4]
+09/10/2026 20:53:28 - INFO - __main__ -   macro F1: 93.83
+09/10/2026 20:53:28 - INFO - __main__ -   Single minor top-1 acc: 93.82
+09/10/2026 20:53:28 - INFO - __main__ -   Best single minor top-1 acc: 93.82
+09/10/2026 20:53:28 - INFO - __main__ -   Mean single minor top-1 acc: 93.53
+
+09/10/2026 20:57:59 - INFO - __main__ -   top-1 acc: 93.74
+09/10/2026 20:58:00 - INFO - __main__ -   per-class acc: [97.8, 93.6, 93.4, 95.0, 97.2, 94.8, 92.8, 89.4, 91.2, 92.2]
+09/10/2026 20:58:00 - INFO - __main__ -   macro F1: 93.75
+09/10/2026 20:58:00 - INFO - __main__ -   Single minor top-1 acc: 93.74
+09/10/2026 20:58:00 - INFO - __main__ -   Best single minor top-1 acc: 93.82
+09/10/2026 20:58:00 - INFO - __main__ -   Mean single minor top-1 acc: 93.56
+
+09/10/2026 21:02:31 - INFO - __main__ -   top-1 acc: 93.80
+09/10/2026 21:02:31 - INFO - __main__ -   per-class acc: [97.6, 94.0, 93.8, 95.4, 97.2, 94.8, 93.4, 89.2, 90.8, 91.8]
+09/10/2026 21:02:31 - INFO - __main__ -   macro F1: 93.82
+09/10/2026 21:02:31 - INFO - __main__ -   Single minor top-1 acc: 93.80
+09/10/2026 21:02:31 - INFO - __main__ -   Best single minor top-1 acc: 93.82
+09/10/2026 21:02:31 - INFO - __main__ -   Mean single minor top-1 acc: 93.60
+
+09/10/2026 21:07:02 - INFO - __main__ -   top-1 acc: 93.78
+09/10/2026 21:07:02 - INFO - __main__ -   per-class acc: [97.4, 93.4, 94.2, 95.4, 97.0, 94.8, 93.4, 89.2, 91.4, 91.6]
+09/10/2026 21:07:02 - INFO - __main__ -   macro F1: 93.80
+09/10/2026 21:07:02 - INFO - __main__ -   Single minor top-1 acc: 93.78
+09/10/2026 21:07:02 - INFO - __main__ -   Best single minor top-1 acc: 93.82
+09/10/2026 21:07:02 - INFO - __main__ -   Mean single minor top-1 acc: 93.62
+
+09/10/2026 21:11:33 - INFO - __main__ -   top-1 acc: 93.68
+09/10/2026 21:11:33 - INFO - __main__ -   per-class acc: [97.4, 93.4, 93.6, 95.4, 97.0, 94.8, 93.2, 89.2, 91.4, 91.4]
+09/10/2026 21:11:33 - INFO - __main__ -   macro F1: 93.70
+09/10/2026 21:11:33 - INFO - __main__ -   Single minor top-1 acc: 93.68
+09/10/2026 21:11:33 - INFO - __main__ -   Best single minor top-1 acc: 93.82
+09/10/2026 21:11:33 - INFO - __main__ -   Mean single minor top-1 acc: 93.63
+
+09/10/2026 21:16:03 - INFO - __main__ -   top-1 acc: 93.78
+09/10/2026 21:16:03 - INFO - __main__ -   per-class acc: [97.4, 93.6, 93.6, 95.6, 97.2, 95.0, 93.0, 89.6, 91.6, 91.2]
+09/10/2026 21:16:03 - INFO - __main__ -   macro F1: 93.80
+09/10/2026 21:16:04 - INFO - __main__ -   Single minor top-1 acc: 93.78
+09/10/2026 21:16:04 - INFO - __main__ -   Best single minor top-1 acc: 93.82
+09/10/2026 21:16:04 - INFO - __main__ -   Mean single minor top-1 acc: 93.65
+

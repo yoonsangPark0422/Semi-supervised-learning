@@ -1,0 +1,10 @@
+2026-10-25T19:14:54.1505720+09:00 START new_dual seed=1 epochs=50 fresh=True
+2026-10-25T19:14:54.1798984+09:00 PID new_dual 14944
+2026-10-25T22:07:05.3613999+09:00 DONE new_dual epoch=50 official_test=True
+2026-10-25T22:07:05.3911830+09:00 START real_last_dual_2 seed=1 epochs=50 fresh=True
+2026-10-25T22:07:05.4087157+09:00 PID real_last_dual_2 19496
+2026-10-26T01:00:32.7443371+09:00 DONE real_last_dual_2 epoch=50 official_test=True
+2026-10-26T01:00:32.7630459+09:00 START decon seed=1 epochs=50 fresh=True
+2026-10-26T01:00:32.7946055+09:00 PID decon 13548
+2026-10-26T02:55:07.0692553+09:00 DONE decon epoch=50 official_test=True
+2026-10-26T02:55:07.0692553+09:00 ALL_DONE

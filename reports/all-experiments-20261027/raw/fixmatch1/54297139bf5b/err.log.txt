@@ -1,0 +1,31 @@
+05/05/2026 13:57:13 - WARNING - __main__ -   Process rank: -1, device: cuda:0, n_gpu: 1, distributed training: False, 16-bits training: False
+05/05/2026 13:57:13 - INFO - __main__ -   {'gpu_id': 0, 'num_workers': 0, 'dataset': 'cifar10', 'num_labeled': 4000, 'expand_labels': True, 'arch': 'wideresnet', 'total_steps': 1, 'eval_step': 1, 'start_epoch': 0, 'batch_size': 4, 'lr': 0.03, 'warmup': 0, 'wdecay': 0.0005, 'nesterov': True, 'use_ema': True, 'ema_decay': 0.999, 'mu': 1, 'lambda_u': 1, 'T': 1, 'threshold': 0.95, 'dual_bias_cotrain': True, 'imb_ratio': 1000.0, 'imb_type': 'exp', 'major_top_ratio': 0.2, 'classwise_quota': 'global', 'minority_threshold_gamma': 1.0, 'min_threshold': 0.5, 'minority_bias_strength': 1.0, 'minority_supervised_gamma': 1.0, 'max_minority_weight': 10.0, 'daso_blend_base': 0.2, 'daso_blend_scale': 0.6, 'pseudo_dist_momentum': 0.999, 'agreement_threshold': 0.5, 'consistency_weight': 0.1, 'unsup_warmup': 1, 'pseudo_warmup': 0, 'out': 'results\\start_full_test', 'resume': '', 'seed': 5, 'amp': False, 'opt_level': 'O1', 'local_rank': -1, 'no_progress': True, 'world_size': 1, 'n_gpu': 1, 'device': device(type='cuda', index=0)}
+05/05/2026 13:57:14 - INFO - dataset.cifar -   Labeled class counts: [2145, 996, 462, 215, 100, 46, 21, 9, 4, 2]
+05/05/2026 13:57:15 - INFO - models.wideresnet -   Model: WideResNet 28x2
+05/05/2026 13:57:15 - INFO - __main__ -   Total params: 1.47M
+05/05/2026 13:57:15 - INFO - models.wideresnet -   Model: WideResNet 28x2
+05/05/2026 13:57:15 - INFO - __main__ -   Total params: 1.47M
+05/05/2026 13:57:15 - INFO - __main__ -   ***** Running training *****
+05/05/2026 13:57:15 - INFO - __main__ -     Task = cifar10@4000
+05/05/2026 13:57:15 - INFO - __main__ -     Num Epochs = 1
+05/05/2026 13:57:15 - INFO - __main__ -     Batch size per GPU = 4
+05/05/2026 13:57:15 - INFO - __main__ -     Total train batch size = 4
+05/05/2026 13:57:15 - INFO - __main__ -     Total optimization steps = 1
+05/05/2026 13:57:31 - INFO - __main__ -   top-1 acc: 9.29
+05/05/2026 13:57:31 - INFO - __main__ -   top-5 acc: 51.62
+05/05/2026 13:57:31 - INFO - __main__ -   per-class acc: [0.0, 0.0, 0.0, 87.7, 1.6, 0.0, 0.0, 0.0, 0.0, 3.6]
+05/05/2026 13:57:31 - INFO - __main__ -   head/mid/tail acc: 0.00 / 29.77 / 0.90
+05/05/2026 13:57:47 - INFO - __main__ -   top-1 acc: 10.00
+05/05/2026 13:57:47 - INFO - __main__ -   top-5 acc: 49.57
+05/05/2026 13:57:47 - INFO - __main__ -   per-class acc: [0.0, 0.0, 0.0, 100.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0]
+05/05/2026 13:57:47 - INFO - __main__ -   head/mid/tail acc: 0.00 / 33.33 / 0.00
+05/05/2026 13:58:08 - INFO - __main__ -   ensemble top-1 acc: 10.00
+05/05/2026 13:58:08 - INFO - __main__ -   ensemble top-5 acc: 51.27
+05/05/2026 13:58:08 - INFO - __main__ -   ensemble per-class acc: [0.0, 0.0, 0.0, 100.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0]
+05/05/2026 13:58:08 - INFO - __main__ -   ensemble head/mid/tail acc: 0.00 / 33.33 / 0.00
+05/05/2026 13:58:08 - INFO - __main__ -   Major top-1 acc: 9.29
+05/05/2026 13:58:08 - INFO - __main__ -   Minor top-1 acc: 10.00
+05/05/2026 13:58:08 - INFO - __main__ -   Ensemble top-1 acc: 10.00
+05/05/2026 13:58:08 - INFO - __main__ -   Best ensemble top-1 acc: 10.00
+05/05/2026 13:58:08 - INFO - __main__ -   Mean ensemble top-1 acc: 10.00
+

@@ -1,0 +1,15 @@
+09/04/2026 19:22:41 - WARNING - __main__ -   Process rank: -1, device: cuda:0, n_gpu: 1, distributed training: False, 16-bits training: False
+09/04/2026 19:22:41 - INFO - __main__ -   {'gpu_id': 0, 'num_workers': 0, 'dataset': 'svhn', 'num_labeled': 4000, 'expand_labels': False, 'arch': 'wideresnet', 'total_steps': 25600, 'eval_step': 512, 'start_epoch': 0, 'batch_size': 64, 'lr': 0.03, 'warmup': 0, 'wdecay': 0.0005, 'nesterov': True, 'use_ema': True, 'no_ema': False, 'ema_decay': 0.999, 'mu': 7, 'lambda_u': 1, 'lambda_cross': 1.0, 'tau_major_cross': 0.95, 'tau_minor_cross': 0.95, 'major_cross_skip_minor_conf_threshold': -1.0, 'minor_balanced_sampler_alpha': 1.2, 'T': 1, 'threshold': 0.95, 'dual_train_mode': 'dual_sampler_weighted_ce', 'imb_ratio': 100.0, 'val_samples_per_class': 500, 'imb_type': 'exp', 'major_top_ratio': 0.2, 'head_class_ratio': 0.3, 'tail_class_ratio': 0.3, 'classwise_quota': 'global', 'minority_threshold_gamma': 1.0, 'min_threshold': 0.5, 'minority_bias_strength': 1.0, 'minority_supervised_gamma': 1.0, 'max_minority_weight': 10.0, 'minority_bias_warmup': 2048, 'ensemble_minor_weight': 0.7, 'unsup_warmup': 1024, 'pseudo_warmup': 512, 'out': 'C:\\Users\\FORYOUCOM\\Desktop\\Semi-supervised-learning-main\\Semi-supervised-learning-main\\results\\svhn_lt_ratio100_dual_minor_decon_seed1_e50_s512\\dual_alpha12_direct_restart', 'resume': '', 'init_checkpoint': '', 'eval_only': False, 'no_save_checkpoint': True, 'seed': 1, 'amp': False, 'opt_level': 'O1', 'local_rank': -1, 'no_progress': True, 'use_minor_balanced_sampler': True, 'use_minor_weighted_ce': True, 'device': device(type='cuda', index=0), 'world_size': 1, 'n_gpu': 1}
+09/04/2026 19:22:44 - INFO - dataset.cifar_val_split -   Using 500 validation samples per class from train split.
+09/04/2026 19:22:44 - INFO - dataset.cifar_val_split -   Labeled class counts: [1612, 967, 580, 348, 209, 124, 74, 44, 26, 16]
+09/04/2026 19:22:47 - INFO - models.wideresnet -   Model: WideResNet 28x2
+09/04/2026 19:22:47 - INFO - __main__ -   Total params: 1.47M
+09/04/2026 19:22:47 - INFO - models.wideresnet -   Model: WideResNet 28x2
+09/04/2026 19:22:47 - INFO - __main__ -   Total params: 1.47M
+09/04/2026 19:22:47 - INFO - __main__ -   ***** Running training *****
+09/04/2026 19:22:47 - INFO - __main__ -     Task = svhn@4000
+09/04/2026 19:22:47 - INFO - __main__ -     Num Epochs = 50
+09/04/2026 19:22:47 - INFO - __main__ -     Batch size per GPU = 64
+09/04/2026 19:22:47 - INFO - __main__ -     Total train batch size = 64
+09/04/2026 19:22:47 - INFO - __main__ -     Total optimization steps = 25600
+09/04/2026 19:22:47 - INFO - __main__ -     Dual train mode = dual_sampler_weighted_ce

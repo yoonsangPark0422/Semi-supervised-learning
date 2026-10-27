@@ -1,0 +1,14 @@
+[2026-08-24 09:53:57] start robust minor-only run set
+[2026-08-24 09:53:57] start ratio=50 seed=1
+[2026-08-24 13:06:02] done ratio=50 seed=1
+[2026-08-24 13:06:02] start ratio=50 seed=2
+[2026-08-24 16:17:40] done ratio=50 seed=2
+[2026-08-24 16:17:40] start ratio=50 seed=3
+[2026-08-24 19:29:41] done ratio=50 seed=3
+[2026-08-24 19:29:41] start ratio=100 seed=1
+[2026-08-24 22:41:39] done ratio=100 seed=1
+[2026-08-24 22:41:39] start ratio=100 seed=2
+[2026-08-25 01:53:34] done ratio=100 seed=2
+[2026-08-25 01:53:34] start ratio=100 seed=3
+[2026-08-25 05:04:59] done ratio=100 seed=3
+[2026-08-25 05:04:59] all done

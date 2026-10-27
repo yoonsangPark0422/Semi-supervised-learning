@@ -1,0 +1,5 @@
+epoch,mode,epoch_time_sec,peak_allocated_mb,peak_reserved_mb,param_count_m,param_count_major_m,param_count_minor_m,train_loss,train_loss_x,train_loss_u,mask,mask_major,mask_minor,test_acc,test_acc_major,test_acc_minor,test_acc_ensemble,test_acc_final,macro_f1,macro_f1_major,macro_f1_minor,macro_f1_ensemble,macro_f1_final,pseudo_pred_js,pseudo_pred_l1,pseudo_agreement_rate,pseudo_accepted_js,pseudo_accepted_agreement_rate
+1,fixmatch,7.268927097320557,65.9970703125,94.0,0.175066,,,1.387676557060331,1.382907647639513,0.004768909027916379,0.01220703125,,,11.55,,,,,6.303811818361282,,,,,,,,,
+2,fixmatch,7.352788686752319,65.9970703125,94.0,0.175066,,,1.23820377048105,1.232091847807169,0.006111923626122007,0.01220703125,,,15.68,,,,,6.338249146938324,,,,,,,,,
+3,fixmatch,7.643263339996338,65.9970703125,94.0,0.175066,,,1.1542838313616812,1.1467978493310511,0.007485983258447959,0.01513671875,,,16.95,,,,,8.103905618190765,,,,,,,,,
+4,fixmatch,7.239203453063965,65.9970703125,94.0,0.175066,,,1.0781861387658864,1.0695087190251797,0.008677418058141484,0.02685546875,,,16.83,,,,,8.013702183961868,,,,,,,,,

@@ -1,0 +1,11 @@
+epoch,model,class,pseudo_hist,accepted_hist,true_count,pseudo_acc,accepted_true_count,accepted_pseudo_acc
+1,fixmatch,0,0,0,0,0.0,0,0.0
+1,fixmatch,1,0,0,0,0.0,0,0.0
+1,fixmatch,2,0,0,0,0.0,0,0.0
+1,fixmatch,3,1,0,2,0.5,0,0.0
+1,fixmatch,4,0,0,0,0.0,0,0.0
+1,fixmatch,5,1,0,0,0.0,0,0.0
+1,fixmatch,6,0,0,0,0.0,0,0.0
+1,fixmatch,7,0,0,0,0.0,0,0.0
+1,fixmatch,8,0,0,0,0.0,0,0.0
+1,fixmatch,9,0,0,0,0.0,0,0.0

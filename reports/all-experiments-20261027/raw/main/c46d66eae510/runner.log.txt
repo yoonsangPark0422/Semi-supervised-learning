@@ -1,0 +1,2 @@
+[2026-09-15 15:46:14] official test 3-model run started
+[2026-09-15 15:46:14] start dataset=cifar10 method=dual seed=1 out=C:\Users\FORYOUCOM\Desktop\Semi-supervised-learning-main\Semi-supervised-learning-main\results\official_test_cifar10_svhn10_3models_e50_s512_seed1_2_3\cifar10\dual\seed_1

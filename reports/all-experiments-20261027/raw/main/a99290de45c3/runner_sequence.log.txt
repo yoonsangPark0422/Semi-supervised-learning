@@ -1,0 +1,2 @@
+NOTE seed1 already exists: dual=new_dual_sampler_alpha12_ratio100_seed1_e50_s512, minor=minor_alpha12_then_dual_alpha125_150.../minor_only_alpha_12
+START minor-only alpha=1.2 seed=2 at 09/01/2026 12:48:34

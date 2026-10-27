@@ -1,0 +1,87 @@
+09/19/2026 08:26:17 - WARNING - __main__ -   Process rank: -1, device: cuda:0, n_gpu: 1, distributed training: False, 16-bits training: False
+09/19/2026 08:26:17 - INFO - __main__ -   {'gpu_id': 0, 'num_workers': 0, 'dataset': 'svhn', 'num_labeled': 4000, 'expand_labels': False, 'arch': 'wideresnet', 'total_steps': 25600, 'eval_step': 512, 'start_epoch': 0, 'batch_size': 64, 'lr': 0.03, 'warmup': 0, 'wdecay': 0.0005, 'nesterov': True, 'use_ema': True, 'no_ema': False, 'ema_decay': 0.999, 'mu': 7, 'lambda_u': 1, 'lambda_cross': 1.0, 'tau_major_cross': 0.95, 'tau_minor_cross': 0.95, 'major_cross_skip_minor_conf_threshold': -1.0, 'minor_balanced_sampler_alpha': 1.2, 'T': 1, 'threshold': 0.95, 'dual_train_mode': 'dual_sampler_weighted_ce', 'imb_ratio': 100.0, 'val_samples_per_class': 0, 'imb_type': 'exp', 'major_top_ratio': 0.2, 'head_class_ratio': 0.3, 'tail_class_ratio': 0.3, 'classwise_quota': 'global', 'minority_threshold_gamma': 1.0, 'min_threshold': 0.5, 'minority_bias_strength': 1.0, 'minority_supervised_gamma': 1.0, 'max_minority_weight': 10.0, 'minority_bias_warmup': 2048, 'ensemble_minor_weight': 0.7, 'unsup_warmup': 1024, 'pseudo_warmup': 512, 'out': 'C:\\Users\\FORYOUCOM\\Desktop\\Semi-supervised-learning-main\\Semi-supervised-learning-main\\results\\official_test_finalonly_alpha12_cifar10_svhn10_3models_e50_s512_seed1_2_3\\svhn\\dual\\seed_3', 'resume': '', 'init_checkpoint': '', 'eval_only': False, 'eval_final_only': True, 'no_save_checkpoint': True, 'seed': 3, 'amp': False, 'opt_level': 'O1', 'local_rank': -1, 'no_progress': True, 'use_minor_balanced_sampler': True, 'use_minor_weighted_ce': True, 'device': device(type='cuda', index=0), 'world_size': 1, 'n_gpu': 1}
+09/19/2026 08:26:19 - INFO - dataset.cifar_val_split -   Using full SVHN train split for training and official test split for evaluation.
+09/19/2026 08:26:19 - INFO - dataset.cifar_val_split -   Labeled class counts: [1612, 967, 580, 348, 209, 124, 74, 44, 26, 16]
+09/19/2026 08:26:22 - INFO - models.wideresnet -   Model: WideResNet 28x2
+09/19/2026 08:26:22 - INFO - __main__ -   Total params: 1.47M
+09/19/2026 08:26:22 - INFO - models.wideresnet -   Model: WideResNet 28x2
+09/19/2026 08:26:22 - INFO - __main__ -   Total params: 1.47M
+09/19/2026 08:26:22 - INFO - __main__ -   ***** Running training *****
+09/19/2026 08:26:22 - INFO - __main__ -     Task = svhn@4000
+09/19/2026 08:26:22 - INFO - __main__ -     Num Epochs = 50
+09/19/2026 08:26:22 - INFO - __main__ -     Batch size per GPU = 64
+09/19/2026 08:26:22 - INFO - __main__ -     Total train batch size = 64
+09/19/2026 08:26:22 - INFO - __main__ -     Total optimization steps = 25600
+09/19/2026 08:26:22 - INFO - __main__ -     Dual train mode = dual_sampler_weighted_ce
+09/19/2026 08:34:23 - INFO - __main__ -   Skipping evaluation until final epoch (1/50).
+09/19/2026 08:42:24 - INFO - __main__ -   Skipping evaluation until final epoch (2/50).
+09/19/2026 08:50:25 - INFO - __main__ -   Skipping evaluation until final epoch (3/50).
+09/19/2026 08:58:26 - INFO - __main__ -   Skipping evaluation until final epoch (4/50).
+09/19/2026 09:06:27 - INFO - __main__ -   Skipping evaluation until final epoch (5/50).
+09/19/2026 09:14:28 - INFO - __main__ -   Skipping evaluation until final epoch (6/50).
+09/19/2026 09:22:28 - INFO - __main__ -   Skipping evaluation until final epoch (7/50).
+09/19/2026 09:30:29 - INFO - __main__ -   Skipping evaluation until final epoch (8/50).
+09/19/2026 09:38:30 - INFO - __main__ -   Skipping evaluation until final epoch (9/50).
+09/19/2026 09:46:31 - INFO - __main__ -   Skipping evaluation until final epoch (10/50).
+09/19/2026 09:54:31 - INFO - __main__ -   Skipping evaluation until final epoch (11/50).
+09/19/2026 10:02:32 - INFO - __main__ -   Skipping evaluation until final epoch (12/50).
+09/19/2026 10:10:33 - INFO - __main__ -   Skipping evaluation until final epoch (13/50).
+09/19/2026 10:18:36 - INFO - __main__ -   Skipping evaluation until final epoch (14/50).
+09/19/2026 10:26:37 - INFO - __main__ -   Skipping evaluation until final epoch (15/50).
+09/19/2026 10:34:38 - INFO - __main__ -   Skipping evaluation until final epoch (16/50).
+09/19/2026 10:42:39 - INFO - __main__ -   Skipping evaluation until final epoch (17/50).
+09/19/2026 10:50:44 - INFO - __main__ -   Skipping evaluation until final epoch (18/50).
+09/19/2026 10:58:44 - INFO - __main__ -   Skipping evaluation until final epoch (19/50).
+09/19/2026 11:06:45 - INFO - __main__ -   Skipping evaluation until final epoch (20/50).
+09/19/2026 11:14:46 - INFO - __main__ -   Skipping evaluation until final epoch (21/50).
+09/19/2026 11:22:48 - INFO - __main__ -   Skipping evaluation until final epoch (22/50).
+09/19/2026 11:30:49 - INFO - __main__ -   Skipping evaluation until final epoch (23/50).
+09/19/2026 11:38:50 - INFO - __main__ -   Skipping evaluation until final epoch (24/50).
+09/19/2026 11:46:50 - INFO - __main__ -   Skipping evaluation until final epoch (25/50).
+09/19/2026 11:54:51 - INFO - __main__ -   Skipping evaluation until final epoch (26/50).
+09/19/2026 12:02:52 - INFO - __main__ -   Skipping evaluation until final epoch (27/50).
+09/19/2026 12:10:53 - INFO - __main__ -   Skipping evaluation until final epoch (28/50).
+09/19/2026 12:18:53 - INFO - __main__ -   Skipping evaluation until final epoch (29/50).
+09/19/2026 12:26:54 - INFO - __main__ -   Skipping evaluation until final epoch (30/50).
+09/19/2026 12:34:54 - INFO - __main__ -   Skipping evaluation until final epoch (31/50).
+09/19/2026 12:42:55 - INFO - __main__ -   Skipping evaluation until final epoch (32/50).
+09/19/2026 12:50:57 - INFO - __main__ -   Skipping evaluation until final epoch (33/50).
+09/19/2026 12:59:06 - INFO - __main__ -   Skipping evaluation until final epoch (34/50).
+09/19/2026 13:07:08 - INFO - __main__ -   Skipping evaluation until final epoch (35/50).
+09/19/2026 13:15:08 - INFO - __main__ -   Skipping evaluation until final epoch (36/50).
+09/19/2026 13:23:08 - INFO - __main__ -   Skipping evaluation until final epoch (37/50).
+09/19/2026 13:31:09 - INFO - __main__ -   Skipping evaluation until final epoch (38/50).
+09/19/2026 13:39:09 - INFO - __main__ -   Skipping evaluation until final epoch (39/50).
+09/19/2026 13:47:09 - INFO - __main__ -   Skipping evaluation until final epoch (40/50).
+09/19/2026 13:55:09 - INFO - __main__ -   Skipping evaluation until final epoch (41/50).
+09/19/2026 14:03:10 - INFO - __main__ -   Skipping evaluation until final epoch (42/50).
+09/19/2026 14:11:10 - INFO - __main__ -   Skipping evaluation until final epoch (43/50).
+09/19/2026 14:19:10 - INFO - __main__ -   Skipping evaluation until final epoch (44/50).
+09/19/2026 14:27:10 - INFO - __main__ -   Skipping evaluation until final epoch (45/50).
+09/19/2026 14:35:10 - INFO - __main__ -   Skipping evaluation until final epoch (46/50).
+09/19/2026 14:43:10 - INFO - __main__ -   Skipping evaluation until final epoch (47/50).
+09/19/2026 14:51:10 - INFO - __main__ -   Skipping evaluation until final epoch (48/50).
+09/19/2026 14:59:10 - INFO - __main__ -   Skipping evaluation until final epoch (49/50).
+09/19/2026 15:07:16 - INFO - __main__ -   top-1 acc: 94.76
+09/19/2026 15:07:16 - INFO - __main__ -   top-5 acc: 99.28
+09/19/2026 15:07:16 - INFO - __main__ -   per-class acc: [98.57, 97.78, 96.67, 92.23, 94.73, 94.3, 92.56, 91.33, 90.6, 92.6]
+09/19/2026 15:07:16 - INFO - __main__ -   macro F1: 94.13
+09/19/2026 15:07:16 - INFO - __main__ -   head/mid/tail acc: 97.67 / 93.75 / 91.78
+09/19/2026 15:07:21 - INFO - __main__ -   top-1 acc: 95.45
+09/19/2026 15:07:21 - INFO - __main__ -   top-5 acc: 99.37
+09/19/2026 15:07:21 - INFO - __main__ -   per-class acc: [98.11, 98.06, 97.18, 91.64, 96.04, 95.68, 94.79, 91.83, 91.39, 94.98]
+09/19/2026 15:07:21 - INFO - __main__ -   macro F1: 94.87
+09/19/2026 15:07:21 - INFO - __main__ -   head/mid/tail acc: 97.78 / 94.45 / 93.25
+09/19/2026 15:07:28 - INFO - __main__ -   ensemble top-1 acc: 95.43
+09/19/2026 15:07:28 - INFO - __main__ -   ensemble top-5 acc: 99.40
+09/19/2026 15:07:28 - INFO - __main__ -   ensemble per-class acc: [98.45, 98.04, 97.04, 92.37, 95.72, 95.39, 94.28, 91.93, 91.51, 94.73]
+09/19/2026 15:07:28 - INFO - __main__ -   ensemble macro F1: 94.87
+09/19/2026 15:07:28 - INFO - __main__ -   ensemble head/mid/tail acc: 97.84 / 94.49 / 93.11
+09/19/2026 15:07:28 - INFO - __main__ -   cross samples pre major->minor: 174.18, pre minor->major: 94.24, conflict: 5.40, skip minor-conf: 0.00, post major->minor: 168.78, post minor->major: 88.83
+09/19/2026 15:07:28 - INFO - __main__ -   Major top-1 acc: 94.76
+09/19/2026 15:07:28 - INFO - __main__ -   Minor top-1 acc: 95.45
+09/19/2026 15:07:28 - INFO - __main__ -   Ensemble top-1 acc: 95.43
+09/19/2026 15:07:28 - INFO - __main__ -   Final top-1 acc: 95.43
+09/19/2026 15:07:28 - INFO - __main__ -   Best final top-1 acc: 95.43
+09/19/2026 15:07:28 - INFO - __main__ -   Mean final top-1 acc: 95.43
+

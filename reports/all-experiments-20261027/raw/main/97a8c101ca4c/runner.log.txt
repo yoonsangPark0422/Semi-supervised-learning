@@ -1,0 +1,12 @@
+[2026-09-15 15:51:54] official test 3-model run started
+[2026-09-15 15:51:55] start dataset=cifar10 method=dual seed=1 out=C:\Users\FORYOUCOM\Desktop\Semi-supervised-learning-main\Semi-supervised-learning-main\results\official_test_finalonly_cifar10_svhn10_3models_e50_s512_seed1_2_3\cifar10\dual\seed_1
+[2026-09-15 18:54:10] done dataset=cifar10 method=dual seed=1
+[2026-09-15 18:54:10] start dataset=cifar10 method=minor seed=1 out=C:\Users\FORYOUCOM\Desktop\Semi-supervised-learning-main\Semi-supervised-learning-main\results\official_test_finalonly_cifar10_svhn10_3models_e50_s512_seed1_2_3\cifar10\minor\seed_1
+[2026-09-15 20:47:40] done dataset=cifar10 method=minor seed=1
+[2026-09-15 20:47:40] start dataset=cifar10 method=decon seed=1 out=C:\Users\FORYOUCOM\Desktop\Semi-supervised-learning-main\Semi-supervised-learning-main\results\official_test_finalonly_cifar10_svhn10_3models_e50_s512_seed1_2_3\cifar10\decon\seed_1
+[2026-09-15 23:33:25] done dataset=cifar10 method=decon seed=1
+[2026-09-16 23:31:57] official test 3-model run started
+[2026-09-16 23:31:57] skip summarized dataset=cifar10 method=dual seed=1
+[2026-09-16 23:31:57] skip summarized dataset=cifar10 method=minor seed=1
+[2026-09-16 23:31:57] summarize existing dataset=cifar10 method=decon seed=1
+[2026-09-16 23:31:57] start dataset=cifar10 method=dual seed=2 out=C:\Users\FORYOUCOM\Desktop\Semi-supervised-learning-main\Semi-supervised-learning-main\results\official_test_finalonly_cifar10_svhn10_3models_e50_s512_seed1_2_3\cifar10\dual\seed_2

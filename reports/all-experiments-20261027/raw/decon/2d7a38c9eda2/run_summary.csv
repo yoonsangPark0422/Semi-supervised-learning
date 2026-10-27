@@ -1,0 +1,7 @@
+ratio,seed,method,status,last_epoch,acc,macro_f1,minority_5_9_recall,minority_5_9_precision,minority_5_9_f1,tail_7_9_recall,tail_7_9_precision,tail_7_9_f1,out
+50,1,decon,done,50,85.0600,85.0125,86.6000,83.1155,84.7255,90.3667,84.4861,87.3262,"results/decon_compare_imb50_100_seed1_2_3_e50_s512/imb50/seed_1/decon"
+50,2,decon,done,50,85.1300,85.0946,86.9200,83.4715,85.0651,90.4333,84.7981,87.5180,"results/decon_compare_imb50_100_seed1_2_3_e50_s512/imb50/seed_2/decon"
+50,3,decon,done,50,85.4900,85.4365,87.4800,83.8139,85.5090,90.6667,85.5335,88.0109,"results/decon_compare_imb50_100_seed1_2_3_e50_s512/imb50/seed_3/decon"
+100,1,decon,done,50,83.2200,83.1601,84.5000,80.6879,82.3661,87.1000,82.7687,84.8531,"results/decon_compare_imb50_100_seed1_2_3_e50_s512/imb100/seed_1/decon"
+100,2,decon,done,50,83.0800,83.0463,84.6000,80.8954,82.5479,87.2333,83.2297,85.1021,"results/decon_compare_imb50_100_seed1_2_3_e50_s512/imb100/seed_2/decon"
+100,3,decon,done,50,83.9400,83.8790,85.6400,81.8663,83.5156,89.4667,82.8654,86.0265,"results/decon_compare_imb50_100_seed1_2_3_e50_s512/imb100/seed_3/decon"

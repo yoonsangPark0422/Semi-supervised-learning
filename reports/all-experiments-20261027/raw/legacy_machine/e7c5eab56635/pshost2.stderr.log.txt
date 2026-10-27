@@ -1,0 +1,8 @@
+python.exe : 05/16/2026 13:57:37 - INFO - dataset.cifar -   Labeled class counts: [1612, 967, 580, 348, 209, 124, 74, 4
+4, 26, 16]
+위치 C:\Users\FORYOUCOM\Desktop\졸업논문 코드\baseline compare\run_compare_100.ps1:13 문자:1
++ & $Python $Script `
++ ~~~~~~~~~~~~~~~~~~~
+    + CategoryInfo          : NotSpecified: (05/16/2026 13:5...74, 44, 26, 16]:String) [], RemoteException
+    + FullyQualifiedErrorId : NativeCommandError
+ 

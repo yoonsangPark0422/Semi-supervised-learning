@@ -1,0 +1,3 @@
+experiment,runs,acc_mean,acc_std,macro_f1_mean,macro_f1_std,pseudo_pred_js_mean,pseudo_agreement_rate_mean,epoch_time_sec_mean,peak_allocated_mb_mean
+abc,1,9.28,0.0,2.417917922139168,0.0,nan,nan,70.79021978378296,59.5205078125
+daso,1,9.29,0.0,2.419581077992916,0.0,nan,nan,71.8742163181305,52.4306640625

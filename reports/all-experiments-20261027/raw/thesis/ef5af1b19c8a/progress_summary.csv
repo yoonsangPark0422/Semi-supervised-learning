@@ -1,0 +1,5 @@
+method,completed_epochs,target_epochs,latest_acc,latest_macro_f1,avg_epoch_time_sec,estimated_remaining_hours,metrics_path
+crest,100,100,91.19,91.19619131088257,292.58,0.00,C:\Users\FORYOUCOM\Desktop\졸업논문 코드\baseline compare\result\seed_5\crest\train_metrics.csv
+daso,100,100,91.57,91.57692790031433,285.89,0.00,C:\Users\FORYOUCOM\Desktop\졸업논문 코드\baseline compare\result\seed_5\daso\train_metrics.csv
+abc,100,100,82.03,82.1807861328125,295.73,0.00,C:\Users\FORYOUCOM\Desktop\졸업논문 코드\baseline compare\result\seed_5\abc\train_metrics.csv
+proposed,100,100,93.47,93.48114132881165,457.22,0.00,C:\Users\FORYOUCOM\Desktop\졸업논문 코드\baseline compare\result\seed_5\proposed\train_metrics.csv

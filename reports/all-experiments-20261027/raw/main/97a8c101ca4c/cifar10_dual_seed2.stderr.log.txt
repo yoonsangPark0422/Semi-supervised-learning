@@ -1,0 +1,20 @@
+09/16/2026 23:32:03 - WARNING - __main__ -   Process rank: -1, device: cuda:0, n_gpu: 1, distributed training: False, 16-bits training: False
+09/16/2026 23:32:03 - INFO - __main__ -   {'gpu_id': 0, 'num_workers': 0, 'dataset': 'cifar10', 'num_labeled': 4000, 'expand_labels': True, 'arch': 'wideresnet', 'total_steps': 25600, 'eval_step': 512, 'start_epoch': 0, 'batch_size': 32, 'lr': 0.03, 'warmup': 0, 'wdecay': 0.0005, 'nesterov': True, 'use_ema': True, 'no_ema': False, 'ema_decay': 0.999, 'mu': 7, 'lambda_u': 1, 'T': 1, 'threshold': 0.95, 'dual_train_mode': 'dual_sampler_weighted_ce', 'imb_ratio': 100.0, 'val_samples_per_class': 0, 'imb_type': 'exp', 'major_top_ratio': 0.2, 'classwise_quota': 'global', 'minority_threshold_gamma': 1.0, 'min_threshold': 0.5, 'minority_bias_strength': 1.0, 'minority_supervised_gamma': 1.0, 'max_minority_weight': 10.0, 'minority_bias_warmup': 2048, 'ensemble_minor_weight': 0.8, 'unsup_warmup': 1024, 'pseudo_warmup': 512, 'out': 'C:\\Users\\FORYOUCOM\\Desktop\\Semi-supervised-learning-main\\Semi-supervised-learning-main\\results\\official_test_finalonly_cifar10_svhn10_3models_e50_s512_seed1_2_3\\cifar10\\dual\\seed_2', 'resume': '', 'init_checkpoint': '', 'eval_only': False, 'eval_final_only': True, 'no_save_checkpoint': True, 'seed': 2, 'amp': False, 'opt_level': 'O1', 'local_rank': -1, 'no_progress': True, 'use_minor_balanced_sampler': True, 'use_minor_weighted_ce': True, 'device': device(type='cuda', index=0), 'world_size': 1, 'n_gpu': 1}
+09/16/2026 23:32:04 - INFO - dataset.cifar_val_split -   Using full CIFAR-10 train split for training and official test split for evaluation.
+09/16/2026 23:32:04 - INFO - dataset.cifar_val_split -   Labeled class counts: [1612, 967, 580, 348, 209, 124, 74, 44, 26, 16]
+09/16/2026 23:32:05 - INFO - __main__ -   Using expanded labeled dataset class counts for dual training: [8060, 4835, 2900, 1740, 1045, 620, 370, 220, 130, 80]. Original split counts were: [1612, 967, 580, 348, 209, 124, 74, 44, 26, 16]
+09/16/2026 23:32:05 - INFO - models.wideresnet -   Model: WideResNet 28x2
+09/16/2026 23:32:05 - INFO - __main__ -   Total params: 1.47M
+09/16/2026 23:32:05 - INFO - models.wideresnet -   Model: WideResNet 28x2
+09/16/2026 23:32:05 - INFO - __main__ -   Total params: 1.47M
+09/16/2026 23:32:05 - INFO - __main__ -   ***** Running training *****
+09/16/2026 23:32:05 - INFO - __main__ -     Task = cifar10@4000
+09/16/2026 23:32:05 - INFO - __main__ -     Num Epochs = 50
+09/16/2026 23:32:05 - INFO - __main__ -     Batch size per GPU = 32
+09/16/2026 23:32:05 - INFO - __main__ -     Total train batch size = 32
+09/16/2026 23:32:05 - INFO - __main__ -     Total optimization steps = 25600
+09/16/2026 23:32:05 - INFO - __main__ -     Dual train mode = dual_sampler_weighted_ce
+09/16/2026 23:35:48 - INFO - __main__ -   Skipping evaluation until final epoch (1/50).
+09/16/2026 23:39:30 - INFO - __main__ -   Skipping evaluation until final epoch (2/50).
+09/16/2026 23:43:14 - INFO - __main__ -   Skipping evaluation until final epoch (3/50).
+09/16/2026 23:46:56 - INFO - __main__ -   Skipping evaluation until final epoch (4/50).

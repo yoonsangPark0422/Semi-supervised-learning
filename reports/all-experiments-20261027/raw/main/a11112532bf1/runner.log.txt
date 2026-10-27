@@ -1,0 +1,13 @@
+[2026-08-24 10:03:09] waiting for existing minor-only runner pid=14440
+[2026-08-25 05:05:17] starting validation split ratio100 comparison
+[2026-08-25 05:05:17] start ours seed=1
+[2026-08-25 08:13:42] done ours seed=1
+[2026-08-25 08:13:42] start ours seed=2
+[2026-08-25 11:21:53] done ours seed=2
+[2026-08-25 11:21:53] start ours seed=3
+[2026-08-25 14:30:44] done ours seed=3
+[2026-08-25 14:30:44] start decon seed=1
+[2026-08-26 12:08:09.43] start decon seed=2 
+[2026-08-26 14:58:37.77] done decon seed=2 
+[2026-08-26 14:58:37.77] start decon seed=3 
+[2026-08-26 17:49:39.13] done decon seed=3 

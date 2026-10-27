@@ -1,0 +1,2 @@
+Top1 acc	Best Top1 acc	
+90.710000	90.710000	

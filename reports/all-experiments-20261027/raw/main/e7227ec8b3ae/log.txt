@@ -1,0 +1,2 @@
+Top1 acc	Best Top1 acc	
+96.761678	96.761678	

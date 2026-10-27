@@ -1,0 +1,54 @@
+{
+  "policy": "Minor LLA + hard self loss; no cross and no self suppression",
+  "self_loss_denominator": "baseline selected self mask count before suppression",
+  "gate_note": "Argmax eligibility only. Hard self uses the adjusted argmax unless suppressed by the gate; the accepted cross target then remains. Batch-dependent self selection is not reconstructed here.",
+  "dataset": "cifar10",
+  "seed": 1,
+  "epoch": 31,
+  "global_step": 15871,
+  "fixed_bias_scale_used": false,
+  "lla_lambda": [
+    -2.334214687347412,
+    -1.4432470798492432,
+    -0.01443503051996231,
+    0.5602461695671082,
+    0.48519784212112427,
+    0.41603371500968933,
+    0.43280982971191406,
+    0.34785497188568115,
+    0.3866100013256073,
+    0.5402666330337524
+  ],
+  "lla_prior": [
+    0.007841058075428009,
+    0.01911247707903385,
+    0.07977047562599182,
+    0.1417173594236374,
+    0.13147102296352386,
+    0.1226852536201477,
+    0.12476079165935516,
+    0.11459951102733612,
+    0.11912798881530762,
+    0.13891401886940002
+  ],
+  "lla_parameter_source": "online, no parameter EMA",
+  "temperature": 1,
+  "fixed_prior_correction": "replaced, not added to LLA",
+  "val_samples_per_class": 500,
+  "model_source": "ema",
+  "tau_major_cross": 0.95,
+  "tau_minor_cross": 0.95,
+  "head_classes": [
+    0,
+    1,
+    2
+  ],
+  "tail_classes": [
+    7,
+    8,
+    9
+  ],
+  "rate_denominator": "n within each condition; rates are fractions, not percentages",
+  "validation_index": "position in deterministic validation split for this seed",
+  "limitations": "Clean validation images in eval mode; not actual augmented train batches. Confidence gaps are descriptive, not calibrated reliability scores. Do not fit a rule and report its accuracy on these same validation samples."
+}

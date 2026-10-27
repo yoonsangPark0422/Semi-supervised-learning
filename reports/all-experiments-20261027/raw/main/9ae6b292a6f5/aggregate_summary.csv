@@ -1,0 +1,2 @@
+method,ratio,n,acc_mean,acc_std,macro_f1_mean,macro_f1_std,minority_f1_mean,minority_f1_std,tail_f1_mean,tail_f1_std
+single_minor,100,3,88.6867,0.2517,88.7659,0.2556,89.9165,0.6338,92.5639,0.2827

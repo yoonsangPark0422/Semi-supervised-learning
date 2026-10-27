@@ -1,0 +1,25 @@
+08/14/2026 20:25:50 - WARNING - __main__ -   Process rank: -1, device: cuda:0, n_gpu: 1, distributed training: False, 16-bits training: False
+08/14/2026 20:25:50 - INFO - __main__ -   {'gpu_id': 0, 'num_workers': 0, 'dataset': 'cifar10', 'num_labeled': 4000, 'expand_labels': True, 'arch': 'wideresnet', 'total_steps': 25600, 'eval_step': 512, 'start_epoch': 0, 'batch_size': 32, 'lr': 0.03, 'warmup': 0, 'wdecay': 0.0005, 'nesterov': True, 'use_ema': True, 'no_ema': False, 'ema_decay': 0.999, 'mu': 7, 'lambda_u': 1, 'T': 1, 'threshold': 0.95, 'dual_train_mode': 'dual_sampler_weighted_ce', 'imb_ratio': 50.0, 'imb_type': 'exp', 'major_top_ratio': 0.2, 'classwise_quota': 'global', 'minority_threshold_gamma': 1.0, 'min_threshold': 0.5, 'minority_bias_strength': 1.0, 'minority_supervised_gamma': 1.0, 'max_minority_weight': 10.0, 'minority_bias_warmup': 2048, 'ensemble_minor_weight': 0.2, 'unsup_warmup': 1024, 'pseudo_warmup': 512, 'out': 'C:\\Users\\FORYOUCOM\\Desktop\\Semi-supervised-learning-main\\Semi-supervised-learning-main\\results\\ensemble_weight_sweep_imb50_100_e50_s512_seed5\\imb50\\eval_w0p2', 'resume': 'C:\\Users\\FORYOUCOM\\Desktop\\Semi-supervised-learning-main\\Semi-supervised-learning-main\\results\\ensemble_weight_sweep_imb50_100_e50_s512_seed5\\imb50\\train_dual\\checkpoint.pth.tar', 'init_checkpoint': '', 'eval_only': True, 'no_save_checkpoint': False, 'seed': 5, 'amp': False, 'opt_level': 'O1', 'local_rank': -1, 'no_progress': True, 'use_minor_balanced_sampler': True, 'use_minor_weighted_ce': True, 'device': device(type='cuda', index=0), 'world_size': 1, 'n_gpu': 1}
+08/14/2026 20:25:50 - INFO - dataset.cifar -   Labeled class counts: [1429, 925, 599, 388, 252, 162, 105, 68, 44, 28]
+08/14/2026 20:25:51 - INFO - __main__ -   Using expanded labeled dataset class counts for dual training: [7145, 4625, 2995, 1940, 1260, 810, 525, 340, 220, 140]. Original split counts were: [1429, 925, 599, 388, 252, 162, 105, 68, 44, 28]
+08/14/2026 20:25:51 - INFO - models.wideresnet -   Model: WideResNet 28x2
+08/14/2026 20:25:51 - INFO - __main__ -   Total params: 1.47M
+08/14/2026 20:25:51 - INFO - models.wideresnet -   Model: WideResNet 28x2
+08/14/2026 20:25:51 - INFO - __main__ -   Total params: 1.47M
+08/14/2026 20:25:51 - INFO - __main__ -   ==> Resuming from checkpoint..
+08/14/2026 20:25:54 - INFO - __main__ -   top-1 acc: 86.77
+08/14/2026 20:25:54 - INFO - __main__ -   top-5 acc: 99.53
+08/14/2026 20:25:54 - INFO - __main__ -   per-class acc: [97.0, 98.7, 88.2, 82.3, 90.9, 72.1, 91.2, 85.1, 82.6, 79.6]
+08/14/2026 20:25:54 - INFO - __main__ -   macro F1: 86.87
+08/14/2026 20:25:54 - INFO - __main__ -   head/mid/tail acc: 94.63 / 81.77 / 84.62
+08/14/2026 20:25:57 - INFO - __main__ -   top-1 acc: 88.78
+08/14/2026 20:25:57 - INFO - __main__ -   top-5 acc: 99.55
+08/14/2026 20:25:57 - INFO - __main__ -   per-class acc: [93.5, 97.5, 87.3, 83.0, 92.5, 73.0, 94.3, 88.6, 89.8, 88.3]
+08/14/2026 20:25:57 - INFO - __main__ -   macro F1: 88.83
+08/14/2026 20:25:57 - INFO - __main__ -   head/mid/tail acc: 92.77 / 82.83 / 90.25
+08/14/2026 20:26:00 - INFO - __main__ -   ensemble top-1 acc: 87.71
+08/14/2026 20:26:00 - INFO - __main__ -   ensemble top-5 acc: 99.57
+08/14/2026 20:26:00 - INFO - __main__ -   ensemble per-class acc: [96.4, 98.4, 88.4, 83.4, 91.7, 72.5, 91.8, 86.4, 85.7, 82.4]
+08/14/2026 20:26:00 - INFO - __main__ -   ensemble macro F1: 87.79
+08/14/2026 20:26:00 - INFO - __main__ -   ensemble head/mid/tail acc: 94.40 / 82.53 / 86.57
+08/14/2026 20:26:00 - INFO - __main__ -   Eval major/minor/ensemble top-1: 86.77 / 88.78 / 87.71

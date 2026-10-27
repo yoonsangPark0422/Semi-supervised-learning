@@ -1,0 +1,410 @@
+09/13/2026 17:39:16 - WARNING - __main__ -   Process rank: -1, device: cuda:0, n_gpu: 1, distributed training: False
+09/13/2026 17:39:16 - INFO - __main__ -   {'gpu_id': 0, 'num_workers': 0, 'dataset': 'svhn', 'num_labeled': 4000, 'val_samples_per_class': 500, 'arch': 'wideresnet', 'total_steps': 25600, 'eval_step': 512, 'start_epoch': 0, 'batch_size': 64, 'lr': 0.03, 'warmup': 0, 'wdecay': 0.0005, 'nesterov': True, 'use_ema': True, 'ema_decay': 0.999, 'mu': 7, 'T': 1, 'threshold': 0.95, 'out': 'C:\\Users\\FORYOUCOM\\Desktop\\Semi-supervised-learning-main\\Semi-supervised-learning-main\\results\\svhn_lt_ratio100_seed1_5_e50_s512_optimized_v2\\decon_seed_4', 'resume': '', 'seed': 4, 'local_rank': -1, 'no_progress': True, 'no_save_checkpoint': True, 'num_max': 1614, 'num_max_u': 4000, 'imb_ratio_label': 100, 'imb_ratio_unlabel': 100, 'flag_reverse_LT': 0, 'ema_mu': 0.99, 'tau2': 2, 'ema_u': 0.99, 'est_epoch': 5, 'img_size': 32, 'tau': 1.0, 'dist_mode': 0, 'emap': 0.999, 'warm_epoch': 50, 'tau3': 2.0, 'tau4': 1.0, 'Tw': 1.0, 'tau_b': 2.0, 'world_size': 1, 'n_gpu': 1, 'device': device(type='cuda', index=0)}
+09/13/2026 17:39:22 - INFO - models.wideresnet -   Model: WideResNet 28x2
+09/13/2026 17:39:22 - INFO - __main__ -   Total params: 1.47M
+09/13/2026 17:39:22 - INFO - __main__ -   ***** Running training *****
+09/13/2026 17:39:22 - INFO - __main__ -     Task = svhn@4000
+09/13/2026 17:39:22 - INFO - __main__ -     Num Epochs = 50
+09/13/2026 17:39:22 - INFO - __main__ -     Batch size per GPU = 64
+09/13/2026 17:39:22 - INFO - __main__ -     Total train batch size = 64
+09/13/2026 17:39:22 - INFO - __main__ -     Total optimization steps = 25600
+09/13/2026 17:46:03 - INFO - __main__ -   top-1 acc: 13.78
+09/13/2026 17:46:03 - INFO - __main__ -   top-5 acc: 56.98
+09/13/2026 17:46:03 - INFO - __main__ -   per-class acc: [0.2, 37.6, 3.8, 0.2, 96.0, 0.0, 0.0, 0.0, 0.0, 0.0]
+09/13/2026 17:46:03 - INFO - __main__ -   macro F1: 7.20
+09/13/2026 17:46:03 - INFO - __main__ -   head/mid/tail acc: 13.87 / 24.05 / 0.00
+09/13/2026 17:46:03 - INFO - __main__ -   Best top-1 acc: 13.78
+09/13/2026 17:46:03 - INFO - __main__ -   Mean top-1 acc: 13.78
+
+09/13/2026 17:52:43 - INFO - __main__ -   top-1 acc: 31.68
+09/13/2026 17:52:43 - INFO - __main__ -   top-5 acc: 75.94
+09/13/2026 17:52:43 - INFO - __main__ -   per-class acc: [21.8, 69.4, 21.6, 47.0, 95.8, 43.6, 17.0, 0.2, 0.0, 0.4]
+09/13/2026 17:52:43 - INFO - __main__ -   macro F1: 29.06
+09/13/2026 17:52:43 - INFO - __main__ -   head/mid/tail acc: 37.60 / 50.85 / 0.20
+09/13/2026 17:52:43 - INFO - __main__ -   Best top-1 acc: 31.68
+09/13/2026 17:52:43 - INFO - __main__ -   Mean top-1 acc: 22.73
+
+09/13/2026 17:59:24 - INFO - __main__ -   top-1 acc: 68.88
+09/13/2026 17:59:24 - INFO - __main__ -   top-5 acc: 93.50
+09/13/2026 17:59:24 - INFO - __main__ -   per-class acc: [71.2, 79.6, 73.4, 77.4, 94.6, 88.0, 85.0, 79.0, 10.0, 30.6]
+09/13/2026 17:59:24 - INFO - __main__ -   macro F1: 66.87
+09/13/2026 17:59:24 - INFO - __main__ -   head/mid/tail acc: 74.73 / 86.25 / 39.87
+09/13/2026 17:59:24 - INFO - __main__ -   Best top-1 acc: 68.88
+09/13/2026 17:59:24 - INFO - __main__ -   Mean top-1 acc: 38.11
+
+09/13/2026 18:06:04 - INFO - __main__ -   top-1 acc: 81.66
+09/13/2026 18:06:04 - INFO - __main__ -   top-5 acc: 97.14
+09/13/2026 18:06:04 - INFO - __main__ -   per-class acc: [80.8, 79.4, 84.4, 76.8, 93.4, 87.8, 92.8, 92.2, 54.0, 75.0]
+09/13/2026 18:06:04 - INFO - __main__ -   macro F1: 81.89
+09/13/2026 18:06:04 - INFO - __main__ -   head/mid/tail acc: 81.53 / 87.70 / 73.73
+09/13/2026 18:06:04 - INFO - __main__ -   Best top-1 acc: 81.66
+09/13/2026 18:06:04 - INFO - __main__ -   Mean top-1 acc: 49.00
+
+09/13/2026 18:12:45 - INFO - __main__ -   top-1 acc: 84.52
+09/13/2026 18:12:45 - INFO - __main__ -   top-5 acc: 98.04
+09/13/2026 18:12:45 - INFO - __main__ -   per-class acc: [84.2, 81.4, 87.4, 69.6, 93.6, 87.8, 94.0, 94.6, 68.2, 84.4]
+09/13/2026 18:12:45 - INFO - __main__ -   macro F1: 84.63
+09/13/2026 18:12:45 - INFO - __main__ -   head/mid/tail acc: 84.33 / 86.25 / 82.40
+09/13/2026 18:12:45 - INFO - __main__ -   Best top-1 acc: 84.52
+09/13/2026 18:12:45 - INFO - __main__ -   Mean top-1 acc: 56.10
+
+09/13/2026 18:19:25 - INFO - __main__ -   top-1 acc: 85.62
+09/13/2026 18:19:25 - INFO - __main__ -   top-5 acc: 98.34
+09/13/2026 18:19:25 - INFO - __main__ -   per-class acc: [85.4, 82.8, 88.4, 67.8, 93.8, 87.4, 92.6, 95.6, 75.6, 86.8]
+09/13/2026 18:19:25 - INFO - __main__ -   macro F1: 85.71
+09/13/2026 18:19:25 - INFO - __main__ -   head/mid/tail acc: 85.53 / 85.40 / 86.00
+09/13/2026 18:19:25 - INFO - __main__ -   Best top-1 acc: 85.62
+09/13/2026 18:19:25 - INFO - __main__ -   Mean top-1 acc: 61.02
+
+09/13/2026 18:26:05 - INFO - __main__ -   top-1 acc: 86.84
+09/13/2026 18:26:05 - INFO - __main__ -   top-5 acc: 98.46
+09/13/2026 18:26:05 - INFO - __main__ -   per-class acc: [84.8, 83.6, 88.6, 72.4, 94.4, 86.4, 91.6, 96.4, 80.6, 89.6]
+09/13/2026 18:26:05 - INFO - __main__ -   macro F1: 86.97
+09/13/2026 18:26:05 - INFO - __main__ -   head/mid/tail acc: 85.67 / 86.20 / 88.87
+09/13/2026 18:26:05 - INFO - __main__ -   Best top-1 acc: 86.84
+09/13/2026 18:26:05 - INFO - __main__ -   Mean top-1 acc: 64.71
+
+09/13/2026 18:32:45 - INFO - __main__ -   top-1 acc: 88.06
+09/13/2026 18:32:45 - INFO - __main__ -   top-5 acc: 98.60
+09/13/2026 18:32:45 - INFO - __main__ -   per-class acc: [86.0, 85.2, 88.6, 75.4, 94.6, 88.6, 90.0, 96.6, 83.8, 91.8]
+09/13/2026 18:32:45 - INFO - __main__ -   macro F1: 88.19
+09/13/2026 18:32:45 - INFO - __main__ -   head/mid/tail acc: 86.60 / 87.15 / 90.73
+09/13/2026 18:32:45 - INFO - __main__ -   Best top-1 acc: 88.06
+09/13/2026 18:32:45 - INFO - __main__ -   Mean top-1 acc: 67.63
+
+09/13/2026 18:39:25 - INFO - __main__ -   top-1 acc: 88.74
+09/13/2026 18:39:25 - INFO - __main__ -   top-5 acc: 98.62
+09/13/2026 18:39:25 - INFO - __main__ -   per-class acc: [86.4, 85.6, 89.2, 78.0, 95.8, 88.6, 89.2, 96.6, 85.4, 92.6]
+09/13/2026 18:39:25 - INFO - __main__ -   macro F1: 88.87
+09/13/2026 18:39:25 - INFO - __main__ -   head/mid/tail acc: 87.07 / 87.90 / 91.53
+09/13/2026 18:39:25 - INFO - __main__ -   Best top-1 acc: 88.74
+09/13/2026 18:39:25 - INFO - __main__ -   Mean top-1 acc: 69.98
+
+09/13/2026 18:46:05 - INFO - __main__ -   top-1 acc: 89.22
+09/13/2026 18:46:05 - INFO - __main__ -   top-5 acc: 98.64
+09/13/2026 18:46:05 - INFO - __main__ -   per-class acc: [86.8, 86.4, 89.0, 80.0, 95.2, 89.0, 89.0, 96.4, 87.6, 92.8]
+09/13/2026 18:46:05 - INFO - __main__ -   macro F1: 89.34
+09/13/2026 18:46:05 - INFO - __main__ -   head/mid/tail acc: 87.40 / 88.30 / 92.27
+09/13/2026 18:46:05 - INFO - __main__ -   Best top-1 acc: 89.22
+09/13/2026 18:46:05 - INFO - __main__ -   Mean top-1 acc: 71.90
+
+09/13/2026 18:52:45 - INFO - __main__ -   top-1 acc: 89.70
+09/13/2026 18:52:45 - INFO - __main__ -   top-5 acc: 98.70
+09/13/2026 18:52:45 - INFO - __main__ -   per-class acc: [87.0, 85.8, 89.6, 82.0, 95.4, 90.4, 88.2, 96.6, 88.4, 93.6]
+09/13/2026 18:52:45 - INFO - __main__ -   macro F1: 89.81
+09/13/2026 18:52:45 - INFO - __main__ -   head/mid/tail acc: 87.47 / 89.00 / 92.87
+09/13/2026 18:52:45 - INFO - __main__ -   Best top-1 acc: 89.70
+09/13/2026 18:52:45 - INFO - __main__ -   Mean top-1 acc: 73.52
+
+09/13/2026 18:59:25 - INFO - __main__ -   top-1 acc: 90.26
+09/13/2026 18:59:25 - INFO - __main__ -   top-5 acc: 98.58
+09/13/2026 18:59:25 - INFO - __main__ -   per-class acc: [87.4, 87.0, 90.2, 83.6, 95.4, 91.0, 88.0, 97.0, 88.4, 94.6]
+09/13/2026 18:59:25 - INFO - __main__ -   macro F1: 90.38
+09/13/2026 18:59:25 - INFO - __main__ -   head/mid/tail acc: 88.20 / 89.50 / 93.33
+09/13/2026 18:59:25 - INFO - __main__ -   Best top-1 acc: 90.26
+09/13/2026 18:59:25 - INFO - __main__ -   Mean top-1 acc: 74.91
+
+09/13/2026 19:06:05 - INFO - __main__ -   top-1 acc: 90.64
+09/13/2026 19:06:05 - INFO - __main__ -   top-5 acc: 98.70
+09/13/2026 19:06:05 - INFO - __main__ -   per-class acc: [87.4, 88.0, 90.8, 85.2, 95.4, 91.4, 88.2, 97.0, 88.4, 94.6]
+09/13/2026 19:06:05 - INFO - __main__ -   macro F1: 90.75
+09/13/2026 19:06:05 - INFO - __main__ -   head/mid/tail acc: 88.73 / 90.05 / 93.33
+09/13/2026 19:06:05 - INFO - __main__ -   Best top-1 acc: 90.64
+09/13/2026 19:06:05 - INFO - __main__ -   Mean top-1 acc: 76.12
+
+09/13/2026 19:12:45 - INFO - __main__ -   top-1 acc: 90.72
+09/13/2026 19:12:45 - INFO - __main__ -   top-5 acc: 98.70
+09/13/2026 19:12:45 - INFO - __main__ -   per-class acc: [87.0, 88.6, 91.0, 85.2, 95.8, 92.2, 86.8, 97.2, 88.4, 95.0]
+09/13/2026 19:12:45 - INFO - __main__ -   macro F1: 90.82
+09/13/2026 19:12:45 - INFO - __main__ -   head/mid/tail acc: 88.87 / 90.00 / 93.53
+09/13/2026 19:12:45 - INFO - __main__ -   Best top-1 acc: 90.72
+09/13/2026 19:12:45 - INFO - __main__ -   Mean top-1 acc: 77.17
+
+09/13/2026 19:19:25 - INFO - __main__ -   top-1 acc: 91.12
+09/13/2026 19:19:25 - INFO - __main__ -   top-5 acc: 98.72
+09/13/2026 19:19:25 - INFO - __main__ -   per-class acc: [87.4, 89.6, 91.2, 86.4, 95.6, 93.0, 87.0, 97.0, 88.2, 95.8]
+09/13/2026 19:19:25 - INFO - __main__ -   macro F1: 91.20
+09/13/2026 19:19:25 - INFO - __main__ -   head/mid/tail acc: 89.40 / 90.50 / 93.67
+09/13/2026 19:19:25 - INFO - __main__ -   Best top-1 acc: 91.12
+09/13/2026 19:19:25 - INFO - __main__ -   Mean top-1 acc: 78.10
+
+09/13/2026 19:26:05 - INFO - __main__ -   top-1 acc: 91.40
+09/13/2026 19:26:05 - INFO - __main__ -   top-5 acc: 98.64
+09/13/2026 19:26:05 - INFO - __main__ -   per-class acc: [87.2, 89.8, 92.2, 87.2, 95.6, 92.4, 87.6, 97.0, 88.8, 96.2]
+09/13/2026 19:26:05 - INFO - __main__ -   macro F1: 91.47
+09/13/2026 19:26:05 - INFO - __main__ -   head/mid/tail acc: 89.73 / 90.70 / 94.00
+09/13/2026 19:26:05 - INFO - __main__ -   Best top-1 acc: 91.40
+09/13/2026 19:26:05 - INFO - __main__ -   Mean top-1 acc: 78.93
+
+09/13/2026 19:32:45 - INFO - __main__ -   top-1 acc: 91.74
+09/13/2026 19:32:45 - INFO - __main__ -   top-5 acc: 98.70
+09/13/2026 19:32:45 - INFO - __main__ -   per-class acc: [87.4, 90.8, 92.6, 88.0, 95.4, 92.6, 87.8, 96.6, 89.0, 97.2]
+09/13/2026 19:32:45 - INFO - __main__ -   macro F1: 91.80
+09/13/2026 19:32:45 - INFO - __main__ -   head/mid/tail acc: 90.27 / 90.95 / 94.27
+09/13/2026 19:32:45 - INFO - __main__ -   Best top-1 acc: 91.74
+09/13/2026 19:32:45 - INFO - __main__ -   Mean top-1 acc: 79.68
+
+09/13/2026 19:39:25 - INFO - __main__ -   top-1 acc: 91.60
+09/13/2026 19:39:25 - INFO - __main__ -   top-5 acc: 98.76
+09/13/2026 19:39:25 - INFO - __main__ -   per-class acc: [87.4, 91.0, 92.0, 87.6, 95.8, 93.0, 87.4, 96.6, 88.8, 96.4]
+09/13/2026 19:39:25 - INFO - __main__ -   macro F1: 91.68
+09/13/2026 19:39:25 - INFO - __main__ -   head/mid/tail acc: 90.13 / 90.95 / 93.93
+09/13/2026 19:39:25 - INFO - __main__ -   Best top-1 acc: 91.74
+09/13/2026 19:39:25 - INFO - __main__ -   Mean top-1 acc: 80.34
+
+09/13/2026 19:46:05 - INFO - __main__ -   top-1 acc: 91.78
+09/13/2026 19:46:05 - INFO - __main__ -   top-5 acc: 98.82
+09/13/2026 19:46:05 - INFO - __main__ -   per-class acc: [87.6, 91.4, 92.4, 87.4, 95.8, 93.4, 87.4, 97.0, 89.4, 96.0]
+09/13/2026 19:46:05 - INFO - __main__ -   macro F1: 91.85
+09/13/2026 19:46:05 - INFO - __main__ -   head/mid/tail acc: 90.47 / 91.00 / 94.13
+09/13/2026 19:46:05 - INFO - __main__ -   Best top-1 acc: 91.78
+09/13/2026 19:46:05 - INFO - __main__ -   Mean top-1 acc: 80.95
+
+09/13/2026 19:52:45 - INFO - __main__ -   top-1 acc: 91.28
+09/13/2026 19:52:45 - INFO - __main__ -   top-5 acc: 98.72
+09/13/2026 19:52:45 - INFO - __main__ -   per-class acc: [88.0, 91.0, 91.6, 86.0, 95.6, 92.2, 87.2, 95.8, 89.4, 96.0]
+09/13/2026 19:52:45 - INFO - __main__ -   macro F1: 91.39
+09/13/2026 19:52:45 - INFO - __main__ -   head/mid/tail acc: 90.20 / 90.25 / 93.73
+09/13/2026 19:52:45 - INFO - __main__ -   Best top-1 acc: 91.78
+09/13/2026 19:52:45 - INFO - __main__ -   Mean top-1 acc: 81.46
+
+09/13/2026 19:59:25 - INFO - __main__ -   top-1 acc: 90.78
+09/13/2026 19:59:25 - INFO - __main__ -   top-5 acc: 98.76
+09/13/2026 19:59:25 - INFO - __main__ -   per-class acc: [87.4, 91.2, 90.6, 85.2, 94.2, 90.4, 87.6, 95.8, 89.8, 95.6]
+09/13/2026 19:59:25 - INFO - __main__ -   macro F1: 90.91
+09/13/2026 19:59:25 - INFO - __main__ -   head/mid/tail acc: 89.73 / 89.35 / 93.73
+09/13/2026 19:59:25 - INFO - __main__ -   Best top-1 acc: 91.78
+09/13/2026 19:59:25 - INFO - __main__ -   Mean top-1 acc: 85.31
+
+09/13/2026 20:06:06 - INFO - __main__ -   top-1 acc: 91.40
+09/13/2026 20:06:06 - INFO - __main__ -   top-5 acc: 98.80
+09/13/2026 20:06:06 - INFO - __main__ -   per-class acc: [87.8, 91.4, 91.6, 86.2, 94.6, 92.0, 87.8, 96.0, 89.6, 97.0]
+09/13/2026 20:06:06 - INFO - __main__ -   macro F1: 91.50
+09/13/2026 20:06:06 - INFO - __main__ -   head/mid/tail acc: 90.27 / 90.15 / 94.20
+09/13/2026 20:06:06 - INFO - __main__ -   Best top-1 acc: 91.78
+09/13/2026 20:06:06 - INFO - __main__ -   Mean top-1 acc: 88.30
+
+09/13/2026 20:12:45 - INFO - __main__ -   top-1 acc: 91.72
+09/13/2026 20:12:45 - INFO - __main__ -   top-5 acc: 98.84
+09/13/2026 20:12:45 - INFO - __main__ -   per-class acc: [88.4, 91.8, 92.2, 86.8, 95.4, 92.6, 87.6, 96.0, 89.4, 97.0]
+09/13/2026 20:12:45 - INFO - __main__ -   macro F1: 91.80
+09/13/2026 20:12:45 - INFO - __main__ -   head/mid/tail acc: 90.80 / 90.60 / 94.13
+09/13/2026 20:12:45 - INFO - __main__ -   Best top-1 acc: 91.78
+09/13/2026 20:12:45 - INFO - __main__ -   Mean top-1 acc: 89.44
+
+09/13/2026 20:19:26 - INFO - __main__ -   top-1 acc: 91.92
+09/13/2026 20:19:26 - INFO - __main__ -   top-5 acc: 98.88
+09/13/2026 20:19:26 - INFO - __main__ -   per-class acc: [88.4, 92.0, 92.8, 87.2, 95.6, 93.2, 87.8, 96.4, 89.4, 96.4]
+09/13/2026 20:19:26 - INFO - __main__ -   macro F1: 91.99
+09/13/2026 20:19:26 - INFO - __main__ -   head/mid/tail acc: 91.07 / 90.95 / 94.07
+09/13/2026 20:19:26 - INFO - __main__ -   Best top-1 acc: 91.92
+09/13/2026 20:19:26 - INFO - __main__ -   Mean top-1 acc: 89.95
+
+09/13/2026 20:26:06 - INFO - __main__ -   top-1 acc: 92.00
+09/13/2026 20:26:06 - INFO - __main__ -   top-5 acc: 98.96
+09/13/2026 20:26:06 - INFO - __main__ -   per-class acc: [88.4, 92.0, 92.6, 87.4, 95.8, 93.4, 88.4, 96.4, 89.4, 96.2]
+09/13/2026 20:26:06 - INFO - __main__ -   macro F1: 92.06
+09/13/2026 20:26:06 - INFO - __main__ -   head/mid/tail acc: 91.00 / 91.25 / 94.00
+09/13/2026 20:26:06 - INFO - __main__ -   Best top-1 acc: 92.00
+09/13/2026 20:26:06 - INFO - __main__ -   Mean top-1 acc: 90.33
+
+09/13/2026 20:32:46 - INFO - __main__ -   top-1 acc: 92.30
+09/13/2026 20:32:46 - INFO - __main__ -   top-5 acc: 99.00
+09/13/2026 20:32:46 - INFO - __main__ -   per-class acc: [89.6, 91.6, 93.4, 87.6, 96.2, 93.6, 89.2, 96.0, 89.8, 96.0]
+09/13/2026 20:32:46 - INFO - __main__ -   macro F1: 92.36
+09/13/2026 20:32:46 - INFO - __main__ -   head/mid/tail acc: 91.53 / 91.65 / 93.93
+09/13/2026 20:32:46 - INFO - __main__ -   Best top-1 acc: 92.30
+09/13/2026 20:32:46 - INFO - __main__ -   Mean top-1 acc: 90.66
+
+09/13/2026 20:39:26 - INFO - __main__ -   top-1 acc: 92.26
+09/13/2026 20:39:26 - INFO - __main__ -   top-5 acc: 98.96
+09/13/2026 20:39:26 - INFO - __main__ -   per-class acc: [89.6, 91.4, 93.2, 87.8, 96.2, 93.8, 88.8, 96.0, 89.6, 96.2]
+09/13/2026 20:39:26 - INFO - __main__ -   macro F1: 92.32
+09/13/2026 20:39:26 - INFO - __main__ -   head/mid/tail acc: 91.40 / 91.65 / 93.93
+09/13/2026 20:39:26 - INFO - __main__ -   Best top-1 acc: 92.30
+09/13/2026 20:39:26 - INFO - __main__ -   Mean top-1 acc: 90.93
+
+09/13/2026 20:46:06 - INFO - __main__ -   top-1 acc: 92.26
+09/13/2026 20:46:06 - INFO - __main__ -   top-5 acc: 98.92
+09/13/2026 20:46:06 - INFO - __main__ -   per-class acc: [90.0, 91.4, 93.6, 87.8, 96.6, 93.6, 88.2, 95.4, 89.8, 96.2]
+09/13/2026 20:46:06 - INFO - __main__ -   macro F1: 92.32
+09/13/2026 20:46:06 - INFO - __main__ -   head/mid/tail acc: 91.67 / 91.55 / 93.80
+09/13/2026 20:46:06 - INFO - __main__ -   Best top-1 acc: 92.30
+09/13/2026 20:46:06 - INFO - __main__ -   Mean top-1 acc: 91.14
+
+09/13/2026 20:52:47 - INFO - __main__ -   top-1 acc: 92.34
+09/13/2026 20:52:47 - INFO - __main__ -   top-5 acc: 98.94
+09/13/2026 20:52:47 - INFO - __main__ -   per-class acc: [89.8, 91.8, 93.6, 88.4, 96.8, 93.6, 88.6, 94.8, 89.8, 96.2]
+09/13/2026 20:52:47 - INFO - __main__ -   macro F1: 92.39
+09/13/2026 20:52:47 - INFO - __main__ -   head/mid/tail acc: 91.73 / 91.85 / 93.60
+09/13/2026 20:52:47 - INFO - __main__ -   Best top-1 acc: 92.34
+09/13/2026 20:52:47 - INFO - __main__ -   Mean top-1 acc: 91.32
+
+09/13/2026 20:59:27 - INFO - __main__ -   top-1 acc: 92.38
+09/13/2026 20:59:27 - INFO - __main__ -   top-5 acc: 98.98
+09/13/2026 20:59:27 - INFO - __main__ -   per-class acc: [90.0, 92.4, 93.6, 88.0, 97.0, 93.6, 88.4, 95.0, 89.8, 96.0]
+09/13/2026 20:59:27 - INFO - __main__ -   macro F1: 92.43
+09/13/2026 20:59:27 - INFO - __main__ -   head/mid/tail acc: 92.00 / 91.75 / 93.60
+09/13/2026 20:59:27 - INFO - __main__ -   Best top-1 acc: 92.38
+09/13/2026 20:59:27 - INFO - __main__ -   Mean top-1 acc: 91.48
+
+09/13/2026 21:06:07 - INFO - __main__ -   top-1 acc: 92.20
+09/13/2026 21:06:07 - INFO - __main__ -   top-5 acc: 98.92
+09/13/2026 21:06:07 - INFO - __main__ -   per-class acc: [90.4, 92.0, 93.4, 88.0, 96.8, 93.6, 88.2, 94.0, 90.0, 95.6]
+09/13/2026 21:06:07 - INFO - __main__ -   macro F1: 92.25
+09/13/2026 21:06:07 - INFO - __main__ -   head/mid/tail acc: 91.93 / 91.65 / 93.20
+09/13/2026 21:06:07 - INFO - __main__ -   Best top-1 acc: 92.38
+09/13/2026 21:06:07 - INFO - __main__ -   Mean top-1 acc: 91.61
+
+09/13/2026 21:12:47 - INFO - __main__ -   top-1 acc: 92.24
+09/13/2026 21:12:47 - INFO - __main__ -   top-5 acc: 98.92
+09/13/2026 21:12:47 - INFO - __main__ -   per-class acc: [90.8, 92.2, 93.4, 88.0, 96.8, 93.6, 88.4, 94.6, 89.0, 95.6]
+09/13/2026 21:12:47 - INFO - __main__ -   macro F1: 92.28
+09/13/2026 21:12:47 - INFO - __main__ -   head/mid/tail acc: 92.13 / 91.70 / 93.07
+09/13/2026 21:12:47 - INFO - __main__ -   Best top-1 acc: 92.38
+09/13/2026 21:12:47 - INFO - __main__ -   Mean top-1 acc: 91.70
+
+09/13/2026 21:19:27 - INFO - __main__ -   top-1 acc: 92.20
+09/13/2026 21:19:27 - INFO - __main__ -   top-5 acc: 98.86
+09/13/2026 21:19:27 - INFO - __main__ -   per-class acc: [90.8, 92.0, 93.6, 87.4, 96.6, 93.6, 89.2, 94.4, 89.4, 95.0]
+09/13/2026 21:19:27 - INFO - __main__ -   macro F1: 92.23
+09/13/2026 21:19:27 - INFO - __main__ -   head/mid/tail acc: 92.13 / 91.70 / 92.93
+09/13/2026 21:19:27 - INFO - __main__ -   Best top-1 acc: 92.38
+09/13/2026 21:19:27 - INFO - __main__ -   Mean top-1 acc: 91.78
+
+09/13/2026 21:26:07 - INFO - __main__ -   top-1 acc: 92.32
+09/13/2026 21:26:07 - INFO - __main__ -   top-5 acc: 98.86
+09/13/2026 21:26:07 - INFO - __main__ -   per-class acc: [90.6, 92.4, 94.0, 88.8, 97.0, 93.4, 89.0, 94.2, 89.2, 94.6]
+09/13/2026 21:26:07 - INFO - __main__ -   macro F1: 92.35
+09/13/2026 21:26:07 - INFO - __main__ -   head/mid/tail acc: 92.33 / 92.05 / 92.67
+09/13/2026 21:26:07 - INFO - __main__ -   Best top-1 acc: 92.38
+09/13/2026 21:26:07 - INFO - __main__ -   Mean top-1 acc: 91.86
+
+09/13/2026 21:32:47 - INFO - __main__ -   top-1 acc: 92.14
+09/13/2026 21:32:47 - INFO - __main__ -   top-5 acc: 98.92
+09/13/2026 21:32:47 - INFO - __main__ -   per-class acc: [91.0, 92.2, 94.0, 88.6, 97.0, 93.4, 88.8, 93.8, 88.2, 94.4]
+09/13/2026 21:32:47 - INFO - __main__ -   macro F1: 92.18
+09/13/2026 21:32:47 - INFO - __main__ -   head/mid/tail acc: 92.40 / 91.95 / 92.13
+09/13/2026 21:32:47 - INFO - __main__ -   Best top-1 acc: 92.38
+09/13/2026 21:32:47 - INFO - __main__ -   Mean top-1 acc: 91.91
+
+09/13/2026 21:39:27 - INFO - __main__ -   top-1 acc: 92.20
+09/13/2026 21:39:27 - INFO - __main__ -   top-5 acc: 98.94
+09/13/2026 21:39:27 - INFO - __main__ -   per-class acc: [92.0, 92.2, 94.4, 89.0, 96.8, 92.8, 88.0, 93.6, 88.8, 94.4]
+09/13/2026 21:39:27 - INFO - __main__ -   macro F1: 92.23
+09/13/2026 21:39:27 - INFO - __main__ -   head/mid/tail acc: 92.87 / 91.65 / 92.27
+09/13/2026 21:39:27 - INFO - __main__ -   Best top-1 acc: 92.38
+09/13/2026 21:39:27 - INFO - __main__ -   Mean top-1 acc: 91.95
+
+09/13/2026 21:46:08 - INFO - __main__ -   top-1 acc: 92.16
+09/13/2026 21:46:08 - INFO - __main__ -   top-5 acc: 98.94
+09/13/2026 21:46:08 - INFO - __main__ -   per-class acc: [92.6, 92.2, 94.6, 89.6, 97.0, 92.4, 87.8, 93.8, 87.6, 94.0]
+09/13/2026 21:46:08 - INFO - __main__ -   macro F1: 92.18
+09/13/2026 21:46:08 - INFO - __main__ -   head/mid/tail acc: 93.13 / 91.70 / 91.80
+09/13/2026 21:46:08 - INFO - __main__ -   Best top-1 acc: 92.38
+09/13/2026 21:46:08 - INFO - __main__ -   Mean top-1 acc: 91.97
+
+09/13/2026 21:52:48 - INFO - __main__ -   top-1 acc: 92.24
+09/13/2026 21:52:48 - INFO - __main__ -   top-5 acc: 98.94
+09/13/2026 21:52:48 - INFO - __main__ -   per-class acc: [92.0, 93.4, 95.0, 89.8, 97.0, 92.4, 88.0, 93.8, 87.0, 94.0]
+09/13/2026 21:52:48 - INFO - __main__ -   macro F1: 92.26
+09/13/2026 21:52:48 - INFO - __main__ -   head/mid/tail acc: 93.47 / 91.80 / 91.60
+09/13/2026 21:52:48 - INFO - __main__ -   Best top-1 acc: 92.38
+09/13/2026 21:52:48 - INFO - __main__ -   Mean top-1 acc: 92.01
+
+09/13/2026 21:59:28 - INFO - __main__ -   top-1 acc: 92.22
+09/13/2026 21:59:28 - INFO - __main__ -   top-5 acc: 98.86
+09/13/2026 21:59:28 - INFO - __main__ -   per-class acc: [91.8, 93.2, 95.2, 89.4, 97.0, 92.8, 87.6, 93.8, 87.4, 94.0]
+09/13/2026 21:59:28 - INFO - __main__ -   macro F1: 92.23
+09/13/2026 21:59:28 - INFO - __main__ -   head/mid/tail acc: 93.40 / 91.70 / 91.73
+09/13/2026 21:59:28 - INFO - __main__ -   Best top-1 acc: 92.38
+09/13/2026 21:59:28 - INFO - __main__ -   Mean top-1 acc: 92.03
+
+09/13/2026 22:06:08 - INFO - __main__ -   top-1 acc: 92.20
+09/13/2026 22:06:08 - INFO - __main__ -   top-5 acc: 98.82
+09/13/2026 22:06:08 - INFO - __main__ -   per-class acc: [91.8, 93.0, 95.2, 89.2, 96.8, 92.8, 87.6, 93.6, 88.0, 94.0]
+09/13/2026 22:06:08 - INFO - __main__ -   macro F1: 92.22
+09/13/2026 22:06:08 - INFO - __main__ -   head/mid/tail acc: 93.33 / 91.60 / 91.87
+09/13/2026 22:06:08 - INFO - __main__ -   Best top-1 acc: 92.38
+09/13/2026 22:06:08 - INFO - __main__ -   Mean top-1 acc: 92.07
+
+09/13/2026 22:12:48 - INFO - __main__ -   top-1 acc: 92.30
+09/13/2026 22:12:48 - INFO - __main__ -   top-5 acc: 98.90
+09/13/2026 22:12:48 - INFO - __main__ -   per-class acc: [92.6, 93.0, 95.0, 89.0, 96.8, 93.0, 87.6, 93.4, 88.6, 94.0]
+09/13/2026 22:12:48 - INFO - __main__ -   macro F1: 92.31
+09/13/2026 22:12:48 - INFO - __main__ -   head/mid/tail acc: 93.53 / 91.60 / 92.00
+09/13/2026 22:12:48 - INFO - __main__ -   Best top-1 acc: 92.38
+09/13/2026 22:12:48 - INFO - __main__ -   Mean top-1 acc: 92.15
+
+09/13/2026 22:19:28 - INFO - __main__ -   top-1 acc: 92.24
+09/13/2026 22:19:28 - INFO - __main__ -   top-5 acc: 98.86
+09/13/2026 22:19:28 - INFO - __main__ -   per-class acc: [93.2, 93.2, 95.0, 89.2, 96.8, 92.6, 87.6, 93.2, 88.0, 93.6]
+09/13/2026 22:19:28 - INFO - __main__ -   macro F1: 92.25
+09/13/2026 22:19:28 - INFO - __main__ -   head/mid/tail acc: 93.80 / 91.55 / 91.60
+09/13/2026 22:19:28 - INFO - __main__ -   Best top-1 acc: 92.38
+09/13/2026 22:19:28 - INFO - __main__ -   Mean top-1 acc: 92.19
+
+09/13/2026 22:26:08 - INFO - __main__ -   top-1 acc: 92.10
+09/13/2026 22:26:08 - INFO - __main__ -   top-5 acc: 98.92
+09/13/2026 22:26:08 - INFO - __main__ -   per-class acc: [93.0, 93.0, 94.6, 89.0, 96.4, 93.0, 87.0, 93.4, 87.8, 93.8]
+09/13/2026 22:26:08 - INFO - __main__ -   macro F1: 92.11
+09/13/2026 22:26:08 - INFO - __main__ -   head/mid/tail acc: 93.53 / 91.35 / 91.67
+09/13/2026 22:26:08 - INFO - __main__ -   Best top-1 acc: 92.38
+09/13/2026 22:26:08 - INFO - __main__ -   Mean top-1 acc: 92.21
+
+09/13/2026 22:32:49 - INFO - __main__ -   top-1 acc: 92.06
+09/13/2026 22:32:49 - INFO - __main__ -   top-5 acc: 98.92
+09/13/2026 22:32:49 - INFO - __main__ -   per-class acc: [93.0, 93.4, 94.6, 89.0, 96.6, 93.2, 87.8, 93.2, 87.4, 92.4]
+09/13/2026 22:32:49 - INFO - __main__ -   macro F1: 92.07
+09/13/2026 22:32:49 - INFO - __main__ -   head/mid/tail acc: 93.67 / 91.65 / 91.00
+09/13/2026 22:32:49 - INFO - __main__ -   Best top-1 acc: 92.38
+09/13/2026 22:32:49 - INFO - __main__ -   Mean top-1 acc: 92.22
+
+09/13/2026 22:39:29 - INFO - __main__ -   top-1 acc: 92.24
+09/13/2026 22:39:29 - INFO - __main__ -   top-5 acc: 98.94
+09/13/2026 22:39:29 - INFO - __main__ -   per-class acc: [93.6, 93.6, 95.0, 89.8, 96.6, 92.6, 88.0, 93.6, 87.6, 92.0]
+09/13/2026 22:39:29 - INFO - __main__ -   macro F1: 92.24
+09/13/2026 22:39:29 - INFO - __main__ -   head/mid/tail acc: 94.07 / 91.75 / 91.07
+09/13/2026 22:39:29 - INFO - __main__ -   Best top-1 acc: 92.38
+09/13/2026 22:39:29 - INFO - __main__ -   Mean top-1 acc: 92.23
+
+09/13/2026 22:46:09 - INFO - __main__ -   top-1 acc: 92.16
+09/13/2026 22:46:09 - INFO - __main__ -   top-5 acc: 98.86
+09/13/2026 22:46:09 - INFO - __main__ -   per-class acc: [93.8, 93.6, 95.2, 89.0, 96.2, 93.0, 87.6, 93.4, 87.4, 92.4]
+09/13/2026 22:46:09 - INFO - __main__ -   macro F1: 92.16
+09/13/2026 22:46:09 - INFO - __main__ -   head/mid/tail acc: 94.20 / 91.45 / 91.07
+09/13/2026 22:46:09 - INFO - __main__ -   Best top-1 acc: 92.38
+09/13/2026 22:46:09 - INFO - __main__ -   Mean top-1 acc: 92.22
+
+09/13/2026 22:52:50 - INFO - __main__ -   top-1 acc: 92.20
+09/13/2026 22:52:50 - INFO - __main__ -   top-5 acc: 98.82
+09/13/2026 22:52:50 - INFO - __main__ -   per-class acc: [93.4, 93.8, 94.8, 89.8, 96.4, 92.8, 87.2, 92.8, 88.0, 93.0]
+09/13/2026 22:52:50 - INFO - __main__ -   macro F1: 92.20
+09/13/2026 22:52:50 - INFO - __main__ -   head/mid/tail acc: 94.00 / 91.55 / 91.27
+09/13/2026 22:52:50 - INFO - __main__ -   Best top-1 acc: 92.38
+09/13/2026 22:52:50 - INFO - __main__ -   Mean top-1 acc: 92.22
+
+09/13/2026 22:59:30 - INFO - __main__ -   top-1 acc: 92.12
+09/13/2026 22:59:30 - INFO - __main__ -   top-5 acc: 98.88
+09/13/2026 22:59:30 - INFO - __main__ -   per-class acc: [94.0, 94.0, 94.6, 89.4, 96.4, 91.8, 87.8, 92.8, 88.2, 92.2]
+09/13/2026 22:59:30 - INFO - __main__ -   macro F1: 92.12
+09/13/2026 22:59:30 - INFO - __main__ -   head/mid/tail acc: 94.20 / 91.35 / 91.07
+09/13/2026 22:59:30 - INFO - __main__ -   Best top-1 acc: 92.38
+09/13/2026 22:59:30 - INFO - __main__ -   Mean top-1 acc: 92.21
+
+09/13/2026 23:06:10 - INFO - __main__ -   top-1 acc: 91.76
+09/13/2026 23:06:10 - INFO - __main__ -   top-5 acc: 98.80
+09/13/2026 23:06:10 - INFO - __main__ -   per-class acc: [93.6, 93.6, 94.4, 89.0, 96.4, 91.6, 87.8, 92.0, 88.2, 91.0]
+09/13/2026 23:06:10 - INFO - __main__ -   macro F1: 91.76
+09/13/2026 23:06:10 - INFO - __main__ -   head/mid/tail acc: 93.87 / 91.20 / 90.40
+09/13/2026 23:06:10 - INFO - __main__ -   Best top-1 acc: 92.38
+09/13/2026 23:06:10 - INFO - __main__ -   Mean top-1 acc: 92.18
+
+09/13/2026 23:12:49 - INFO - __main__ -   top-1 acc: 91.88
+09/13/2026 23:12:49 - INFO - __main__ -   top-5 acc: 98.76
+09/13/2026 23:12:49 - INFO - __main__ -   per-class acc: [94.4, 94.2, 94.8, 88.6, 96.6, 92.2, 86.6, 92.4, 88.4, 90.6]
+09/13/2026 23:12:49 - INFO - __main__ -   macro F1: 91.87
+09/13/2026 23:12:49 - INFO - __main__ -   head/mid/tail acc: 94.47 / 91.00 / 90.47
+09/13/2026 23:12:49 - INFO - __main__ -   Best top-1 acc: 92.38
+09/13/2026 23:12:49 - INFO - __main__ -   Mean top-1 acc: 92.16
+

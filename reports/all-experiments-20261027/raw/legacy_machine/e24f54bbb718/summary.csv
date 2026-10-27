@@ -1,0 +1,2 @@
+experiment,runs,acc_mean,acc_std,macro_f1_mean,macro_f1_std,pseudo_pred_js_mean,pseudo_agreement_rate_mean,epoch_time_sec_mean,peak_allocated_mb_mean
+crest,1,9.29,0.0,2.4195557460188866,0.0,nan,nan,67.70739388465881,52.431640625

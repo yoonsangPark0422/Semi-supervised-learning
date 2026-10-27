@@ -9,6 +9,7 @@ import torch
 
 def prediction_rows(major_logits, minor_logits, targets, counts, args,
                     bias_scale, group_indices, start_index=0, cross_enabled=True):
+    cross_enabled = cross_enabled and not getattr(args, 'disable_cross', False)
     prior = counts.to(minor_logits.device).float()
     prior = prior / prior.sum()
     major_probs = torch.softmax(major_logits.detach() / args.T, dim=-1)
@@ -141,8 +142,11 @@ def diagnose_validation(args, loader, major, minor, class_counts,
     write_csv(folder / 'samples.csv', rows)
     write_csv(folder / 'conditions.csv', summarize(rows))
     metadata = {
-        'policy': 'Minor LLA + hard self loss; last-2 narrow gate and cross masks unchanged',
+        'policy': ('Minor LLA + hard self loss; no cross and no self suppression'
+                   if getattr(args, 'disable_cross', False) else
+                   'Minor LLA + hard self loss; last-2 narrow gate and cross masks unchanged'),
         'self_loss_denominator': 'baseline selected self mask count before suppression',
+        'minor_self_weight': ('detached adjusted confidence' if getattr(args, 'minor_self_confidence_weight', False) else 'one'),
         'gate_note': 'Argmax eligibility only. Hard self uses the adjusted argmax unless suppressed by the gate; the accepted cross target then remains. Batch-dependent self selection is not reconstructed here.',
         'dataset': args.dataset, 'seed': args.seed, 'epoch': epoch,
         'global_step': global_step, 'fixed_bias_scale_used': False,

@@ -1,0 +1,40 @@
+{
+  "seed": 1,
+  "labeled_unique": 400,
+  "unlabeled_unique": 5000,
+  "labeled_counts": [
+    162,
+    97,
+    58,
+    35,
+    21,
+    13,
+    7,
+    4,
+    2,
+    1
+  ],
+  "unlabeled_counts": [
+    500,
+    500,
+    500,
+    500,
+    500,
+    500,
+    500,
+    500,
+    500,
+    500
+  ],
+  "labeled_expanded": 16400,
+  "labeled_subset_of_unlabeled": true,
+  "requested_imbalance": 100,
+  "realized_imbalance": 162.0,
+  "sha256": "fabeb863829946b33112bc48631e9cdb99ce5e9f22b38ac73468c4e9ce656cd0",
+  "method": "decon",
+  "test_count": 10000,
+  "actual_labeled_length": 16400,
+  "actual_unlabeled_length": 5000,
+  "trainer": "C:\\Users\\FORYOUCOM\\Desktop\\DeCon\\train_dual_matched.py",
+  "trainer_sha256": "705df2bcbe6e16343321e71deefb310023f6cc8ba46dcc7b5a6fcb8e77234567"
+}

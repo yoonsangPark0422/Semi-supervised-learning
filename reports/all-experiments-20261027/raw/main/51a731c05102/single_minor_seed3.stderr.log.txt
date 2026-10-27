@@ -1,0 +1,460 @@
+08/25/2026 21:11:50 - WARNING - __main__ -   Process rank: -1, device: cuda:0, n_gpu: 1, distributed training: False
+08/25/2026 21:11:50 - INFO - __main__ -   {'gpu_id': 0, 'num_workers': 0, 'dataset': 'cifar10', 'num_labeled': 4000, 'expand_labels': True, 'arch': 'wideresnet', 'total_steps': 25600, 'eval_step': 512, 'start_epoch': 0, 'batch_size': 32, 'lr': 0.03, 'warmup': 0, 'wdecay': 0.0005, 'nesterov': True, 'use_ema': True, 'no_ema': False, 'ema_decay': 0.999, 'mu': 7, 'lambda_u': 1, 'T': 1, 'threshold': 0.95, 'imb_ratio': 100.0, 'val_samples_per_class': 500, 'imb_type': 'exp', 'major_top_ratio': 0.2, 'classwise_quota': 'global', 'minority_threshold_gamma': 1.0, 'min_threshold': 0.5, 'minority_bias_strength': 1.0, 'minority_supervised_gamma': 1.0, 'max_minority_weight': 10.0, 'minority_bias_warmup': 2048, 'unsup_warmup': 1024, 'pseudo_warmup': 512, 'out': 'C:\\Users\\FORYOUCOM\\Desktop\\Semi-supervised-learning-main\\Semi-supervised-learning-main\\results\\valsplit_ratio100_single_minor_e50_s512_seed1_2_3\\seed_3', 'resume': '', 'init_checkpoint': '', 'eval_only': False, 'no_save_checkpoint': True, 'seed': 3, 'amp': False, 'opt_level': 'O1', 'local_rank': -1, 'no_progress': True, 'dual_train_mode': 'single_minor', 'use_minor_balanced_sampler': True, 'use_minor_weighted_ce': True, 'ensemble_minor_weight': 1.0, 'device': device(type='cuda', index=0), 'world_size': 1, 'n_gpu': 1}
+08/25/2026 21:11:51 - INFO - dataset.cifar_val_split -   Using 500 validation samples per class from CIFAR train split.
+08/25/2026 21:11:51 - INFO - dataset.cifar_val_split -   Labeled class counts: [1612, 967, 580, 348, 209, 124, 74, 44, 26, 16]
+08/25/2026 21:11:52 - INFO - train -   Using expanded labeled dataset class counts for dual training: [8060, 4835, 2900, 1740, 1045, 620, 370, 220, 130, 80]. Original split counts were: [1612, 967, 580, 348, 209, 124, 74, 44, 26, 16]
+08/25/2026 21:11:52 - INFO - models.wideresnet -   Model: WideResNet 28x2
+08/25/2026 21:11:52 - INFO - train -   Total params: 1.47M
+08/25/2026 21:11:52 - INFO - __main__ -   ***** Running single minor training *****
+08/25/2026 21:11:52 - INFO - __main__ -     Num Epochs = 50
+08/25/2026 21:11:52 - INFO - __main__ -     Total optimization steps = 25600
+08/25/2026 21:14:11 - INFO - train -   top-1 acc: 22.50
+08/25/2026 21:14:11 - INFO - train -   top-5 acc: 69.94
+08/25/2026 21:14:11 - INFO - train -   per-class acc: [28.4, 0.2, 20.2, 47.2, 38.0, 15.8, 37.4, 2.6, 34.2, 1.0]
+08/25/2026 21:14:11 - INFO - train -   macro F1: 19.40
+08/25/2026 21:14:11 - INFO - train -   head/mid/tail acc: 16.27 / 33.67 / 18.80
+08/25/2026 21:14:11 - INFO - __main__ -   Single minor top-1 acc: 22.50
+08/25/2026 21:14:11 - INFO - __main__ -   Best single minor top-1 acc: 22.50
+08/25/2026 21:14:11 - INFO - __main__ -   Mean single minor top-1 acc: 22.50
+
+08/25/2026 21:16:30 - INFO - train -   top-1 acc: 30.56
+08/25/2026 21:16:30 - INFO - train -   top-5 acc: 73.78
+08/25/2026 21:16:30 - INFO - train -   per-class acc: [46.8, 14.4, 27.6, 17.6, 59.0, 53.0, 46.4, 5.0, 34.6, 1.2]
+08/25/2026 21:16:30 - INFO - train -   macro F1: 27.34
+08/25/2026 21:16:30 - INFO - train -   head/mid/tail acc: 29.60 / 43.20 / 21.80
+08/25/2026 21:16:30 - INFO - __main__ -   Single minor top-1 acc: 30.56
+08/25/2026 21:16:30 - INFO - __main__ -   Best single minor top-1 acc: 30.56
+08/25/2026 21:16:30 - INFO - __main__ -   Mean single minor top-1 acc: 26.53
+
+08/25/2026 21:18:48 - INFO - train -   top-1 acc: 39.42
+08/25/2026 21:18:48 - INFO - train -   top-5 acc: 82.94
+08/25/2026 21:18:48 - INFO - train -   per-class acc: [55.8, 48.2, 27.6, 11.2, 54.6, 59.2, 71.4, 15.4, 45.2, 5.6]
+08/25/2026 21:18:48 - INFO - train -   macro F1: 36.54
+08/25/2026 21:18:48 - INFO - train -   head/mid/tail acc: 43.87 / 41.67 / 34.40
+08/25/2026 21:18:48 - INFO - __main__ -   Single minor top-1 acc: 39.42
+08/25/2026 21:18:48 - INFO - __main__ -   Best single minor top-1 acc: 39.42
+08/25/2026 21:18:48 - INFO - __main__ -   Mean single minor top-1 acc: 30.83
+
+08/25/2026 21:21:07 - INFO - train -   top-1 acc: 47.66
+08/25/2026 21:21:07 - INFO - train -   top-5 acc: 89.22
+08/25/2026 21:21:07 - INFO - train -   per-class acc: [54.8, 66.6, 31.0, 20.6, 59.6, 65.4, 78.2, 21.8, 57.8, 20.8]
+08/25/2026 21:21:07 - INFO - train -   macro F1: 45.88
+08/25/2026 21:21:07 - INFO - train -   head/mid/tail acc: 50.80 / 48.53 / 44.65
+08/25/2026 21:21:07 - INFO - __main__ -   Single minor top-1 acc: 47.66
+08/25/2026 21:21:07 - INFO - __main__ -   Best single minor top-1 acc: 47.66
+08/25/2026 21:21:07 - INFO - __main__ -   Mean single minor top-1 acc: 35.03
+
+08/25/2026 21:23:26 - INFO - train -   top-1 acc: 53.30
+08/25/2026 21:23:26 - INFO - train -   top-5 acc: 92.58
+08/25/2026 21:23:26 - INFO - train -   per-class acc: [48.2, 71.8, 36.2, 36.4, 58.0, 67.8, 80.8, 30.8, 65.6, 37.4]
+08/25/2026 21:23:26 - INFO - train -   macro F1: 52.74
+08/25/2026 21:23:26 - INFO - train -   head/mid/tail acc: 52.07 / 54.07 / 53.65
+08/25/2026 21:23:26 - INFO - __main__ -   Single minor top-1 acc: 53.30
+08/25/2026 21:23:26 - INFO - __main__ -   Best single minor top-1 acc: 53.30
+08/25/2026 21:23:26 - INFO - __main__ -   Mean single minor top-1 acc: 38.69
+
+08/25/2026 21:25:44 - INFO - train -   top-1 acc: 58.20
+08/25/2026 21:25:44 - INFO - train -   top-5 acc: 94.50
+08/25/2026 21:25:44 - INFO - train -   per-class acc: [49.4, 76.8, 43.2, 48.2, 59.6, 69.4, 80.6, 40.2, 67.8, 46.8]
+08/25/2026 21:25:44 - INFO - train -   macro F1: 58.08
+08/25/2026 21:25:44 - INFO - train -   head/mid/tail acc: 56.47 / 59.07 / 58.85
+08/25/2026 21:25:44 - INFO - __main__ -   Single minor top-1 acc: 58.20
+08/25/2026 21:25:44 - INFO - __main__ -   Best single minor top-1 acc: 58.20
+08/25/2026 21:25:44 - INFO - __main__ -   Mean single minor top-1 acc: 41.94
+
+08/25/2026 21:28:03 - INFO - train -   top-1 acc: 62.70
+08/25/2026 21:28:03 - INFO - train -   top-5 acc: 95.80
+08/25/2026 21:28:03 - INFO - train -   per-class acc: [53.4, 81.0, 49.0, 55.2, 66.6, 70.0, 77.6, 45.6, 69.8, 58.8]
+08/25/2026 21:28:03 - INFO - train -   macro F1: 62.92
+08/25/2026 21:28:03 - INFO - train -   head/mid/tail acc: 61.13 / 63.93 / 62.95
+08/25/2026 21:28:03 - INFO - __main__ -   Single minor top-1 acc: 62.70
+08/25/2026 21:28:03 - INFO - __main__ -   Best single minor top-1 acc: 62.70
+08/25/2026 21:28:03 - INFO - __main__ -   Mean single minor top-1 acc: 44.91
+
+08/25/2026 21:30:22 - INFO - train -   top-1 acc: 65.74
+08/25/2026 21:30:22 - INFO - train -   top-5 acc: 96.54
+08/25/2026 21:30:22 - INFO - train -   per-class acc: [55.4, 84.8, 54.2, 64.6, 69.8, 67.4, 77.2, 49.8, 70.0, 64.2]
+08/25/2026 21:30:22 - INFO - train -   macro F1: 66.09
+08/25/2026 21:30:22 - INFO - train -   head/mid/tail acc: 64.80 / 67.27 / 65.30
+08/25/2026 21:30:22 - INFO - __main__ -   Single minor top-1 acc: 65.74
+08/25/2026 21:30:22 - INFO - __main__ -   Best single minor top-1 acc: 65.74
+08/25/2026 21:30:22 - INFO - __main__ -   Mean single minor top-1 acc: 47.51
+
+08/25/2026 21:32:41 - INFO - train -   top-1 acc: 67.80
+08/25/2026 21:32:41 - INFO - train -   top-5 acc: 96.84
+08/25/2026 21:32:41 - INFO - train -   per-class acc: [58.8, 86.2, 58.0, 68.8, 70.4, 66.4, 77.0, 53.8, 69.6, 69.0]
+08/25/2026 21:32:41 - INFO - train -   macro F1: 68.27
+08/25/2026 21:32:41 - INFO - train -   head/mid/tail acc: 67.67 / 68.53 / 67.35
+08/25/2026 21:32:41 - INFO - __main__ -   Single minor top-1 acc: 67.80
+08/25/2026 21:32:41 - INFO - __main__ -   Best single minor top-1 acc: 67.80
+08/25/2026 21:32:41 - INFO - __main__ -   Mean single minor top-1 acc: 49.76
+
+08/25/2026 21:34:59 - INFO - train -   top-1 acc: 70.06
+08/25/2026 21:34:59 - INFO - train -   top-5 acc: 97.10
+08/25/2026 21:34:59 - INFO - train -   per-class acc: [61.4, 87.6, 61.6, 71.6, 73.2, 66.8, 76.8, 58.0, 71.2, 72.4]
+08/25/2026 21:34:59 - INFO - train -   macro F1: 70.52
+08/25/2026 21:34:59 - INFO - train -   head/mid/tail acc: 70.20 / 70.53 / 69.60
+08/25/2026 21:34:59 - INFO - __main__ -   Single minor top-1 acc: 70.06
+08/25/2026 21:34:59 - INFO - __main__ -   Best single minor top-1 acc: 70.06
+08/25/2026 21:34:59 - INFO - __main__ -   Mean single minor top-1 acc: 51.79
+
+08/25/2026 21:37:18 - INFO - train -   top-1 acc: 71.62
+08/25/2026 21:37:18 - INFO - train -   top-5 acc: 97.44
+08/25/2026 21:37:18 - INFO - train -   per-class acc: [63.6, 89.4, 63.6, 71.2, 76.0, 68.4, 76.0, 60.2, 71.8, 76.0]
+08/25/2026 21:37:18 - INFO - train -   macro F1: 72.11
+08/25/2026 21:37:18 - INFO - train -   head/mid/tail acc: 72.20 / 71.87 / 71.00
+08/25/2026 21:37:18 - INFO - __main__ -   Single minor top-1 acc: 71.62
+08/25/2026 21:37:18 - INFO - __main__ -   Best single minor top-1 acc: 71.62
+08/25/2026 21:37:18 - INFO - __main__ -   Mean single minor top-1 acc: 53.60
+
+08/25/2026 21:39:37 - INFO - train -   top-1 acc: 73.18
+08/25/2026 21:39:37 - INFO - train -   top-5 acc: 97.70
+08/25/2026 21:39:37 - INFO - train -   per-class acc: [64.0, 91.0, 65.8, 71.2, 77.8, 69.2, 77.6, 64.0, 74.0, 77.2]
+08/25/2026 21:39:37 - INFO - train -   macro F1: 73.62
+08/25/2026 21:39:37 - INFO - train -   head/mid/tail acc: 73.60 / 72.73 / 73.20
+08/25/2026 21:39:37 - INFO - __main__ -   Single minor top-1 acc: 73.18
+08/25/2026 21:39:37 - INFO - __main__ -   Best single minor top-1 acc: 73.18
+08/25/2026 21:39:37 - INFO - __main__ -   Mean single minor top-1 acc: 55.23
+
+08/25/2026 21:41:55 - INFO - train -   top-1 acc: 74.78
+08/25/2026 21:41:55 - INFO - train -   top-5 acc: 98.10
+08/25/2026 21:41:55 - INFO - train -   per-class acc: [67.4, 92.2, 67.2, 73.0, 78.2, 70.0, 79.2, 66.2, 76.2, 78.2]
+08/25/2026 21:41:55 - INFO - train -   macro F1: 75.19
+08/25/2026 21:41:55 - INFO - train -   head/mid/tail acc: 75.60 / 73.73 / 74.95
+08/25/2026 21:41:55 - INFO - __main__ -   Single minor top-1 acc: 74.78
+08/25/2026 21:41:55 - INFO - __main__ -   Best single minor top-1 acc: 74.78
+08/25/2026 21:41:55 - INFO - __main__ -   Mean single minor top-1 acc: 56.73
+
+08/25/2026 21:44:14 - INFO - train -   top-1 acc: 75.76
+08/25/2026 21:44:14 - INFO - train -   top-5 acc: 98.30
+08/25/2026 21:44:14 - INFO - train -   per-class acc: [69.2, 92.4, 69.2, 73.2, 80.0, 68.6, 78.6, 68.8, 77.8, 79.8]
+08/25/2026 21:44:14 - INFO - train -   macro F1: 76.20
+08/25/2026 21:44:14 - INFO - train -   head/mid/tail acc: 76.93 / 73.93 / 76.25
+08/25/2026 21:44:14 - INFO - __main__ -   Single minor top-1 acc: 75.76
+08/25/2026 21:44:14 - INFO - __main__ -   Best single minor top-1 acc: 75.76
+08/25/2026 21:44:14 - INFO - __main__ -   Mean single minor top-1 acc: 58.09
+
+08/25/2026 21:46:33 - INFO - train -   top-1 acc: 76.94
+08/25/2026 21:46:33 - INFO - train -   top-5 acc: 98.36
+08/25/2026 21:46:33 - INFO - train -   per-class acc: [71.0, 93.2, 71.0, 73.0, 81.6, 70.8, 78.8, 69.8, 78.4, 81.8]
+08/25/2026 21:46:33 - INFO - train -   macro F1: 77.32
+08/25/2026 21:46:33 - INFO - train -   head/mid/tail acc: 78.40 / 75.13 / 77.20
+08/25/2026 21:46:33 - INFO - __main__ -   Single minor top-1 acc: 76.94
+08/25/2026 21:46:33 - INFO - __main__ -   Best single minor top-1 acc: 76.94
+08/25/2026 21:46:33 - INFO - __main__ -   Mean single minor top-1 acc: 59.35
+
+08/25/2026 21:48:52 - INFO - train -   top-1 acc: 77.80
+08/25/2026 21:48:52 - INFO - train -   top-5 acc: 98.48
+08/25/2026 21:48:52 - INFO - train -   per-class acc: [73.2, 94.2, 73.6, 73.4, 82.6, 70.6, 79.2, 69.4, 79.6, 82.2]
+08/25/2026 21:48:52 - INFO - train -   macro F1: 78.14
+08/25/2026 21:48:52 - INFO - train -   head/mid/tail acc: 80.33 / 75.53 / 77.60
+08/25/2026 21:48:52 - INFO - __main__ -   Single minor top-1 acc: 77.80
+08/25/2026 21:48:52 - INFO - __main__ -   Best single minor top-1 acc: 77.80
+08/25/2026 21:48:52 - INFO - __main__ -   Mean single minor top-1 acc: 60.50
+
+08/25/2026 21:51:10 - INFO - train -   top-1 acc: 78.46
+08/25/2026 21:51:10 - INFO - train -   top-5 acc: 98.62
+08/25/2026 21:51:10 - INFO - train -   per-class acc: [75.0, 94.0, 75.2, 74.6, 82.0, 72.2, 78.6, 71.0, 80.0, 82.0]
+08/25/2026 21:51:10 - INFO - train -   macro F1: 78.80
+08/25/2026 21:51:10 - INFO - train -   head/mid/tail acc: 81.40 / 76.27 / 77.90
+08/25/2026 21:51:10 - INFO - __main__ -   Single minor top-1 acc: 78.46
+08/25/2026 21:51:10 - INFO - __main__ -   Best single minor top-1 acc: 78.46
+08/25/2026 21:51:10 - INFO - __main__ -   Mean single minor top-1 acc: 61.56
+
+08/25/2026 21:53:30 - INFO - train -   top-1 acc: 78.90
+08/25/2026 21:53:30 - INFO - train -   top-5 acc: 98.80
+08/25/2026 21:53:30 - INFO - train -   per-class acc: [76.0, 94.6, 75.0, 72.4, 82.0, 72.6, 79.4, 72.8, 81.2, 83.0]
+08/25/2026 21:53:30 - INFO - train -   macro F1: 79.22
+08/25/2026 21:53:30 - INFO - train -   head/mid/tail acc: 81.87 / 75.67 / 79.10
+08/25/2026 21:53:30 - INFO - __main__ -   Single minor top-1 acc: 78.90
+08/25/2026 21:53:30 - INFO - __main__ -   Best single minor top-1 acc: 78.90
+08/25/2026 21:53:30 - INFO - __main__ -   Mean single minor top-1 acc: 62.52
+
+08/25/2026 21:55:49 - INFO - train -   top-1 acc: 79.62
+08/25/2026 21:55:49 - INFO - train -   top-5 acc: 98.92
+08/25/2026 21:55:49 - INFO - train -   per-class acc: [76.8, 95.0, 76.4, 73.4, 83.2, 72.2, 79.6, 73.4, 82.0, 84.2]
+08/25/2026 21:55:49 - INFO - train -   macro F1: 79.97
+08/25/2026 21:55:49 - INFO - train -   head/mid/tail acc: 82.73 / 76.27 / 79.80
+08/25/2026 21:55:49 - INFO - __main__ -   Single minor top-1 acc: 79.62
+08/25/2026 21:55:49 - INFO - __main__ -   Best single minor top-1 acc: 79.62
+08/25/2026 21:55:49 - INFO - __main__ -   Mean single minor top-1 acc: 63.42
+
+08/25/2026 21:58:07 - INFO - train -   top-1 acc: 80.72
+08/25/2026 21:58:07 - INFO - train -   top-5 acc: 99.02
+08/25/2026 21:58:07 - INFO - train -   per-class acc: [78.8, 95.0, 77.4, 75.4, 82.8, 73.6, 80.4, 74.8, 84.0, 85.0]
+08/25/2026 21:58:07 - INFO - train -   macro F1: 81.03
+08/25/2026 21:58:07 - INFO - train -   head/mid/tail acc: 83.73 / 77.27 / 81.05
+08/25/2026 21:58:07 - INFO - __main__ -   Single minor top-1 acc: 80.72
+08/25/2026 21:58:07 - INFO - __main__ -   Best single minor top-1 acc: 80.72
+08/25/2026 21:58:07 - INFO - __main__ -   Mean single minor top-1 acc: 64.29
+
+08/25/2026 22:00:26 - INFO - train -   top-1 acc: 81.00
+08/25/2026 22:00:26 - INFO - train -   top-5 acc: 98.96
+08/25/2026 22:00:26 - INFO - train -   per-class acc: [79.6, 94.8, 79.0, 76.2, 83.2, 73.6, 80.0, 75.4, 84.0, 84.2]
+08/25/2026 22:00:26 - INFO - train -   macro F1: 81.26
+08/25/2026 22:00:26 - INFO - train -   head/mid/tail acc: 84.47 / 77.67 / 80.90
+08/25/2026 22:00:26 - INFO - __main__ -   Single minor top-1 acc: 81.00
+08/25/2026 22:00:26 - INFO - __main__ -   Best single minor top-1 acc: 81.00
+08/25/2026 22:00:26 - INFO - __main__ -   Mean single minor top-1 acc: 67.21
+
+08/25/2026 22:02:45 - INFO - train -   top-1 acc: 81.96
+08/25/2026 22:02:45 - INFO - train -   top-5 acc: 98.92
+08/25/2026 22:02:45 - INFO - train -   per-class acc: [80.2, 95.0, 79.2, 77.4, 84.0, 74.6, 81.0, 76.2, 86.6, 85.4]
+08/25/2026 22:02:45 - INFO - train -   macro F1: 82.18
+08/25/2026 22:02:45 - INFO - train -   head/mid/tail acc: 84.80 / 78.67 / 82.30
+08/25/2026 22:02:45 - INFO - __main__ -   Single minor top-1 acc: 81.96
+08/25/2026 22:02:45 - INFO - __main__ -   Best single minor top-1 acc: 81.96
+08/25/2026 22:02:45 - INFO - __main__ -   Mean single minor top-1 acc: 69.78
+
+08/25/2026 22:05:04 - INFO - train -   top-1 acc: 82.16
+08/25/2026 22:05:04 - INFO - train -   top-5 acc: 99.02
+08/25/2026 22:05:04 - INFO - train -   per-class acc: [80.6, 95.2, 80.2, 77.4, 84.0, 74.2, 81.2, 77.4, 86.4, 85.0]
+08/25/2026 22:05:04 - INFO - train -   macro F1: 82.40
+08/25/2026 22:05:04 - INFO - train -   head/mid/tail acc: 85.33 / 78.53 / 82.50
+08/25/2026 22:05:04 - INFO - __main__ -   Single minor top-1 acc: 82.16
+08/25/2026 22:05:04 - INFO - __main__ -   Best single minor top-1 acc: 82.16
+08/25/2026 22:05:04 - INFO - __main__ -   Mean single minor top-1 acc: 71.92
+
+08/25/2026 22:07:23 - INFO - train -   top-1 acc: 82.64
+08/25/2026 22:07:23 - INFO - train -   top-5 acc: 99.02
+08/25/2026 22:07:23 - INFO - train -   per-class acc: [82.0, 95.2, 80.0, 77.4, 84.0, 73.2, 82.8, 78.2, 88.0, 85.6]
+08/25/2026 22:07:23 - INFO - train -   macro F1: 82.87
+08/25/2026 22:07:23 - INFO - train -   head/mid/tail acc: 85.73 / 78.20 / 83.65
+08/25/2026 22:07:23 - INFO - __main__ -   Single minor top-1 acc: 82.64
+08/25/2026 22:07:23 - INFO - __main__ -   Best single minor top-1 acc: 82.64
+08/25/2026 22:07:23 - INFO - __main__ -   Mean single minor top-1 acc: 73.67
+
+08/25/2026 22:09:42 - INFO - train -   top-1 acc: 82.94
+08/25/2026 22:09:42 - INFO - train -   top-5 acc: 99.06
+08/25/2026 22:09:42 - INFO - train -   per-class acc: [83.2, 95.0, 80.8, 78.6, 84.6, 72.6, 83.2, 77.6, 88.8, 85.0]
+08/25/2026 22:09:42 - INFO - train -   macro F1: 83.15
+08/25/2026 22:09:42 - INFO - train -   head/mid/tail acc: 86.33 / 78.60 / 83.65
+08/25/2026 22:09:42 - INFO - __main__ -   Single minor top-1 acc: 82.94
+08/25/2026 22:09:42 - INFO - __main__ -   Best single minor top-1 acc: 82.94
+08/25/2026 22:09:42 - INFO - __main__ -   Mean single minor top-1 acc: 75.15
+
+08/25/2026 22:12:01 - INFO - train -   top-1 acc: 83.32
+08/25/2026 22:12:01 - INFO - train -   top-5 acc: 99.16
+08/25/2026 22:12:01 - INFO - train -   per-class acc: [83.6, 95.2, 81.4, 76.8, 85.6, 73.4, 84.4, 78.8, 88.8, 85.2]
+08/25/2026 22:12:01 - INFO - train -   macro F1: 83.50
+08/25/2026 22:12:01 - INFO - train -   head/mid/tail acc: 86.73 / 78.60 / 84.30
+08/25/2026 22:12:01 - INFO - __main__ -   Single minor top-1 acc: 83.32
+08/25/2026 22:12:01 - INFO - __main__ -   Best single minor top-1 acc: 83.32
+08/25/2026 22:12:01 - INFO - __main__ -   Mean single minor top-1 acc: 76.41
+
+08/25/2026 22:14:19 - INFO - train -   top-1 acc: 84.00
+08/25/2026 22:14:19 - INFO - train -   top-5 acc: 99.16
+08/25/2026 22:14:19 - INFO - train -   per-class acc: [85.4, 95.4, 82.8, 77.2, 85.6, 73.8, 85.8, 81.2, 88.0, 84.8]
+08/25/2026 22:14:19 - INFO - train -   macro F1: 84.15
+08/25/2026 22:14:19 - INFO - train -   head/mid/tail acc: 87.87 / 78.87 / 84.95
+08/25/2026 22:14:19 - INFO - __main__ -   Single minor top-1 acc: 84.00
+08/25/2026 22:14:19 - INFO - __main__ -   Best single minor top-1 acc: 84.00
+08/25/2026 22:14:19 - INFO - __main__ -   Mean single minor top-1 acc: 77.47
+
+08/25/2026 22:16:38 - INFO - train -   top-1 acc: 84.20
+08/25/2026 22:16:38 - INFO - train -   top-5 acc: 99.22
+08/25/2026 22:16:38 - INFO - train -   per-class acc: [85.6, 95.6, 82.8, 78.0, 86.4, 73.0, 86.2, 80.8, 88.6, 85.0]
+08/25/2026 22:16:38 - INFO - train -   macro F1: 84.36
+08/25/2026 22:16:38 - INFO - train -   head/mid/tail acc: 88.00 / 79.13 / 85.15
+08/25/2026 22:16:38 - INFO - __main__ -   Single minor top-1 acc: 84.20
+08/25/2026 22:16:38 - INFO - __main__ -   Best single minor top-1 acc: 84.20
+08/25/2026 22:16:38 - INFO - __main__ -   Mean single minor top-1 acc: 78.39
+
+08/25/2026 22:18:57 - INFO - train -   top-1 acc: 84.12
+08/25/2026 22:18:57 - INFO - train -   top-5 acc: 99.26
+08/25/2026 22:18:57 - INFO - train -   per-class acc: [84.8, 95.8, 83.0, 78.0, 87.2, 72.4, 86.2, 80.4, 88.6, 84.8]
+08/25/2026 22:18:57 - INFO - train -   macro F1: 84.26
+08/25/2026 22:18:57 - INFO - train -   head/mid/tail acc: 87.87 / 79.20 / 85.00
+08/25/2026 22:18:57 - INFO - __main__ -   Single minor top-1 acc: 84.12
+08/25/2026 22:18:57 - INFO - __main__ -   Best single minor top-1 acc: 84.20
+08/25/2026 22:18:57 - INFO - __main__ -   Mean single minor top-1 acc: 79.21
+
+08/25/2026 22:21:16 - INFO - train -   top-1 acc: 84.32
+08/25/2026 22:21:16 - INFO - train -   top-5 acc: 99.22
+08/25/2026 22:21:16 - INFO - train -   per-class acc: [85.8, 95.4, 83.6, 78.6, 87.0, 72.0, 86.8, 80.8, 89.0, 84.2]
+08/25/2026 22:21:16 - INFO - train -   macro F1: 84.45
+08/25/2026 22:21:16 - INFO - train -   head/mid/tail acc: 88.27 / 79.20 / 85.20
+08/25/2026 22:21:16 - INFO - __main__ -   Single minor top-1 acc: 84.32
+08/25/2026 22:21:16 - INFO - __main__ -   Best single minor top-1 acc: 84.32
+08/25/2026 22:21:16 - INFO - __main__ -   Mean single minor top-1 acc: 79.92
+
+08/25/2026 22:23:35 - INFO - train -   top-1 acc: 84.92
+08/25/2026 22:23:35 - INFO - train -   top-5 acc: 99.26
+08/25/2026 22:23:35 - INFO - train -   per-class acc: [87.6, 95.8, 84.2, 78.8, 86.8, 73.0, 86.6, 82.0, 89.2, 85.2]
+08/25/2026 22:23:35 - INFO - train -   macro F1: 85.07
+08/25/2026 22:23:35 - INFO - train -   head/mid/tail acc: 89.20 / 79.53 / 85.75
+08/25/2026 22:23:35 - INFO - __main__ -   Single minor top-1 acc: 84.92
+08/25/2026 22:23:35 - INFO - __main__ -   Best single minor top-1 acc: 84.92
+08/25/2026 22:23:35 - INFO - __main__ -   Mean single minor top-1 acc: 80.59
+
+08/25/2026 22:25:53 - INFO - train -   top-1 acc: 85.14
+08/25/2026 22:25:53 - INFO - train -   top-5 acc: 99.24
+08/25/2026 22:25:53 - INFO - train -   per-class acc: [87.4, 95.4, 84.6, 79.0, 87.4, 73.6, 86.2, 83.0, 90.0, 84.8]
+08/25/2026 22:25:53 - INFO - train -   macro F1: 85.29
+08/25/2026 22:25:53 - INFO - train -   head/mid/tail acc: 89.13 / 80.00 / 86.00
+08/25/2026 22:25:53 - INFO - __main__ -   Single minor top-1 acc: 85.14
+08/25/2026 22:25:53 - INFO - __main__ -   Best single minor top-1 acc: 85.14
+08/25/2026 22:25:53 - INFO - __main__ -   Mean single minor top-1 acc: 81.19
+
+08/25/2026 22:28:12 - INFO - train -   top-1 acc: 85.52
+08/25/2026 22:28:12 - INFO - train -   top-5 acc: 99.22
+08/25/2026 22:28:12 - INFO - train -   per-class acc: [87.8, 95.8, 84.0, 80.2, 87.8, 72.4, 87.0, 83.8, 89.8, 86.6]
+08/25/2026 22:28:12 - INFO - train -   macro F1: 85.65
+08/25/2026 22:28:12 - INFO - train -   head/mid/tail acc: 89.20 / 80.13 / 86.80
+08/25/2026 22:28:12 - INFO - __main__ -   Single minor top-1 acc: 85.52
+08/25/2026 22:28:12 - INFO - __main__ -   Best single minor top-1 acc: 85.52
+08/25/2026 22:28:12 - INFO - __main__ -   Mean single minor top-1 acc: 81.72
+
+08/25/2026 22:30:31 - INFO - train -   top-1 acc: 85.56
+08/25/2026 22:30:31 - INFO - train -   top-5 acc: 99.26
+08/25/2026 22:30:31 - INFO - train -   per-class acc: [87.8, 95.4, 85.0, 80.8, 86.8, 73.2, 86.6, 85.0, 89.2, 85.8]
+08/25/2026 22:30:31 - INFO - train -   macro F1: 85.70
+08/25/2026 22:30:31 - INFO - train -   head/mid/tail acc: 89.40 / 80.27 / 86.65
+08/25/2026 22:30:31 - INFO - __main__ -   Single minor top-1 acc: 85.56
+08/25/2026 22:30:31 - INFO - __main__ -   Best single minor top-1 acc: 85.56
+08/25/2026 22:30:31 - INFO - __main__ -   Mean single minor top-1 acc: 82.21
+
+08/25/2026 22:32:49 - INFO - train -   top-1 acc: 86.08
+08/25/2026 22:32:49 - INFO - train -   top-5 acc: 99.22
+08/25/2026 22:32:49 - INFO - train -   per-class acc: [87.4, 95.6, 86.0, 81.4, 86.8, 74.6, 88.4, 84.8, 89.2, 86.6]
+08/25/2026 22:32:49 - INFO - train -   macro F1: 86.21
+08/25/2026 22:32:49 - INFO - train -   head/mid/tail acc: 89.67 / 80.93 / 87.25
+08/25/2026 22:32:49 - INFO - __main__ -   Single minor top-1 acc: 86.08
+08/25/2026 22:32:49 - INFO - __main__ -   Best single minor top-1 acc: 86.08
+08/25/2026 22:32:49 - INFO - __main__ -   Mean single minor top-1 acc: 82.67
+
+08/25/2026 22:35:08 - INFO - train -   top-1 acc: 86.60
+08/25/2026 22:35:08 - INFO - train -   top-5 acc: 99.32
+08/25/2026 22:35:08 - INFO - train -   per-class acc: [89.0, 95.6, 86.2, 83.2, 87.6, 74.0, 88.2, 84.8, 90.6, 86.8]
+08/25/2026 22:35:08 - INFO - train -   macro F1: 86.73
+08/25/2026 22:35:08 - INFO - train -   head/mid/tail acc: 90.27 / 81.60 / 87.60
+08/25/2026 22:35:08 - INFO - __main__ -   Single minor top-1 acc: 86.60
+08/25/2026 22:35:08 - INFO - __main__ -   Best single minor top-1 acc: 86.60
+08/25/2026 22:35:08 - INFO - __main__ -   Mean single minor top-1 acc: 83.11
+
+08/25/2026 22:37:27 - INFO - train -   top-1 acc: 86.52
+08/25/2026 22:37:27 - INFO - train -   top-5 acc: 99.32
+08/25/2026 22:37:27 - INFO - train -   per-class acc: [88.4, 95.8, 86.4, 82.6, 87.6, 74.8, 88.6, 85.2, 89.2, 86.6]
+08/25/2026 22:37:27 - INFO - train -   macro F1: 86.64
+08/25/2026 22:37:27 - INFO - train -   head/mid/tail acc: 90.20 / 81.67 / 87.40
+08/25/2026 22:37:27 - INFO - __main__ -   Single minor top-1 acc: 86.52
+08/25/2026 22:37:27 - INFO - __main__ -   Best single minor top-1 acc: 86.60
+08/25/2026 22:37:27 - INFO - __main__ -   Mean single minor top-1 acc: 83.51
+
+08/25/2026 22:39:46 - INFO - train -   top-1 acc: 86.98
+08/25/2026 22:39:46 - INFO - train -   top-5 acc: 99.38
+08/25/2026 22:39:46 - INFO - train -   per-class acc: [89.8, 96.2, 87.0, 83.4, 87.8, 74.4, 89.2, 86.0, 90.0, 86.0]
+08/25/2026 22:39:46 - INFO - train -   macro F1: 87.08
+08/25/2026 22:39:46 - INFO - train -   head/mid/tail acc: 91.00 / 81.87 / 87.80
+08/25/2026 22:39:46 - INFO - __main__ -   Single minor top-1 acc: 86.98
+08/25/2026 22:39:46 - INFO - __main__ -   Best single minor top-1 acc: 86.98
+08/25/2026 22:39:46 - INFO - __main__ -   Mean single minor top-1 acc: 83.92
+
+08/25/2026 22:42:05 - INFO - train -   top-1 acc: 86.96
+08/25/2026 22:42:05 - INFO - train -   top-5 acc: 99.42
+08/25/2026 22:42:05 - INFO - train -   per-class acc: [89.8, 95.8, 86.8, 84.2, 88.6, 74.2, 89.8, 85.2, 89.4, 85.8]
+08/25/2026 22:42:05 - INFO - train -   macro F1: 87.06
+08/25/2026 22:42:05 - INFO - train -   head/mid/tail acc: 90.80 / 82.33 / 87.55
+08/25/2026 22:42:05 - INFO - __main__ -   Single minor top-1 acc: 86.96
+08/25/2026 22:42:05 - INFO - __main__ -   Best single minor top-1 acc: 86.98
+08/25/2026 22:42:05 - INFO - __main__ -   Mean single minor top-1 acc: 84.28
+
+08/25/2026 22:44:23 - INFO - train -   top-1 acc: 87.22
+08/25/2026 22:44:23 - INFO - train -   top-5 acc: 99.38
+08/25/2026 22:44:23 - INFO - train -   per-class acc: [90.2, 96.0, 86.6, 84.8, 88.4, 73.4, 89.6, 86.2, 89.8, 87.2]
+08/25/2026 22:44:23 - INFO - train -   macro F1: 87.34
+08/25/2026 22:44:23 - INFO - train -   head/mid/tail acc: 90.93 / 82.20 / 88.20
+08/25/2026 22:44:24 - INFO - __main__ -   Single minor top-1 acc: 87.22
+08/25/2026 22:44:24 - INFO - __main__ -   Best single minor top-1 acc: 87.22
+08/25/2026 22:44:24 - INFO - __main__ -   Mean single minor top-1 acc: 84.61
+
+08/25/2026 22:46:42 - INFO - train -   top-1 acc: 87.60
+08/25/2026 22:46:42 - INFO - train -   top-5 acc: 99.38
+08/25/2026 22:46:42 - INFO - train -   per-class acc: [90.4, 95.8, 87.0, 85.4, 88.0, 74.4, 89.6, 87.2, 89.6, 88.6]
+08/25/2026 22:46:42 - INFO - train -   macro F1: 87.73
+08/25/2026 22:46:42 - INFO - train -   head/mid/tail acc: 91.07 / 82.60 / 88.75
+08/25/2026 22:46:42 - INFO - __main__ -   Single minor top-1 acc: 87.60
+08/25/2026 22:46:42 - INFO - __main__ -   Best single minor top-1 acc: 87.60
+08/25/2026 22:46:42 - INFO - __main__ -   Mean single minor top-1 acc: 84.94
+
+08/25/2026 22:49:01 - INFO - train -   top-1 acc: 88.06
+08/25/2026 22:49:01 - INFO - train -   top-5 acc: 99.40
+08/25/2026 22:49:01 - INFO - train -   per-class acc: [90.6, 96.4, 87.8, 85.8, 88.0, 75.0, 89.4, 88.2, 90.0, 89.4]
+08/25/2026 22:49:01 - INFO - train -   macro F1: 88.17
+08/25/2026 22:49:01 - INFO - train -   head/mid/tail acc: 91.60 / 82.93 / 89.25
+08/25/2026 22:49:01 - INFO - __main__ -   Single minor top-1 acc: 88.06
+08/25/2026 22:49:01 - INFO - __main__ -   Best single minor top-1 acc: 88.06
+08/25/2026 22:49:01 - INFO - __main__ -   Mean single minor top-1 acc: 85.24
+
+08/25/2026 22:51:20 - INFO - train -   top-1 acc: 88.20
+08/25/2026 22:51:20 - INFO - train -   top-5 acc: 99.42
+08/25/2026 22:51:20 - INFO - train -   per-class acc: [90.2, 96.0, 89.0, 85.8, 88.0, 75.2, 89.0, 88.6, 90.6, 89.6]
+08/25/2026 22:51:20 - INFO - train -   macro F1: 88.29
+08/25/2026 22:51:20 - INFO - train -   head/mid/tail acc: 91.73 / 83.00 / 89.45
+08/25/2026 22:51:20 - INFO - __main__ -   Single minor top-1 acc: 88.20
+08/25/2026 22:51:20 - INFO - __main__ -   Best single minor top-1 acc: 88.20
+08/25/2026 22:51:20 - INFO - __main__ -   Mean single minor top-1 acc: 85.55
+
+08/25/2026 22:53:39 - INFO - train -   top-1 acc: 88.32
+08/25/2026 22:53:39 - INFO - train -   top-5 acc: 99.44
+08/25/2026 22:53:39 - INFO - train -   per-class acc: [90.8, 96.6, 89.6, 86.2, 87.8, 74.4, 89.2, 88.8, 91.0, 88.8]
+08/25/2026 22:53:39 - INFO - train -   macro F1: 88.42
+08/25/2026 22:53:39 - INFO - train -   head/mid/tail acc: 92.33 / 82.80 / 89.45
+08/25/2026 22:53:39 - INFO - __main__ -   Single minor top-1 acc: 88.32
+08/25/2026 22:53:39 - INFO - __main__ -   Best single minor top-1 acc: 88.32
+08/25/2026 22:53:39 - INFO - __main__ -   Mean single minor top-1 acc: 85.83
+
+08/25/2026 22:55:57 - INFO - train -   top-1 acc: 88.30
+08/25/2026 22:55:57 - INFO - train -   top-5 acc: 99.46
+08/25/2026 22:55:57 - INFO - train -   per-class acc: [90.4, 96.2, 89.6, 86.4, 87.4, 75.4, 89.6, 88.2, 91.0, 88.8]
+08/25/2026 22:55:57 - INFO - train -   macro F1: 88.39
+08/25/2026 22:55:57 - INFO - train -   head/mid/tail acc: 92.07 / 83.07 / 89.40
+08/25/2026 22:55:57 - INFO - __main__ -   Single minor top-1 acc: 88.30
+08/25/2026 22:55:57 - INFO - __main__ -   Best single minor top-1 acc: 88.32
+08/25/2026 22:55:57 - INFO - __main__ -   Mean single minor top-1 acc: 86.10
+
+08/25/2026 22:58:16 - INFO - train -   top-1 acc: 88.70
+08/25/2026 22:58:16 - INFO - train -   top-5 acc: 99.46
+08/25/2026 22:58:16 - INFO - train -   per-class acc: [90.6, 96.4, 89.4, 86.8, 88.0, 75.2, 89.8, 89.2, 91.0, 90.6]
+08/25/2026 22:58:16 - INFO - train -   macro F1: 88.78
+08/25/2026 22:58:16 - INFO - train -   head/mid/tail acc: 92.13 / 83.33 / 90.15
+08/25/2026 22:58:16 - INFO - __main__ -   Single minor top-1 acc: 88.70
+08/25/2026 22:58:16 - INFO - __main__ -   Best single minor top-1 acc: 88.70
+08/25/2026 22:58:16 - INFO - __main__ -   Mean single minor top-1 acc: 86.37
+
+08/25/2026 23:00:35 - INFO - train -   top-1 acc: 88.94
+08/25/2026 23:00:35 - INFO - train -   top-5 acc: 99.42
+08/25/2026 23:00:35 - INFO - train -   per-class acc: [91.2, 96.4, 89.6, 87.6, 88.4, 75.4, 89.4, 89.6, 92.0, 89.8]
+08/25/2026 23:00:35 - INFO - train -   macro F1: 89.01
+08/25/2026 23:00:35 - INFO - train -   head/mid/tail acc: 92.40 / 83.80 / 90.20
+08/25/2026 23:00:35 - INFO - __main__ -   Single minor top-1 acc: 88.94
+08/25/2026 23:00:35 - INFO - __main__ -   Best single minor top-1 acc: 88.94
+08/25/2026 23:00:35 - INFO - __main__ -   Mean single minor top-1 acc: 86.61
+
+08/25/2026 23:02:53 - INFO - train -   top-1 acc: 88.96
+08/25/2026 23:02:53 - INFO - train -   top-5 acc: 99.44
+08/25/2026 23:02:53 - INFO - train -   per-class acc: [91.0, 96.2, 89.6, 87.2, 89.0, 75.4, 89.8, 89.8, 91.6, 90.0]
+08/25/2026 23:02:53 - INFO - train -   macro F1: 89.03
+08/25/2026 23:02:53 - INFO - train -   head/mid/tail acc: 92.27 / 83.87 / 90.30
+08/25/2026 23:02:53 - INFO - __main__ -   Single minor top-1 acc: 88.96
+08/25/2026 23:02:53 - INFO - __main__ -   Best single minor top-1 acc: 88.96
+08/25/2026 23:02:53 - INFO - __main__ -   Mean single minor top-1 acc: 86.85
+
+08/25/2026 23:05:12 - INFO - train -   top-1 acc: 89.10
+08/25/2026 23:05:12 - INFO - train -   top-5 acc: 99.44
+08/25/2026 23:05:12 - INFO - train -   per-class acc: [91.8, 96.6, 89.2, 87.6, 88.8, 75.8, 90.0, 89.4, 91.4, 90.4]
+08/25/2026 23:05:12 - INFO - train -   macro F1: 89.18
+08/25/2026 23:05:12 - INFO - train -   head/mid/tail acc: 92.53 / 84.07 / 90.30
+08/25/2026 23:05:12 - INFO - __main__ -   Single minor top-1 acc: 89.10
+08/25/2026 23:05:12 - INFO - __main__ -   Best single minor top-1 acc: 89.10
+08/25/2026 23:05:12 - INFO - __main__ -   Mean single minor top-1 acc: 87.10
+
+08/25/2026 23:07:31 - INFO - train -   top-1 acc: 88.92
+08/25/2026 23:07:31 - INFO - train -   top-5 acc: 99.44
+08/25/2026 23:07:31 - INFO - train -   per-class acc: [92.0, 96.6, 88.4, 87.0, 89.0, 75.8, 89.6, 89.6, 91.6, 89.6]
+08/25/2026 23:07:31 - INFO - train -   macro F1: 88.99
+08/25/2026 23:07:31 - INFO - train -   head/mid/tail acc: 92.33 / 83.93 / 90.10
+08/25/2026 23:07:31 - INFO - __main__ -   Single minor top-1 acc: 88.92
+08/25/2026 23:07:31 - INFO - __main__ -   Best single minor top-1 acc: 89.10
+08/25/2026 23:07:31 - INFO - __main__ -   Mean single minor top-1 acc: 87.33
+

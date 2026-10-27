@@ -1,0 +1,1115 @@
+08/17/2026 06:22:49 - WARNING - __main__ -   Process rank: -1, device: cuda:0, n_gpu: 1, distributed training: False, 16-bits training: False
+08/17/2026 06:22:49 - INFO - __main__ -   {'gpu_id': 0, 'num_workers': 0, 'dataset': 'cifar10', 'num_labeled': 4000, 'expand_labels': True, 'arch': 'wideresnet', 'total_steps': 25600, 'eval_step': 512, 'start_epoch': 0, 'batch_size': 32, 'lr': 0.03, 'warmup': 0, 'wdecay': 0.0005, 'nesterov': True, 'use_ema': True, 'no_ema': False, 'ema_decay': 0.999, 'mu': 7, 'lambda_u': 1, 'T': 1, 'threshold': 0.95, 'dual_train_mode': 'dual_sampler_weighted_ce', 'imb_ratio': 50.0, 'imb_type': 'exp', 'major_top_ratio': 0.2, 'classwise_quota': 'global', 'minority_threshold_gamma': 1.0, 'min_threshold': 0.5, 'minority_bias_strength': 1.0, 'minority_supervised_gamma': 1.0, 'max_minority_weight': 10.0, 'minority_bias_warmup': 2048, 'ensemble_minor_weight': 0.8, 'unsup_warmup': 1024, 'pseudo_warmup': 512, 'out': 'C:\\Users\\FORYOUCOM\\Desktop\\Semi-supervised-learning-main\\Semi-supervised-learning-main\\results\\ablation_imb50_100_seed1_2_3_e50_s512\\imb50\\seed_3\\dual_sampler_weighted_ce', 'resume': '', 'init_checkpoint': '', 'eval_only': False, 'no_save_checkpoint': True, 'seed': 3, 'amp': False, 'opt_level': 'O1', 'local_rank': -1, 'no_progress': True, 'use_minor_balanced_sampler': True, 'use_minor_weighted_ce': True, 'device': device(type='cuda', index=0), 'world_size': 1, 'n_gpu': 1}
+08/17/2026 06:22:50 - INFO - dataset.cifar -   Labeled class counts: [1429, 925, 599, 388, 252, 162, 105, 68, 44, 28]
+08/17/2026 06:22:51 - INFO - __main__ -   Using expanded labeled dataset class counts for dual training: [7145, 4625, 2995, 1940, 1260, 810, 525, 340, 220, 140]. Original split counts were: [1429, 925, 599, 388, 252, 162, 105, 68, 44, 28]
+08/17/2026 06:22:51 - INFO - models.wideresnet -   Model: WideResNet 28x2
+08/17/2026 06:22:51 - INFO - __main__ -   Total params: 1.47M
+08/17/2026 06:22:51 - INFO - models.wideresnet -   Model: WideResNet 28x2
+08/17/2026 06:22:51 - INFO - __main__ -   Total params: 1.47M
+08/17/2026 06:22:51 - INFO - __main__ -   ***** Running training *****
+08/17/2026 06:22:51 - INFO - __main__ -     Task = cifar10@4000
+08/17/2026 06:22:51 - INFO - __main__ -     Num Epochs = 50
+08/17/2026 06:22:51 - INFO - __main__ -     Batch size per GPU = 32
+08/17/2026 06:22:51 - INFO - __main__ -     Total train batch size = 32
+08/17/2026 06:22:51 - INFO - __main__ -     Total optimization steps = 25600
+08/17/2026 06:22:51 - INFO - __main__ -     Dual train mode = dual_sampler_weighted_ce
+08/17/2026 06:26:33 - INFO - __main__ -   top-1 acc: 17.80
+08/17/2026 06:26:33 - INFO - __main__ -   top-5 acc: 68.47
+08/17/2026 06:26:33 - INFO - __main__ -   per-class acc: [75.6, 0.6, 73.9, 27.9, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0]
+08/17/2026 06:26:33 - INFO - __main__ -   macro F1: 8.51
+08/17/2026 06:26:33 - INFO - __main__ -   head/mid/tail acc: 50.03 / 9.30 / 0.00
+08/17/2026 06:26:36 - INFO - __main__ -   top-1 acc: 21.93
+08/17/2026 06:26:36 - INFO - __main__ -   top-5 acc: 77.31
+08/17/2026 06:26:36 - INFO - __main__ -   per-class acc: [0.8, 14.8, 0.1, 1.6, 7.1, 30.9, 94.7, 0.7, 66.9, 1.7]
+08/17/2026 06:26:36 - INFO - __main__ -   macro F1: 14.59
+08/17/2026 06:26:36 - INFO - __main__ -   head/mid/tail acc: 5.23 / 13.20 / 41.00
+08/17/2026 06:26:39 - INFO - __main__ -   ensemble top-1 acc: 26.19
+08/17/2026 06:26:39 - INFO - __main__ -   ensemble top-5 acc: 75.74
+08/17/2026 06:26:39 - INFO - __main__ -   ensemble per-class acc: [23.5, 20.0, 2.2, 11.7, 19.5, 30.7, 87.8, 0.4, 65.7, 0.4]
+08/17/2026 06:26:39 - INFO - __main__ -   ensemble macro F1: 21.42
+08/17/2026 06:26:39 - INFO - __main__ -   ensemble head/mid/tail acc: 15.23 / 20.63 / 38.57
+08/17/2026 06:26:39 - INFO - __main__ -   Major top-1 acc: 17.80
+08/17/2026 06:26:39 - INFO - __main__ -   Minor top-1 acc: 21.93
+08/17/2026 06:26:39 - INFO - __main__ -   Ensemble top-1 acc: 26.19
+08/17/2026 06:26:39 - INFO - __main__ -   Final top-1 acc: 26.19
+08/17/2026 06:26:39 - INFO - __main__ -   Best final top-1 acc: 26.19
+08/17/2026 06:26:39 - INFO - __main__ -   Mean final top-1 acc: 26.19
+
+08/17/2026 06:30:22 - INFO - __main__ -   top-1 acc: 19.31
+08/17/2026 06:30:22 - INFO - __main__ -   top-5 acc: 72.26
+08/17/2026 06:30:22 - INFO - __main__ -   per-class acc: [84.7, 20.8, 81.0, 5.3, 1.0, 0.0, 0.3, 0.0, 0.0, 0.0]
+08/17/2026 06:30:22 - INFO - __main__ -   macro F1: 10.70
+08/17/2026 06:30:22 - INFO - __main__ -   head/mid/tail acc: 62.17 / 2.10 / 0.08
+08/17/2026 06:30:25 - INFO - __main__ -   top-1 acc: 29.85
+08/17/2026 06:30:25 - INFO - __main__ -   top-5 acc: 78.99
+08/17/2026 06:30:25 - INFO - __main__ -   per-class acc: [21.6, 22.7, 4.7, 2.1, 27.5, 42.0, 94.2, 0.9, 70.1, 12.7]
+08/17/2026 06:30:25 - INFO - __main__ -   macro F1: 25.34
+08/17/2026 06:30:25 - INFO - __main__ -   head/mid/tail acc: 16.33 / 23.87 / 44.47
+08/17/2026 06:30:28 - INFO - __main__ -   ensemble top-1 acc: 32.94
+08/17/2026 06:30:28 - INFO - __main__ -   ensemble top-5 acc: 78.22
+08/17/2026 06:30:28 - INFO - __main__ -   ensemble per-class acc: [41.8, 29.2, 16.2, 6.1, 36.4, 37.1, 90.8, 0.5, 63.5, 7.8]
+08/17/2026 06:30:28 - INFO - __main__ -   ensemble macro F1: 29.53
+08/17/2026 06:30:28 - INFO - __main__ -   ensemble head/mid/tail acc: 29.07 / 26.53 / 40.65
+08/17/2026 06:30:28 - INFO - __main__ -   Major top-1 acc: 19.31
+08/17/2026 06:30:28 - INFO - __main__ -   Minor top-1 acc: 29.85
+08/17/2026 06:30:28 - INFO - __main__ -   Ensemble top-1 acc: 32.94
+08/17/2026 06:30:28 - INFO - __main__ -   Final top-1 acc: 32.94
+08/17/2026 06:30:28 - INFO - __main__ -   Best final top-1 acc: 32.94
+08/17/2026 06:30:28 - INFO - __main__ -   Mean final top-1 acc: 29.56
+
+08/17/2026 06:34:11 - INFO - __main__ -   top-1 acc: 26.51
+08/17/2026 06:34:11 - INFO - __main__ -   top-5 acc: 80.46
+08/17/2026 06:34:11 - INFO - __main__ -   per-class acc: [91.1, 57.9, 75.8, 13.2, 20.1, 0.2, 6.7, 0.1, 0.0, 0.0]
+08/17/2026 06:34:11 - INFO - __main__ -   macro F1: 18.52
+08/17/2026 06:34:11 - INFO - __main__ -   head/mid/tail acc: 74.93 / 11.17 / 1.70
+08/17/2026 06:34:14 - INFO - __main__ -   top-1 acc: 39.73
+08/17/2026 06:34:14 - INFO - __main__ -   top-5 acc: 82.90
+08/17/2026 06:34:14 - INFO - __main__ -   per-class acc: [38.7, 39.2, 18.5, 11.2, 40.4, 59.4, 92.6, 3.6, 68.0, 25.7]
+08/17/2026 06:34:14 - INFO - __main__ -   macro F1: 37.15
+08/17/2026 06:34:14 - INFO - __main__ -   head/mid/tail acc: 32.13 / 37.00 / 47.47
+08/17/2026 06:34:17 - INFO - __main__ -   ensemble top-1 acc: 42.51
+08/17/2026 06:34:17 - INFO - __main__ -   ensemble top-5 acc: 83.26
+08/17/2026 06:34:17 - INFO - __main__ -   ensemble per-class acc: [55.5, 49.2, 32.1, 17.6, 45.1, 50.5, 88.7, 2.3, 62.4, 21.7]
+08/17/2026 06:34:17 - INFO - __main__ -   ensemble macro F1: 40.15
+08/17/2026 06:34:17 - INFO - __main__ -   ensemble head/mid/tail acc: 45.60 / 37.73 / 43.78
+08/17/2026 06:34:17 - INFO - __main__ -   Major top-1 acc: 26.51
+08/17/2026 06:34:17 - INFO - __main__ -   Minor top-1 acc: 39.73
+08/17/2026 06:34:17 - INFO - __main__ -   Ensemble top-1 acc: 42.51
+08/17/2026 06:34:17 - INFO - __main__ -   Final top-1 acc: 42.51
+08/17/2026 06:34:17 - INFO - __main__ -   Best final top-1 acc: 42.51
+08/17/2026 06:34:17 - INFO - __main__ -   Mean final top-1 acc: 33.88
+
+08/17/2026 06:38:01 - INFO - __main__ -   top-1 acc: 34.33
+08/17/2026 06:38:01 - INFO - __main__ -   top-5 acc: 87.77
+08/17/2026 06:38:01 - INFO - __main__ -   per-class acc: [92.6, 79.1, 69.1, 41.8, 41.4, 3.0, 13.3, 2.6, 0.1, 0.3]
+08/17/2026 06:38:01 - INFO - __main__ -   macro F1: 25.68
+08/17/2026 06:38:01 - INFO - __main__ -   head/mid/tail acc: 80.27 / 28.73 / 4.07
+08/17/2026 06:38:03 - INFO - __main__ -   top-1 acc: 49.10
+08/17/2026 06:38:03 - INFO - __main__ -   top-5 acc: 88.17
+08/17/2026 06:38:03 - INFO - __main__ -   per-class acc: [46.0, 58.9, 27.2, 28.1, 48.4, 65.6, 90.1, 12.0, 72.7, 42.0]
+08/17/2026 06:38:03 - INFO - __main__ -   macro F1: 47.80
+08/17/2026 06:38:03 - INFO - __main__ -   head/mid/tail acc: 44.03 / 47.37 / 54.20
+08/17/2026 06:38:07 - INFO - __main__ -   ensemble top-1 acc: 51.79
+08/17/2026 06:38:07 - INFO - __main__ -   ensemble top-5 acc: 89.00
+08/17/2026 06:38:07 - INFO - __main__ -   ensemble per-class acc: [58.7, 69.2, 39.9, 39.9, 52.7, 57.1, 85.3, 9.7, 68.1, 37.3]
+08/17/2026 06:38:07 - INFO - __main__ -   ensemble macro F1: 50.43
+08/17/2026 06:38:07 - INFO - __main__ -   ensemble head/mid/tail acc: 55.93 / 49.90 / 50.10
+08/17/2026 06:38:07 - INFO - __main__ -   Major top-1 acc: 34.33
+08/17/2026 06:38:07 - INFO - __main__ -   Minor top-1 acc: 49.10
+08/17/2026 06:38:07 - INFO - __main__ -   Ensemble top-1 acc: 51.79
+08/17/2026 06:38:07 - INFO - __main__ -   Final top-1 acc: 51.79
+08/17/2026 06:38:07 - INFO - __main__ -   Best final top-1 acc: 51.79
+08/17/2026 06:38:07 - INFO - __main__ -   Mean final top-1 acc: 38.36
+
+08/17/2026 06:41:50 - INFO - __main__ -   top-1 acc: 41.73
+08/17/2026 06:41:50 - INFO - __main__ -   top-5 acc: 92.22
+08/17/2026 06:41:50 - INFO - __main__ -   per-class acc: [93.6, 89.3, 60.4, 63.5, 55.3, 11.1, 24.2, 14.1, 0.5, 5.3]
+08/17/2026 06:41:50 - INFO - __main__ -   macro F1: 34.75
+08/17/2026 06:41:50 - INFO - __main__ -   head/mid/tail acc: 81.10 / 43.30 / 11.03
+08/17/2026 06:41:52 - INFO - __main__ -   top-1 acc: 55.01
+08/17/2026 06:41:52 - INFO - __main__ -   top-5 acc: 90.94
+08/17/2026 06:41:52 - INFO - __main__ -   per-class acc: [49.0, 71.8, 35.7, 35.5, 51.7, 70.3, 89.6, 18.8, 73.6, 54.1]
+08/17/2026 06:41:52 - INFO - __main__ -   macro F1: 54.30
+08/17/2026 06:41:52 - INFO - __main__ -   head/mid/tail acc: 52.17 / 52.50 / 59.03
+08/17/2026 06:41:56 - INFO - __main__ -   ensemble top-1 acc: 57.43
+08/17/2026 06:41:56 - INFO - __main__ -   ensemble top-5 acc: 91.83
+08/17/2026 06:41:56 - INFO - __main__ -   ensemble per-class acc: [61.8, 78.9, 44.1, 46.5, 55.4, 64.4, 85.7, 18.2, 69.1, 50.2]
+08/17/2026 06:41:56 - INFO - __main__ -   ensemble macro F1: 56.76
+08/17/2026 06:41:56 - INFO - __main__ -   ensemble head/mid/tail acc: 61.60 / 55.43 / 55.80
+08/17/2026 06:41:56 - INFO - __main__ -   Major top-1 acc: 41.73
+08/17/2026 06:41:56 - INFO - __main__ -   Minor top-1 acc: 55.01
+08/17/2026 06:41:56 - INFO - __main__ -   Ensemble top-1 acc: 57.43
+08/17/2026 06:41:56 - INFO - __main__ -   Final top-1 acc: 57.43
+08/17/2026 06:41:56 - INFO - __main__ -   Best final top-1 acc: 57.43
+08/17/2026 06:41:56 - INFO - __main__ -   Mean final top-1 acc: 42.17
+
+08/17/2026 06:45:39 - INFO - __main__ -   top-1 acc: 49.23
+08/17/2026 06:45:39 - INFO - __main__ -   top-5 acc: 94.62
+08/17/2026 06:45:39 - INFO - __main__ -   per-class acc: [94.5, 91.7, 57.7, 73.5, 61.8, 26.3, 37.7, 29.1, 3.7, 16.3]
+08/17/2026 06:45:39 - INFO - __main__ -   macro F1: 45.14
+08/17/2026 06:45:39 - INFO - __main__ -   head/mid/tail acc: 81.30 / 53.87 / 21.70
+08/17/2026 06:45:42 - INFO - __main__ -   top-1 acc: 59.92
+08/17/2026 06:45:42 - INFO - __main__ -   top-5 acc: 93.64
+08/17/2026 06:45:42 - INFO - __main__ -   per-class acc: [55.8, 77.6, 43.5, 42.0, 56.3, 71.4, 88.3, 30.0, 73.1, 61.2]
+08/17/2026 06:45:42 - INFO - __main__ -   macro F1: 59.82
+08/17/2026 06:45:42 - INFO - __main__ -   head/mid/tail acc: 58.97 / 56.57 / 63.15
+08/17/2026 06:45:45 - INFO - __main__ -   ensemble top-1 acc: 61.85
+08/17/2026 06:45:45 - INFO - __main__ -   ensemble top-5 acc: 94.23
+08/17/2026 06:45:45 - INFO - __main__ -   ensemble per-class acc: [65.4, 84.0, 49.7, 50.8, 59.4, 67.3, 85.5, 30.3, 68.9, 57.2]
+08/17/2026 06:45:45 - INFO - __main__ -   ensemble macro F1: 61.71
+08/17/2026 06:45:45 - INFO - __main__ -   ensemble head/mid/tail acc: 66.37 / 59.17 / 60.48
+08/17/2026 06:45:45 - INFO - __main__ -   Major top-1 acc: 49.23
+08/17/2026 06:45:45 - INFO - __main__ -   Minor top-1 acc: 59.92
+08/17/2026 06:45:45 - INFO - __main__ -   Ensemble top-1 acc: 61.85
+08/17/2026 06:45:45 - INFO - __main__ -   Final top-1 acc: 61.85
+08/17/2026 06:45:45 - INFO - __main__ -   Best final top-1 acc: 61.85
+08/17/2026 06:45:45 - INFO - __main__ -   Mean final top-1 acc: 45.45
+
+08/17/2026 06:49:28 - INFO - __main__ -   top-1 acc: 55.52
+08/17/2026 06:49:28 - INFO - __main__ -   top-5 acc: 95.76
+08/17/2026 06:49:28 - INFO - __main__ -   per-class acc: [95.1, 93.7, 59.8, 75.8, 63.7, 39.8, 46.2, 40.1, 11.4, 29.6]
+08/17/2026 06:49:28 - INFO - __main__ -   macro F1: 53.45
+08/17/2026 06:49:28 - INFO - __main__ -   head/mid/tail acc: 82.87 / 59.77 / 31.83
+08/17/2026 06:49:31 - INFO - __main__ -   top-1 acc: 63.65
+08/17/2026 06:49:31 - INFO - __main__ -   top-5 acc: 95.02
+08/17/2026 06:49:31 - INFO - __main__ -   per-class acc: [59.2, 82.4, 49.7, 45.5, 61.2, 70.6, 88.6, 38.5, 74.0, 66.8]
+08/17/2026 06:49:31 - INFO - __main__ -   macro F1: 63.70
+08/17/2026 06:49:31 - INFO - __main__ -   head/mid/tail acc: 63.77 / 59.10 / 66.97
+08/17/2026 06:49:34 - INFO - __main__ -   ensemble top-1 acc: 65.04
+08/17/2026 06:49:34 - INFO - __main__ -   ensemble top-5 acc: 95.49
+08/17/2026 06:49:34 - INFO - __main__ -   ensemble per-class acc: [69.1, 86.5, 53.0, 53.7, 62.7, 67.5, 85.7, 38.3, 69.9, 64.0]
+08/17/2026 06:49:34 - INFO - __main__ -   ensemble macro F1: 65.14
+08/17/2026 06:49:34 - INFO - __main__ -   ensemble head/mid/tail acc: 69.53 / 61.30 / 64.47
+08/17/2026 06:49:34 - INFO - __main__ -   Major top-1 acc: 55.52
+08/17/2026 06:49:34 - INFO - __main__ -   Minor top-1 acc: 63.65
+08/17/2026 06:49:34 - INFO - __main__ -   Ensemble top-1 acc: 65.04
+08/17/2026 06:49:34 - INFO - __main__ -   Final top-1 acc: 65.04
+08/17/2026 06:49:34 - INFO - __main__ -   Best final top-1 acc: 65.04
+08/17/2026 06:49:34 - INFO - __main__ -   Mean final top-1 acc: 48.25
+
+08/17/2026 06:53:18 - INFO - __main__ -   top-1 acc: 60.49
+08/17/2026 06:53:18 - INFO - __main__ -   top-5 acc: 96.68
+08/17/2026 06:53:18 - INFO - __main__ -   per-class acc: [95.1, 94.9, 63.9, 75.4, 66.2, 47.1, 53.5, 46.2, 23.4, 39.2]
+08/17/2026 06:53:18 - INFO - __main__ -   macro F1: 59.58
+08/17/2026 06:53:18 - INFO - __main__ -   head/mid/tail acc: 84.63 / 62.90 / 40.58
+08/17/2026 06:53:20 - INFO - __main__ -   top-1 acc: 66.73
+08/17/2026 06:53:20 - INFO - __main__ -   top-5 acc: 96.16
+08/17/2026 06:53:20 - INFO - __main__ -   per-class acc: [63.6, 86.0, 53.8, 51.2, 64.5, 70.8, 87.3, 44.2, 74.5, 71.4]
+08/17/2026 06:53:20 - INFO - __main__ -   macro F1: 66.88
+08/17/2026 06:53:20 - INFO - __main__ -   head/mid/tail acc: 67.80 / 62.17 / 69.35
+08/17/2026 06:53:24 - INFO - __main__ -   ensemble top-1 acc: 67.96
+08/17/2026 06:53:24 - INFO - __main__ -   ensemble top-5 acc: 96.42
+08/17/2026 06:53:24 - INFO - __main__ -   ensemble per-class acc: [72.4, 88.9, 57.3, 58.2, 65.6, 67.9, 84.4, 45.6, 69.8, 69.5]
+08/17/2026 06:53:24 - INFO - __main__ -   ensemble macro F1: 68.16
+08/17/2026 06:53:24 - INFO - __main__ -   ensemble head/mid/tail acc: 72.87 / 63.90 / 67.32
+08/17/2026 06:53:24 - INFO - __main__ -   Major top-1 acc: 60.49
+08/17/2026 06:53:24 - INFO - __main__ -   Minor top-1 acc: 66.73
+08/17/2026 06:53:24 - INFO - __main__ -   Ensemble top-1 acc: 67.96
+08/17/2026 06:53:24 - INFO - __main__ -   Final top-1 acc: 67.96
+08/17/2026 06:53:24 - INFO - __main__ -   Best final top-1 acc: 67.96
+08/17/2026 06:53:24 - INFO - __main__ -   Mean final top-1 acc: 50.71
+
+08/17/2026 06:57:07 - INFO - __main__ -   top-1 acc: 64.28
+08/17/2026 06:57:07 - INFO - __main__ -   top-5 acc: 97.10
+08/17/2026 06:57:07 - INFO - __main__ -   per-class acc: [95.1, 96.1, 66.6, 77.4, 67.4, 50.5, 58.2, 51.5, 33.6, 46.4]
+08/17/2026 06:57:07 - INFO - __main__ -   macro F1: 63.90
+08/17/2026 06:57:07 - INFO - __main__ -   head/mid/tail acc: 85.93 / 65.10 / 47.42
+08/17/2026 06:57:10 - INFO - __main__ -   top-1 acc: 69.24
+08/17/2026 06:57:10 - INFO - __main__ -   top-5 acc: 96.75
+08/17/2026 06:57:10 - INFO - __main__ -   per-class acc: [68.8, 88.6, 56.4, 55.2, 66.5, 71.1, 85.5, 50.8, 74.6, 74.9]
+08/17/2026 06:57:10 - INFO - __main__ -   macro F1: 69.45
+08/17/2026 06:57:10 - INFO - __main__ -   head/mid/tail acc: 71.27 / 64.27 / 71.45
+08/17/2026 06:57:13 - INFO - __main__ -   ensemble top-1 acc: 70.38
+08/17/2026 06:57:13 - INFO - __main__ -   ensemble top-5 acc: 96.97
+08/17/2026 06:57:13 - INFO - __main__ -   ensemble per-class acc: [76.3, 90.6, 60.4, 60.9, 67.7, 69.0, 83.4, 51.2, 71.3, 73.0]
+08/17/2026 06:57:13 - INFO - __main__ -   ensemble macro F1: 70.59
+08/17/2026 06:57:13 - INFO - __main__ -   ensemble head/mid/tail acc: 75.77 / 65.87 / 69.73
+08/17/2026 06:57:13 - INFO - __main__ -   Major top-1 acc: 64.28
+08/17/2026 06:57:13 - INFO - __main__ -   Minor top-1 acc: 69.24
+08/17/2026 06:57:13 - INFO - __main__ -   Ensemble top-1 acc: 70.38
+08/17/2026 06:57:13 - INFO - __main__ -   Final top-1 acc: 70.38
+08/17/2026 06:57:13 - INFO - __main__ -   Best final top-1 acc: 70.38
+08/17/2026 06:57:13 - INFO - __main__ -   Mean final top-1 acc: 52.90
+
+08/17/2026 07:00:56 - INFO - __main__ -   top-1 acc: 67.31
+08/17/2026 07:00:56 - INFO - __main__ -   top-5 acc: 97.38
+08/17/2026 07:00:56 - INFO - __main__ -   per-class acc: [95.2, 96.6, 69.5, 77.2, 68.8, 54.5, 60.9, 54.4, 42.3, 53.7]
+08/17/2026 07:00:56 - INFO - __main__ -   macro F1: 67.28
+08/17/2026 07:00:56 - INFO - __main__ -   head/mid/tail acc: 87.10 / 66.83 / 52.83
+08/17/2026 07:00:59 - INFO - __main__ -   top-1 acc: 71.14
+08/17/2026 07:00:59 - INFO - __main__ -   top-5 acc: 97.05
+08/17/2026 07:00:59 - INFO - __main__ -   per-class acc: [70.4, 89.2, 59.3, 58.5, 70.7, 71.5, 84.5, 53.1, 75.5, 78.7]
+08/17/2026 07:00:59 - INFO - __main__ -   macro F1: 71.38
+08/17/2026 07:00:59 - INFO - __main__ -   head/mid/tail acc: 72.97 / 66.90 / 72.95
+08/17/2026 07:01:02 - INFO - __main__ -   ensemble top-1 acc: 72.03
+08/17/2026 07:01:02 - INFO - __main__ -   ensemble top-5 acc: 97.27
+08/17/2026 07:01:02 - INFO - __main__ -   ensemble per-class acc: [77.9, 91.2, 62.3, 63.1, 70.8, 69.7, 82.8, 53.4, 72.3, 76.8]
+08/17/2026 07:01:02 - INFO - __main__ -   ensemble macro F1: 72.27
+08/17/2026 07:01:02 - INFO - __main__ -   ensemble head/mid/tail acc: 77.13 / 67.87 / 71.32
+08/17/2026 07:01:02 - INFO - __main__ -   Major top-1 acc: 67.31
+08/17/2026 07:01:02 - INFO - __main__ -   Minor top-1 acc: 71.14
+08/17/2026 07:01:02 - INFO - __main__ -   Ensemble top-1 acc: 72.03
+08/17/2026 07:01:02 - INFO - __main__ -   Final top-1 acc: 72.03
+08/17/2026 07:01:02 - INFO - __main__ -   Best final top-1 acc: 72.03
+08/17/2026 07:01:02 - INFO - __main__ -   Mean final top-1 acc: 54.81
+
+08/17/2026 07:04:45 - INFO - __main__ -   top-1 acc: 69.49
+08/17/2026 07:04:45 - INFO - __main__ -   top-5 acc: 97.63
+08/17/2026 07:04:45 - INFO - __main__ -   per-class acc: [94.9, 97.6, 71.3, 77.1, 71.4, 56.4, 64.7, 56.6, 48.6, 56.3]
+08/17/2026 07:04:45 - INFO - __main__ -   macro F1: 69.58
+08/17/2026 07:04:45 - INFO - __main__ -   head/mid/tail acc: 87.93 / 68.30 / 56.55
+08/17/2026 07:04:48 - INFO - __main__ -   top-1 acc: 72.63
+08/17/2026 07:04:48 - INFO - __main__ -   top-5 acc: 97.46
+08/17/2026 07:04:48 - INFO - __main__ -   per-class acc: [72.4, 89.7, 60.6, 61.0, 74.2, 72.6, 84.3, 54.9, 75.6, 81.0]
+08/17/2026 07:04:48 - INFO - __main__ -   macro F1: 72.85
+08/17/2026 07:04:48 - INFO - __main__ -   head/mid/tail acc: 74.23 / 69.27 / 73.95
+08/17/2026 07:04:51 - INFO - __main__ -   ensemble top-1 acc: 73.52
+08/17/2026 07:04:51 - INFO - __main__ -   ensemble top-5 acc: 97.64
+08/17/2026 07:04:51 - INFO - __main__ -   ensemble per-class acc: [79.2, 91.9, 63.0, 64.4, 75.0, 70.7, 82.9, 56.1, 73.7, 78.3]
+08/17/2026 07:04:51 - INFO - __main__ -   ensemble macro F1: 73.74
+08/17/2026 07:04:51 - INFO - __main__ -   ensemble head/mid/tail acc: 78.03 / 70.03 / 72.75
+08/17/2026 07:04:51 - INFO - __main__ -   Major top-1 acc: 69.49
+08/17/2026 07:04:51 - INFO - __main__ -   Minor top-1 acc: 72.63
+08/17/2026 07:04:51 - INFO - __main__ -   Ensemble top-1 acc: 73.52
+08/17/2026 07:04:51 - INFO - __main__ -   Final top-1 acc: 73.52
+08/17/2026 07:04:51 - INFO - __main__ -   Best final top-1 acc: 73.52
+08/17/2026 07:04:51 - INFO - __main__ -   Mean final top-1 acc: 56.51
+
+08/17/2026 07:08:34 - INFO - __main__ -   top-1 acc: 71.26
+08/17/2026 07:08:34 - INFO - __main__ -   top-5 acc: 97.82
+08/17/2026 07:08:34 - INFO - __main__ -   per-class acc: [95.2, 97.5, 72.5, 76.6, 72.7, 59.0, 69.5, 57.3, 52.1, 60.2]
+08/17/2026 07:08:34 - INFO - __main__ -   macro F1: 71.38
+08/17/2026 07:08:34 - INFO - __main__ -   head/mid/tail acc: 88.40 / 69.43 / 59.78
+08/17/2026 07:08:37 - INFO - __main__ -   top-1 acc: 74.15
+08/17/2026 07:08:37 - INFO - __main__ -   top-5 acc: 97.69
+08/17/2026 07:08:37 - INFO - __main__ -   per-class acc: [74.4, 90.4, 61.9, 63.6, 75.9, 72.0, 85.0, 58.1, 77.5, 82.7]
+08/17/2026 07:08:37 - INFO - __main__ -   macro F1: 74.38
+08/17/2026 07:08:37 - INFO - __main__ -   head/mid/tail acc: 75.57 / 70.50 / 75.83
+08/17/2026 07:08:40 - INFO - __main__ -   ensemble top-1 acc: 75.03
+08/17/2026 07:08:40 - INFO - __main__ -   ensemble top-5 acc: 97.82
+08/17/2026 07:08:40 - INFO - __main__ -   ensemble per-class acc: [80.2, 92.8, 65.9, 66.1, 76.8, 70.5, 84.2, 58.5, 75.1, 80.2]
+08/17/2026 07:08:40 - INFO - __main__ -   ensemble macro F1: 75.25
+08/17/2026 07:08:40 - INFO - __main__ -   ensemble head/mid/tail acc: 79.63 / 71.13 / 74.50
+08/17/2026 07:08:41 - INFO - __main__ -   Major top-1 acc: 71.26
+08/17/2026 07:08:41 - INFO - __main__ -   Minor top-1 acc: 74.15
+08/17/2026 07:08:41 - INFO - __main__ -   Ensemble top-1 acc: 75.03
+08/17/2026 07:08:41 - INFO - __main__ -   Final top-1 acc: 75.03
+08/17/2026 07:08:41 - INFO - __main__ -   Best final top-1 acc: 75.03
+08/17/2026 07:08:41 - INFO - __main__ -   Mean final top-1 acc: 58.06
+
+08/17/2026 07:12:24 - INFO - __main__ -   top-1 acc: 72.35
+08/17/2026 07:12:24 - INFO - __main__ -   top-5 acc: 97.96
+08/17/2026 07:12:24 - INFO - __main__ -   per-class acc: [95.3, 97.4, 74.3, 75.8, 74.9, 59.1, 71.1, 59.3, 54.0, 62.3]
+08/17/2026 07:12:24 - INFO - __main__ -   macro F1: 72.49
+08/17/2026 07:12:24 - INFO - __main__ -   head/mid/tail acc: 89.00 / 69.93 / 61.68
+08/17/2026 07:12:26 - INFO - __main__ -   top-1 acc: 75.69
+08/17/2026 07:12:26 - INFO - __main__ -   top-5 acc: 97.91
+08/17/2026 07:12:26 - INFO - __main__ -   per-class acc: [75.4, 91.2, 65.9, 65.5, 78.2, 71.6, 85.1, 61.1, 79.2, 83.7]
+08/17/2026 07:12:26 - INFO - __main__ -   macro F1: 75.94
+08/17/2026 07:12:26 - INFO - __main__ -   head/mid/tail acc: 77.50 / 71.77 / 77.28
+08/17/2026 07:12:30 - INFO - __main__ -   ensemble top-1 acc: 76.49
+08/17/2026 07:12:30 - INFO - __main__ -   ensemble top-5 acc: 98.02
+08/17/2026 07:12:30 - INFO - __main__ -   ensemble per-class acc: [80.6, 93.5, 69.3, 68.5, 78.6, 70.4, 84.3, 61.2, 76.5, 82.0]
+08/17/2026 07:12:30 - INFO - __main__ -   ensemble macro F1: 76.71
+08/17/2026 07:12:30 - INFO - __main__ -   ensemble head/mid/tail acc: 81.13 / 72.50 / 76.00
+08/17/2026 07:12:30 - INFO - __main__ -   Major top-1 acc: 72.35
+08/17/2026 07:12:30 - INFO - __main__ -   Minor top-1 acc: 75.69
+08/17/2026 07:12:30 - INFO - __main__ -   Ensemble top-1 acc: 76.49
+08/17/2026 07:12:30 - INFO - __main__ -   Final top-1 acc: 76.49
+08/17/2026 07:12:30 - INFO - __main__ -   Best final top-1 acc: 76.49
+08/17/2026 07:12:30 - INFO - __main__ -   Mean final top-1 acc: 59.47
+
+08/17/2026 07:16:13 - INFO - __main__ -   top-1 acc: 73.65
+08/17/2026 07:16:13 - INFO - __main__ -   top-5 acc: 98.07
+08/17/2026 07:16:13 - INFO - __main__ -   per-class acc: [95.0, 97.7, 75.2, 74.8, 77.2, 61.6, 73.9, 60.7, 56.1, 64.3]
+08/17/2026 07:16:13 - INFO - __main__ -   macro F1: 73.79
+08/17/2026 07:16:13 - INFO - __main__ -   head/mid/tail acc: 89.30 / 71.20 / 63.75
+08/17/2026 07:16:16 - INFO - __main__ -   top-1 acc: 76.82
+08/17/2026 07:16:16 - INFO - __main__ -   top-5 acc: 98.08
+08/17/2026 07:16:16 - INFO - __main__ -   per-class acc: [77.1, 92.2, 68.7, 66.5, 81.2, 72.0, 84.5, 62.4, 79.5, 84.1]
+08/17/2026 07:16:16 - INFO - __main__ -   macro F1: 77.03
+08/17/2026 07:16:16 - INFO - __main__ -   head/mid/tail acc: 79.33 / 73.23 / 77.62
+08/17/2026 07:16:19 - INFO - __main__ -   ensemble top-1 acc: 77.28
+08/17/2026 07:16:19 - INFO - __main__ -   ensemble top-5 acc: 98.13
+08/17/2026 07:16:19 - INFO - __main__ -   ensemble per-class acc: [82.3, 93.9, 71.3, 68.9, 80.2, 70.8, 83.5, 62.1, 77.1, 82.7]
+08/17/2026 07:16:19 - INFO - __main__ -   ensemble macro F1: 77.49
+08/17/2026 07:16:19 - INFO - __main__ -   ensemble head/mid/tail acc: 82.50 / 73.30 / 76.35
+08/17/2026 07:16:19 - INFO - __main__ -   Major top-1 acc: 73.65
+08/17/2026 07:16:19 - INFO - __main__ -   Minor top-1 acc: 76.82
+08/17/2026 07:16:19 - INFO - __main__ -   Ensemble top-1 acc: 77.28
+08/17/2026 07:16:19 - INFO - __main__ -   Final top-1 acc: 77.28
+08/17/2026 07:16:19 - INFO - __main__ -   Best final top-1 acc: 77.28
+08/17/2026 07:16:19 - INFO - __main__ -   Mean final top-1 acc: 60.75
+
+08/17/2026 07:20:02 - INFO - __main__ -   top-1 acc: 74.92
+08/17/2026 07:20:02 - INFO - __main__ -   top-5 acc: 98.13
+08/17/2026 07:20:02 - INFO - __main__ -   per-class acc: [94.9, 97.9, 76.6, 76.0, 77.9, 62.8, 74.8, 63.0, 58.8, 66.5]
+08/17/2026 07:20:02 - INFO - __main__ -   macro F1: 75.11
+08/17/2026 07:20:02 - INFO - __main__ -   head/mid/tail acc: 89.80 / 72.23 / 65.78
+08/17/2026 07:20:05 - INFO - __main__ -   top-1 acc: 77.84
+08/17/2026 07:20:05 - INFO - __main__ -   top-5 acc: 98.17
+08/17/2026 07:20:05 - INFO - __main__ -   per-class acc: [78.3, 92.8, 70.3, 68.0, 82.3, 72.1, 84.4, 64.2, 80.9, 85.1]
+08/17/2026 07:20:05 - INFO - __main__ -   macro F1: 78.04
+08/17/2026 07:20:05 - INFO - __main__ -   head/mid/tail acc: 80.47 / 74.13 / 78.65
+08/17/2026 07:20:08 - INFO - __main__ -   ensemble top-1 acc: 78.29
+08/17/2026 07:20:08 - INFO - __main__ -   ensemble top-5 acc: 98.28
+08/17/2026 07:20:08 - INFO - __main__ -   ensemble per-class acc: [83.9, 94.5, 72.5, 70.0, 81.6, 70.9, 83.7, 63.9, 78.5, 83.4]
+08/17/2026 07:20:08 - INFO - __main__ -   ensemble macro F1: 78.49
+08/17/2026 07:20:08 - INFO - __main__ -   ensemble head/mid/tail acc: 83.63 / 74.17 / 77.38
+08/17/2026 07:20:08 - INFO - __main__ -   Major top-1 acc: 74.92
+08/17/2026 07:20:08 - INFO - __main__ -   Minor top-1 acc: 77.84
+08/17/2026 07:20:08 - INFO - __main__ -   Ensemble top-1 acc: 78.29
+08/17/2026 07:20:08 - INFO - __main__ -   Final top-1 acc: 78.29
+08/17/2026 07:20:08 - INFO - __main__ -   Best final top-1 acc: 78.29
+08/17/2026 07:20:08 - INFO - __main__ -   Mean final top-1 acc: 61.92
+
+08/17/2026 07:23:51 - INFO - __main__ -   top-1 acc: 75.83
+08/17/2026 07:23:51 - INFO - __main__ -   top-5 acc: 98.38
+08/17/2026 07:23:51 - INFO - __main__ -   per-class acc: [94.8, 98.1, 76.9, 76.3, 78.7, 63.3, 74.9, 65.2, 62.2, 67.9]
+08/17/2026 07:23:51 - INFO - __main__ -   macro F1: 76.05
+08/17/2026 07:23:51 - INFO - __main__ -   head/mid/tail acc: 89.93 / 72.77 / 67.55
+08/17/2026 07:23:54 - INFO - __main__ -   top-1 acc: 78.48
+08/17/2026 07:23:54 - INFO - __main__ -   top-5 acc: 98.30
+08/17/2026 07:23:54 - INFO - __main__ -   per-class acc: [79.3, 93.4, 72.6, 68.7, 82.7, 72.0, 84.0, 65.4, 81.5, 85.2]
+08/17/2026 07:23:54 - INFO - __main__ -   macro F1: 78.70
+08/17/2026 07:23:54 - INFO - __main__ -   head/mid/tail acc: 81.77 / 74.47 / 79.02
+08/17/2026 07:23:57 - INFO - __main__ -   ensemble top-1 acc: 79.15
+08/17/2026 07:23:57 - INFO - __main__ -   ensemble top-5 acc: 98.33
+08/17/2026 07:23:57 - INFO - __main__ -   ensemble per-class acc: [84.1, 95.1, 73.6, 71.9, 82.5, 71.0, 83.5, 65.8, 80.2, 83.8]
+08/17/2026 07:23:57 - INFO - __main__ -   ensemble macro F1: 79.37
+08/17/2026 07:23:57 - INFO - __main__ -   ensemble head/mid/tail acc: 84.27 / 75.13 / 78.32
+08/17/2026 07:23:57 - INFO - __main__ -   Major top-1 acc: 75.83
+08/17/2026 07:23:57 - INFO - __main__ -   Minor top-1 acc: 78.48
+08/17/2026 07:23:57 - INFO - __main__ -   Ensemble top-1 acc: 79.15
+08/17/2026 07:23:57 - INFO - __main__ -   Final top-1 acc: 79.15
+08/17/2026 07:23:57 - INFO - __main__ -   Best final top-1 acc: 79.15
+08/17/2026 07:23:57 - INFO - __main__ -   Mean final top-1 acc: 62.99
+
+08/17/2026 07:27:41 - INFO - __main__ -   top-1 acc: 76.14
+08/17/2026 07:27:41 - INFO - __main__ -   top-5 acc: 98.53
+08/17/2026 07:27:41 - INFO - __main__ -   per-class acc: [95.0, 98.1, 77.5, 76.5, 79.9, 63.1, 75.8, 65.3, 61.3, 68.9]
+08/17/2026 07:27:41 - INFO - __main__ -   macro F1: 76.35
+08/17/2026 07:27:41 - INFO - __main__ -   head/mid/tail acc: 90.20 / 73.17 / 67.83
+08/17/2026 07:27:43 - INFO - __main__ -   top-1 acc: 79.14
+08/17/2026 07:27:43 - INFO - __main__ -   top-5 acc: 98.37
+08/17/2026 07:27:43 - INFO - __main__ -   per-class acc: [79.9, 94.0, 74.5, 69.6, 83.4, 72.2, 84.1, 67.0, 81.9, 84.8]
+08/17/2026 07:27:43 - INFO - __main__ -   macro F1: 79.37
+08/17/2026 07:27:43 - INFO - __main__ -   head/mid/tail acc: 82.80 / 75.07 / 79.45
+08/17/2026 07:27:47 - INFO - __main__ -   ensemble top-1 acc: 79.71
+08/17/2026 07:27:47 - INFO - __main__ -   ensemble top-5 acc: 98.46
+08/17/2026 07:27:47 - INFO - __main__ -   ensemble per-class acc: [84.7, 95.7, 75.5, 72.2, 83.2, 71.4, 83.5, 67.4, 80.0, 83.5]
+08/17/2026 07:27:47 - INFO - __main__ -   ensemble macro F1: 79.94
+08/17/2026 07:27:47 - INFO - __main__ -   ensemble head/mid/tail acc: 85.30 / 75.60 / 78.60
+08/17/2026 07:27:47 - INFO - __main__ -   Major top-1 acc: 76.14
+08/17/2026 07:27:47 - INFO - __main__ -   Minor top-1 acc: 79.14
+08/17/2026 07:27:47 - INFO - __main__ -   Ensemble top-1 acc: 79.71
+08/17/2026 07:27:47 - INFO - __main__ -   Final top-1 acc: 79.71
+08/17/2026 07:27:47 - INFO - __main__ -   Best final top-1 acc: 79.71
+08/17/2026 07:27:47 - INFO - __main__ -   Mean final top-1 acc: 63.98
+
+08/17/2026 07:31:30 - INFO - __main__ -   top-1 acc: 76.64
+08/17/2026 07:31:30 - INFO - __main__ -   top-5 acc: 98.64
+08/17/2026 07:31:30 - INFO - __main__ -   per-class acc: [94.6, 98.0, 78.3, 77.0, 80.5, 62.8, 76.9, 67.0, 62.2, 69.1]
+08/17/2026 07:31:30 - INFO - __main__ -   macro F1: 76.84
+08/17/2026 07:31:30 - INFO - __main__ -   head/mid/tail acc: 90.30 / 73.43 / 68.80
+08/17/2026 07:31:33 - INFO - __main__ -   top-1 acc: 80.02
+08/17/2026 07:31:33 - INFO - __main__ -   top-5 acc: 98.53
+08/17/2026 07:31:33 - INFO - __main__ -   per-class acc: [81.4, 94.0, 75.1, 70.4, 84.4, 73.1, 85.1, 67.8, 83.1, 85.8]
+08/17/2026 07:31:33 - INFO - __main__ -   macro F1: 80.23
+08/17/2026 07:31:33 - INFO - __main__ -   head/mid/tail acc: 83.50 / 75.97 / 80.45
+08/17/2026 07:31:36 - INFO - __main__ -   ensemble top-1 acc: 80.19
+08/17/2026 07:31:36 - INFO - __main__ -   ensemble top-5 acc: 98.53
+08/17/2026 07:31:36 - INFO - __main__ -   ensemble per-class acc: [86.1, 95.9, 75.8, 72.2, 83.9, 72.1, 83.6, 67.4, 81.6, 83.3]
+08/17/2026 07:31:36 - INFO - __main__ -   ensemble macro F1: 80.40
+08/17/2026 07:31:36 - INFO - __main__ -   ensemble head/mid/tail acc: 85.93 / 76.07 / 78.98
+08/17/2026 07:31:36 - INFO - __main__ -   Major top-1 acc: 76.64
+08/17/2026 07:31:36 - INFO - __main__ -   Minor top-1 acc: 80.02
+08/17/2026 07:31:36 - INFO - __main__ -   Ensemble top-1 acc: 80.19
+08/17/2026 07:31:36 - INFO - __main__ -   Final top-1 acc: 80.19
+08/17/2026 07:31:36 - INFO - __main__ -   Best final top-1 acc: 80.19
+08/17/2026 07:31:36 - INFO - __main__ -   Mean final top-1 acc: 64.88
+
+08/17/2026 07:35:19 - INFO - __main__ -   top-1 acc: 77.40
+08/17/2026 07:35:19 - INFO - __main__ -   top-5 acc: 98.67
+08/17/2026 07:35:19 - INFO - __main__ -   per-class acc: [94.7, 97.9, 79.2, 76.4, 81.2, 64.1, 78.5, 67.7, 64.3, 70.0]
+08/17/2026 07:35:19 - INFO - __main__ -   macro F1: 77.60
+08/17/2026 07:35:19 - INFO - __main__ -   head/mid/tail acc: 90.60 / 73.90 / 70.12
+08/17/2026 07:35:22 - INFO - __main__ -   top-1 acc: 80.67
+08/17/2026 07:35:22 - INFO - __main__ -   top-5 acc: 98.64
+08/17/2026 07:35:22 - INFO - __main__ -   per-class acc: [81.8, 94.9, 76.2, 71.3, 84.5, 73.8, 85.0, 68.9, 84.5, 85.8]
+08/17/2026 07:35:22 - INFO - __main__ -   macro F1: 80.87
+08/17/2026 07:35:22 - INFO - __main__ -   head/mid/tail acc: 84.30 / 76.53 / 81.05
+08/17/2026 07:35:25 - INFO - __main__ -   ensemble top-1 acc: 80.72
+08/17/2026 07:35:25 - INFO - __main__ -   ensemble top-5 acc: 98.61
+08/17/2026 07:35:25 - INFO - __main__ -   ensemble per-class acc: [86.4, 95.7, 76.7, 72.5, 83.4, 73.0, 84.2, 68.6, 82.6, 84.1]
+08/17/2026 07:35:25 - INFO - __main__ -   ensemble macro F1: 80.93
+08/17/2026 07:35:25 - INFO - __main__ -   ensemble head/mid/tail acc: 86.27 / 76.30 / 79.88
+08/17/2026 07:35:25 - INFO - __main__ -   Major top-1 acc: 77.40
+08/17/2026 07:35:25 - INFO - __main__ -   Minor top-1 acc: 80.67
+08/17/2026 07:35:25 - INFO - __main__ -   Ensemble top-1 acc: 80.72
+08/17/2026 07:35:25 - INFO - __main__ -   Final top-1 acc: 80.72
+08/17/2026 07:35:25 - INFO - __main__ -   Best final top-1 acc: 80.72
+08/17/2026 07:35:25 - INFO - __main__ -   Mean final top-1 acc: 65.71
+
+08/17/2026 07:39:08 - INFO - __main__ -   top-1 acc: 77.92
+08/17/2026 07:39:08 - INFO - __main__ -   top-5 acc: 98.77
+08/17/2026 07:39:08 - INFO - __main__ -   per-class acc: [95.2, 98.2, 79.5, 77.0, 82.2, 64.7, 79.1, 68.0, 64.7, 70.6]
+08/17/2026 07:39:08 - INFO - __main__ -   macro F1: 78.11
+08/17/2026 07:39:08 - INFO - __main__ -   head/mid/tail acc: 90.97 / 74.63 / 70.60
+08/17/2026 07:39:11 - INFO - __main__ -   top-1 acc: 80.98
+08/17/2026 07:39:11 - INFO - __main__ -   top-5 acc: 98.68
+08/17/2026 07:39:11 - INFO - __main__ -   per-class acc: [82.3, 94.9, 76.1, 71.3, 85.5, 74.3, 85.4, 69.5, 84.5, 86.0]
+08/17/2026 07:39:11 - INFO - __main__ -   macro F1: 81.16
+08/17/2026 07:39:11 - INFO - __main__ -   head/mid/tail acc: 84.43 / 77.03 / 81.35
+08/17/2026 07:39:14 - INFO - __main__ -   ensemble top-1 acc: 81.31
+08/17/2026 07:39:14 - INFO - __main__ -   ensemble top-5 acc: 98.77
+08/17/2026 07:39:14 - INFO - __main__ -   ensemble per-class acc: [86.8, 95.7, 77.7, 73.1, 85.2, 73.1, 84.7, 69.5, 83.1, 84.2]
+08/17/2026 07:39:14 - INFO - __main__ -   ensemble macro F1: 81.50
+08/17/2026 07:39:14 - INFO - __main__ -   ensemble head/mid/tail acc: 86.73 / 77.13 / 80.38
+08/17/2026 07:39:14 - INFO - __main__ -   Major top-1 acc: 77.92
+08/17/2026 07:39:14 - INFO - __main__ -   Minor top-1 acc: 80.98
+08/17/2026 07:39:14 - INFO - __main__ -   Ensemble top-1 acc: 81.31
+08/17/2026 07:39:14 - INFO - __main__ -   Final top-1 acc: 81.31
+08/17/2026 07:39:14 - INFO - __main__ -   Best final top-1 acc: 81.31
+08/17/2026 07:39:14 - INFO - __main__ -   Mean final top-1 acc: 66.49
+
+08/17/2026 07:42:57 - INFO - __main__ -   top-1 acc: 78.22
+08/17/2026 07:42:57 - INFO - __main__ -   top-5 acc: 98.81
+08/17/2026 07:42:57 - INFO - __main__ -   per-class acc: [95.1, 98.1, 80.4, 77.2, 82.5, 65.8, 78.3, 68.9, 65.2, 70.7]
+08/17/2026 07:42:57 - INFO - __main__ -   macro F1: 78.42
+08/17/2026 07:42:57 - INFO - __main__ -   head/mid/tail acc: 91.20 / 75.17 / 70.78
+08/17/2026 07:43:00 - INFO - __main__ -   top-1 acc: 81.49
+08/17/2026 07:43:00 - INFO - __main__ -   top-5 acc: 98.76
+08/17/2026 07:43:00 - INFO - __main__ -   per-class acc: [83.7, 95.0, 77.1, 72.3, 85.2, 74.7, 85.7, 70.4, 84.4, 86.4]
+08/17/2026 07:43:00 - INFO - __main__ -   macro F1: 81.68
+08/17/2026 07:43:00 - INFO - __main__ -   head/mid/tail acc: 85.27 / 77.40 / 81.72
+08/17/2026 07:43:03 - INFO - __main__ -   ensemble top-1 acc: 81.53
+08/17/2026 07:43:03 - INFO - __main__ -   ensemble top-5 acc: 98.78
+08/17/2026 07:43:03 - INFO - __main__ -   ensemble per-class acc: [87.1, 95.8, 78.5, 73.8, 85.2, 73.1, 84.8, 70.2, 82.4, 84.4]
+08/17/2026 07:43:03 - INFO - __main__ -   ensemble macro F1: 81.72
+08/17/2026 07:43:03 - INFO - __main__ -   ensemble head/mid/tail acc: 87.13 / 77.37 / 80.45
+08/17/2026 07:43:03 - INFO - __main__ -   Major top-1 acc: 78.22
+08/17/2026 07:43:03 - INFO - __main__ -   Minor top-1 acc: 81.49
+08/17/2026 07:43:03 - INFO - __main__ -   Ensemble top-1 acc: 81.53
+08/17/2026 07:43:03 - INFO - __main__ -   Final top-1 acc: 81.53
+08/17/2026 07:43:03 - INFO - __main__ -   Best final top-1 acc: 81.53
+08/17/2026 07:43:03 - INFO - __main__ -   Mean final top-1 acc: 69.26
+
+08/17/2026 07:46:46 - INFO - __main__ -   top-1 acc: 78.63
+08/17/2026 07:46:46 - INFO - __main__ -   top-5 acc: 98.89
+08/17/2026 07:46:46 - INFO - __main__ -   per-class acc: [95.7, 97.8, 79.6, 78.3, 82.5, 66.8, 79.3, 69.1, 66.9, 70.3]
+08/17/2026 07:46:46 - INFO - __main__ -   macro F1: 78.84
+08/17/2026 07:46:46 - INFO - __main__ -   head/mid/tail acc: 91.03 / 75.87 / 71.40
+08/17/2026 07:46:49 - INFO - __main__ -   top-1 acc: 81.75
+08/17/2026 07:46:49 - INFO - __main__ -   top-5 acc: 98.72
+08/17/2026 07:46:49 - INFO - __main__ -   per-class acc: [84.4, 95.6, 78.8, 72.4, 85.9, 74.8, 84.7, 70.5, 84.4, 86.0]
+08/17/2026 07:46:49 - INFO - __main__ -   macro F1: 81.93
+08/17/2026 07:46:49 - INFO - __main__ -   head/mid/tail acc: 86.27 / 77.70 / 81.40
+08/17/2026 07:46:52 - INFO - __main__ -   ensemble top-1 acc: 81.80
+08/17/2026 07:46:52 - INFO - __main__ -   ensemble top-5 acc: 98.72
+08/17/2026 07:46:52 - INFO - __main__ -   ensemble per-class acc: [87.9, 96.0, 79.5, 73.7, 86.0, 73.6, 84.1, 70.4, 82.9, 83.9]
+08/17/2026 07:46:52 - INFO - __main__ -   ensemble macro F1: 81.98
+08/17/2026 07:46:52 - INFO - __main__ -   ensemble head/mid/tail acc: 87.80 / 77.77 / 80.32
+08/17/2026 07:46:52 - INFO - __main__ -   Major top-1 acc: 78.63
+08/17/2026 07:46:52 - INFO - __main__ -   Minor top-1 acc: 81.75
+08/17/2026 07:46:52 - INFO - __main__ -   Ensemble top-1 acc: 81.80
+08/17/2026 07:46:52 - INFO - __main__ -   Final top-1 acc: 81.80
+08/17/2026 07:46:52 - INFO - __main__ -   Best final top-1 acc: 81.80
+08/17/2026 07:46:52 - INFO - __main__ -   Mean final top-1 acc: 71.70
+
+08/17/2026 07:50:35 - INFO - __main__ -   top-1 acc: 78.97
+08/17/2026 07:50:35 - INFO - __main__ -   top-5 acc: 98.92
+08/17/2026 07:50:35 - INFO - __main__ -   per-class acc: [95.6, 97.9, 79.6, 78.2, 82.8, 67.1, 79.6, 70.9, 67.8, 70.2]
+08/17/2026 07:50:35 - INFO - __main__ -   macro F1: 79.18
+08/17/2026 07:50:35 - INFO - __main__ -   head/mid/tail acc: 91.03 / 76.03 / 72.12
+08/17/2026 07:50:38 - INFO - __main__ -   top-1 acc: 82.01
+08/17/2026 07:50:38 - INFO - __main__ -   top-5 acc: 98.69
+08/17/2026 07:50:38 - INFO - __main__ -   per-class acc: [85.1, 95.4, 79.9, 72.8, 85.8, 74.0, 85.2, 71.4, 84.6, 85.9]
+08/17/2026 07:50:38 - INFO - __main__ -   macro F1: 82.19
+08/17/2026 07:50:38 - INFO - __main__ -   head/mid/tail acc: 86.80 / 77.53 / 81.78
+08/17/2026 07:50:41 - INFO - __main__ -   ensemble top-1 acc: 82.38
+08/17/2026 07:50:41 - INFO - __main__ -   ensemble top-5 acc: 98.75
+08/17/2026 07:50:41 - INFO - __main__ -   ensemble per-class acc: [88.4, 96.2, 80.9, 74.9, 85.5, 73.9, 84.5, 71.3, 83.8, 84.4]
+08/17/2026 07:50:41 - INFO - __main__ -   ensemble macro F1: 82.55
+08/17/2026 07:50:41 - INFO - __main__ -   ensemble head/mid/tail acc: 88.50 / 78.10 / 81.00
+08/17/2026 07:50:41 - INFO - __main__ -   Major top-1 acc: 78.97
+08/17/2026 07:50:41 - INFO - __main__ -   Minor top-1 acc: 82.01
+08/17/2026 07:50:41 - INFO - __main__ -   Ensemble top-1 acc: 82.38
+08/17/2026 07:50:41 - INFO - __main__ -   Final top-1 acc: 82.38
+08/17/2026 07:50:41 - INFO - __main__ -   Best final top-1 acc: 82.38
+08/17/2026 07:50:41 - INFO - __main__ -   Mean final top-1 acc: 73.69
+
+08/17/2026 07:54:24 - INFO - __main__ -   top-1 acc: 79.50
+08/17/2026 07:54:24 - INFO - __main__ -   top-5 acc: 98.97
+08/17/2026 07:54:24 - INFO - __main__ -   per-class acc: [95.6, 98.1, 80.3, 78.8, 83.3, 67.3, 81.0, 70.7, 68.6, 71.3]
+08/17/2026 07:54:24 - INFO - __main__ -   macro F1: 79.68
+08/17/2026 07:54:24 - INFO - __main__ -   head/mid/tail acc: 91.33 / 76.47 / 72.90
+08/17/2026 07:54:27 - INFO - __main__ -   top-1 acc: 82.56
+08/17/2026 07:54:27 - INFO - __main__ -   top-5 acc: 98.68
+08/17/2026 07:54:27 - INFO - __main__ -   per-class acc: [85.4, 95.5, 79.9, 73.7, 86.2, 74.2, 86.0, 72.5, 85.7, 86.5]
+08/17/2026 07:54:27 - INFO - __main__ -   macro F1: 82.74
+08/17/2026 07:54:27 - INFO - __main__ -   head/mid/tail acc: 86.93 / 78.03 / 82.68
+08/17/2026 07:54:30 - INFO - __main__ -   ensemble top-1 acc: 82.72
+08/17/2026 07:54:30 - INFO - __main__ -   ensemble top-5 acc: 98.76
+08/17/2026 07:54:30 - INFO - __main__ -   ensemble per-class acc: [88.3, 96.1, 80.3, 75.2, 86.3, 73.8, 85.3, 72.3, 84.6, 85.0]
+08/17/2026 07:54:30 - INFO - __main__ -   ensemble macro F1: 82.89
+08/17/2026 07:54:30 - INFO - __main__ -   ensemble head/mid/tail acc: 88.23 / 78.43 / 81.80
+08/17/2026 07:54:30 - INFO - __main__ -   Major top-1 acc: 79.50
+08/17/2026 07:54:30 - INFO - __main__ -   Minor top-1 acc: 82.56
+08/17/2026 07:54:30 - INFO - __main__ -   Ensemble top-1 acc: 82.72
+08/17/2026 07:54:30 - INFO - __main__ -   Final top-1 acc: 82.72
+08/17/2026 07:54:30 - INFO - __main__ -   Best final top-1 acc: 82.72
+08/17/2026 07:54:30 - INFO - __main__ -   Mean final top-1 acc: 75.24
+
+08/17/2026 07:58:14 - INFO - __main__ -   top-1 acc: 79.92
+08/17/2026 07:58:14 - INFO - __main__ -   top-5 acc: 99.06
+08/17/2026 07:58:14 - INFO - __main__ -   per-class acc: [96.0, 98.2, 81.0, 77.9, 83.3, 68.5, 81.0, 71.6, 68.7, 73.0]
+08/17/2026 07:58:14 - INFO - __main__ -   macro F1: 80.09
+08/17/2026 07:58:14 - INFO - __main__ -   head/mid/tail acc: 91.73 / 76.57 / 73.57
+08/17/2026 07:58:16 - INFO - __main__ -   top-1 acc: 82.97
+08/17/2026 07:58:16 - INFO - __main__ -   top-5 acc: 98.72
+08/17/2026 07:58:16 - INFO - __main__ -   per-class acc: [85.8, 95.9, 80.4, 73.5, 86.7, 74.8, 86.3, 74.0, 85.5, 86.8]
+08/17/2026 07:58:16 - INFO - __main__ -   macro F1: 83.13
+08/17/2026 07:58:16 - INFO - __main__ -   head/mid/tail acc: 87.37 / 78.33 / 83.15
+08/17/2026 07:58:20 - INFO - __main__ -   ensemble top-1 acc: 82.99
+08/17/2026 07:58:20 - INFO - __main__ -   ensemble top-5 acc: 98.88
+08/17/2026 07:58:20 - INFO - __main__ -   ensemble per-class acc: [88.8, 96.1, 80.9, 74.8, 86.5, 74.2, 85.9, 73.2, 84.0, 85.5]
+08/17/2026 07:58:20 - INFO - __main__ -   ensemble macro F1: 83.14
+08/17/2026 07:58:20 - INFO - __main__ -   ensemble head/mid/tail acc: 88.60 / 78.50 / 82.15
+08/17/2026 07:58:20 - INFO - __main__ -   Major top-1 acc: 79.92
+08/17/2026 07:58:20 - INFO - __main__ -   Minor top-1 acc: 82.97
+08/17/2026 07:58:20 - INFO - __main__ -   Ensemble top-1 acc: 82.99
+08/17/2026 07:58:20 - INFO - __main__ -   Final top-1 acc: 82.99
+08/17/2026 07:58:20 - INFO - __main__ -   Best final top-1 acc: 82.99
+08/17/2026 07:58:20 - INFO - __main__ -   Mean final top-1 acc: 76.52
+
+08/17/2026 08:02:03 - INFO - __main__ -   top-1 acc: 80.16
+08/17/2026 08:02:03 - INFO - __main__ -   top-5 acc: 99.08
+08/17/2026 08:02:03 - INFO - __main__ -   per-class acc: [95.6, 97.9, 81.1, 78.8, 82.6, 68.6, 81.3, 71.3, 70.4, 74.0]
+08/17/2026 08:02:03 - INFO - __main__ -   macro F1: 80.38
+08/17/2026 08:02:03 - INFO - __main__ -   head/mid/tail acc: 91.53 / 76.67 / 74.25
+08/17/2026 08:02:06 - INFO - __main__ -   top-1 acc: 83.13
+08/17/2026 08:02:06 - INFO - __main__ -   top-5 acc: 98.81
+08/17/2026 08:02:06 - INFO - __main__ -   per-class acc: [86.8, 96.0, 80.5, 73.8, 87.0, 74.8, 86.0, 74.3, 85.3, 86.8]
+08/17/2026 08:02:06 - INFO - __main__ -   macro F1: 83.28
+08/17/2026 08:02:06 - INFO - __main__ -   head/mid/tail acc: 87.77 / 78.53 / 83.10
+08/17/2026 08:02:09 - INFO - __main__ -   ensemble top-1 acc: 83.30
+08/17/2026 08:02:09 - INFO - __main__ -   ensemble top-5 acc: 98.87
+08/17/2026 08:02:09 - INFO - __main__ -   ensemble per-class acc: [90.3, 96.2, 81.2, 75.4, 86.8, 74.4, 85.7, 73.8, 84.0, 85.2]
+08/17/2026 08:02:09 - INFO - __main__ -   ensemble macro F1: 83.45
+08/17/2026 08:02:09 - INFO - __main__ -   ensemble head/mid/tail acc: 89.23 / 78.87 / 82.18
+08/17/2026 08:02:09 - INFO - __main__ -   Major top-1 acc: 80.16
+08/17/2026 08:02:09 - INFO - __main__ -   Minor top-1 acc: 83.13
+08/17/2026 08:02:09 - INFO - __main__ -   Ensemble top-1 acc: 83.30
+08/17/2026 08:02:09 - INFO - __main__ -   Final top-1 acc: 83.30
+08/17/2026 08:02:09 - INFO - __main__ -   Best final top-1 acc: 83.30
+08/17/2026 08:02:09 - INFO - __main__ -   Mean final top-1 acc: 77.59
+
+08/17/2026 08:05:52 - INFO - __main__ -   top-1 acc: 80.66
+08/17/2026 08:05:52 - INFO - __main__ -   top-5 acc: 99.10
+08/17/2026 08:05:52 - INFO - __main__ -   per-class acc: [96.2, 98.3, 81.5, 78.9, 83.5, 69.0, 82.0, 71.6, 70.6, 75.0]
+08/17/2026 08:05:52 - INFO - __main__ -   macro F1: 80.85
+08/17/2026 08:05:52 - INFO - __main__ -   head/mid/tail acc: 92.00 / 77.13 / 74.80
+08/17/2026 08:05:55 - INFO - __main__ -   top-1 acc: 83.42
+08/17/2026 08:05:55 - INFO - __main__ -   top-5 acc: 98.85
+08/17/2026 08:05:55 - INFO - __main__ -   per-class acc: [87.1, 95.9, 81.3, 74.0, 86.9, 75.3, 86.6, 74.5, 85.3, 87.3]
+08/17/2026 08:05:55 - INFO - __main__ -   macro F1: 83.57
+08/17/2026 08:05:55 - INFO - __main__ -   head/mid/tail acc: 88.10 / 78.73 / 83.43
+08/17/2026 08:05:58 - INFO - __main__ -   ensemble top-1 acc: 83.59
+08/17/2026 08:05:58 - INFO - __main__ -   ensemble top-5 acc: 98.94
+08/17/2026 08:05:58 - INFO - __main__ -   ensemble per-class acc: [90.4, 96.4, 82.3, 75.6, 86.7, 74.4, 86.3, 74.3, 83.7, 85.8]
+08/17/2026 08:05:58 - INFO - __main__ -   ensemble macro F1: 83.73
+08/17/2026 08:05:58 - INFO - __main__ -   ensemble head/mid/tail acc: 89.70 / 78.90 / 82.52
+08/17/2026 08:05:58 - INFO - __main__ -   Major top-1 acc: 80.66
+08/17/2026 08:05:58 - INFO - __main__ -   Minor top-1 acc: 83.42
+08/17/2026 08:05:58 - INFO - __main__ -   Ensemble top-1 acc: 83.59
+08/17/2026 08:05:58 - INFO - __main__ -   Final top-1 acc: 83.59
+08/17/2026 08:05:58 - INFO - __main__ -   Best final top-1 acc: 83.59
+08/17/2026 08:05:58 - INFO - __main__ -   Mean final top-1 acc: 78.52
+
+08/17/2026 08:09:41 - INFO - __main__ -   top-1 acc: 81.07
+08/17/2026 08:09:41 - INFO - __main__ -   top-5 acc: 99.14
+08/17/2026 08:09:41 - INFO - __main__ -   per-class acc: [96.2, 98.2, 82.4, 79.4, 84.3, 68.8, 81.6, 73.4, 71.5, 74.9]
+08/17/2026 08:09:41 - INFO - __main__ -   macro F1: 81.26
+08/17/2026 08:09:41 - INFO - __main__ -   head/mid/tail acc: 92.27 / 77.50 / 75.35
+08/17/2026 08:09:44 - INFO - __main__ -   top-1 acc: 83.88
+08/17/2026 08:09:44 - INFO - __main__ -   top-5 acc: 98.98
+08/17/2026 08:09:44 - INFO - __main__ -   per-class acc: [87.9, 96.0, 82.8, 75.5, 87.3, 74.1, 86.8, 74.9, 86.4, 87.1]
+08/17/2026 08:09:44 - INFO - __main__ -   macro F1: 84.03
+08/17/2026 08:09:44 - INFO - __main__ -   head/mid/tail acc: 88.90 / 78.97 / 83.80
+08/17/2026 08:09:47 - INFO - __main__ -   ensemble top-1 acc: 83.99
+08/17/2026 08:09:47 - INFO - __main__ -   ensemble top-5 acc: 99.00
+08/17/2026 08:09:47 - INFO - __main__ -   ensemble per-class acc: [90.9, 96.6, 82.8, 77.1, 87.2, 73.4, 85.9, 75.3, 84.9, 85.8]
+08/17/2026 08:09:47 - INFO - __main__ -   ensemble macro F1: 84.14
+08/17/2026 08:09:47 - INFO - __main__ -   ensemble head/mid/tail acc: 90.10 / 79.23 / 82.97
+08/17/2026 08:09:47 - INFO - __main__ -   Major top-1 acc: 81.07
+08/17/2026 08:09:47 - INFO - __main__ -   Minor top-1 acc: 83.88
+08/17/2026 08:09:47 - INFO - __main__ -   Ensemble top-1 acc: 83.99
+08/17/2026 08:09:47 - INFO - __main__ -   Final top-1 acc: 83.99
+08/17/2026 08:09:47 - INFO - __main__ -   Best final top-1 acc: 83.99
+08/17/2026 08:09:47 - INFO - __main__ -   Mean final top-1 acc: 79.32
+
+08/17/2026 08:13:31 - INFO - __main__ -   top-1 acc: 81.32
+08/17/2026 08:13:31 - INFO - __main__ -   top-5 acc: 99.18
+08/17/2026 08:13:31 - INFO - __main__ -   per-class acc: [96.6, 98.0, 82.8, 78.9, 84.5, 68.7, 82.7, 73.9, 71.7, 75.4]
+08/17/2026 08:13:31 - INFO - __main__ -   macro F1: 81.49
+08/17/2026 08:13:31 - INFO - __main__ -   head/mid/tail acc: 92.47 / 77.37 / 75.93
+08/17/2026 08:13:34 - INFO - __main__ -   top-1 acc: 84.08
+08/17/2026 08:13:34 - INFO - __main__ -   top-5 acc: 98.96
+08/17/2026 08:13:34 - INFO - __main__ -   per-class acc: [88.3, 96.2, 82.2, 75.1, 87.7, 73.6, 87.9, 75.4, 87.1, 87.3]
+08/17/2026 08:13:34 - INFO - __main__ -   macro F1: 84.21
+08/17/2026 08:13:34 - INFO - __main__ -   head/mid/tail acc: 88.90 / 78.80 / 84.43
+08/17/2026 08:13:37 - INFO - __main__ -   ensemble top-1 acc: 84.21
+08/17/2026 08:13:37 - INFO - __main__ -   ensemble top-5 acc: 99.02
+08/17/2026 08:13:37 - INFO - __main__ -   ensemble per-class acc: [90.9, 96.6, 82.7, 76.6, 87.5, 73.7, 87.0, 75.4, 85.5, 86.2]
+08/17/2026 08:13:37 - INFO - __main__ -   ensemble macro F1: 84.35
+08/17/2026 08:13:37 - INFO - __main__ -   ensemble head/mid/tail acc: 90.07 / 79.27 / 83.52
+08/17/2026 08:13:37 - INFO - __main__ -   Major top-1 acc: 81.32
+08/17/2026 08:13:37 - INFO - __main__ -   Minor top-1 acc: 84.08
+08/17/2026 08:13:37 - INFO - __main__ -   Ensemble top-1 acc: 84.21
+08/17/2026 08:13:37 - INFO - __main__ -   Final top-1 acc: 84.21
+08/17/2026 08:13:37 - INFO - __main__ -   Best final top-1 acc: 84.21
+08/17/2026 08:13:37 - INFO - __main__ -   Mean final top-1 acc: 80.01
+
+08/17/2026 08:17:20 - INFO - __main__ -   top-1 acc: 81.72
+08/17/2026 08:17:20 - INFO - __main__ -   top-5 acc: 99.15
+08/17/2026 08:17:20 - INFO - __main__ -   per-class acc: [96.4, 98.0, 83.0, 79.1, 85.0, 70.0, 83.5, 75.2, 71.9, 75.1]
+08/17/2026 08:17:20 - INFO - __main__ -   macro F1: 81.91
+08/17/2026 08:17:20 - INFO - __main__ -   head/mid/tail acc: 92.47 / 78.03 / 76.43
+08/17/2026 08:17:23 - INFO - __main__ -   top-1 acc: 84.42
+08/17/2026 08:17:23 - INFO - __main__ -   top-5 acc: 99.03
+08/17/2026 08:17:23 - INFO - __main__ -   per-class acc: [88.8, 96.2, 82.8, 75.7, 87.7, 74.8, 88.0, 76.2, 86.5, 87.5]
+08/17/2026 08:17:23 - INFO - __main__ -   macro F1: 84.55
+08/17/2026 08:17:23 - INFO - __main__ -   head/mid/tail acc: 89.27 / 79.40 / 84.55
+08/17/2026 08:17:26 - INFO - __main__ -   ensemble top-1 acc: 84.54
+08/17/2026 08:17:26 - INFO - __main__ -   ensemble top-5 acc: 99.06
+08/17/2026 08:17:26 - INFO - __main__ -   ensemble per-class acc: [91.6, 96.9, 83.4, 76.7, 87.3, 74.3, 87.2, 76.2, 85.4, 86.4]
+08/17/2026 08:17:26 - INFO - __main__ -   ensemble macro F1: 84.68
+08/17/2026 08:17:26 - INFO - __main__ -   ensemble head/mid/tail acc: 90.63 / 79.43 / 83.80
+08/17/2026 08:17:26 - INFO - __main__ -   Major top-1 acc: 81.72
+08/17/2026 08:17:26 - INFO - __main__ -   Minor top-1 acc: 84.42
+08/17/2026 08:17:26 - INFO - __main__ -   Ensemble top-1 acc: 84.54
+08/17/2026 08:17:26 - INFO - __main__ -   Final top-1 acc: 84.54
+08/17/2026 08:17:26 - INFO - __main__ -   Best final top-1 acc: 84.54
+08/17/2026 08:17:26 - INFO - __main__ -   Mean final top-1 acc: 80.64
+
+08/17/2026 08:21:09 - INFO - __main__ -   top-1 acc: 82.15
+08/17/2026 08:21:09 - INFO - __main__ -   top-5 acc: 99.20
+08/17/2026 08:21:09 - INFO - __main__ -   per-class acc: [96.8, 98.2, 83.4, 79.2, 85.4, 70.2, 83.1, 75.6, 73.1, 76.5]
+08/17/2026 08:21:09 - INFO - __main__ -   macro F1: 82.34
+08/17/2026 08:21:09 - INFO - __main__ -   head/mid/tail acc: 92.80 / 78.27 / 77.07
+08/17/2026 08:21:12 - INFO - __main__ -   top-1 acc: 84.76
+08/17/2026 08:21:12 - INFO - __main__ -   top-5 acc: 99.06
+08/17/2026 08:21:12 - INFO - __main__ -   per-class acc: [89.2, 96.4, 83.6, 76.4, 88.0, 75.1, 88.0, 76.6, 86.1, 88.2]
+08/17/2026 08:21:12 - INFO - __main__ -   macro F1: 84.88
+08/17/2026 08:21:12 - INFO - __main__ -   head/mid/tail acc: 89.73 / 79.83 / 84.73
+08/17/2026 08:21:16 - INFO - __main__ -   ensemble top-1 acc: 84.89
+08/17/2026 08:21:16 - INFO - __main__ -   ensemble top-5 acc: 99.09
+08/17/2026 08:21:16 - INFO - __main__ -   ensemble per-class acc: [92.1, 97.1, 83.6, 77.5, 87.9, 74.7, 87.3, 76.9, 85.3, 86.5]
+08/17/2026 08:21:16 - INFO - __main__ -   ensemble macro F1: 85.02
+08/17/2026 08:21:16 - INFO - __main__ -   ensemble head/mid/tail acc: 90.93 / 80.03 / 84.00
+08/17/2026 08:21:16 - INFO - __main__ -   Major top-1 acc: 82.15
+08/17/2026 08:21:16 - INFO - __main__ -   Minor top-1 acc: 84.76
+08/17/2026 08:21:16 - INFO - __main__ -   Ensemble top-1 acc: 84.89
+08/17/2026 08:21:16 - INFO - __main__ -   Final top-1 acc: 84.89
+08/17/2026 08:21:16 - INFO - __main__ -   Best final top-1 acc: 84.89
+08/17/2026 08:21:16 - INFO - __main__ -   Mean final top-1 acc: 81.21
+
+08/17/2026 08:24:59 - INFO - __main__ -   top-1 acc: 82.36
+08/17/2026 08:24:59 - INFO - __main__ -   top-5 acc: 99.27
+08/17/2026 08:24:59 - INFO - __main__ -   per-class acc: [96.8, 98.1, 83.1, 80.1, 85.7, 70.0, 84.0, 76.1, 73.3, 76.4]
+08/17/2026 08:24:59 - INFO - __main__ -   macro F1: 82.54
+08/17/2026 08:24:59 - INFO - __main__ -   head/mid/tail acc: 92.67 / 78.60 / 77.45
+08/17/2026 08:25:01 - INFO - __main__ -   top-1 acc: 84.86
+08/17/2026 08:25:01 - INFO - __main__ -   top-5 acc: 99.04
+08/17/2026 08:25:01 - INFO - __main__ -   per-class acc: [89.3, 96.7, 83.8, 75.5, 87.9, 75.2, 88.6, 77.1, 86.3, 88.2]
+08/17/2026 08:25:01 - INFO - __main__ -   macro F1: 84.97
+08/17/2026 08:25:01 - INFO - __main__ -   head/mid/tail acc: 89.93 / 79.53 / 85.05
+08/17/2026 08:25:05 - INFO - __main__ -   ensemble top-1 acc: 85.07
+08/17/2026 08:25:05 - INFO - __main__ -   ensemble top-5 acc: 99.11
+08/17/2026 08:25:05 - INFO - __main__ -   ensemble per-class acc: [92.1, 97.2, 83.9, 77.3, 87.9, 75.0, 88.2, 76.9, 85.5, 86.7]
+08/17/2026 08:25:05 - INFO - __main__ -   ensemble macro F1: 85.19
+08/17/2026 08:25:05 - INFO - __main__ -   ensemble head/mid/tail acc: 91.07 / 80.07 / 84.32
+08/17/2026 08:25:05 - INFO - __main__ -   Major top-1 acc: 82.36
+08/17/2026 08:25:05 - INFO - __main__ -   Minor top-1 acc: 84.86
+08/17/2026 08:25:05 - INFO - __main__ -   Ensemble top-1 acc: 85.07
+08/17/2026 08:25:05 - INFO - __main__ -   Final top-1 acc: 85.07
+08/17/2026 08:25:05 - INFO - __main__ -   Best final top-1 acc: 85.07
+08/17/2026 08:25:05 - INFO - __main__ -   Mean final top-1 acc: 81.71
+
+08/17/2026 08:28:48 - INFO - __main__ -   top-1 acc: 82.79
+08/17/2026 08:28:48 - INFO - __main__ -   top-5 acc: 99.26
+08/17/2026 08:28:48 - INFO - __main__ -   per-class acc: [96.8, 98.1, 83.0, 79.5, 85.7, 71.5, 85.4, 76.2, 75.0, 76.7]
+08/17/2026 08:28:48 - INFO - __main__ -   macro F1: 82.96
+08/17/2026 08:28:48 - INFO - __main__ -   head/mid/tail acc: 92.63 / 78.90 / 78.33
+08/17/2026 08:28:51 - INFO - __main__ -   top-1 acc: 85.24
+08/17/2026 08:28:51 - INFO - __main__ -   top-5 acc: 99.07
+08/17/2026 08:28:51 - INFO - __main__ -   per-class acc: [90.1, 96.5, 84.3, 76.4, 88.1, 75.7, 88.9, 77.7, 86.4, 88.3]
+08/17/2026 08:28:51 - INFO - __main__ -   macro F1: 85.35
+08/17/2026 08:28:51 - INFO - __main__ -   head/mid/tail acc: 90.30 / 80.07 / 85.32
+08/17/2026 08:28:54 - INFO - __main__ -   ensemble top-1 acc: 85.34
+08/17/2026 08:28:54 - INFO - __main__ -   ensemble top-5 acc: 99.13
+08/17/2026 08:28:54 - INFO - __main__ -   ensemble per-class acc: [92.2, 97.3, 84.9, 77.3, 88.1, 74.6, 88.4, 77.8, 86.0, 86.8]
+08/17/2026 08:28:54 - INFO - __main__ -   ensemble macro F1: 85.46
+08/17/2026 08:28:54 - INFO - __main__ -   ensemble head/mid/tail acc: 91.47 / 80.00 / 84.75
+08/17/2026 08:28:54 - INFO - __main__ -   Major top-1 acc: 82.79
+08/17/2026 08:28:54 - INFO - __main__ -   Minor top-1 acc: 85.24
+08/17/2026 08:28:54 - INFO - __main__ -   Ensemble top-1 acc: 85.34
+08/17/2026 08:28:54 - INFO - __main__ -   Final top-1 acc: 85.34
+08/17/2026 08:28:54 - INFO - __main__ -   Best final top-1 acc: 85.34
+08/17/2026 08:28:54 - INFO - __main__ -   Mean final top-1 acc: 82.15
+
+08/17/2026 08:32:37 - INFO - __main__ -   top-1 acc: 82.94
+08/17/2026 08:32:37 - INFO - __main__ -   top-5 acc: 99.32
+08/17/2026 08:32:37 - INFO - __main__ -   per-class acc: [97.0, 98.2, 83.5, 79.2, 87.1, 70.7, 85.5, 76.8, 75.0, 76.4]
+08/17/2026 08:32:37 - INFO - __main__ -   macro F1: 83.10
+08/17/2026 08:32:37 - INFO - __main__ -   head/mid/tail acc: 92.90 / 79.00 / 78.43
+08/17/2026 08:32:40 - INFO - __main__ -   top-1 acc: 85.54
+08/17/2026 08:32:40 - INFO - __main__ -   top-5 acc: 99.14
+08/17/2026 08:32:40 - INFO - __main__ -   per-class acc: [90.2, 96.3, 85.0, 77.3, 89.1, 75.3, 88.8, 78.5, 86.9, 88.0]
+08/17/2026 08:32:40 - INFO - __main__ -   macro F1: 85.66
+08/17/2026 08:32:40 - INFO - __main__ -   head/mid/tail acc: 90.50 / 80.57 / 85.55
+08/17/2026 08:32:43 - INFO - __main__ -   ensemble top-1 acc: 85.58
+08/17/2026 08:32:43 - INFO - __main__ -   ensemble top-5 acc: 99.17
+08/17/2026 08:32:43 - INFO - __main__ -   ensemble per-class acc: [91.8, 97.3, 85.4, 77.4, 89.3, 74.2, 88.8, 78.5, 86.1, 87.0]
+08/17/2026 08:32:43 - INFO - __main__ -   ensemble macro F1: 85.69
+08/17/2026 08:32:43 - INFO - __main__ -   ensemble head/mid/tail acc: 91.50 / 80.30 / 85.10
+08/17/2026 08:32:43 - INFO - __main__ -   Major top-1 acc: 82.94
+08/17/2026 08:32:43 - INFO - __main__ -   Minor top-1 acc: 85.54
+08/17/2026 08:32:43 - INFO - __main__ -   Ensemble top-1 acc: 85.58
+08/17/2026 08:32:43 - INFO - __main__ -   Final top-1 acc: 85.58
+08/17/2026 08:32:43 - INFO - __main__ -   Best final top-1 acc: 85.58
+08/17/2026 08:32:43 - INFO - __main__ -   Mean final top-1 acc: 82.56
+
+08/17/2026 08:36:26 - INFO - __main__ -   top-1 acc: 83.36
+08/17/2026 08:36:26 - INFO - __main__ -   top-5 acc: 99.36
+08/17/2026 08:36:26 - INFO - __main__ -   per-class acc: [96.7, 98.3, 84.0, 79.5, 87.9, 71.1, 85.9, 77.2, 75.6, 77.4]
+08/17/2026 08:36:26 - INFO - __main__ -   macro F1: 83.51
+08/17/2026 08:36:26 - INFO - __main__ -   head/mid/tail acc: 93.00 / 79.50 / 79.03
+08/17/2026 08:36:29 - INFO - __main__ -   top-1 acc: 85.96
+08/17/2026 08:36:29 - INFO - __main__ -   top-5 acc: 99.19
+08/17/2026 08:36:29 - INFO - __main__ -   per-class acc: [90.8, 96.2, 85.5, 77.8, 89.2, 75.6, 89.5, 79.0, 87.5, 88.5]
+08/17/2026 08:36:29 - INFO - __main__ -   macro F1: 86.07
+08/17/2026 08:36:29 - INFO - __main__ -   head/mid/tail acc: 90.83 / 80.87 / 86.12
+08/17/2026 08:36:32 - INFO - __main__ -   ensemble top-1 acc: 85.85
+08/17/2026 08:36:32 - INFO - __main__ -   ensemble top-5 acc: 99.20
+08/17/2026 08:36:32 - INFO - __main__ -   ensemble per-class acc: [92.0, 97.1, 85.7, 77.8, 89.4, 74.9, 89.0, 79.5, 86.2, 86.9]
+08/17/2026 08:36:32 - INFO - __main__ -   ensemble macro F1: 85.97
+08/17/2026 08:36:32 - INFO - __main__ -   ensemble head/mid/tail acc: 91.60 / 80.70 / 85.40
+08/17/2026 08:36:32 - INFO - __main__ -   Major top-1 acc: 83.36
+08/17/2026 08:36:32 - INFO - __main__ -   Minor top-1 acc: 85.96
+08/17/2026 08:36:32 - INFO - __main__ -   Ensemble top-1 acc: 85.85
+08/17/2026 08:36:32 - INFO - __main__ -   Final top-1 acc: 85.85
+08/17/2026 08:36:32 - INFO - __main__ -   Best final top-1 acc: 85.85
+08/17/2026 08:36:32 - INFO - __main__ -   Mean final top-1 acc: 82.94
+
+08/17/2026 08:40:15 - INFO - __main__ -   top-1 acc: 83.61
+08/17/2026 08:40:15 - INFO - __main__ -   top-5 acc: 99.35
+08/17/2026 08:40:15 - INFO - __main__ -   per-class acc: [96.5, 98.0, 84.5, 79.2, 88.2, 71.5, 86.7, 77.7, 75.7, 78.1]
+08/17/2026 08:40:15 - INFO - __main__ -   macro F1: 83.76
+08/17/2026 08:40:15 - INFO - __main__ -   head/mid/tail acc: 93.00 / 79.63 / 79.55
+08/17/2026 08:40:17 - INFO - __main__ -   top-1 acc: 86.08
+08/17/2026 08:40:17 - INFO - __main__ -   top-5 acc: 99.22
+08/17/2026 08:40:17 - INFO - __main__ -   per-class acc: [90.0, 96.3, 85.9, 77.9, 89.2, 75.8, 89.4, 79.9, 88.1, 88.3]
+08/17/2026 08:40:17 - INFO - __main__ -   macro F1: 86.21
+08/17/2026 08:40:17 - INFO - __main__ -   head/mid/tail acc: 90.73 / 80.97 / 86.43
+08/17/2026 08:40:21 - INFO - __main__ -   ensemble top-1 acc: 86.29
+08/17/2026 08:40:21 - INFO - __main__ -   ensemble top-5 acc: 99.25
+08/17/2026 08:40:21 - INFO - __main__ -   ensemble per-class acc: [92.1, 97.0, 85.9, 78.2, 89.9, 75.8, 89.3, 80.1, 87.0, 87.6]
+08/17/2026 08:40:21 - INFO - __main__ -   ensemble macro F1: 86.40
+08/17/2026 08:40:21 - INFO - __main__ -   ensemble head/mid/tail acc: 91.67 / 81.30 / 86.00
+08/17/2026 08:40:21 - INFO - __main__ -   Major top-1 acc: 83.61
+08/17/2026 08:40:21 - INFO - __main__ -   Minor top-1 acc: 86.08
+08/17/2026 08:40:21 - INFO - __main__ -   Ensemble top-1 acc: 86.29
+08/17/2026 08:40:21 - INFO - __main__ -   Final top-1 acc: 86.29
+08/17/2026 08:40:21 - INFO - __main__ -   Best final top-1 acc: 86.29
+08/17/2026 08:40:21 - INFO - __main__ -   Mean final top-1 acc: 83.30
+
+08/17/2026 08:44:04 - INFO - __main__ -   top-1 acc: 83.89
+08/17/2026 08:44:04 - INFO - __main__ -   top-5 acc: 99.39
+08/17/2026 08:44:04 - INFO - __main__ -   per-class acc: [96.5, 98.0, 85.1, 80.4, 88.7, 71.4, 86.8, 77.6, 75.9, 78.5]
+08/17/2026 08:44:04 - INFO - __main__ -   macro F1: 84.03
+08/17/2026 08:44:04 - INFO - __main__ -   head/mid/tail acc: 93.20 / 80.17 / 79.70
+08/17/2026 08:44:07 - INFO - __main__ -   top-1 acc: 86.32
+08/17/2026 08:44:07 - INFO - __main__ -   top-5 acc: 99.23
+08/17/2026 08:44:07 - INFO - __main__ -   per-class acc: [90.2, 96.5, 84.8, 77.9, 90.0, 76.6, 89.3, 80.3, 88.5, 89.1]
+08/17/2026 08:44:07 - INFO - __main__ -   macro F1: 86.44
+08/17/2026 08:44:07 - INFO - __main__ -   head/mid/tail acc: 90.50 / 81.50 / 86.80
+08/17/2026 08:44:10 - INFO - __main__ -   ensemble top-1 acc: 86.45
+08/17/2026 08:44:10 - INFO - __main__ -   ensemble top-5 acc: 99.28
+08/17/2026 08:44:10 - INFO - __main__ -   ensemble per-class acc: [92.9, 97.0, 85.3, 78.5, 90.5, 75.9, 89.2, 80.3, 87.2, 87.7]
+08/17/2026 08:44:10 - INFO - __main__ -   ensemble macro F1: 86.56
+08/17/2026 08:44:10 - INFO - __main__ -   ensemble head/mid/tail acc: 91.73 / 81.63 / 86.10
+08/17/2026 08:44:10 - INFO - __main__ -   Major top-1 acc: 83.89
+08/17/2026 08:44:10 - INFO - __main__ -   Minor top-1 acc: 86.32
+08/17/2026 08:44:10 - INFO - __main__ -   Ensemble top-1 acc: 86.45
+08/17/2026 08:44:10 - INFO - __main__ -   Final top-1 acc: 86.45
+08/17/2026 08:44:10 - INFO - __main__ -   Best final top-1 acc: 86.45
+08/17/2026 08:44:10 - INFO - __main__ -   Mean final top-1 acc: 83.64
+
+08/17/2026 08:47:53 - INFO - __main__ -   top-1 acc: 84.19
+08/17/2026 08:47:53 - INFO - __main__ -   top-5 acc: 99.42
+08/17/2026 08:47:53 - INFO - __main__ -   per-class acc: [96.9, 98.2, 84.6, 80.6, 89.3, 71.2, 87.0, 78.9, 76.6, 78.6]
+08/17/2026 08:47:53 - INFO - __main__ -   macro F1: 84.33
+08/17/2026 08:47:53 - INFO - __main__ -   head/mid/tail acc: 93.23 / 80.37 / 80.28
+08/17/2026 08:47:56 - INFO - __main__ -   top-1 acc: 86.71
+08/17/2026 08:47:56 - INFO - __main__ -   top-5 acc: 99.29
+08/17/2026 08:47:56 - INFO - __main__ -   per-class acc: [91.1, 96.6, 86.1, 78.8, 90.6, 75.9, 89.0, 81.3, 88.7, 89.0]
+08/17/2026 08:47:56 - INFO - __main__ -   macro F1: 86.82
+08/17/2026 08:47:56 - INFO - __main__ -   head/mid/tail acc: 91.27 / 81.77 / 87.00
+08/17/2026 08:47:59 - INFO - __main__ -   ensemble top-1 acc: 86.67
+08/17/2026 08:47:59 - INFO - __main__ -   ensemble top-5 acc: 99.32
+08/17/2026 08:47:59 - INFO - __main__ -   ensemble per-class acc: [93.3, 97.1, 85.7, 80.0, 90.5, 75.1, 88.5, 81.2, 87.3, 88.0]
+08/17/2026 08:47:59 - INFO - __main__ -   ensemble macro F1: 86.78
+08/17/2026 08:47:59 - INFO - __main__ -   ensemble head/mid/tail acc: 92.03 / 81.87 / 86.25
+08/17/2026 08:47:59 - INFO - __main__ -   Major top-1 acc: 84.19
+08/17/2026 08:47:59 - INFO - __main__ -   Minor top-1 acc: 86.71
+08/17/2026 08:47:59 - INFO - __main__ -   Ensemble top-1 acc: 86.67
+08/17/2026 08:47:59 - INFO - __main__ -   Final top-1 acc: 86.67
+08/17/2026 08:47:59 - INFO - __main__ -   Best final top-1 acc: 86.67
+08/17/2026 08:47:59 - INFO - __main__ -   Mean final top-1 acc: 83.96
+
+08/17/2026 08:51:42 - INFO - __main__ -   top-1 acc: 84.41
+08/17/2026 08:51:42 - INFO - __main__ -   top-5 acc: 99.43
+08/17/2026 08:51:42 - INFO - __main__ -   per-class acc: [97.2, 98.3, 84.5, 80.4, 89.7, 71.6, 87.2, 79.7, 76.8, 78.7]
+08/17/2026 08:51:42 - INFO - __main__ -   macro F1: 84.54
+08/17/2026 08:51:42 - INFO - __main__ -   head/mid/tail acc: 93.33 / 80.57 / 80.60
+08/17/2026 08:51:45 - INFO - __main__ -   top-1 acc: 86.75
+08/17/2026 08:51:45 - INFO - __main__ -   top-5 acc: 99.31
+08/17/2026 08:51:45 - INFO - __main__ -   per-class acc: [91.2, 96.3, 86.3, 78.8, 90.6, 76.0, 89.1, 81.9, 88.1, 89.2]
+08/17/2026 08:51:45 - INFO - __main__ -   macro F1: 86.86
+08/17/2026 08:51:45 - INFO - __main__ -   head/mid/tail acc: 91.27 / 81.80 / 87.08
+08/17/2026 08:51:48 - INFO - __main__ -   ensemble top-1 acc: 86.88
+08/17/2026 08:51:48 - INFO - __main__ -   ensemble top-5 acc: 99.34
+08/17/2026 08:51:48 - INFO - __main__ -   ensemble per-class acc: [93.3, 96.9, 86.0, 80.1, 90.4, 75.8, 89.1, 81.6, 87.0, 88.6]
+08/17/2026 08:51:48 - INFO - __main__ -   ensemble macro F1: 86.99
+08/17/2026 08:51:48 - INFO - __main__ -   ensemble head/mid/tail acc: 92.07 / 82.10 / 86.58
+08/17/2026 08:51:48 - INFO - __main__ -   Major top-1 acc: 84.41
+08/17/2026 08:51:48 - INFO - __main__ -   Minor top-1 acc: 86.75
+08/17/2026 08:51:48 - INFO - __main__ -   Ensemble top-1 acc: 86.88
+08/17/2026 08:51:48 - INFO - __main__ -   Final top-1 acc: 86.88
+08/17/2026 08:51:48 - INFO - __main__ -   Best final top-1 acc: 86.88
+08/17/2026 08:51:48 - INFO - __main__ -   Mean final top-1 acc: 84.27
+
+08/17/2026 08:55:32 - INFO - __main__ -   top-1 acc: 84.64
+08/17/2026 08:55:32 - INFO - __main__ -   top-5 acc: 99.41
+08/17/2026 08:55:32 - INFO - __main__ -   per-class acc: [97.0, 98.4, 85.0, 80.6, 90.3, 71.3, 87.3, 80.6, 76.9, 79.0]
+08/17/2026 08:55:32 - INFO - __main__ -   macro F1: 84.76
+08/17/2026 08:55:32 - INFO - __main__ -   head/mid/tail acc: 93.47 / 80.73 / 80.95
+08/17/2026 08:55:34 - INFO - __main__ -   top-1 acc: 86.93
+08/17/2026 08:55:34 - INFO - __main__ -   top-5 acc: 99.31
+08/17/2026 08:55:34 - INFO - __main__ -   per-class acc: [91.4, 96.0, 86.0, 79.1, 90.7, 76.3, 89.4, 81.8, 88.7, 89.9]
+08/17/2026 08:55:34 - INFO - __main__ -   macro F1: 87.04
+08/17/2026 08:55:34 - INFO - __main__ -   head/mid/tail acc: 91.13 / 82.03 / 87.45
+08/17/2026 08:55:38 - INFO - __main__ -   ensemble top-1 acc: 87.08
+08/17/2026 08:55:38 - INFO - __main__ -   ensemble top-5 acc: 99.31
+08/17/2026 08:55:38 - INFO - __main__ -   ensemble per-class acc: [93.8, 97.0, 86.2, 80.1, 90.9, 75.9, 89.0, 81.9, 87.2, 88.8]
+08/17/2026 08:55:38 - INFO - __main__ -   ensemble macro F1: 87.18
+08/17/2026 08:55:38 - INFO - __main__ -   ensemble head/mid/tail acc: 92.33 / 82.30 / 86.72
+08/17/2026 08:55:38 - INFO - __main__ -   Major top-1 acc: 84.64
+08/17/2026 08:55:38 - INFO - __main__ -   Minor top-1 acc: 86.93
+08/17/2026 08:55:38 - INFO - __main__ -   Ensemble top-1 acc: 87.08
+08/17/2026 08:55:38 - INFO - __main__ -   Final top-1 acc: 87.08
+08/17/2026 08:55:38 - INFO - __main__ -   Best final top-1 acc: 87.08
+08/17/2026 08:55:38 - INFO - __main__ -   Mean final top-1 acc: 84.56
+
+08/17/2026 08:59:21 - INFO - __main__ -   top-1 acc: 84.80
+08/17/2026 08:59:21 - INFO - __main__ -   top-5 acc: 99.43
+08/17/2026 08:59:21 - INFO - __main__ -   per-class acc: [97.2, 98.1, 85.2, 80.7, 90.2, 71.4, 87.7, 80.6, 78.0, 78.9]
+08/17/2026 08:59:21 - INFO - __main__ -   macro F1: 84.93
+08/17/2026 08:59:21 - INFO - __main__ -   head/mid/tail acc: 93.50 / 80.77 / 81.30
+08/17/2026 08:59:23 - INFO - __main__ -   top-1 acc: 87.01
+08/17/2026 08:59:23 - INFO - __main__ -   top-5 acc: 99.30
+08/17/2026 08:59:23 - INFO - __main__ -   per-class acc: [91.4, 95.9, 86.1, 80.1, 91.2, 76.2, 89.6, 81.4, 89.2, 89.0]
+08/17/2026 08:59:23 - INFO - __main__ -   macro F1: 87.11
+08/17/2026 08:59:23 - INFO - __main__ -   head/mid/tail acc: 91.13 / 82.50 / 87.30
+08/17/2026 08:59:27 - INFO - __main__ -   ensemble top-1 acc: 87.17
+08/17/2026 08:59:27 - INFO - __main__ -   ensemble top-5 acc: 99.35
+08/17/2026 08:59:27 - INFO - __main__ -   ensemble per-class acc: [93.4, 97.0, 86.6, 80.7, 91.0, 75.7, 89.2, 82.0, 87.6, 88.5]
+08/17/2026 08:59:27 - INFO - __main__ -   ensemble macro F1: 87.27
+08/17/2026 08:59:27 - INFO - __main__ -   ensemble head/mid/tail acc: 92.33 / 82.47 / 86.83
+08/17/2026 08:59:27 - INFO - __main__ -   Major top-1 acc: 84.80
+08/17/2026 08:59:27 - INFO - __main__ -   Minor top-1 acc: 87.01
+08/17/2026 08:59:27 - INFO - __main__ -   Ensemble top-1 acc: 87.17
+08/17/2026 08:59:27 - INFO - __main__ -   Final top-1 acc: 87.17
+08/17/2026 08:59:27 - INFO - __main__ -   Best final top-1 acc: 87.17
+08/17/2026 08:59:27 - INFO - __main__ -   Mean final top-1 acc: 84.84
+
+08/17/2026 09:03:09 - INFO - __main__ -   top-1 acc: 85.13
+08/17/2026 09:03:10 - INFO - __main__ -   top-5 acc: 99.47
+08/17/2026 09:03:10 - INFO - __main__ -   per-class acc: [97.0, 98.3, 85.6, 80.9, 90.2, 72.5, 88.2, 81.2, 78.8, 78.6]
+08/17/2026 09:03:10 - INFO - __main__ -   macro F1: 85.25
+08/17/2026 09:03:10 - INFO - __main__ -   head/mid/tail acc: 93.63 / 81.20 / 81.70
+08/17/2026 09:03:12 - INFO - __main__ -   top-1 acc: 87.19
+08/17/2026 09:03:12 - INFO - __main__ -   top-5 acc: 99.35
+08/17/2026 09:03:12 - INFO - __main__ -   per-class acc: [91.5, 96.1, 86.0, 79.6, 90.8, 76.9, 90.3, 82.1, 89.3, 89.3]
+08/17/2026 09:03:12 - INFO - __main__ -   macro F1: 87.29
+08/17/2026 09:03:12 - INFO - __main__ -   head/mid/tail acc: 91.20 / 82.43 / 87.75
+08/17/2026 09:03:16 - INFO - __main__ -   ensemble top-1 acc: 87.34
+08/17/2026 09:03:16 - INFO - __main__ -   ensemble top-5 acc: 99.40
+08/17/2026 09:03:16 - INFO - __main__ -   ensemble per-class acc: [93.0, 97.1, 86.7, 80.2, 91.5, 76.3, 89.9, 82.6, 88.1, 88.0]
+08/17/2026 09:03:16 - INFO - __main__ -   ensemble macro F1: 87.43
+08/17/2026 09:03:16 - INFO - __main__ -   ensemble head/mid/tail acc: 92.27 / 82.67 / 87.15
+08/17/2026 09:03:16 - INFO - __main__ -   Major top-1 acc: 85.13
+08/17/2026 09:03:16 - INFO - __main__ -   Minor top-1 acc: 87.19
+08/17/2026 09:03:16 - INFO - __main__ -   Ensemble top-1 acc: 87.34
+08/17/2026 09:03:16 - INFO - __main__ -   Final top-1 acc: 87.34
+08/17/2026 09:03:16 - INFO - __main__ -   Best final top-1 acc: 87.34
+08/17/2026 09:03:16 - INFO - __main__ -   Mean final top-1 acc: 85.12
+
+08/17/2026 09:06:59 - INFO - __main__ -   top-1 acc: 85.16
+08/17/2026 09:06:59 - INFO - __main__ -   top-5 acc: 99.45
+08/17/2026 09:06:59 - INFO - __main__ -   per-class acc: [97.0, 97.9, 85.6, 81.2, 90.1, 72.4, 88.2, 81.8, 78.5, 78.9]
+08/17/2026 09:06:59 - INFO - __main__ -   macro F1: 85.29
+08/17/2026 09:06:59 - INFO - __main__ -   head/mid/tail acc: 93.50 / 81.23 / 81.85
+08/17/2026 09:07:01 - INFO - __main__ -   top-1 acc: 87.35
+08/17/2026 09:07:01 - INFO - __main__ -   top-5 acc: 99.37
+08/17/2026 09:07:01 - INFO - __main__ -   per-class acc: [91.6, 96.2, 86.3, 80.0, 91.4, 76.6, 90.9, 82.6, 89.2, 88.7]
+08/17/2026 09:07:01 - INFO - __main__ -   macro F1: 87.44
+08/17/2026 09:07:01 - INFO - __main__ -   head/mid/tail acc: 91.37 / 82.67 / 87.85
+08/17/2026 09:07:05 - INFO - __main__ -   ensemble top-1 acc: 87.54
+08/17/2026 09:07:05 - INFO - __main__ -   ensemble top-5 acc: 99.43
+08/17/2026 09:07:05 - INFO - __main__ -   ensemble per-class acc: [93.6, 97.2, 86.7, 80.6, 91.6, 76.6, 90.5, 82.5, 88.2, 87.9]
+08/17/2026 09:07:05 - INFO - __main__ -   ensemble macro F1: 87.63
+08/17/2026 09:07:05 - INFO - __main__ -   ensemble head/mid/tail acc: 92.50 / 82.93 / 87.28
+08/17/2026 09:07:05 - INFO - __main__ -   Major top-1 acc: 85.16
+08/17/2026 09:07:05 - INFO - __main__ -   Minor top-1 acc: 87.35
+08/17/2026 09:07:05 - INFO - __main__ -   Ensemble top-1 acc: 87.54
+08/17/2026 09:07:05 - INFO - __main__ -   Final top-1 acc: 87.54
+08/17/2026 09:07:05 - INFO - __main__ -   Best final top-1 acc: 87.54
+08/17/2026 09:07:05 - INFO - __main__ -   Mean final top-1 acc: 85.37
+
+08/17/2026 09:10:47 - INFO - __main__ -   top-1 acc: 85.56
+08/17/2026 09:10:47 - INFO - __main__ -   top-5 acc: 99.44
+08/17/2026 09:10:47 - INFO - __main__ -   per-class acc: [97.2, 97.9, 86.4, 81.6, 89.8, 72.3, 88.7, 82.8, 79.1, 79.8]
+08/17/2026 09:10:47 - INFO - __main__ -   macro F1: 85.69
+08/17/2026 09:10:47 - INFO - __main__ -   head/mid/tail acc: 93.83 / 81.23 / 82.60
+08/17/2026 09:10:50 - INFO - __main__ -   top-1 acc: 87.72
+08/17/2026 09:10:50 - INFO - __main__ -   top-5 acc: 99.34
+08/17/2026 09:10:50 - INFO - __main__ -   per-class acc: [92.1, 96.3, 86.1, 80.0, 91.4, 77.4, 91.2, 83.5, 89.5, 89.7]
+08/17/2026 09:10:50 - INFO - __main__ -   macro F1: 87.81
+08/17/2026 09:10:50 - INFO - __main__ -   head/mid/tail acc: 91.50 / 82.93 / 88.48
+08/17/2026 09:10:54 - INFO - __main__ -   ensemble top-1 acc: 87.83
+08/17/2026 09:10:54 - INFO - __main__ -   ensemble top-5 acc: 99.44
+08/17/2026 09:10:54 - INFO - __main__ -   ensemble per-class acc: [93.9, 97.0, 87.0, 80.7, 91.8, 76.8, 90.8, 83.4, 88.3, 88.6]
+08/17/2026 09:10:54 - INFO - __main__ -   ensemble macro F1: 87.92
+08/17/2026 09:10:54 - INFO - __main__ -   ensemble head/mid/tail acc: 92.63 / 83.10 / 87.78
+08/17/2026 09:10:54 - INFO - __main__ -   Major top-1 acc: 85.56
+08/17/2026 09:10:54 - INFO - __main__ -   Minor top-1 acc: 87.72
+08/17/2026 09:10:54 - INFO - __main__ -   Ensemble top-1 acc: 87.83
+08/17/2026 09:10:54 - INFO - __main__ -   Final top-1 acc: 87.83
+08/17/2026 09:10:54 - INFO - __main__ -   Best final top-1 acc: 87.83
+08/17/2026 09:10:54 - INFO - __main__ -   Mean final top-1 acc: 85.63
+
+08/17/2026 09:14:37 - INFO - __main__ -   top-1 acc: 85.82
+08/17/2026 09:14:37 - INFO - __main__ -   top-5 acc: 99.47
+08/17/2026 09:14:37 - INFO - __main__ -   per-class acc: [97.2, 98.1, 86.3, 81.9, 90.4, 72.4, 88.9, 83.2, 79.4, 80.4]
+08/17/2026 09:14:37 - INFO - __main__ -   macro F1: 85.94
+08/17/2026 09:14:37 - INFO - __main__ -   head/mid/tail acc: 93.87 / 81.57 / 82.97
+08/17/2026 09:14:39 - INFO - __main__ -   top-1 acc: 87.83
+08/17/2026 09:14:39 - INFO - __main__ -   top-5 acc: 99.39
+08/17/2026 09:14:39 - INFO - __main__ -   per-class acc: [92.5, 96.5, 86.1, 80.5, 92.0, 76.7, 91.3, 83.8, 89.3, 89.6]
+08/17/2026 09:14:39 - INFO - __main__ -   macro F1: 87.91
+08/17/2026 09:14:39 - INFO - __main__ -   head/mid/tail acc: 91.70 / 83.07 / 88.50
+08/17/2026 09:14:43 - INFO - __main__ -   ensemble top-1 acc: 87.89
+08/17/2026 09:14:43 - INFO - __main__ -   ensemble top-5 acc: 99.41
+08/17/2026 09:14:43 - INFO - __main__ -   ensemble per-class acc: [93.6, 97.1, 86.8, 80.9, 92.5, 76.4, 91.0, 83.6, 88.4, 88.6]
+08/17/2026 09:14:43 - INFO - __main__ -   ensemble macro F1: 87.97
+08/17/2026 09:14:43 - INFO - __main__ -   ensemble head/mid/tail acc: 92.50 / 83.27 / 87.90
+08/17/2026 09:14:43 - INFO - __main__ -   Major top-1 acc: 85.82
+08/17/2026 09:14:43 - INFO - __main__ -   Minor top-1 acc: 87.83
+08/17/2026 09:14:43 - INFO - __main__ -   Ensemble top-1 acc: 87.89
+08/17/2026 09:14:43 - INFO - __main__ -   Final top-1 acc: 87.89
+08/17/2026 09:14:43 - INFO - __main__ -   Best final top-1 acc: 87.89
+08/17/2026 09:14:43 - INFO - __main__ -   Mean final top-1 acc: 85.88
+
+08/17/2026 09:18:25 - INFO - __main__ -   top-1 acc: 86.18
+08/17/2026 09:18:25 - INFO - __main__ -   top-5 acc: 99.51
+08/17/2026 09:18:25 - INFO - __main__ -   per-class acc: [97.1, 98.1, 87.2, 81.7, 90.7, 73.4, 89.3, 83.5, 80.1, 80.7]
+08/17/2026 09:18:25 - INFO - __main__ -   macro F1: 86.30
+08/17/2026 09:18:25 - INFO - __main__ -   head/mid/tail acc: 94.13 / 81.93 / 83.40
+08/17/2026 09:18:28 - INFO - __main__ -   top-1 acc: 88.01
+08/17/2026 09:18:28 - INFO - __main__ -   top-5 acc: 99.41
+08/17/2026 09:18:28 - INFO - __main__ -   per-class acc: [92.5, 96.3, 86.3, 80.1, 91.5, 77.7, 91.2, 84.3, 90.2, 90.0]
+08/17/2026 09:18:28 - INFO - __main__ -   macro F1: 88.10
+08/17/2026 09:18:28 - INFO - __main__ -   head/mid/tail acc: 91.70 / 83.10 / 88.93
+08/17/2026 09:18:32 - INFO - __main__ -   ensemble top-1 acc: 88.02
+08/17/2026 09:18:32 - INFO - __main__ -   ensemble top-5 acc: 99.46
+08/17/2026 09:18:32 - INFO - __main__ -   ensemble per-class acc: [93.8, 96.9, 86.9, 80.6, 91.7, 77.0, 91.1, 83.9, 89.0, 89.3]
+08/17/2026 09:18:32 - INFO - __main__ -   ensemble macro F1: 88.10
+08/17/2026 09:18:32 - INFO - __main__ -   ensemble head/mid/tail acc: 92.53 / 83.10 / 88.32
+08/17/2026 09:18:32 - INFO - __main__ -   Major top-1 acc: 86.18
+08/17/2026 09:18:32 - INFO - __main__ -   Minor top-1 acc: 88.01
+08/17/2026 09:18:32 - INFO - __main__ -   Ensemble top-1 acc: 88.02
+08/17/2026 09:18:32 - INFO - __main__ -   Final top-1 acc: 88.02
+08/17/2026 09:18:32 - INFO - __main__ -   Best final top-1 acc: 88.02
+08/17/2026 09:18:32 - INFO - __main__ -   Mean final top-1 acc: 86.11
+
+08/17/2026 09:22:14 - INFO - __main__ -   top-1 acc: 86.14
+08/17/2026 09:22:14 - INFO - __main__ -   top-5 acc: 99.51
+08/17/2026 09:22:14 - INFO - __main__ -   per-class acc: [97.0, 98.2, 86.7, 81.1, 91.4, 73.5, 89.3, 83.2, 80.2, 80.8]
+08/17/2026 09:22:14 - INFO - __main__ -   macro F1: 86.26
+08/17/2026 09:22:14 - INFO - __main__ -   head/mid/tail acc: 93.97 / 82.00 / 83.38
+08/17/2026 09:22:17 - INFO - __main__ -   top-1 acc: 88.20
+08/17/2026 09:22:17 - INFO - __main__ -   top-5 acc: 99.41
+08/17/2026 09:22:17 - INFO - __main__ -   per-class acc: [92.2, 96.4, 86.7, 80.2, 91.8, 78.4, 91.5, 84.1, 90.4, 90.3]
+08/17/2026 09:22:17 - INFO - __main__ -   macro F1: 88.28
+08/17/2026 09:22:17 - INFO - __main__ -   head/mid/tail acc: 91.77 / 83.47 / 89.07
+08/17/2026 09:22:20 - INFO - __main__ -   ensemble top-1 acc: 88.31
+08/17/2026 09:22:20 - INFO - __main__ -   ensemble top-5 acc: 99.46
+08/17/2026 09:22:20 - INFO - __main__ -   ensemble per-class acc: [93.6, 96.9, 87.1, 81.4, 91.8, 77.5, 91.6, 84.2, 89.6, 89.4]
+08/17/2026 09:22:20 - INFO - __main__ -   ensemble macro F1: 88.39
+08/17/2026 09:22:20 - INFO - __main__ -   ensemble head/mid/tail acc: 92.53 / 83.57 / 88.70
+08/17/2026 09:22:21 - INFO - __main__ -   Major top-1 acc: 86.14
+08/17/2026 09:22:21 - INFO - __main__ -   Minor top-1 acc: 88.20
+08/17/2026 09:22:21 - INFO - __main__ -   Ensemble top-1 acc: 88.31
+08/17/2026 09:22:21 - INFO - __main__ -   Final top-1 acc: 88.31
+08/17/2026 09:22:21 - INFO - __main__ -   Best final top-1 acc: 88.31
+08/17/2026 09:22:21 - INFO - __main__ -   Mean final top-1 acc: 86.35
+
+08/17/2026 09:26:03 - INFO - __main__ -   top-1 acc: 86.37
+08/17/2026 09:26:03 - INFO - __main__ -   top-5 acc: 99.53
+08/17/2026 09:26:03 - INFO - __main__ -   per-class acc: [96.6, 98.1, 87.1, 82.1, 91.3, 74.2, 89.9, 83.0, 81.0, 80.4]
+08/17/2026 09:26:03 - INFO - __main__ -   macro F1: 86.49
+08/17/2026 09:26:03 - INFO - __main__ -   head/mid/tail acc: 93.93 / 82.53 / 83.57
+08/17/2026 09:26:06 - INFO - __main__ -   top-1 acc: 88.48
+08/17/2026 09:26:06 - INFO - __main__ -   top-5 acc: 99.45
+08/17/2026 09:26:06 - INFO - __main__ -   per-class acc: [92.3, 96.5, 86.9, 80.6, 92.0, 78.4, 92.0, 84.5, 90.6, 91.0]
+08/17/2026 09:26:06 - INFO - __main__ -   macro F1: 88.55
+08/17/2026 09:26:06 - INFO - __main__ -   head/mid/tail acc: 91.90 / 83.67 / 89.53
+08/17/2026 09:26:09 - INFO - __main__ -   ensemble top-1 acc: 88.56
+08/17/2026 09:26:09 - INFO - __main__ -   ensemble top-5 acc: 99.48
+08/17/2026 09:26:09 - INFO - __main__ -   ensemble per-class acc: [94.4, 97.0, 87.2, 81.4, 91.9, 77.8, 91.7, 84.6, 89.6, 90.0]
+08/17/2026 09:26:09 - INFO - __main__ -   ensemble macro F1: 88.64
+08/17/2026 09:26:09 - INFO - __main__ -   ensemble head/mid/tail acc: 92.87 / 83.70 / 88.97
+08/17/2026 09:26:09 - INFO - __main__ -   Major top-1 acc: 86.37
+08/17/2026 09:26:09 - INFO - __main__ -   Minor top-1 acc: 88.48
+08/17/2026 09:26:09 - INFO - __main__ -   Ensemble top-1 acc: 88.56
+08/17/2026 09:26:09 - INFO - __main__ -   Final top-1 acc: 88.56
+08/17/2026 09:26:09 - INFO - __main__ -   Best final top-1 acc: 88.56
+08/17/2026 09:26:09 - INFO - __main__ -   Mean final top-1 acc: 86.58
+
+08/17/2026 09:29:52 - INFO - __main__ -   top-1 acc: 86.59
+08/17/2026 09:29:52 - INFO - __main__ -   top-5 acc: 99.54
+08/17/2026 09:29:52 - INFO - __main__ -   per-class acc: [97.1, 98.1, 86.7, 82.9, 91.5, 73.7, 90.2, 83.3, 81.4, 81.0]
+08/17/2026 09:29:52 - INFO - __main__ -   macro F1: 86.70
+08/17/2026 09:29:52 - INFO - __main__ -   head/mid/tail acc: 93.97 / 82.70 / 83.97
+08/17/2026 09:29:55 - INFO - __main__ -   top-1 acc: 88.62
+08/17/2026 09:29:55 - INFO - __main__ -   top-5 acc: 99.46
+08/17/2026 09:29:55 - INFO - __main__ -   per-class acc: [91.9, 96.4, 86.7, 81.5, 92.5, 77.8, 92.2, 85.2, 90.9, 91.1]
+08/17/2026 09:29:55 - INFO - __main__ -   macro F1: 88.69
+08/17/2026 09:29:55 - INFO - __main__ -   head/mid/tail acc: 91.67 / 83.93 / 89.85
+08/17/2026 09:29:58 - INFO - __main__ -   ensemble top-1 acc: 88.75
+08/17/2026 09:29:58 - INFO - __main__ -   ensemble top-5 acc: 99.49
+08/17/2026 09:29:58 - INFO - __main__ -   ensemble per-class acc: [94.0, 96.9, 87.4, 81.6, 92.8, 77.7, 92.1, 84.8, 90.1, 90.1]
+08/17/2026 09:29:58 - INFO - __main__ -   ensemble macro F1: 88.82
+08/17/2026 09:29:58 - INFO - __main__ -   ensemble head/mid/tail acc: 92.77 / 84.03 / 89.28
+08/17/2026 09:29:58 - INFO - __main__ -   Major top-1 acc: 86.59
+08/17/2026 09:29:58 - INFO - __main__ -   Minor top-1 acc: 88.62
+08/17/2026 09:29:58 - INFO - __main__ -   Ensemble top-1 acc: 88.75
+08/17/2026 09:29:58 - INFO - __main__ -   Final top-1 acc: 88.75
+08/17/2026 09:29:58 - INFO - __main__ -   Best final top-1 acc: 88.75
+08/17/2026 09:29:58 - INFO - __main__ -   Mean final top-1 acc: 86.80
+
+08/17/2026 09:33:41 - INFO - __main__ -   top-1 acc: 86.68
+08/17/2026 09:33:41 - INFO - __main__ -   top-5 acc: 99.55
+08/17/2026 09:33:41 - INFO - __main__ -   per-class acc: [97.0, 98.2, 86.3, 83.3, 91.4, 73.4, 90.5, 83.6, 81.5, 81.6]
+08/17/2026 09:33:41 - INFO - __main__ -   macro F1: 86.79
+08/17/2026 09:33:41 - INFO - __main__ -   head/mid/tail acc: 93.83 / 82.70 / 84.30
+08/17/2026 09:33:44 - INFO - __main__ -   top-1 acc: 88.75
+08/17/2026 09:33:44 - INFO - __main__ -   top-5 acc: 99.45
+08/17/2026 09:33:44 - INFO - __main__ -   per-class acc: [92.4, 96.4, 86.7, 81.7, 92.6, 77.7, 92.3, 85.8, 90.5, 91.4]
+08/17/2026 09:33:44 - INFO - __main__ -   macro F1: 88.81
+08/17/2026 09:33:44 - INFO - __main__ -   head/mid/tail acc: 91.83 / 84.00 / 90.00
+08/17/2026 09:33:47 - INFO - __main__ -   ensemble top-1 acc: 88.84
+08/17/2026 09:33:47 - INFO - __main__ -   ensemble top-5 acc: 99.53
+08/17/2026 09:33:47 - INFO - __main__ -   ensemble per-class acc: [93.9, 97.1, 87.3, 82.1, 92.8, 77.4, 92.4, 85.2, 89.8, 90.4]
+08/17/2026 09:33:47 - INFO - __main__ -   ensemble macro F1: 88.91
+08/17/2026 09:33:47 - INFO - __main__ -   ensemble head/mid/tail acc: 92.77 / 84.10 / 89.45
+08/17/2026 09:33:47 - INFO - __main__ -   Major top-1 acc: 86.68
+08/17/2026 09:33:47 - INFO - __main__ -   Minor top-1 acc: 88.75
+08/17/2026 09:33:47 - INFO - __main__ -   Ensemble top-1 acc: 88.84
+08/17/2026 09:33:47 - INFO - __main__ -   Final top-1 acc: 88.84
+08/17/2026 09:33:47 - INFO - __main__ -   Best final top-1 acc: 88.84
+08/17/2026 09:33:47 - INFO - __main__ -   Mean final top-1 acc: 87.02
+

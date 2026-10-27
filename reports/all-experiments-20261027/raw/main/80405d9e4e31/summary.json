@@ -1,0 +1,295 @@
+{
+  "provenance": [
+    {
+      "seed": 1,
+      "checkpoint": "C:\\Users\\FORYOUCOM\\Desktop\\Semi-supervised-learning-main\\Semi-supervised-learning-main\\results\\dual_real_last_2_lla_hard_validation_cifar10_e50_s512_seed1\\checkpoint.pth.tar",
+      "sha256": "045f75235c3d99ede9b46c3a5bce2fc3b93cd048551b2623b7f24f4fd477c929",
+      "validation_indices_sha256": "884c4f3f9b53846ad3cf16e358f66a0349787a50dae2976ec23e88414ff610aa"
+    },
+    {
+      "seed": 2,
+      "checkpoint": "C:\\Users\\FORYOUCOM\\Desktop\\Semi-supervised-learning-main\\Semi-supervised-learning-main\\results\\dual_real_last_2_lla_hard_validation_cifar10_e50_s512_seed2\\checkpoint.pth.tar",
+      "sha256": "373016a218d5f892021d32293bec24f264b8253302ee050e77a751fcae5261ef",
+      "validation_indices_sha256": "f8a56c0facab0d8b650fa6b9f66a4f0d68834419ac54e38fcf798294b0462e40"
+    }
+  ],
+  "repeats": 5,
+  "batch_size": 224,
+  "weights_frozen": true,
+  "clean_baseline_reproduced": true,
+  "model_mode": "eval (frozen BN); online and EMA weights separately",
+  "limitation": "Not a historical training trace: no strong view or loss/backprop; no train-mode BN; balanced held-out batches. Final short batch retained.",
+  "summaries": [
+    {
+      "seed": 1,
+      "mode": "ema",
+      "n": 7500,
+      "correct": 6760,
+      "cross_reasons": {
+        "confidence_below_0.95": 635,
+        "sent": 6145,
+        "predicted_non_tail": 717,
+        "cross_conflict": 3
+      },
+      "self_reasons": {
+        "selected": 7130,
+        "gate_suppressed": 10,
+        "quota": 251,
+        "confidence_below_0.5": 109
+      },
+      "wrong_self": 409,
+      "wrong_self_major_correct": 53,
+      "wrong_self_created_by_correction": 1,
+      "wrong_cross": 5,
+      "minor_goal_conflicts": 22,
+      "major_goal_conflicts": 0,
+      "unstable_images": 119,
+      "always_wrong_self_images": 50,
+      "per_class": {
+        "7": {
+          "correct": 2071,
+          "wrong_self": 345,
+          "wrong_destinations": {
+            "3": 199,
+            "5": 82,
+            "2": 70,
+            "4": 67,
+            "0": 6,
+            "6": 3,
+            "1": 2
+          }
+        },
+        "8": {
+          "correct": 2381,
+          "wrong_self": 14,
+          "wrong_destinations": {
+            "0": 67,
+            "1": 30,
+            "9": 5,
+            "3": 7,
+            "2": 6,
+            "4": 4
+          }
+        },
+        "9": {
+          "correct": 2308,
+          "wrong_self": 50,
+          "wrong_destinations": {
+            "1": 97,
+            "0": 34,
+            "8": 18,
+            "3": 26,
+            "4": 5,
+            "6": 11,
+            "2": 1
+          }
+        }
+      }
+    },
+    {
+      "seed": 1,
+      "mode": "online",
+      "n": 7500,
+      "correct": 6677,
+      "cross_reasons": {
+        "predicted_non_tail": 773,
+        "sent": 5828,
+        "confidence_below_0.95": 894,
+        "cross_conflict": 5
+      },
+      "self_reasons": {
+        "selected": 7138,
+        "confidence_below_0.5": 183,
+        "quota": 163,
+        "gate_suppressed": 16
+      },
+      "wrong_self": 539,
+      "wrong_self_major_correct": 63,
+      "wrong_self_created_by_correction": 0,
+      "wrong_cross": 12,
+      "minor_goal_conflicts": 28,
+      "major_goal_conflicts": 0,
+      "unstable_images": 149,
+      "always_wrong_self_images": 69,
+      "per_class": {
+        "7": {
+          "correct": 2023,
+          "wrong_self": 404,
+          "wrong_destinations": {
+            "4": 71,
+            "3": 291,
+            "2": 35,
+            "5": 67,
+            "9": 3,
+            "0": 9,
+            "6": 1
+          }
+        },
+        "8": {
+          "correct": 2339,
+          "wrong_self": 49,
+          "wrong_destinations": {
+            "5": 1,
+            "0": 66,
+            "1": 28,
+            "4": 10,
+            "2": 7,
+            "9": 7,
+            "3": 41,
+            "6": 1
+          }
+        },
+        "9": {
+          "correct": 2315,
+          "wrong_self": 86,
+          "wrong_destinations": {
+            "8": 40,
+            "1": 57,
+            "5": 4,
+            "4": 8,
+            "0": 26,
+            "3": 45,
+            "2": 2,
+            "6": 3
+          }
+        }
+      }
+    },
+    {
+      "seed": 2,
+      "mode": "ema",
+      "n": 7500,
+      "correct": 6845,
+      "cross_reasons": {
+        "sent": 6159,
+        "predicted_non_tail": 606,
+        "confidence_below_0.95": 730,
+        "cross_conflict": 5
+      },
+      "self_reasons": {
+        "selected": 7126,
+        "quota": 244,
+        "confidence_below_0.5": 110,
+        "gate_suppressed": 20
+      },
+      "wrong_self": 337,
+      "wrong_self_major_correct": 68,
+      "wrong_self_created_by_correction": 0,
+      "wrong_cross": 4,
+      "minor_goal_conflicts": 24,
+      "major_goal_conflicts": 0,
+      "unstable_images": 126,
+      "always_wrong_self_images": 38,
+      "per_class": {
+        "7": {
+          "correct": 2172,
+          "wrong_self": 274,
+          "wrong_destinations": {
+            "2": 16,
+            "5": 116,
+            "3": 83,
+            "6": 6,
+            "4": 79,
+            "9": 14,
+            "0": 14
+          }
+        },
+        "8": {
+          "correct": 2336,
+          "wrong_self": 31,
+          "wrong_destinations": {
+            "0": 81,
+            "2": 3,
+            "1": 40,
+            "7": 2,
+            "6": 12,
+            "9": 16,
+            "3": 10
+          }
+        },
+        "9": {
+          "correct": 2337,
+          "wrong_self": 32,
+          "wrong_destinations": {
+            "1": 95,
+            "7": 4,
+            "8": 13,
+            "5": 10,
+            "4": 5,
+            "0": 22,
+            "3": 13,
+            "6": 1
+          }
+        }
+      }
+    },
+    {
+      "seed": 2,
+      "mode": "online",
+      "n": 7500,
+      "correct": 6843,
+      "cross_reasons": {
+        "sent": 5968,
+        "predicted_non_tail": 562,
+        "confidence_below_0.95": 969,
+        "cross_conflict": 1
+      },
+      "self_reasons": {
+        "selected": 7089,
+        "confidence_below_0.5": 138,
+        "quota": 259,
+        "gate_suppressed": 14
+      },
+      "wrong_self": 304,
+      "wrong_self_major_correct": 55,
+      "wrong_self_created_by_correction": 1,
+      "wrong_cross": 12,
+      "minor_goal_conflicts": 16,
+      "major_goal_conflicts": 0,
+      "unstable_images": 137,
+      "always_wrong_self_images": 29,
+      "per_class": {
+        "7": {
+          "correct": 2158,
+          "wrong_self": 215,
+          "wrong_destinations": {
+            "2": 56,
+            "3": 69,
+            "0": 47,
+            "5": 64,
+            "9": 27,
+            "4": 74,
+            "8": 4,
+            "6": 1
+          }
+        },
+        "8": {
+          "correct": 2296,
+          "wrong_self": 56,
+          "wrong_destinations": {
+            "2": 6,
+            "0": 109,
+            "9": 44,
+            "1": 27,
+            "3": 12,
+            "6": 5,
+            "7": 1
+          }
+        },
+        "9": {
+          "correct": 2389,
+          "wrong_self": 33,
+          "wrong_destinations": {
+            "7": 6,
+            "0": 28,
+            "5": 3,
+            "3": 16,
+            "1": 43,
+            "8": 13,
+            "4": 2
+          }
+        }
+      }
+    }
+  ]
+}

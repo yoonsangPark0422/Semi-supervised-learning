@@ -1,0 +1,8 @@
+START thr=0.6 at 08/29/2026 19:24:06
+END thr=0.6 code=0 at 08/29/2026 22:31:15
+START thr=0.7 at 08/29/2026 22:31:15
+END thr=0.7 code=0 at 08/30/2026 01:38:13
+START thr=0.8 at 08/30/2026 01:38:13
+END thr=0.8 code=0 at 08/30/2026 04:45:19
+START thr=0.9 at 08/30/2026 04:45:19
+END thr=0.9 code=0 at 08/30/2026 07:52:31

@@ -1,0 +1,4 @@
+method,ratio,seed,status,last_epoch,acc,macro_f1,minority_5_9_recall,minority_5_9_precision,minority_5_9_f1,tail_7_9_recall,tail_7_9_precision,tail_7_9_f1,out
+single_minor,100,1,done,50,88.7200,88.8154,87.2800,93.2651,90.1608,89.5333,96.1984,92.7390,"results/valsplit_ratio100_single_minor_e50_s512_seed1_2_3/seed_1"
+single_minor,100,2,done,50,88.4200,88.4892,85.2400,93.5999,89.1969,88.4667,96.3634,92.2378,"results/valsplit_ratio100_single_minor_e50_s512_seed1_2_3/seed_2"
+single_minor,100,3,done,50,88.9200,88.9931,87.2400,93.8411,90.3917,90.2667,95.3156,92.7149,"results/valsplit_ratio100_single_minor_e50_s512_seed1_2_3/seed_3"

@@ -1,0 +1,199 @@
+2026-10-26 20:51:13.976111: I tensorflow/core/util/port.cc:153] oneDNN custom operations are on. You may see slightly different numerical results due to floating-point round-off errors from different computation orders. To turn them off, set the environment variable `TF_ENABLE_ONEDNN_OPTS=0`.
+2026-10-26 20:51:15.541613: I tensorflow/core/util/port.cc:153] oneDNN custom operations are on. You may see slightly different numerical results due to floating-point round-off errors from different computation orders. To turn them off, set the environment variable `TF_ENABLE_ONEDNN_OPTS=0`.
+10/26/2026 20:51:17 - WARNING - reduced_experiment_trainer -   Process rank: -1, device: cuda:0, n_gpu: 1, distributed training: False, 16-bits training: False
+10/26/2026 20:51:17 - INFO - reduced_experiment_trainer -   {'gpu_id': 0, 'num_workers': 2, 'dataset': 'cifar10', 'num_labeled': 400, 'expand_labels': True, 'arch': 'wideresnet', 'total_steps': 25600, 'eval_step': 512, 'start_epoch': 0, 'batch_size': 32, 'lr': 0.03, 'warmup': 0, 'wdecay': 0.0005, 'nesterov': True, 'use_ema': True, 'no_ema': False, 'ema_decay': 0.999, 'mu': 7, 'lambda_u': 1, 'lambda_cross': 1.0, 'disable_cross': False, 'minor_self_confidence_weight': False, 'tau_major_cross': 0.95, 'tau_minor_cross': 0.95, 'major_cross_skip_minor_conf_threshold': -1.0, 'minor_balanced_sampler_alpha': 1.2, 'T': 1, 'threshold': 0.95, 'dual_train_mode': 'dual_sampler_weighted_ce', 'imb_ratio': 100.0, 'val_samples_per_class': 0, 'diagnose_disagreement': False, 'imb_type': 'exp', 'major_top_ratio': 0.2, 'head_class_ratio': 0.3, 'tail_class_ratio': 0.3, 'classwise_quota': 'global', 'minority_threshold_gamma': 1.0, 'min_threshold': 0.5, 'minority_supervised_gamma': 1.0, 'max_minority_weight': 10.0, 'minority_bias_warmup': 2048, 'ensemble_minor_weight': 0.8, 'unsup_warmup': 1024, 'pseudo_warmup': 512, 'out': 'C:\\Users\\FORYOUCOM\\Desktop\\Semi-supervised-learning-main\\Semi-supervised-learning-main\\results\\reduced10pct_decon_real_last2_cifar10_seed1\\real_last_dual_2', 'resume': '', 'init_checkpoint': '', 'eval_only': False, 'eval_final_only': True, 'no_save_checkpoint': False, 'seed': 1, 'amp': False, 'opt_level': 'O1', 'local_rank': -1, 'no_progress': True, 'lla_lr': 0.002, 'lla_eps': 1e-08, 'experiment_variant': 'dual_real_last_2_minor_lla_hard', 'use_minor_balanced_sampler': True, 'use_minor_weighted_ce': True, 'device': device(type='cuda', index=0), 'world_size': 1, 'n_gpu': 1}
+10/26/2026 20:51:18 - INFO - dataset.cifar_val_split -   Using full CIFAR-10 train split for training and official test split for evaluation.
+10/26/2026 20:51:19 - INFO - reduced_experiment_trainer -   Using expanded labeled dataset class counts for dual training: [6642, 3977, 2378, 1435, 861, 533, 287, 164, 82, 41]. Original split counts were: [162, 97, 58, 35, 21, 13, 7, 4, 2, 1]
+10/26/2026 20:51:19 - INFO - models.wideresnet -   Model: WideResNet 28x2
+10/26/2026 20:51:19 - INFO - reduced_experiment_trainer -   Total params: 1.47M
+10/26/2026 20:51:19 - INFO - models.wideresnet -   Model: WideResNet 28x2
+10/26/2026 20:51:19 - INFO - reduced_experiment_trainer -   Total params: 1.47M
+10/26/2026 20:51:19 - INFO - reduced_experiment_trainer -   ***** Running training *****
+10/26/2026 20:51:19 - INFO - reduced_experiment_trainer -     Task = cifar10@400
+10/26/2026 20:51:19 - INFO - reduced_experiment_trainer -     Num Epochs = 50
+10/26/2026 20:51:19 - INFO - reduced_experiment_trainer -     Batch size per GPU = 32
+10/26/2026 20:51:19 - INFO - reduced_experiment_trainer -     Total train batch size = 32
+10/26/2026 20:51:19 - INFO - reduced_experiment_trainer -     Total optimization steps = 25600
+10/26/2026 20:51:19 - INFO - reduced_experiment_trainer -     Dual train mode = dual_sampler_weighted_ce
+10/26/2026 20:56:13 - INFO - reduced_experiment_trainer -   Last-2 correction gate: {'epoch': 1, 'samples_seen': 114688, 'gate_selected': 0, 'conflicting_self_suppressed': 0, 'baseline_minor_self_selected': 0}
+10/26/2026 20:56:13 - INFO - reduced_experiment_trainer -   LLA class losses labeled/unlabeled: 0.608843 / 2.397698
+10/26/2026 20:56:13 - INFO - reduced_experiment_trainer -   Skipping evaluation until final epoch (1/50).
+10/26/2026 21:01:05 - INFO - reduced_experiment_trainer -   Last-2 correction gate: {'epoch': 2, 'samples_seen': 114688, 'gate_selected': 1034, 'conflicting_self_suppressed': 32, 'baseline_minor_self_selected': 29544}
+10/26/2026 21:01:05 - INFO - reduced_experiment_trainer -   LLA class losses labeled/unlabeled: 0.389937 / 1.968831
+10/26/2026 21:01:05 - INFO - reduced_experiment_trainer -   Skipping evaluation until final epoch (2/50).
+10/26/2026 21:05:53 - INFO - reduced_experiment_trainer -   Last-2 correction gate: {'epoch': 3, 'samples_seen': 114688, 'gate_selected': 1653, 'conflicting_self_suppressed': 301, 'baseline_minor_self_selected': 50241}
+10/26/2026 21:05:53 - INFO - reduced_experiment_trainer -   LLA class losses labeled/unlabeled: 0.437709 / 1.587618
+10/26/2026 21:05:53 - INFO - reduced_experiment_trainer -   Skipping evaluation until final epoch (3/50).
+10/26/2026 21:10:46 - INFO - reduced_experiment_trainer -   Last-2 correction gate: {'epoch': 4, 'samples_seen': 114688, 'gate_selected': 892, 'conflicting_self_suppressed': 311, 'baseline_minor_self_selected': 65123}
+10/26/2026 21:10:46 - INFO - reduced_experiment_trainer -   LLA class losses labeled/unlabeled: 0.454865 / 1.477880
+10/26/2026 21:10:46 - INFO - reduced_experiment_trainer -   Skipping evaluation until final epoch (4/50).
+10/26/2026 21:15:34 - INFO - reduced_experiment_trainer -   Last-2 correction gate: {'epoch': 5, 'samples_seen': 114688, 'gate_selected': 1611, 'conflicting_self_suppressed': 963, 'baseline_minor_self_selected': 75741}
+10/26/2026 21:15:34 - INFO - reduced_experiment_trainer -   LLA class losses labeled/unlabeled: 0.316169 / 1.325213
+10/26/2026 21:15:34 - INFO - reduced_experiment_trainer -   Skipping evaluation until final epoch (5/50).
+10/26/2026 21:20:22 - INFO - reduced_experiment_trainer -   Last-2 correction gate: {'epoch': 6, 'samples_seen': 114688, 'gate_selected': 1801, 'conflicting_self_suppressed': 1360, 'baseline_minor_self_selected': 80220}
+10/26/2026 21:20:22 - INFO - reduced_experiment_trainer -   LLA class losses labeled/unlabeled: 0.235891 / 1.275948
+10/26/2026 21:20:22 - INFO - reduced_experiment_trainer -   Skipping evaluation until final epoch (6/50).
+10/26/2026 21:25:10 - INFO - reduced_experiment_trainer -   Last-2 correction gate: {'epoch': 7, 'samples_seen': 114688, 'gate_selected': 1943, 'conflicting_self_suppressed': 1515, 'baseline_minor_self_selected': 80651}
+10/26/2026 21:25:10 - INFO - reduced_experiment_trainer -   LLA class losses labeled/unlabeled: 0.208835 / 1.222926
+10/26/2026 21:25:10 - INFO - reduced_experiment_trainer -   Skipping evaluation until final epoch (7/50).
+10/26/2026 21:30:03 - INFO - reduced_experiment_trainer -   Last-2 correction gate: {'epoch': 8, 'samples_seen': 114688, 'gate_selected': 1987, 'conflicting_self_suppressed': 1530, 'baseline_minor_self_selected': 80416}
+10/26/2026 21:30:03 - INFO - reduced_experiment_trainer -   LLA class losses labeled/unlabeled: 0.174867 / 1.175356
+10/26/2026 21:30:03 - INFO - reduced_experiment_trainer -   Skipping evaluation until final epoch (8/50).
+10/26/2026 21:34:51 - INFO - reduced_experiment_trainer -   Last-2 correction gate: {'epoch': 9, 'samples_seen': 114688, 'gate_selected': 1867, 'conflicting_self_suppressed': 1427, 'baseline_minor_self_selected': 80157}
+10/26/2026 21:34:51 - INFO - reduced_experiment_trainer -   LLA class losses labeled/unlabeled: 0.149752 / 1.143166
+10/26/2026 21:34:51 - INFO - reduced_experiment_trainer -   Skipping evaluation until final epoch (9/50).
+10/26/2026 21:39:39 - INFO - reduced_experiment_trainer -   Last-2 correction gate: {'epoch': 10, 'samples_seen': 114688, 'gate_selected': 1982, 'conflicting_self_suppressed': 1579, 'baseline_minor_self_selected': 81402}
+10/26/2026 21:39:39 - INFO - reduced_experiment_trainer -   LLA class losses labeled/unlabeled: 0.124186 / 1.094130
+10/26/2026 21:39:39 - INFO - reduced_experiment_trainer -   Skipping evaluation until final epoch (10/50).
+10/26/2026 21:44:27 - INFO - reduced_experiment_trainer -   Last-2 correction gate: {'epoch': 11, 'samples_seen': 114688, 'gate_selected': 1870, 'conflicting_self_suppressed': 1448, 'baseline_minor_self_selected': 81578}
+10/26/2026 21:44:27 - INFO - reduced_experiment_trainer -   LLA class losses labeled/unlabeled: 0.113473 / 1.051180
+10/26/2026 21:44:27 - INFO - reduced_experiment_trainer -   Skipping evaluation until final epoch (11/50).
+10/26/2026 21:49:20 - INFO - reduced_experiment_trainer -   Last-2 correction gate: {'epoch': 12, 'samples_seen': 114688, 'gate_selected': 1940, 'conflicting_self_suppressed': 1538, 'baseline_minor_self_selected': 81966}
+10/26/2026 21:49:20 - INFO - reduced_experiment_trainer -   LLA class losses labeled/unlabeled: 0.094500 / 1.017558
+10/26/2026 21:49:20 - INFO - reduced_experiment_trainer -   Skipping evaluation until final epoch (12/50).
+10/26/2026 21:54:06 - INFO - reduced_experiment_trainer -   Last-2 correction gate: {'epoch': 13, 'samples_seen': 114688, 'gate_selected': 1691, 'conflicting_self_suppressed': 1364, 'baseline_minor_self_selected': 83363}
+10/26/2026 21:54:06 - INFO - reduced_experiment_trainer -   LLA class losses labeled/unlabeled: 0.084793 / 0.967725
+10/26/2026 21:54:06 - INFO - reduced_experiment_trainer -   Skipping evaluation until final epoch (13/50).
+10/26/2026 21:58:52 - INFO - reduced_experiment_trainer -   Last-2 correction gate: {'epoch': 14, 'samples_seen': 114688, 'gate_selected': 1666, 'conflicting_self_suppressed': 1369, 'baseline_minor_self_selected': 84936}
+10/26/2026 21:58:52 - INFO - reduced_experiment_trainer -   LLA class losses labeled/unlabeled: 0.070400 / 0.920878
+10/26/2026 21:58:52 - INFO - reduced_experiment_trainer -   Skipping evaluation until final epoch (14/50).
+10/26/2026 22:03:44 - INFO - reduced_experiment_trainer -   Last-2 correction gate: {'epoch': 15, 'samples_seen': 114688, 'gate_selected': 1446, 'conflicting_self_suppressed': 1191, 'baseline_minor_self_selected': 86541}
+10/26/2026 22:03:44 - INFO - reduced_experiment_trainer -   LLA class losses labeled/unlabeled: 0.069426 / 0.874988
+10/26/2026 22:03:44 - INFO - reduced_experiment_trainer -   Skipping evaluation until final epoch (15/50).
+10/26/2026 22:08:34 - INFO - reduced_experiment_trainer -   Last-2 correction gate: {'epoch': 16, 'samples_seen': 114688, 'gate_selected': 1250, 'conflicting_self_suppressed': 1027, 'baseline_minor_self_selected': 87337}
+10/26/2026 22:08:34 - INFO - reduced_experiment_trainer -   LLA class losses labeled/unlabeled: 0.054229 / 0.839648
+10/26/2026 22:08:34 - INFO - reduced_experiment_trainer -   Skipping evaluation until final epoch (16/50).
+10/26/2026 22:13:18 - INFO - reduced_experiment_trainer -   Last-2 correction gate: {'epoch': 17, 'samples_seen': 114688, 'gate_selected': 1039, 'conflicting_self_suppressed': 868, 'baseline_minor_self_selected': 88250}
+10/26/2026 22:13:18 - INFO - reduced_experiment_trainer -   LLA class losses labeled/unlabeled: 0.048295 / 0.801821
+10/26/2026 22:13:18 - INFO - reduced_experiment_trainer -   Skipping evaluation until final epoch (17/50).
+10/26/2026 22:18:05 - INFO - reduced_experiment_trainer -   Last-2 correction gate: {'epoch': 18, 'samples_seen': 114688, 'gate_selected': 956, 'conflicting_self_suppressed': 802, 'baseline_minor_self_selected': 89358}
+10/26/2026 22:18:05 - INFO - reduced_experiment_trainer -   LLA class losses labeled/unlabeled: 0.043166 / 0.782105
+10/26/2026 22:18:05 - INFO - reduced_experiment_trainer -   Skipping evaluation until final epoch (18/50).
+10/26/2026 22:22:56 - INFO - reduced_experiment_trainer -   Last-2 correction gate: {'epoch': 19, 'samples_seen': 114688, 'gate_selected': 824, 'conflicting_self_suppressed': 687, 'baseline_minor_self_selected': 89699}
+10/26/2026 22:22:56 - INFO - reduced_experiment_trainer -   LLA class losses labeled/unlabeled: 0.038955 / 0.748690
+10/26/2026 22:22:56 - INFO - reduced_experiment_trainer -   Skipping evaluation until final epoch (19/50).
+10/26/2026 22:27:43 - INFO - reduced_experiment_trainer -   Last-2 correction gate: {'epoch': 20, 'samples_seen': 114688, 'gate_selected': 661, 'conflicting_self_suppressed': 566, 'baseline_minor_self_selected': 89886}
+10/26/2026 22:27:43 - INFO - reduced_experiment_trainer -   LLA class losses labeled/unlabeled: 0.033817 / 0.715729
+10/26/2026 22:27:43 - INFO - reduced_experiment_trainer -   Skipping evaluation until final epoch (20/50).
+10/26/2026 22:32:29 - INFO - reduced_experiment_trainer -   Last-2 correction gate: {'epoch': 21, 'samples_seen': 114688, 'gate_selected': 617, 'conflicting_self_suppressed': 506, 'baseline_minor_self_selected': 90236}
+10/26/2026 22:32:29 - INFO - reduced_experiment_trainer -   LLA class losses labeled/unlabeled: 0.031875 / 0.697918
+10/26/2026 22:32:29 - INFO - reduced_experiment_trainer -   Skipping evaluation until final epoch (21/50).
+10/26/2026 22:37:15 - INFO - reduced_experiment_trainer -   Last-2 correction gate: {'epoch': 22, 'samples_seen': 114688, 'gate_selected': 512, 'conflicting_self_suppressed': 441, 'baseline_minor_self_selected': 90884}
+10/26/2026 22:37:15 - INFO - reduced_experiment_trainer -   LLA class losses labeled/unlabeled: 0.027585 / 0.669512
+10/26/2026 22:37:15 - INFO - reduced_experiment_trainer -   Skipping evaluation until final epoch (22/50).
+10/26/2026 22:42:05 - INFO - reduced_experiment_trainer -   Last-2 correction gate: {'epoch': 23, 'samples_seen': 114688, 'gate_selected': 404, 'conflicting_self_suppressed': 336, 'baseline_minor_self_selected': 91050}
+10/26/2026 22:42:05 - INFO - reduced_experiment_trainer -   LLA class losses labeled/unlabeled: 0.024814 / 0.646463
+10/26/2026 22:42:05 - INFO - reduced_experiment_trainer -   Skipping evaluation until final epoch (23/50).
+10/26/2026 22:46:49 - INFO - reduced_experiment_trainer -   Last-2 correction gate: {'epoch': 24, 'samples_seen': 114688, 'gate_selected': 441, 'conflicting_self_suppressed': 373, 'baseline_minor_self_selected': 91124}
+10/26/2026 22:46:49 - INFO - reduced_experiment_trainer -   LLA class losses labeled/unlabeled: 0.022049 / 0.628075
+10/26/2026 22:46:49 - INFO - reduced_experiment_trainer -   Skipping evaluation until final epoch (24/50).
+10/26/2026 22:51:35 - INFO - reduced_experiment_trainer -   Last-2 correction gate: {'epoch': 25, 'samples_seen': 114688, 'gate_selected': 397, 'conflicting_self_suppressed': 326, 'baseline_minor_self_selected': 91270}
+10/26/2026 22:51:35 - INFO - reduced_experiment_trainer -   LLA class losses labeled/unlabeled: 0.018901 / 0.616140
+10/26/2026 22:51:35 - INFO - reduced_experiment_trainer -   Skipping evaluation until final epoch (25/50).
+10/26/2026 22:56:26 - INFO - reduced_experiment_trainer -   Last-2 correction gate: {'epoch': 26, 'samples_seen': 114688, 'gate_selected': 365, 'conflicting_self_suppressed': 300, 'baseline_minor_self_selected': 91287}
+10/26/2026 22:56:26 - INFO - reduced_experiment_trainer -   LLA class losses labeled/unlabeled: 0.018367 / 0.603027
+10/26/2026 22:56:26 - INFO - reduced_experiment_trainer -   Skipping evaluation until final epoch (26/50).
+10/26/2026 23:01:13 - INFO - reduced_experiment_trainer -   Last-2 correction gate: {'epoch': 27, 'samples_seen': 114688, 'gate_selected': 338, 'conflicting_self_suppressed': 294, 'baseline_minor_self_selected': 91486}
+10/26/2026 23:01:13 - INFO - reduced_experiment_trainer -   LLA class losses labeled/unlabeled: 0.016880 / 0.584343
+10/26/2026 23:01:13 - INFO - reduced_experiment_trainer -   Skipping evaluation until final epoch (27/50).
+10/26/2026 23:05:59 - INFO - reduced_experiment_trainer -   Last-2 correction gate: {'epoch': 28, 'samples_seen': 114688, 'gate_selected': 248, 'conflicting_self_suppressed': 212, 'baseline_minor_self_selected': 92030}
+10/26/2026 23:05:59 - INFO - reduced_experiment_trainer -   LLA class losses labeled/unlabeled: 0.014699 / 0.562693
+10/26/2026 23:05:59 - INFO - reduced_experiment_trainer -   Skipping evaluation until final epoch (28/50).
+10/26/2026 23:10:45 - INFO - reduced_experiment_trainer -   Last-2 correction gate: {'epoch': 29, 'samples_seen': 114688, 'gate_selected': 255, 'conflicting_self_suppressed': 214, 'baseline_minor_self_selected': 91742}
+10/26/2026 23:10:45 - INFO - reduced_experiment_trainer -   LLA class losses labeled/unlabeled: 0.012474 / 0.546628
+10/26/2026 23:10:45 - INFO - reduced_experiment_trainer -   Skipping evaluation until final epoch (29/50).
+10/26/2026 23:15:36 - INFO - reduced_experiment_trainer -   Last-2 correction gate: {'epoch': 30, 'samples_seen': 114688, 'gate_selected': 198, 'conflicting_self_suppressed': 172, 'baseline_minor_self_selected': 92083}
+10/26/2026 23:15:36 - INFO - reduced_experiment_trainer -   LLA class losses labeled/unlabeled: 0.012780 / 0.532981
+10/26/2026 23:15:36 - INFO - reduced_experiment_trainer -   Skipping evaluation until final epoch (30/50).
+10/26/2026 23:20:22 - INFO - reduced_experiment_trainer -   Last-2 correction gate: {'epoch': 31, 'samples_seen': 114688, 'gate_selected': 178, 'conflicting_self_suppressed': 159, 'baseline_minor_self_selected': 92155}
+10/26/2026 23:20:22 - INFO - reduced_experiment_trainer -   LLA class losses labeled/unlabeled: 0.009884 / 0.516135
+10/26/2026 23:20:22 - INFO - reduced_experiment_trainer -   Skipping evaluation until final epoch (31/50).
+10/26/2026 23:25:08 - INFO - reduced_experiment_trainer -   Last-2 correction gate: {'epoch': 32, 'samples_seen': 114688, 'gate_selected': 201, 'conflicting_self_suppressed': 175, 'baseline_minor_self_selected': 92443}
+10/26/2026 23:25:08 - INFO - reduced_experiment_trainer -   LLA class losses labeled/unlabeled: 0.009820 / 0.498364
+10/26/2026 23:25:08 - INFO - reduced_experiment_trainer -   Skipping evaluation until final epoch (32/50).
+10/26/2026 23:29:54 - INFO - reduced_experiment_trainer -   Last-2 correction gate: {'epoch': 33, 'samples_seen': 114688, 'gate_selected': 147, 'conflicting_self_suppressed': 126, 'baseline_minor_self_selected': 92486}
+10/26/2026 23:29:54 - INFO - reduced_experiment_trainer -   LLA class losses labeled/unlabeled: 0.007688 / 0.481667
+10/26/2026 23:29:54 - INFO - reduced_experiment_trainer -   Skipping evaluation until final epoch (33/50).
+10/26/2026 23:34:46 - INFO - reduced_experiment_trainer -   Last-2 correction gate: {'epoch': 34, 'samples_seen': 114688, 'gate_selected': 147, 'conflicting_self_suppressed': 127, 'baseline_minor_self_selected': 92616}
+10/26/2026 23:34:46 - INFO - reduced_experiment_trainer -   LLA class losses labeled/unlabeled: 0.007256 / 0.465262
+10/26/2026 23:34:46 - INFO - reduced_experiment_trainer -   Skipping evaluation until final epoch (34/50).
+10/26/2026 23:39:32 - INFO - reduced_experiment_trainer -   Last-2 correction gate: {'epoch': 35, 'samples_seen': 114688, 'gate_selected': 100, 'conflicting_self_suppressed': 86, 'baseline_minor_self_selected': 92801}
+10/26/2026 23:39:32 - INFO - reduced_experiment_trainer -   LLA class losses labeled/unlabeled: 0.006949 / 0.446446
+10/26/2026 23:39:32 - INFO - reduced_experiment_trainer -   Skipping evaluation until final epoch (35/50).
+10/26/2026 23:44:17 - INFO - reduced_experiment_trainer -   Last-2 correction gate: {'epoch': 36, 'samples_seen': 114688, 'gate_selected': 97, 'conflicting_self_suppressed': 86, 'baseline_minor_self_selected': 92870}
+10/26/2026 23:44:17 - INFO - reduced_experiment_trainer -   LLA class losses labeled/unlabeled: 0.005927 / 0.425035
+10/26/2026 23:44:17 - INFO - reduced_experiment_trainer -   Skipping evaluation until final epoch (36/50).
+10/26/2026 23:49:08 - INFO - reduced_experiment_trainer -   Last-2 correction gate: {'epoch': 37, 'samples_seen': 114688, 'gate_selected': 84, 'conflicting_self_suppressed': 75, 'baseline_minor_self_selected': 92671}
+10/26/2026 23:49:08 - INFO - reduced_experiment_trainer -   LLA class losses labeled/unlabeled: 0.005568 / 0.413930
+10/26/2026 23:49:08 - INFO - reduced_experiment_trainer -   Skipping evaluation until final epoch (37/50).
+10/26/2026 23:53:54 - INFO - reduced_experiment_trainer -   Last-2 correction gate: {'epoch': 38, 'samples_seen': 114688, 'gate_selected': 81, 'conflicting_self_suppressed': 73, 'baseline_minor_self_selected': 92913}
+10/26/2026 23:53:54 - INFO - reduced_experiment_trainer -   LLA class losses labeled/unlabeled: 0.003790 / 0.397140
+10/26/2026 23:53:54 - INFO - reduced_experiment_trainer -   Skipping evaluation until final epoch (38/50).
+10/26/2026 23:58:40 - INFO - reduced_experiment_trainer -   Last-2 correction gate: {'epoch': 39, 'samples_seen': 114688, 'gate_selected': 56, 'conflicting_self_suppressed': 54, 'baseline_minor_self_selected': 92816}
+10/26/2026 23:58:40 - INFO - reduced_experiment_trainer -   LLA class losses labeled/unlabeled: 0.003713 / 0.377336
+10/26/2026 23:58:40 - INFO - reduced_experiment_trainer -   Skipping evaluation until final epoch (39/50).
+10/27/2026 00:03:27 - INFO - reduced_experiment_trainer -   Last-2 correction gate: {'epoch': 40, 'samples_seen': 114688, 'gate_selected': 48, 'conflicting_self_suppressed': 40, 'baseline_minor_self_selected': 92912}
+10/27/2026 00:03:27 - INFO - reduced_experiment_trainer -   LLA class losses labeled/unlabeled: 0.002986 / 0.364028
+10/27/2026 00:03:27 - INFO - reduced_experiment_trainer -   Skipping evaluation until final epoch (40/50).
+10/27/2026 00:08:18 - INFO - reduced_experiment_trainer -   Last-2 correction gate: {'epoch': 41, 'samples_seen': 114688, 'gate_selected': 51, 'conflicting_self_suppressed': 41, 'baseline_minor_self_selected': 92833}
+10/27/2026 00:08:18 - INFO - reduced_experiment_trainer -   LLA class losses labeled/unlabeled: 0.003329 / 0.351277
+10/27/2026 00:08:18 - INFO - reduced_experiment_trainer -   Skipping evaluation until final epoch (41/50).
+10/27/2026 00:13:03 - INFO - reduced_experiment_trainer -   Last-2 correction gate: {'epoch': 42, 'samples_seen': 114688, 'gate_selected': 39, 'conflicting_self_suppressed': 36, 'baseline_minor_self_selected': 92960}
+10/27/2026 00:13:03 - INFO - reduced_experiment_trainer -   LLA class losses labeled/unlabeled: 0.002087 / 0.328578
+10/27/2026 00:13:03 - INFO - reduced_experiment_trainer -   Skipping evaluation until final epoch (42/50).
+10/27/2026 00:17:49 - INFO - reduced_experiment_trainer -   Last-2 correction gate: {'epoch': 43, 'samples_seen': 114688, 'gate_selected': 38, 'conflicting_self_suppressed': 34, 'baseline_minor_self_selected': 92849}
+10/27/2026 00:17:49 - INFO - reduced_experiment_trainer -   LLA class losses labeled/unlabeled: 0.001957 / 0.317472
+10/27/2026 00:17:49 - INFO - reduced_experiment_trainer -   Skipping evaluation until final epoch (43/50).
+10/27/2026 00:22:35 - INFO - reduced_experiment_trainer -   Last-2 correction gate: {'epoch': 44, 'samples_seen': 114688, 'gate_selected': 15, 'conflicting_self_suppressed': 12, 'baseline_minor_self_selected': 92724}
+10/27/2026 00:22:35 - INFO - reduced_experiment_trainer -   LLA class losses labeled/unlabeled: 0.001868 / 0.302268
+10/27/2026 00:22:35 - INFO - reduced_experiment_trainer -   Skipping evaluation until final epoch (44/50).
+10/27/2026 00:27:27 - INFO - reduced_experiment_trainer -   Last-2 correction gate: {'epoch': 45, 'samples_seen': 114688, 'gate_selected': 15, 'conflicting_self_suppressed': 12, 'baseline_minor_self_selected': 92676}
+10/27/2026 00:27:27 - INFO - reduced_experiment_trainer -   LLA class losses labeled/unlabeled: 0.001597 / 0.283707
+10/27/2026 00:27:27 - INFO - reduced_experiment_trainer -   Skipping evaluation until final epoch (45/50).
+10/27/2026 00:32:13 - INFO - reduced_experiment_trainer -   Last-2 correction gate: {'epoch': 46, 'samples_seen': 114688, 'gate_selected': 13, 'conflicting_self_suppressed': 10, 'baseline_minor_self_selected': 92676}
+10/27/2026 00:32:13 - INFO - reduced_experiment_trainer -   LLA class losses labeled/unlabeled: 0.001190 / 0.267451
+10/27/2026 00:32:13 - INFO - reduced_experiment_trainer -   Skipping evaluation until final epoch (46/50).
+10/27/2026 00:36:59 - INFO - reduced_experiment_trainer -   Last-2 correction gate: {'epoch': 47, 'samples_seen': 114688, 'gate_selected': 5, 'conflicting_self_suppressed': 5, 'baseline_minor_self_selected': 92394}
+10/27/2026 00:36:59 - INFO - reduced_experiment_trainer -   LLA class losses labeled/unlabeled: 0.000981 / 0.257610
+10/27/2026 00:36:59 - INFO - reduced_experiment_trainer -   Skipping evaluation until final epoch (47/50).
+10/27/2026 00:41:50 - INFO - reduced_experiment_trainer -   Last-2 correction gate: {'epoch': 48, 'samples_seen': 114688, 'gate_selected': 9, 'conflicting_self_suppressed': 9, 'baseline_minor_self_selected': 92386}
+10/27/2026 00:41:50 - INFO - reduced_experiment_trainer -   LLA class losses labeled/unlabeled: 0.001442 / 0.243669
+10/27/2026 00:41:50 - INFO - reduced_experiment_trainer -   Skipping evaluation until final epoch (48/50).
+10/27/2026 00:46:36 - INFO - reduced_experiment_trainer -   Last-2 correction gate: {'epoch': 49, 'samples_seen': 114688, 'gate_selected': 7, 'conflicting_self_suppressed': 6, 'baseline_minor_self_selected': 92345}
+10/27/2026 00:46:36 - INFO - reduced_experiment_trainer -   LLA class losses labeled/unlabeled: 0.000692 / 0.229327
+10/27/2026 00:46:36 - INFO - reduced_experiment_trainer -   Skipping evaluation until final epoch (49/50).
+10/27/2026 00:51:23 - INFO - reduced_experiment_trainer -   Last-2 correction gate: {'epoch': 50, 'samples_seen': 114688, 'gate_selected': 11, 'conflicting_self_suppressed': 11, 'baseline_minor_self_selected': 92326}
+10/27/2026 00:51:23 - INFO - reduced_experiment_trainer -   LLA class losses labeled/unlabeled: 0.001129 / 0.215232
+10/27/2026 00:51:29 - INFO - reduced_experiment_trainer -   major top-1 acc: 63.18
+10/27/2026 00:51:29 - INFO - reduced_experiment_trainer -   major top-5 acc: 94.45
+10/27/2026 00:51:29 - INFO - reduced_experiment_trainer -   per-class acc: [90.8, 94.3, 55.0, 49.5, 53.5, 13.2, 42.4, 71.6, 72.5, 89.0]
+10/27/2026 00:51:29 - INFO - reduced_experiment_trainer -   macro F1: 62.47
+10/27/2026 00:51:29 - INFO - reduced_experiment_trainer -   head/mid/tail acc: 80.03 / 38.73 / 68.88
+10/27/2026 00:51:36 - INFO - reduced_experiment_trainer -   minor top-1 acc: 65.67
+10/27/2026 00:51:36 - INFO - reduced_experiment_trainer -   minor top-5 acc: 95.37
+10/27/2026 00:51:36 - INFO - reduced_experiment_trainer -   per-class acc: [91.8, 93.5, 55.8, 34.6, 63.1, 36.0, 60.1, 66.8, 68.3, 86.7]
+10/27/2026 00:51:36 - INFO - reduced_experiment_trainer -   macro F1: 65.96
+10/27/2026 00:51:36 - INFO - reduced_experiment_trainer -   head/mid/tail acc: 80.37 / 44.57 / 70.47
+10/27/2026 00:51:44 - INFO - reduced_experiment_trainer -   ensemble top-1 acc: 65.91
+10/27/2026 00:51:44 - INFO - reduced_experiment_trainer -   ensemble top-5 acc: 95.53
+10/27/2026 00:51:44 - INFO - reduced_experiment_trainer -   ensemble per-class acc: [91.7, 94.6, 55.9, 37.6, 62.1, 32.5, 58.1, 68.7, 69.7, 88.2]
+10/27/2026 00:51:44 - INFO - reduced_experiment_trainer -   ensemble macro F1: 66.20
+10/27/2026 00:51:44 - INFO - reduced_experiment_trainer -   ensemble head/mid/tail acc: 80.73 / 44.07 / 71.18
+10/27/2026 00:51:50 - INFO - reduced_experiment_trainer -   minor_lla top-1 acc: 67.50
+10/27/2026 00:51:50 - INFO - reduced_experiment_trainer -   minor_lla top-5 acc: 95.73
+10/27/2026 00:51:50 - INFO - reduced_experiment_trainer -   per-class acc: [87.8, 93.1, 51.2, 40.8, 64.5, 40.6, 66.0, 68.7, 73.1, 89.2]
+10/27/2026 00:51:50 - INFO - reduced_experiment_trainer -   macro F1: 67.57
+10/27/2026 00:51:50 - INFO - reduced_experiment_trainer -   head/mid/tail acc: 77.37 / 48.63 / 74.25
+10/27/2026 00:51:58 - INFO - reduced_experiment_trainer -   ensemble_lla top-1 acc: 67.35
+10/27/2026 00:51:58 - INFO - reduced_experiment_trainer -   ensemble_lla top-5 acc: 95.90
+10/27/2026 00:51:58 - INFO - reduced_experiment_trainer -   ensemble_lla per-class acc: [88.9, 93.5, 53.1, 42.5, 63.8, 36.3, 62.2, 70.0, 73.5, 89.7]
+10/27/2026 00:51:58 - INFO - reduced_experiment_trainer -   ensemble_lla macro F1: 67.49
+10/27/2026 00:51:58 - INFO - reduced_experiment_trainer -   ensemble_lla head/mid/tail acc: 78.50 / 47.53 / 73.85
+10/27/2026 00:51:58 - INFO - reduced_experiment_trainer -   cross samples pre major->minor: 91.96, pre minor->major: 58.06, conflict: 0.00, skip minor-conf: 0.00, post major->minor: 91.96, post minor->major: 58.06
+10/27/2026 00:51:58 - INFO - reduced_experiment_trainer -   Major top-1 acc: 63.18
+10/27/2026 00:51:58 - INFO - reduced_experiment_trainer -   Minor top-1 acc: 65.67
+10/27/2026 00:51:58 - INFO - reduced_experiment_trainer -   Ensemble top-1 acc: 65.91
+10/27/2026 00:51:58 - INFO - reduced_experiment_trainer -   Final top-1 acc: 65.91
+10/27/2026 00:51:58 - INFO - reduced_experiment_trainer -   Best final top-1 acc: 65.91
+10/27/2026 00:51:58 - INFO - reduced_experiment_trainer -   Mean final top-1 acc: 65.91
+

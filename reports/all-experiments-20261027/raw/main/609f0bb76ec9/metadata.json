@@ -1,0 +1,54 @@
+{
+  "policy": "Minor LLA + soft self loss; last-2 narrow gate and cross masks unchanged",
+  "self_loss_denominator": "baseline selected self mask count before suppression",
+  "gate_note": "Argmax eligibility only. minor_selected_target describes an argmax, not the actual soft training target. Actual suppression is logged in correction_gate_stats.csv.",
+  "dataset": "cifar10",
+  "seed": 2,
+  "epoch": 31,
+  "global_step": 15871,
+  "fixed_bias_scale_used": false,
+  "lla_lambda": [
+    0.6268100142478943,
+    0.5131142735481262,
+    0.3359598219394684,
+    -0.421941876411438,
+    -0.41766101121902466,
+    -0.4959457218647003,
+    -0.6171116828918457,
+    -0.6627519726753235,
+    -0.5569233298301697,
+    -0.6000905632972717
+  ],
+  "lla_prior": [
+    0.20700640976428986,
+    0.18475931882858276,
+    0.15476372838020325,
+    0.07252983003854752,
+    0.07284098118543625,
+    0.06735613197088242,
+    0.059669919312000275,
+    0.05700778216123581,
+    0.06337162852287292,
+    0.06069426238536835
+  ],
+  "lla_parameter_source": "online, no parameter EMA",
+  "temperature": 1,
+  "fixed_prior_correction": "replaced, not added to LLA",
+  "val_samples_per_class": 500,
+  "model_source": "ema",
+  "tau_major_cross": 0.95,
+  "tau_minor_cross": 0.95,
+  "head_classes": [
+    0,
+    1,
+    2
+  ],
+  "tail_classes": [
+    7,
+    8,
+    9
+  ],
+  "rate_denominator": "n within each condition; rates are fractions, not percentages",
+  "validation_index": "position in deterministic validation split for this seed",
+  "limitations": "Clean validation images in eval mode; not actual augmented train batches. Confidence gaps are descriptive, not calibrated reliability scores. Do not fit a rule and report its accuracy on these same validation samples."
+}

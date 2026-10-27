@@ -1,5 +1,17 @@
 # Major-Minor Dual FixMatch
 
+## 전체 실험 결과 / Complete experiment history
+
+**[전체 실험 기록과 분석 (2026-10-27)](reports/all-experiments-20261027/README.md)**
+
+초기 baseline부터 Dual/DeCon, LLA, 교환·self loss ablation, 10% 데이터 비교까지
+모은 기록입니다. Validation과 official test, DeCon의 초기 불균형 unlabeled 설정과
+이후 균형 데이터 재실험을 구분했습니다. 215개 지표 폴더, 499개 모델별 지표 행과
+2,767개 원본 파일의 대응표가 있으며, 중복 폴더를 독립 실험으로 세면 안 됩니다.
+
+- [전체 성능 카탈로그](reports/all-experiments-20261027/CATALOG.md)
+- [원본 파일 및 압축 파일 대응표](reports/all-experiments-20261027/artifact_manifest.csv)
+
 This repository contains the cleaned dual-model training code used for the
 imbalanced semi-supervised learning experiments.
 

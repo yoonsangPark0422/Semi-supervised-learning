@@ -1,0 +1,21 @@
+{
+  "source_files": 2767,
+  "unique_archived_files": 2485,
+  "deduplicated": 282,
+  "unique_metric_runs": 215,
+  "model_metric_rows": 499,
+  "raw_source_bytes": 750421607,
+  "archived_bytes": 188830973,
+  "source_counts": {
+    "main": 2387,
+    "decon": 37,
+    "thesis": 17,
+    "legacy_machine": 242,
+    "dual200": 4,
+    "fixmatch1": 13,
+    "onedrive_dual": 43,
+    "existing_reports": 24
+  },
+  "local_only_count": 432,
+  "parse_notes": 0
+}

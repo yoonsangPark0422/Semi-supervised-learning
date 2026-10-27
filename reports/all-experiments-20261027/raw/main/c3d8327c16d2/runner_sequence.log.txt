@@ -1,0 +1,11 @@
+START minor-only alpha=1.2 at 08/31/2026 20:14:42
+END minor-only alpha=1.2 code=0 at 08/31/2026 22:10:26
+START dual alpha=1.25 at 08/31/2026 22:10:26
+END dual alpha=1.25 code=0 at 09/01/2026 01:17:14
+START dual alpha=1.30 at 09/01/2026 01:17:14
+END dual alpha=1.30 code=0 at 09/01/2026 04:23:58
+START dual alpha=1.35 at 09/01/2026 04:23:58
+END dual alpha=1.35 code=0 at 09/01/2026 07:30:31
+START dual alpha=1.40 at 09/01/2026 07:30:31
+END dual alpha=1.40 code=0 at 09/01/2026 10:37:08
+START dual alpha=1.45 at 09/01/2026 10:37:08

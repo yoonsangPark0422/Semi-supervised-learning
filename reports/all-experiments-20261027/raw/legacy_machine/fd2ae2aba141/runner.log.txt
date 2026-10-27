@@ -1,0 +1,1 @@
+[2026-05-13T14:24:09] epochs=200 eval_step=1024 total_steps=204800 batch_size=32 mu=7 seeds=[5]

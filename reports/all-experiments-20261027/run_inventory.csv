@@ -1,0 +1,397 @@
+﻿run,metric_file,last_epoch,planned_epoch,status,source
+main/Semi-supervised-learning-main/dual/result/svhn_smoke_minor,per_class_eval.csv,1,,latest_record_only,raw/main/0c3073960325/per_class_eval.csv
+main/Semi-supervised-learning-main/dual/result/svhn_smoke_minor,train_metrics.csv,1,,latest_record_only,raw/main/0c3073960325/train_metrics.csv
+main/Semi-supervised-learning-main/dual/result/svhn_smoke_minor_cuda,per_class_eval.csv,1,,latest_record_only,raw/main/268ad25bb6a0/per_class_eval.csv
+main/Semi-supervised-learning-main/dual/result/svhn_smoke_minor_cuda,train_metrics.csv,1,,latest_record_only,raw/main/268ad25bb6a0/train_metrics.csv
+main/Semi-supervised-learning-main/dual/result/svhn_smoke_optimized_loader,per_class_eval.csv,1,,latest_record_only,raw/main/1a413e396632/per_class_eval.csv
+main/Semi-supervised-learning-main/dual/result/svhn_smoke_optimized_loader,train_metrics.csv,1,,latest_record_only,raw/main/1a413e396632/train_metrics.csv
+main/Semi-supervised-learning-main/dual/result/svhn_smoke_optimized_loader2,per_class_eval.csv,1,,latest_record_only,raw/main/f2bd1cbc36b4/per_class_eval.csv
+main/Semi-supervised-learning-main/dual/result/svhn_smoke_optimized_loader2,train_metrics.csv,1,,latest_record_only,raw/main/f2bd1cbc36b4/train_metrics.csv
+main/Semi-supervised-learning-main/dual/results/speed_probe,per_class_eval.csv,1,,latest_record_only,raw/main/c1d67996e927/per_class_eval.csv
+main/Semi-supervised-learning-main/dual/results/speed_probe,train_metrics.csv,1,,latest_record_only,raw/main/c1d67996e927/train_metrics.csv
+main/Semi-supervised-learning-main/results/ablation_imb50_100_seed1_2_3_e50_s512/imb100/seed_1/baseline_fixmatch,per_class_eval.csv,50,50,reached_planned_epoch,raw/main/7d350e8c9537/per_class_eval.csv
+main/Semi-supervised-learning-main/results/ablation_imb50_100_seed1_2_3_e50_s512/imb100/seed_1/baseline_fixmatch,train_metrics.csv,50,50,reached_planned_epoch,raw/main/7d350e8c9537/train_metrics.csv
+main/Semi-supervised-learning-main/results/ablation_imb50_100_seed1_2_3_e50_s512/imb100/seed_1/dual_none,per_class_eval.csv,50,50,reached_planned_epoch,raw/main/b6cd7e8026f9/per_class_eval.csv
+main/Semi-supervised-learning-main/results/ablation_imb50_100_seed1_2_3_e50_s512/imb100/seed_1/dual_none,train_metrics.csv,50,50,reached_planned_epoch,raw/main/b6cd7e8026f9/train_metrics.csv
+main/Semi-supervised-learning-main/results/ablation_imb50_100_seed1_2_3_e50_s512/imb100/seed_1/dual_sampler,per_class_eval.csv,50,50,reached_planned_epoch,raw/main/ea7d65010ac7/per_class_eval.csv
+main/Semi-supervised-learning-main/results/ablation_imb50_100_seed1_2_3_e50_s512/imb100/seed_1/dual_sampler,train_metrics.csv,50,50,reached_planned_epoch,raw/main/ea7d65010ac7/train_metrics.csv
+main/Semi-supervised-learning-main/results/ablation_imb50_100_seed1_2_3_e50_s512/imb100/seed_1/dual_sampler_weighted_ce,per_class_eval.csv,50,50,reached_planned_epoch,raw/main/d8b02576318c/per_class_eval.csv
+main/Semi-supervised-learning-main/results/ablation_imb50_100_seed1_2_3_e50_s512/imb100/seed_1/dual_sampler_weighted_ce,train_metrics.csv,50,50,reached_planned_epoch,raw/main/d8b02576318c/train_metrics.csv
+main/Semi-supervised-learning-main/results/ablation_imb50_100_seed1_2_3_e50_s512/imb100/seed_1/dual_weighted_ce,per_class_eval.csv,50,50,reached_planned_epoch,raw/main/42b3d3701a3c/per_class_eval.csv
+main/Semi-supervised-learning-main/results/ablation_imb50_100_seed1_2_3_e50_s512/imb100/seed_1/dual_weighted_ce,train_metrics.csv,50,50,reached_planned_epoch,raw/main/42b3d3701a3c/train_metrics.csv
+main/Semi-supervised-learning-main/results/ablation_imb50_100_seed1_2_3_e50_s512/imb100/seed_2/baseline_fixmatch,per_class_eval.csv,50,50,reached_planned_epoch,raw/main/f19904b17ac6/per_class_eval.csv
+main/Semi-supervised-learning-main/results/ablation_imb50_100_seed1_2_3_e50_s512/imb100/seed_2/baseline_fixmatch,train_metrics.csv,50,50,reached_planned_epoch,raw/main/f19904b17ac6/train_metrics.csv
+main/Semi-supervised-learning-main/results/ablation_imb50_100_seed1_2_3_e50_s512/imb100/seed_2/dual_none,per_class_eval.csv,50,50,reached_planned_epoch,raw/main/8501b46cf15a/per_class_eval.csv
+main/Semi-supervised-learning-main/results/ablation_imb50_100_seed1_2_3_e50_s512/imb100/seed_2/dual_none,train_metrics.csv,50,50,reached_planned_epoch,raw/main/8501b46cf15a/train_metrics.csv
+main/Semi-supervised-learning-main/results/ablation_imb50_100_seed1_2_3_e50_s512/imb100/seed_2/dual_sampler,per_class_eval.csv,50,50,reached_planned_epoch,raw/main/072d28acb1c1/per_class_eval.csv
+main/Semi-supervised-learning-main/results/ablation_imb50_100_seed1_2_3_e50_s512/imb100/seed_2/dual_sampler,train_metrics.csv,50,50,reached_planned_epoch,raw/main/072d28acb1c1/train_metrics.csv
+main/Semi-supervised-learning-main/results/ablation_imb50_100_seed1_2_3_e50_s512/imb100/seed_2/dual_sampler_weighted_ce,per_class_eval.csv,50,50,reached_planned_epoch,raw/main/e5b55223d1c9/per_class_eval.csv
+main/Semi-supervised-learning-main/results/ablation_imb50_100_seed1_2_3_e50_s512/imb100/seed_2/dual_sampler_weighted_ce,train_metrics.csv,50,50,reached_planned_epoch,raw/main/e5b55223d1c9/train_metrics.csv
+main/Semi-supervised-learning-main/results/ablation_imb50_100_seed1_2_3_e50_s512/imb100/seed_2/dual_weighted_ce,per_class_eval.csv,50,50,reached_planned_epoch,raw/main/79defc2dab5a/per_class_eval.csv
+main/Semi-supervised-learning-main/results/ablation_imb50_100_seed1_2_3_e50_s512/imb100/seed_2/dual_weighted_ce,train_metrics.csv,50,50,reached_planned_epoch,raw/main/79defc2dab5a/train_metrics.csv
+main/Semi-supervised-learning-main/results/ablation_imb50_100_seed1_2_3_e50_s512/imb100/seed_3/baseline_fixmatch,per_class_eval.csv,50,50,reached_planned_epoch,raw/main/c4009c65a0b3/per_class_eval.csv
+main/Semi-supervised-learning-main/results/ablation_imb50_100_seed1_2_3_e50_s512/imb100/seed_3/baseline_fixmatch,train_metrics.csv,50,50,reached_planned_epoch,raw/main/c4009c65a0b3/train_metrics.csv
+main/Semi-supervised-learning-main/results/ablation_imb50_100_seed1_2_3_e50_s512/imb100/seed_3/dual_none,per_class_eval.csv,50,50,reached_planned_epoch,raw/main/47ebb8696d2d/per_class_eval.csv
+main/Semi-supervised-learning-main/results/ablation_imb50_100_seed1_2_3_e50_s512/imb100/seed_3/dual_none,train_metrics.csv,50,50,reached_planned_epoch,raw/main/47ebb8696d2d/train_metrics.csv
+main/Semi-supervised-learning-main/results/ablation_imb50_100_seed1_2_3_e50_s512/imb100/seed_3/dual_sampler,per_class_eval.csv,50,50,reached_planned_epoch,raw/main/0a14342a13b0/per_class_eval.csv
+main/Semi-supervised-learning-main/results/ablation_imb50_100_seed1_2_3_e50_s512/imb100/seed_3/dual_sampler,train_metrics.csv,50,50,reached_planned_epoch,raw/main/0a14342a13b0/train_metrics.csv
+main/Semi-supervised-learning-main/results/ablation_imb50_100_seed1_2_3_e50_s512/imb100/seed_3/dual_sampler_weighted_ce,per_class_eval.csv,50,50,reached_planned_epoch,raw/main/cbd813055c19/per_class_eval.csv
+main/Semi-supervised-learning-main/results/ablation_imb50_100_seed1_2_3_e50_s512/imb100/seed_3/dual_sampler_weighted_ce,train_metrics.csv,50,50,reached_planned_epoch,raw/main/cbd813055c19/train_metrics.csv
+main/Semi-supervised-learning-main/results/ablation_imb50_100_seed1_2_3_e50_s512/imb100/seed_3/dual_weighted_ce,per_class_eval.csv,50,50,reached_planned_epoch,raw/main/6e9bd9658bc2/per_class_eval.csv
+main/Semi-supervised-learning-main/results/ablation_imb50_100_seed1_2_3_e50_s512/imb100/seed_3/dual_weighted_ce,train_metrics.csv,50,50,reached_planned_epoch,raw/main/6e9bd9658bc2/train_metrics.csv
+main/Semi-supervised-learning-main/results/ablation_imb50_100_seed1_2_3_e50_s512/imb50/seed_1/baseline_fixmatch,per_class_eval.csv,50,50,reached_planned_epoch,raw/main/95443ef2eea9/per_class_eval.csv
+main/Semi-supervised-learning-main/results/ablation_imb50_100_seed1_2_3_e50_s512/imb50/seed_1/baseline_fixmatch,train_metrics.csv,50,50,reached_planned_epoch,raw/main/95443ef2eea9/train_metrics.csv
+main/Semi-supervised-learning-main/results/ablation_imb50_100_seed1_2_3_e50_s512/imb50/seed_1/dual_none,per_class_eval.csv,50,50,reached_planned_epoch,raw/main/50f0f88fa5f4/per_class_eval.csv
+main/Semi-supervised-learning-main/results/ablation_imb50_100_seed1_2_3_e50_s512/imb50/seed_1/dual_none,train_metrics.csv,50,50,reached_planned_epoch,raw/main/50f0f88fa5f4/train_metrics.csv
+main/Semi-supervised-learning-main/results/ablation_imb50_100_seed1_2_3_e50_s512/imb50/seed_1/dual_sampler,per_class_eval.csv,50,50,reached_planned_epoch,raw/main/cc4e7ee2f5bc/per_class_eval.csv
+main/Semi-supervised-learning-main/results/ablation_imb50_100_seed1_2_3_e50_s512/imb50/seed_1/dual_sampler,train_metrics.csv,50,50,reached_planned_epoch,raw/main/cc4e7ee2f5bc/train_metrics.csv
+main/Semi-supervised-learning-main/results/ablation_imb50_100_seed1_2_3_e50_s512/imb50/seed_1/dual_sampler_weighted_ce,per_class_eval.csv,50,50,reached_planned_epoch,raw/main/25a1f80cb7e3/per_class_eval.csv
+main/Semi-supervised-learning-main/results/ablation_imb50_100_seed1_2_3_e50_s512/imb50/seed_1/dual_sampler_weighted_ce,train_metrics.csv,50,50,reached_planned_epoch,raw/main/25a1f80cb7e3/train_metrics.csv
+main/Semi-supervised-learning-main/results/ablation_imb50_100_seed1_2_3_e50_s512/imb50/seed_1/dual_weighted_ce,per_class_eval.csv,50,50,reached_planned_epoch,raw/main/01b15f23c162/per_class_eval.csv
+main/Semi-supervised-learning-main/results/ablation_imb50_100_seed1_2_3_e50_s512/imb50/seed_1/dual_weighted_ce,train_metrics.csv,50,50,reached_planned_epoch,raw/main/01b15f23c162/train_metrics.csv
+main/Semi-supervised-learning-main/results/ablation_imb50_100_seed1_2_3_e50_s512/imb50/seed_2/baseline_fixmatch,per_class_eval.csv,50,50,reached_planned_epoch,raw/main/e6b5664fe3c4/per_class_eval.csv
+main/Semi-supervised-learning-main/results/ablation_imb50_100_seed1_2_3_e50_s512/imb50/seed_2/baseline_fixmatch,train_metrics.csv,50,50,reached_planned_epoch,raw/main/e6b5664fe3c4/train_metrics.csv
+main/Semi-supervised-learning-main/results/ablation_imb50_100_seed1_2_3_e50_s512/imb50/seed_2/dual_none,per_class_eval.csv,50,50,reached_planned_epoch,raw/main/f983ffeee13b/per_class_eval.csv
+main/Semi-supervised-learning-main/results/ablation_imb50_100_seed1_2_3_e50_s512/imb50/seed_2/dual_none,train_metrics.csv,50,50,reached_planned_epoch,raw/main/f983ffeee13b/train_metrics.csv
+main/Semi-supervised-learning-main/results/ablation_imb50_100_seed1_2_3_e50_s512/imb50/seed_2/dual_sampler,per_class_eval.csv,50,50,reached_planned_epoch,raw/main/e0719f4593b7/per_class_eval.csv
+main/Semi-supervised-learning-main/results/ablation_imb50_100_seed1_2_3_e50_s512/imb50/seed_2/dual_sampler,train_metrics.csv,50,50,reached_planned_epoch,raw/main/e0719f4593b7/train_metrics.csv
+main/Semi-supervised-learning-main/results/ablation_imb50_100_seed1_2_3_e50_s512/imb50/seed_2/dual_sampler_weighted_ce,per_class_eval.csv,50,50,reached_planned_epoch,raw/main/5b908ee58ecd/per_class_eval.csv
+main/Semi-supervised-learning-main/results/ablation_imb50_100_seed1_2_3_e50_s512/imb50/seed_2/dual_sampler_weighted_ce,train_metrics.csv,50,50,reached_planned_epoch,raw/main/5b908ee58ecd/train_metrics.csv
+main/Semi-supervised-learning-main/results/ablation_imb50_100_seed1_2_3_e50_s512/imb50/seed_2/dual_weighted_ce,per_class_eval.csv,50,50,reached_planned_epoch,raw/main/f05fe2c613a7/per_class_eval.csv
+main/Semi-supervised-learning-main/results/ablation_imb50_100_seed1_2_3_e50_s512/imb50/seed_2/dual_weighted_ce,train_metrics.csv,50,50,reached_planned_epoch,raw/main/f05fe2c613a7/train_metrics.csv
+main/Semi-supervised-learning-main/results/ablation_imb50_100_seed1_2_3_e50_s512/imb50/seed_3/baseline_fixmatch,per_class_eval.csv,50,50,reached_planned_epoch,raw/main/344433d30130/per_class_eval.csv
+main/Semi-supervised-learning-main/results/ablation_imb50_100_seed1_2_3_e50_s512/imb50/seed_3/baseline_fixmatch,train_metrics.csv,50,50,reached_planned_epoch,raw/main/344433d30130/train_metrics.csv
+main/Semi-supervised-learning-main/results/ablation_imb50_100_seed1_2_3_e50_s512/imb50/seed_3/dual_none,per_class_eval.csv,50,50,reached_planned_epoch,raw/main/fac60add211c/per_class_eval.csv
+main/Semi-supervised-learning-main/results/ablation_imb50_100_seed1_2_3_e50_s512/imb50/seed_3/dual_none,train_metrics.csv,50,50,reached_planned_epoch,raw/main/fac60add211c/train_metrics.csv
+main/Semi-supervised-learning-main/results/ablation_imb50_100_seed1_2_3_e50_s512/imb50/seed_3/dual_sampler,per_class_eval.csv,50,50,reached_planned_epoch,raw/main/81fa166f747a/per_class_eval.csv
+main/Semi-supervised-learning-main/results/ablation_imb50_100_seed1_2_3_e50_s512/imb50/seed_3/dual_sampler,train_metrics.csv,50,50,reached_planned_epoch,raw/main/81fa166f747a/train_metrics.csv
+main/Semi-supervised-learning-main/results/ablation_imb50_100_seed1_2_3_e50_s512/imb50/seed_3/dual_sampler_weighted_ce,per_class_eval.csv,50,50,reached_planned_epoch,raw/main/2c3efe5c61d9/per_class_eval.csv
+main/Semi-supervised-learning-main/results/ablation_imb50_100_seed1_2_3_e50_s512/imb50/seed_3/dual_sampler_weighted_ce,train_metrics.csv,50,50,reached_planned_epoch,raw/main/2c3efe5c61d9/train_metrics.csv
+main/Semi-supervised-learning-main/results/ablation_imb50_100_seed1_2_3_e50_s512/imb50/seed_3/dual_weighted_ce,per_class_eval.csv,50,50,reached_planned_epoch,raw/main/3662e5b6c41e/per_class_eval.csv
+main/Semi-supervised-learning-main/results/ablation_imb50_100_seed1_2_3_e50_s512/imb50/seed_3/dual_weighted_ce,train_metrics.csv,50,50,reached_planned_epoch,raw/main/3662e5b6c41e/train_metrics.csv
+main/Semi-supervised-learning-main/results/alpha12_dual_minor_seed1_2_3_ratio100_e50_s512/minor_only_alpha12_seed_2,per_class_eval.csv,3,50,partial,raw/main/4bb839025895/per_class_eval.csv
+main/Semi-supervised-learning-main/results/alpha12_dual_minor_seed1_2_3_ratio100_e50_s512/minor_only_alpha12_seed_2,train_metrics.csv,3,50,partial,raw/main/4bb839025895/train_metrics.csv
+main/Semi-supervised-learning-main/results/alpha12_dual_minor_seed1_5_ratio100_e50_s512/dual_alpha12_seed_2,per_class_eval.csv,50,50,reached_planned_epoch,raw/main/4b058a88a613/per_class_eval.csv
+main/Semi-supervised-learning-main/results/alpha12_dual_minor_seed1_5_ratio100_e50_s512/dual_alpha12_seed_2,train_metrics.csv,50,50,reached_planned_epoch,raw/main/4b058a88a613/train_metrics.csv
+main/Semi-supervised-learning-main/results/alpha12_dual_minor_seed1_5_ratio100_e50_s512/dual_alpha12_seed_3,per_class_eval.csv,50,50,reached_planned_epoch,raw/main/afb8efb73c57/per_class_eval.csv
+main/Semi-supervised-learning-main/results/alpha12_dual_minor_seed1_5_ratio100_e50_s512/dual_alpha12_seed_3,train_metrics.csv,50,50,reached_planned_epoch,raw/main/afb8efb73c57/train_metrics.csv
+main/Semi-supervised-learning-main/results/alpha12_dual_minor_seed1_5_ratio100_e50_s512/dual_alpha12_seed_4,per_class_eval.csv,50,50,reached_planned_epoch,raw/main/5e2a21d506f9/per_class_eval.csv
+main/Semi-supervised-learning-main/results/alpha12_dual_minor_seed1_5_ratio100_e50_s512/dual_alpha12_seed_4,train_metrics.csv,50,50,reached_planned_epoch,raw/main/5e2a21d506f9/train_metrics.csv
+main/Semi-supervised-learning-main/results/alpha12_dual_minor_seed1_5_ratio100_e50_s512/dual_alpha12_seed_5,per_class_eval.csv,50,50,reached_planned_epoch,raw/main/b06d3a3f9fb9/per_class_eval.csv
+main/Semi-supervised-learning-main/results/alpha12_dual_minor_seed1_5_ratio100_e50_s512/dual_alpha12_seed_5,train_metrics.csv,50,50,reached_planned_epoch,raw/main/b06d3a3f9fb9/train_metrics.csv
+main/Semi-supervised-learning-main/results/alpha12_dual_minor_seed1_5_ratio100_e50_s512/minor_only_alpha12_seed_2,per_class_eval.csv,50,50,reached_planned_epoch,raw/main/2b1135b968c0/per_class_eval.csv
+main/Semi-supervised-learning-main/results/alpha12_dual_minor_seed1_5_ratio100_e50_s512/minor_only_alpha12_seed_2,train_metrics.csv,50,50,reached_planned_epoch,raw/main/2b1135b968c0/train_metrics.csv
+main/Semi-supervised-learning-main/results/alpha12_dual_minor_seed1_5_ratio100_e50_s512/minor_only_alpha12_seed_3,per_class_eval.csv,50,50,reached_planned_epoch,raw/main/acff7e2e2874/per_class_eval.csv
+main/Semi-supervised-learning-main/results/alpha12_dual_minor_seed1_5_ratio100_e50_s512/minor_only_alpha12_seed_3,train_metrics.csv,50,50,reached_planned_epoch,raw/main/acff7e2e2874/train_metrics.csv
+main/Semi-supervised-learning-main/results/alpha12_dual_minor_seed1_5_ratio100_e50_s512/minor_only_alpha12_seed_4,per_class_eval.csv,50,50,reached_planned_epoch,raw/main/e10b040badb0/per_class_eval.csv
+main/Semi-supervised-learning-main/results/alpha12_dual_minor_seed1_5_ratio100_e50_s512/minor_only_alpha12_seed_4,train_metrics.csv,50,50,reached_planned_epoch,raw/main/e10b040badb0/train_metrics.csv
+main/Semi-supervised-learning-main/results/alpha12_dual_minor_seed1_5_ratio100_e50_s512/minor_only_alpha12_seed_5,per_class_eval.csv,50,50,reached_planned_epoch,raw/main/02a9f2dc2e79/per_class_eval.csv
+main/Semi-supervised-learning-main/results/alpha12_dual_minor_seed1_5_ratio100_e50_s512/minor_only_alpha12_seed_5,train_metrics.csv,50,50,reached_planned_epoch,raw/main/02a9f2dc2e79/train_metrics.csv
+main/Semi-supervised-learning-main/results/bias_strength_valsplit_ratio100_seed1_e50_s512/bias_1,per_class_eval.csv,50,50,reached_planned_epoch,raw/main/ecee878b59eb/per_class_eval.csv
+main/Semi-supervised-learning-main/results/bias_strength_valsplit_ratio100_seed1_e50_s512/bias_1,train_metrics.csv,50,50,reached_planned_epoch,raw/main/ecee878b59eb/train_metrics.csv
+main/Semi-supervised-learning-main/results/bias_strength_valsplit_ratio100_seed1_e50_s512/bias_2,per_class_eval.csv,50,50,reached_planned_epoch,raw/main/ad26f76decb7/per_class_eval.csv
+main/Semi-supervised-learning-main/results/bias_strength_valsplit_ratio100_seed1_e50_s512/bias_2,train_metrics.csv,50,50,reached_planned_epoch,raw/main/ad26f76decb7/train_metrics.csv
+main/Semi-supervised-learning-main/results/bias_strength_valsplit_ratio100_seed1_e50_s512/bias_3,per_class_eval.csv,50,50,reached_planned_epoch,raw/main/5ce5b5cb6a11/per_class_eval.csv
+main/Semi-supervised-learning-main/results/bias_strength_valsplit_ratio100_seed1_e50_s512/bias_3,train_metrics.csv,50,50,reached_planned_epoch,raw/main/5ce5b5cb6a11/train_metrics.csv
+main/Semi-supervised-learning-main/results/bias_strength_valsplit_ratio100_seed1_e50_s512/bias_4,per_class_eval.csv,50,50,reached_planned_epoch,raw/main/283d987ddd27/per_class_eval.csv
+main/Semi-supervised-learning-main/results/bias_strength_valsplit_ratio100_seed1_e50_s512/bias_4,train_metrics.csv,50,50,reached_planned_epoch,raw/main/283d987ddd27/train_metrics.csv
+main/Semi-supervised-learning-main/results/dual_real_last_2_lla_hard_no_cross_validation_cifar10_e50_s512_seed1,evaluation_metrics.csv,50,50,reached_planned_epoch,raw/main/25048bb887f1/evaluation_metrics.csv
+main/Semi-supervised-learning-main/results/dual_real_last_2_lla_hard_no_cross_validation_cifar10_e50_s512_seed1,per_class_eval.csv,50,50,reached_planned_epoch,raw/main/25048bb887f1/per_class_eval.csv
+main/Semi-supervised-learning-main/results/dual_real_last_2_lla_hard_no_cross_validation_cifar10_e50_s512_seed1,train_metrics.csv,50,50,reached_planned_epoch,raw/main/25048bb887f1/train_metrics.csv
+main/Semi-supervised-learning-main/results/dual_real_last_2_lla_hard_official_test_e50_seed1,evaluation_metrics.csv,50,50,reached_planned_epoch,raw/main/0d76d6a35f28/evaluation_metrics.csv
+main/Semi-supervised-learning-main/results/dual_real_last_2_lla_hard_official_test_e50_seed1,per_class_eval.csv,50,50,reached_planned_epoch,raw/main/0d76d6a35f28/per_class_eval.csv
+main/Semi-supervised-learning-main/results/dual_real_last_2_lla_hard_official_test_e50_seed2,evaluation_metrics.csv,50,50,reached_planned_epoch,raw/main/2a31b01881b4/evaluation_metrics.csv
+main/Semi-supervised-learning-main/results/dual_real_last_2_lla_hard_official_test_e50_seed2,per_class_eval.csv,50,50,reached_planned_epoch,raw/main/2a31b01881b4/per_class_eval.csv
+main/Semi-supervised-learning-main/results/dual_real_last_2_lla_hard_validation_cifar10_e50_s512_seed1,evaluation_metrics.csv,50,50,reached_planned_epoch,raw/main/a8b4b6443300/evaluation_metrics.csv
+main/Semi-supervised-learning-main/results/dual_real_last_2_lla_hard_validation_cifar10_e50_s512_seed1,per_class_eval.csv,50,50,reached_planned_epoch,raw/main/a8b4b6443300/per_class_eval.csv
+main/Semi-supervised-learning-main/results/dual_real_last_2_lla_hard_validation_cifar10_e50_s512_seed1,train_metrics.csv,50,50,reached_planned_epoch,raw/main/a8b4b6443300/train_metrics.csv
+main/Semi-supervised-learning-main/results/dual_real_last_2_lla_hard_validation_cifar10_e50_s512_seed2,evaluation_metrics.csv,50,50,reached_planned_epoch,raw/main/ad6a1e0d3a2f/evaluation_metrics.csv
+main/Semi-supervised-learning-main/results/dual_real_last_2_lla_hard_validation_cifar10_e50_s512_seed2,per_class_eval.csv,50,50,reached_planned_epoch,raw/main/ad6a1e0d3a2f/per_class_eval.csv
+main/Semi-supervised-learning-main/results/dual_real_last_2_lla_hard_validation_cifar10_e50_s512_seed2,train_metrics.csv,50,50,reached_planned_epoch,raw/main/ad6a1e0d3a2f/train_metrics.csv
+main/Semi-supervised-learning-main/results/dual_real_last_2_self_confidence_validation_cifar10_e50_s512_seed1,evaluation_metrics.csv,50,50,reached_planned_epoch,raw/main/ec52a83f5387/evaluation_metrics.csv
+main/Semi-supervised-learning-main/results/dual_real_last_2_self_confidence_validation_cifar10_e50_s512_seed1,per_class_eval.csv,50,50,reached_planned_epoch,raw/main/ec52a83f5387/per_class_eval.csv
+main/Semi-supervised-learning-main/results/dual_real_last_2_self_confidence_validation_cifar10_e50_s512_seed1,train_metrics.csv,50,50,reached_planned_epoch,raw/main/ec52a83f5387/train_metrics.csv
+main/Semi-supervised-learning-main/results/dual_real_last_2_self_floor08_validation_cifar10_e50_s512_seed1,evaluation_metrics.csv,50,50,reached_planned_epoch,raw/main/7e35a7c85465/evaluation_metrics.csv
+main/Semi-supervised-learning-main/results/dual_real_last_2_self_floor08_validation_cifar10_e50_s512_seed1,per_class_eval.csv,50,50,reached_planned_epoch,raw/main/7e35a7c85465/per_class_eval.csv
+main/Semi-supervised-learning-main/results/dual_real_last_2_self_floor08_validation_cifar10_e50_s512_seed1,train_metrics.csv,50,50,reached_planned_epoch,raw/main/7e35a7c85465/train_metrics.csv
+main/Semi-supervised-learning-main/results/dual_real_last_lla_soft_validation_cifar10_e50_s512_seed1,evaluation_metrics.csv,50,50,reached_planned_epoch,raw/main/b7f1a98cce7e/evaluation_metrics.csv
+main/Semi-supervised-learning-main/results/dual_real_last_lla_soft_validation_cifar10_e50_s512_seed1,per_class_eval.csv,50,50,reached_planned_epoch,raw/main/b7f1a98cce7e/per_class_eval.csv
+main/Semi-supervised-learning-main/results/dual_real_last_lla_soft_validation_cifar10_e50_s512_seed1,train_metrics.csv,50,50,reached_planned_epoch,raw/main/b7f1a98cce7e/train_metrics.csv
+main/Semi-supervised-learning-main/results/dual_real_last_lla_soft_validation_cifar10_e50_s512_seed2,evaluation_metrics.csv,50,50,reached_planned_epoch,raw/main/447d414d4763/evaluation_metrics.csv
+main/Semi-supervised-learning-main/results/dual_real_last_lla_soft_validation_cifar10_e50_s512_seed2,per_class_eval.csv,50,50,reached_planned_epoch,raw/main/447d414d4763/per_class_eval.csv
+main/Semi-supervised-learning-main/results/dual_real_last_lla_soft_validation_cifar10_e50_s512_seed2,train_metrics.csv,50,50,reached_planned_epoch,raw/main/447d414d4763/train_metrics.csv
+main/Semi-supervised-learning-main/results/ensemble_weight_sweep_imb50_100_e50_s512_seed5/imb100/eval_w0p2,per_class_eval.csv,1,50,partial,raw/main/fe4a89833ecf/per_class_eval.csv
+main/Semi-supervised-learning-main/results/ensemble_weight_sweep_imb50_100_e50_s512_seed5/imb100/eval_w0p3,per_class_eval.csv,1,50,partial,raw/main/8dc6bb4d1c13/per_class_eval.csv
+main/Semi-supervised-learning-main/results/ensemble_weight_sweep_imb50_100_e50_s512_seed5/imb100/eval_w0p4,per_class_eval.csv,1,50,partial,raw/main/755d1e3a9ef6/per_class_eval.csv
+main/Semi-supervised-learning-main/results/ensemble_weight_sweep_imb50_100_e50_s512_seed5/imb100/eval_w0p5,per_class_eval.csv,1,50,partial,raw/main/7d51d95f239e/per_class_eval.csv
+main/Semi-supervised-learning-main/results/ensemble_weight_sweep_imb50_100_e50_s512_seed5/imb100/eval_w0p6,per_class_eval.csv,1,50,partial,raw/main/8f6b0394e8cf/per_class_eval.csv
+main/Semi-supervised-learning-main/results/ensemble_weight_sweep_imb50_100_e50_s512_seed5/imb100/eval_w0p7,per_class_eval.csv,1,50,partial,raw/main/ef652661f368/per_class_eval.csv
+main/Semi-supervised-learning-main/results/ensemble_weight_sweep_imb50_100_e50_s512_seed5/imb100/eval_w0p8,per_class_eval.csv,1,50,partial,raw/main/f6e41a30ab49/per_class_eval.csv
+main/Semi-supervised-learning-main/results/ensemble_weight_sweep_imb50_100_e50_s512_seed5/imb100/train_dual,per_class_eval.csv,50,50,reached_planned_epoch,raw/main/5ff1c41649f2/per_class_eval.csv
+main/Semi-supervised-learning-main/results/ensemble_weight_sweep_imb50_100_e50_s512_seed5/imb100/train_dual,train_metrics.csv,50,50,reached_planned_epoch,raw/main/5ff1c41649f2/train_metrics.csv
+main/Semi-supervised-learning-main/results/ensemble_weight_sweep_imb50_100_e50_s512_seed5/imb50/eval_w0p2,per_class_eval.csv,1,50,partial,raw/main/94714156000b/per_class_eval.csv
+main/Semi-supervised-learning-main/results/ensemble_weight_sweep_imb50_100_e50_s512_seed5/imb50/eval_w0p3,per_class_eval.csv,1,50,partial,raw/main/847b95cde037/per_class_eval.csv
+main/Semi-supervised-learning-main/results/ensemble_weight_sweep_imb50_100_e50_s512_seed5/imb50/eval_w0p4,per_class_eval.csv,1,50,partial,raw/main/063949cd8f55/per_class_eval.csv
+main/Semi-supervised-learning-main/results/ensemble_weight_sweep_imb50_100_e50_s512_seed5/imb50/eval_w0p5,per_class_eval.csv,1,50,partial,raw/main/8e8a3b27cdd1/per_class_eval.csv
+main/Semi-supervised-learning-main/results/ensemble_weight_sweep_imb50_100_e50_s512_seed5/imb50/eval_w0p6,per_class_eval.csv,1,50,partial,raw/main/c446ae8a663f/per_class_eval.csv
+main/Semi-supervised-learning-main/results/ensemble_weight_sweep_imb50_100_e50_s512_seed5/imb50/eval_w0p7,per_class_eval.csv,1,50,partial,raw/main/50a22af6cb9e/per_class_eval.csv
+main/Semi-supervised-learning-main/results/ensemble_weight_sweep_imb50_100_e50_s512_seed5/imb50/eval_w0p8,per_class_eval.csv,1,50,partial,raw/main/c2c88d58b712/per_class_eval.csv
+main/Semi-supervised-learning-main/results/ensemble_weight_sweep_imb50_100_e50_s512_seed5/imb50/train_dual,per_class_eval.csv,50,50,reached_planned_epoch,raw/main/56524116fa06/per_class_eval.csv
+main/Semi-supervised-learning-main/results/ensemble_weight_sweep_imb50_100_e50_s512_seed5/imb50/train_dual,train_metrics.csv,50,50,reached_planned_epoch,raw/main/56524116fa06/train_metrics.csv
+main/Semi-supervised-learning-main/results/fixmatch_vs_dual_imb50_100_e50_s512_seed5/imb100/baseline_fixmatch,per_class_eval.csv,50,50,reached_planned_epoch,raw/main/64e302bf4493/per_class_eval.csv
+main/Semi-supervised-learning-main/results/fixmatch_vs_dual_imb50_100_e50_s512_seed5/imb100/baseline_fixmatch,train_metrics.csv,50,50,reached_planned_epoch,raw/main/64e302bf4493/train_metrics.csv
+main/Semi-supervised-learning-main/results/fixmatch_vs_dual_imb50_100_e50_s512_seed5/imb100/dual_sampler_weighted_ce,per_class_eval.csv,50,50,reached_planned_epoch,raw/main/fb3ce25f5e93/per_class_eval.csv
+main/Semi-supervised-learning-main/results/fixmatch_vs_dual_imb50_100_e50_s512_seed5/imb100/dual_sampler_weighted_ce,train_metrics.csv,50,50,reached_planned_epoch,raw/main/fb3ce25f5e93/train_metrics.csv
+main/Semi-supervised-learning-main/results/fixmatch_vs_dual_imb50_100_e50_s512_seed5/imb50/baseline_fixmatch,per_class_eval.csv,50,50,reached_planned_epoch,raw/main/e8277fe3cc57/per_class_eval.csv
+main/Semi-supervised-learning-main/results/fixmatch_vs_dual_imb50_100_e50_s512_seed5/imb50/baseline_fixmatch,train_metrics.csv,50,50,reached_planned_epoch,raw/main/e8277fe3cc57/train_metrics.csv
+main/Semi-supervised-learning-main/results/fixmatch_vs_dual_imb50_100_e50_s512_seed5/imb50/dual_sampler_weighted_ce,per_class_eval.csv,50,50,reached_planned_epoch,raw/main/348f0d298aa6/per_class_eval.csv
+main/Semi-supervised-learning-main/results/fixmatch_vs_dual_imb50_100_e50_s512_seed5/imb50/dual_sampler_weighted_ce,train_metrics.csv,50,50,reached_planned_epoch,raw/main/348f0d298aa6/train_metrics.csv
+main/Semi-supervised-learning-main/results/last2_dual_validation_cifar10_e50_s512_seed1_20261023,per_class_eval.csv,50,50,reached_planned_epoch,raw/main/2eaebe299888/per_class_eval.csv
+main/Semi-supervised-learning-main/results/last2_dual_validation_cifar10_e50_s512_seed1_20261023,train_metrics.csv,50,50,reached_planned_epoch,raw/main/2eaebe299888/train_metrics.csv
+main/Semi-supervised-learning-main/results/last_dual_quick_validation_cifar10_e20_s512_seed1_20261023,per_class_eval.csv,20,20,reached_planned_epoch,raw/main/11029405247e/per_class_eval.csv
+main/Semi-supervised-learning-main/results/last_dual_quick_validation_cifar10_e20_s512_seed1_20261023,train_metrics.csv,20,20,reached_planned_epoch,raw/main/11029405247e/train_metrics.csv
+main/Semi-supervised-learning-main/results/last_dual_validation_cifar10_e50_s512_seed1_20261023,per_class_eval.csv,50,50,reached_planned_epoch,raw/main/6ec162f61fb6/per_class_eval.csv
+main/Semi-supervised-learning-main/results/last_dual_validation_cifar10_e50_s512_seed1_20261023,train_metrics.csv,50,50,reached_planned_epoch,raw/main/6ec162f61fb6/train_metrics.csv
+main/Semi-supervised-learning-main/results/minor_alpha12_then_dual_alpha125_150_ratio100_seed1_e50_s512/dual_alpha_125,per_class_eval.csv,50,50,reached_planned_epoch,raw/main/2c2184645c8b/per_class_eval.csv
+main/Semi-supervised-learning-main/results/minor_alpha12_then_dual_alpha125_150_ratio100_seed1_e50_s512/dual_alpha_125,train_metrics.csv,50,50,reached_planned_epoch,raw/main/2c2184645c8b/train_metrics.csv
+main/Semi-supervised-learning-main/results/minor_alpha12_then_dual_alpha125_150_ratio100_seed1_e50_s512/dual_alpha_130,per_class_eval.csv,50,50,reached_planned_epoch,raw/main/4d5ab9439599/per_class_eval.csv
+main/Semi-supervised-learning-main/results/minor_alpha12_then_dual_alpha125_150_ratio100_seed1_e50_s512/dual_alpha_130,train_metrics.csv,50,50,reached_planned_epoch,raw/main/4d5ab9439599/train_metrics.csv
+main/Semi-supervised-learning-main/results/minor_alpha12_then_dual_alpha125_150_ratio100_seed1_e50_s512/dual_alpha_135,per_class_eval.csv,50,50,reached_planned_epoch,raw/main/2840cb895ead/per_class_eval.csv
+main/Semi-supervised-learning-main/results/minor_alpha12_then_dual_alpha125_150_ratio100_seed1_e50_s512/dual_alpha_135,train_metrics.csv,50,50,reached_planned_epoch,raw/main/2840cb895ead/train_metrics.csv
+main/Semi-supervised-learning-main/results/minor_alpha12_then_dual_alpha125_150_ratio100_seed1_e50_s512/dual_alpha_140,per_class_eval.csv,50,50,reached_planned_epoch,raw/main/aac93f59818c/per_class_eval.csv
+main/Semi-supervised-learning-main/results/minor_alpha12_then_dual_alpha125_150_ratio100_seed1_e50_s512/dual_alpha_140,train_metrics.csv,50,50,reached_planned_epoch,raw/main/aac93f59818c/train_metrics.csv
+main/Semi-supervised-learning-main/results/minor_alpha12_then_dual_alpha125_150_ratio100_seed1_e50_s512/dual_alpha_145,per_class_eval.csv,35,50,partial,raw/main/2c3447a0213e/per_class_eval.csv
+main/Semi-supervised-learning-main/results/minor_alpha12_then_dual_alpha125_150_ratio100_seed1_e50_s512/dual_alpha_145,train_metrics.csv,35,50,partial,raw/main/2c3447a0213e/train_metrics.csv
+main/Semi-supervised-learning-main/results/minor_alpha12_then_dual_alpha125_150_ratio100_seed1_e50_s512/minor_only_alpha_12,per_class_eval.csv,50,50,reached_planned_epoch,raw/main/499aebef65af/per_class_eval.csv
+main/Semi-supervised-learning-main/results/minor_alpha12_then_dual_alpha125_150_ratio100_seed1_e50_s512/minor_only_alpha_12,train_metrics.csv,50,50,reached_planned_epoch,raw/main/499aebef65af/train_metrics.csv
+main/Semi-supervised-learning-main/results/new_dual_conflict_filter_ratio100_seed1_e50_s512,per_class_eval.csv,50,50,reached_planned_epoch,raw/main/9f04acb0a53b/per_class_eval.csv
+main/Semi-supervised-learning-main/results/new_dual_conflict_filter_ratio100_seed1_e50_s512,train_metrics.csv,50,50,reached_planned_epoch,raw/main/9f04acb0a53b/train_metrics.csv
+main/Semi-supervised-learning-main/results/new_dual_head_tail_selective_cross_ratio100_seed1_2_3_e50_s512/seed_2,per_class_eval.csv,50,50,reached_planned_epoch,raw/main/81e5a202b165/per_class_eval.csv
+main/Semi-supervised-learning-main/results/new_dual_head_tail_selective_cross_ratio100_seed1_2_3_e50_s512/seed_2,train_metrics.csv,50,50,reached_planned_epoch,raw/main/81e5a202b165/train_metrics.csv
+main/Semi-supervised-learning-main/results/new_dual_head_tail_selective_cross_ratio100_seed1_2_3_e50_s512/seed_3,per_class_eval.csv,50,50,reached_planned_epoch,raw/main/18fe4bac41c9/per_class_eval.csv
+main/Semi-supervised-learning-main/results/new_dual_head_tail_selective_cross_ratio100_seed1_2_3_e50_s512/seed_3,train_metrics.csv,50,50,reached_planned_epoch,raw/main/18fe4bac41c9/train_metrics.csv
+main/Semi-supervised-learning-main/results/new_dual_head_tail_selective_cross_ratio100_seed1_e50_s512,per_class_eval.csv,50,50,reached_planned_epoch,raw/main/a2acf51bcdc9/per_class_eval.csv
+main/Semi-supervised-learning-main/results/new_dual_head_tail_selective_cross_ratio100_seed1_e50_s512,train_metrics.csv,50,50,reached_planned_epoch,raw/main/a2acf51bcdc9/train_metrics.csv
+main/Semi-supervised-learning-main/results/new_dual_sampler_alpha12_ratio100_seed1_e50_s512,per_class_eval.csv,50,50,reached_planned_epoch,raw/main/bc02505d6333/per_class_eval.csv
+main/Semi-supervised-learning-main/results/new_dual_sampler_alpha12_ratio100_seed1_e50_s512,train_metrics.csv,50,50,reached_planned_epoch,raw/main/bc02505d6333/train_metrics.csv
+main/Semi-supervised-learning-main/results/new_dual_skip_minor_conf08_ratio100_seed1_e50_s512,per_class_eval.csv,3,50,partial,raw/main/c8095aef4c9f/per_class_eval.csv
+main/Semi-supervised-learning-main/results/new_dual_skip_minor_conf08_ratio100_seed1_e50_s512,train_metrics.csv,3,50,partial,raw/main/c8095aef4c9f/train_metrics.csv
+main/Semi-supervised-learning-main/results/new_dual_skip_minor_conf08_ratio100_seed1_e50_s512_gpu,per_class_eval.csv,50,50,reached_planned_epoch,raw/main/4bba951e495b/per_class_eval.csv
+main/Semi-supervised-learning-main/results/new_dual_skip_minor_conf08_ratio100_seed1_e50_s512_gpu,train_metrics.csv,50,50,reached_planned_epoch,raw/main/4bba951e495b/train_metrics.csv
+main/Semi-supervised-learning-main/results/new_dual_skip_minor_conf_sweep093_098_ratio100_seed1_e50_s512/thr_093,per_class_eval.csv,24,50,partial,raw/main/98ef0a83f1a9/per_class_eval.csv
+main/Semi-supervised-learning-main/results/new_dual_skip_minor_conf_sweep093_098_ratio100_seed1_e50_s512/thr_093,train_metrics.csv,24,50,partial,raw/main/98ef0a83f1a9/train_metrics.csv
+main/Semi-supervised-learning-main/results/new_dual_skip_minor_conf_sweep_ratio100_seed1_e50_s512/thr_06,per_class_eval.csv,50,50,reached_planned_epoch,raw/main/2038e322c3e9/per_class_eval.csv
+main/Semi-supervised-learning-main/results/new_dual_skip_minor_conf_sweep_ratio100_seed1_e50_s512/thr_06,train_metrics.csv,50,50,reached_planned_epoch,raw/main/2038e322c3e9/train_metrics.csv
+main/Semi-supervised-learning-main/results/new_dual_skip_minor_conf_sweep_ratio100_seed1_e50_s512/thr_07,per_class_eval.csv,50,50,reached_planned_epoch,raw/main/1605883b197b/per_class_eval.csv
+main/Semi-supervised-learning-main/results/new_dual_skip_minor_conf_sweep_ratio100_seed1_e50_s512/thr_07,train_metrics.csv,50,50,reached_planned_epoch,raw/main/1605883b197b/train_metrics.csv
+main/Semi-supervised-learning-main/results/new_dual_skip_minor_conf_sweep_ratio100_seed1_e50_s512/thr_08,per_class_eval.csv,50,50,reached_planned_epoch,raw/main/9e539a02eaae/per_class_eval.csv
+main/Semi-supervised-learning-main/results/new_dual_skip_minor_conf_sweep_ratio100_seed1_e50_s512/thr_08,train_metrics.csv,50,50,reached_planned_epoch,raw/main/9e539a02eaae/train_metrics.csv
+main/Semi-supervised-learning-main/results/new_dual_skip_minor_conf_sweep_ratio100_seed1_e50_s512/thr_09,per_class_eval.csv,50,50,reached_planned_epoch,raw/main/010a82a68786/per_class_eval.csv
+main/Semi-supervised-learning-main/results/new_dual_skip_minor_conf_sweep_ratio100_seed1_e50_s512/thr_09,train_metrics.csv,50,50,reached_planned_epoch,raw/main/010a82a68786/train_metrics.csv
+main/Semi-supervised-learning-main/results/official_test_decon_dual_matched_cifar10_svhn_e50_s512_seed1_2_3/cifar10/decon/seed_1,per_class_eval.csv,50,50,reached_planned_epoch,raw/main/2a1435d84341/per_class_eval.csv
+main/Semi-supervised-learning-main/results/official_test_decon_dual_matched_cifar10_svhn_e50_s512_seed1_2_3/cifar10/decon/seed_2,per_class_eval.csv,50,50,reached_planned_epoch,raw/main/7d20538d0440/per_class_eval.csv
+main/Semi-supervised-learning-main/results/official_test_decon_dual_matched_cifar10_svhn_e50_s512_seed1_2_3/cifar10/decon/seed_3,per_class_eval.csv,50,50,reached_planned_epoch,raw/main/26d9c990c173/per_class_eval.csv
+main/Semi-supervised-learning-main/results/official_test_decon_dual_matched_cifar10_svhn_e50_s512_seed1_2_3/svhn/decon/seed_1,per_class_eval.csv,50,50,reached_planned_epoch,raw/main/e7227ec8b3ae/per_class_eval.csv
+main/Semi-supervised-learning-main/results/official_test_finalonly_alpha12_cifar10_svhn10_3models_e50_s512_seed1_2_3/cifar10/decon/seed_1,per_class_eval.csv,50,50,reached_planned_epoch,raw/main/eabfc4fa5976/per_class_eval.csv
+main/Semi-supervised-learning-main/results/official_test_finalonly_alpha12_cifar10_svhn10_3models_e50_s512_seed1_2_3/cifar10/decon/seed_2,per_class_eval.csv,50,50,reached_planned_epoch,raw/main/f8c6e0d675f9/per_class_eval.csv
+main/Semi-supervised-learning-main/results/official_test_finalonly_alpha12_cifar10_svhn10_3models_e50_s512_seed1_2_3/cifar10/decon/seed_3,per_class_eval.csv,50,50,reached_planned_epoch,raw/main/d644605fceaf/per_class_eval.csv
+main/Semi-supervised-learning-main/results/official_test_finalonly_alpha12_cifar10_svhn10_3models_e50_s512_seed1_2_3/cifar10/dual/seed_1,per_class_eval.csv,50,50,reached_planned_epoch,raw/main/efe2a0f043fa/per_class_eval.csv
+main/Semi-supervised-learning-main/results/official_test_finalonly_alpha12_cifar10_svhn10_3models_e50_s512_seed1_2_3/cifar10/dual/seed_1,train_metrics.csv,50,50,reached_planned_epoch,raw/main/efe2a0f043fa/train_metrics.csv
+main/Semi-supervised-learning-main/results/official_test_finalonly_alpha12_cifar10_svhn10_3models_e50_s512_seed1_2_3/cifar10/dual/seed_2,per_class_eval.csv,50,50,reached_planned_epoch,raw/main/c9495d17a5d1/per_class_eval.csv
+main/Semi-supervised-learning-main/results/official_test_finalonly_alpha12_cifar10_svhn10_3models_e50_s512_seed1_2_3/cifar10/dual/seed_2,train_metrics.csv,50,50,reached_planned_epoch,raw/main/c9495d17a5d1/train_metrics.csv
+main/Semi-supervised-learning-main/results/official_test_finalonly_alpha12_cifar10_svhn10_3models_e50_s512_seed1_2_3/cifar10/dual/seed_3,per_class_eval.csv,50,50,reached_planned_epoch,raw/main/d78688a05c68/per_class_eval.csv
+main/Semi-supervised-learning-main/results/official_test_finalonly_alpha12_cifar10_svhn10_3models_e50_s512_seed1_2_3/cifar10/dual/seed_3,train_metrics.csv,50,50,reached_planned_epoch,raw/main/d78688a05c68/train_metrics.csv
+main/Semi-supervised-learning-main/results/official_test_finalonly_alpha12_cifar10_svhn10_3models_e50_s512_seed1_2_3/cifar10/minor/seed_1,per_class_eval.csv,50,50,reached_planned_epoch,raw/main/28deb2e0e737/per_class_eval.csv
+main/Semi-supervised-learning-main/results/official_test_finalonly_alpha12_cifar10_svhn10_3models_e50_s512_seed1_2_3/cifar10/minor/seed_1,train_metrics.csv,50,50,reached_planned_epoch,raw/main/28deb2e0e737/train_metrics.csv
+main/Semi-supervised-learning-main/results/official_test_finalonly_alpha12_cifar10_svhn10_3models_e50_s512_seed1_2_3/cifar10/minor/seed_2,per_class_eval.csv,50,50,reached_planned_epoch,raw/main/a80828a0084d/per_class_eval.csv
+main/Semi-supervised-learning-main/results/official_test_finalonly_alpha12_cifar10_svhn10_3models_e50_s512_seed1_2_3/cifar10/minor/seed_2,train_metrics.csv,50,50,reached_planned_epoch,raw/main/a80828a0084d/train_metrics.csv
+main/Semi-supervised-learning-main/results/official_test_finalonly_alpha12_cifar10_svhn10_3models_e50_s512_seed1_2_3/cifar10/minor/seed_3,per_class_eval.csv,50,50,reached_planned_epoch,raw/main/8a2ac2280ce5/per_class_eval.csv
+main/Semi-supervised-learning-main/results/official_test_finalonly_alpha12_cifar10_svhn10_3models_e50_s512_seed1_2_3/cifar10/minor/seed_3,train_metrics.csv,50,50,reached_planned_epoch,raw/main/8a2ac2280ce5/train_metrics.csv
+main/Semi-supervised-learning-main/results/official_test_finalonly_alpha12_cifar10_svhn10_3models_e50_s512_seed1_2_3/svhn/decon/seed_1,per_class_eval.csv,50,50,reached_planned_epoch,raw/main/c7896e63f38e/per_class_eval.csv
+main/Semi-supervised-learning-main/results/official_test_finalonly_alpha12_cifar10_svhn10_3models_e50_s512_seed1_2_3/svhn/decon/seed_2,per_class_eval.csv,50,50,reached_planned_epoch,raw/main/ad62c0e0a1ab/per_class_eval.csv
+main/Semi-supervised-learning-main/results/official_test_finalonly_alpha12_cifar10_svhn10_3models_e50_s512_seed1_2_3/svhn/decon/seed_3,per_class_eval.csv,50,50,reached_planned_epoch,raw/main/c8bfd9fc7cf1/per_class_eval.csv
+main/Semi-supervised-learning-main/results/official_test_finalonly_alpha12_cifar10_svhn10_3models_e50_s512_seed1_2_3/svhn/dual/seed_1,per_class_eval.csv,50,50,reached_planned_epoch,raw/main/f40869f48368/per_class_eval.csv
+main/Semi-supervised-learning-main/results/official_test_finalonly_alpha12_cifar10_svhn10_3models_e50_s512_seed1_2_3/svhn/dual/seed_1,train_metrics.csv,50,50,reached_planned_epoch,raw/main/f40869f48368/train_metrics.csv
+main/Semi-supervised-learning-main/results/official_test_finalonly_alpha12_cifar10_svhn10_3models_e50_s512_seed1_2_3/svhn/dual/seed_2,per_class_eval.csv,50,50,reached_planned_epoch,raw/main/b981541205a2/per_class_eval.csv
+main/Semi-supervised-learning-main/results/official_test_finalonly_alpha12_cifar10_svhn10_3models_e50_s512_seed1_2_3/svhn/dual/seed_2,train_metrics.csv,50,50,reached_planned_epoch,raw/main/b981541205a2/train_metrics.csv
+main/Semi-supervised-learning-main/results/official_test_finalonly_alpha12_cifar10_svhn10_3models_e50_s512_seed1_2_3/svhn/dual/seed_3,per_class_eval.csv,50,50,reached_planned_epoch,raw/main/969de064a3eb/per_class_eval.csv
+main/Semi-supervised-learning-main/results/official_test_finalonly_alpha12_cifar10_svhn10_3models_e50_s512_seed1_2_3/svhn/dual/seed_3,train_metrics.csv,50,50,reached_planned_epoch,raw/main/969de064a3eb/train_metrics.csv
+main/Semi-supervised-learning-main/results/official_test_finalonly_alpha12_cifar10_svhn10_3models_e50_s512_seed1_2_3/svhn/minor/seed_1,per_class_eval.csv,50,50,reached_planned_epoch,raw/main/80c2f071237e/per_class_eval.csv
+main/Semi-supervised-learning-main/results/official_test_finalonly_alpha12_cifar10_svhn10_3models_e50_s512_seed1_2_3/svhn/minor/seed_1,train_metrics.csv,50,50,reached_planned_epoch,raw/main/80c2f071237e/train_metrics.csv
+main/Semi-supervised-learning-main/results/official_test_finalonly_alpha12_cifar10_svhn10_3models_e50_s512_seed1_2_3/svhn/minor/seed_2,per_class_eval.csv,50,50,reached_planned_epoch,raw/main/7d5b57f8624f/per_class_eval.csv
+main/Semi-supervised-learning-main/results/official_test_finalonly_alpha12_cifar10_svhn10_3models_e50_s512_seed1_2_3/svhn/minor/seed_2,train_metrics.csv,50,50,reached_planned_epoch,raw/main/7d5b57f8624f/train_metrics.csv
+main/Semi-supervised-learning-main/results/official_test_finalonly_alpha12_cifar10_svhn10_3models_e50_s512_seed1_2_3/svhn/minor/seed_3,per_class_eval.csv,50,50,reached_planned_epoch,raw/main/4c56dfdfcce8/per_class_eval.csv
+main/Semi-supervised-learning-main/results/official_test_finalonly_alpha12_cifar10_svhn10_3models_e50_s512_seed1_2_3/svhn/minor/seed_3,train_metrics.csv,50,50,reached_planned_epoch,raw/main/4c56dfdfcce8/train_metrics.csv
+main/Semi-supervised-learning-main/results/official_test_finalonly_cifar10_svhn10_3models_e50_s512_seed1_2_3/cifar10/decon/seed_1,per_class_eval.csv,50,50,reached_planned_epoch,raw/main/11b523bd4629/per_class_eval.csv
+main/Semi-supervised-learning-main/results/official_test_finalonly_cifar10_svhn10_3models_e50_s512_seed1_2_3/cifar10/dual/seed_1,per_class_eval.csv,50,50,reached_planned_epoch,raw/main/8dda4dd6ac9f/per_class_eval.csv
+main/Semi-supervised-learning-main/results/official_test_finalonly_cifar10_svhn10_3models_e50_s512_seed1_2_3/cifar10/dual/seed_1,train_metrics.csv,50,50,reached_planned_epoch,raw/main/8dda4dd6ac9f/train_metrics.csv
+main/Semi-supervised-learning-main/results/official_test_finalonly_cifar10_svhn10_3models_e50_s512_seed1_2_3/cifar10/minor/seed_1,per_class_eval.csv,50,50,reached_planned_epoch,raw/main/390fb4a8bbbc/per_class_eval.csv
+main/Semi-supervised-learning-main/results/official_test_finalonly_cifar10_svhn10_3models_e50_s512_seed1_2_3/cifar10/minor/seed_1,train_metrics.csv,50,50,reached_planned_epoch,raw/main/390fb4a8bbbc/train_metrics.csv
+main/Semi-supervised-learning-main/results/reduced10pct_decon_real_last2_cifar10_seed1/decon,per_class_eval.csv,50,,latest_record_only,raw/main/6828cf7a68fb/per_class_eval.csv
+main/Semi-supervised-learning-main/results/reduced10pct_decon_real_last2_cifar10_seed1/real_last_dual_2,evaluation_metrics.csv,50,,latest_record_only,raw/main/01e4b3c2e14b/evaluation_metrics.csv
+main/Semi-supervised-learning-main/results/reduced10pct_decon_real_last2_cifar10_seed1/real_last_dual_2,per_class_eval.csv,50,,latest_record_only,raw/main/01e4b3c2e14b/per_class_eval.csv
+main/Semi-supervised-learning-main/results/reduced10pct_decon_real_last2_cifar10_seed1/real_last_dual_2,train_metrics.csv,50,,latest_record_only,raw/main/01e4b3c2e14b/train_metrics.csv
+main/Semi-supervised-learning-main/results/svhn_lt_ratio100_dual_minor_decon_seed1_e50_s512/decon_workers0,per_class_eval.csv,50,50,reached_planned_epoch,raw/main/2aa6d4abfc5c/per_class_eval.csv
+main/Semi-supervised-learning-main/results/svhn_lt_ratio100_dual_minor_decon_seed1_e50_s512/dual_alpha12_verified,per_class_eval.csv,50,50,reached_planned_epoch,raw/main/80c9d9b74113/per_class_eval.csv
+main/Semi-supervised-learning-main/results/svhn_lt_ratio100_dual_minor_decon_seed1_e50_s512/dual_alpha12_verified,train_metrics.csv,50,50,reached_planned_epoch,raw/main/80c9d9b74113/train_metrics.csv
+main/Semi-supervised-learning-main/results/svhn_lt_ratio100_dual_minor_decon_seed1_e50_s512/minor_only_alpha12_direct,per_class_eval.csv,50,50,reached_planned_epoch,raw/main/64d5af245885/per_class_eval.csv
+main/Semi-supervised-learning-main/results/svhn_lt_ratio100_dual_minor_decon_seed1_e50_s512/minor_only_alpha12_direct,train_metrics.csv,50,50,reached_planned_epoch,raw/main/64d5af245885/train_metrics.csv
+main/Semi-supervised-learning-main/results/svhn_lt_ratio100_seed1_5_e50_s512_optimized_v2/decon_seed_2,per_class_eval.csv,50,50,reached_planned_epoch,raw/main/f54c67357f0b/per_class_eval.csv
+main/Semi-supervised-learning-main/results/svhn_lt_ratio100_seed1_5_e50_s512_optimized_v2/decon_seed_3,per_class_eval.csv,50,50,reached_planned_epoch,raw/main/174e36315c36/per_class_eval.csv
+main/Semi-supervised-learning-main/results/svhn_lt_ratio100_seed1_5_e50_s512_optimized_v2/decon_seed_4,per_class_eval.csv,50,50,reached_planned_epoch,raw/main/6a661e1ab5e1/per_class_eval.csv
+main/Semi-supervised-learning-main/results/svhn_lt_ratio100_seed1_5_e50_s512_optimized_v2/decon_seed_5,per_class_eval.csv,50,50,reached_planned_epoch,raw/main/655b63424249/per_class_eval.csv
+main/Semi-supervised-learning-main/results/svhn_lt_ratio100_seed1_5_e50_s512_optimized_v2/dual_alpha12_seed_2_direct,per_class_eval.csv,50,50,reached_planned_epoch,raw/main/82d298bbbabb/per_class_eval.csv
+main/Semi-supervised-learning-main/results/svhn_lt_ratio100_seed1_5_e50_s512_optimized_v2/dual_alpha12_seed_2_direct,train_metrics.csv,50,50,reached_planned_epoch,raw/main/82d298bbbabb/train_metrics.csv
+main/Semi-supervised-learning-main/results/svhn_lt_ratio100_seed1_5_e50_s512_optimized_v2/dual_alpha12_seed_3,per_class_eval.csv,50,50,reached_planned_epoch,raw/main/ed897aa4d919/per_class_eval.csv
+main/Semi-supervised-learning-main/results/svhn_lt_ratio100_seed1_5_e50_s512_optimized_v2/dual_alpha12_seed_3,train_metrics.csv,50,50,reached_planned_epoch,raw/main/ed897aa4d919/train_metrics.csv
+main/Semi-supervised-learning-main/results/svhn_lt_ratio100_seed1_5_e50_s512_optimized_v2/dual_alpha12_seed_4,per_class_eval.csv,50,50,reached_planned_epoch,raw/main/d4d28e436336/per_class_eval.csv
+main/Semi-supervised-learning-main/results/svhn_lt_ratio100_seed1_5_e50_s512_optimized_v2/dual_alpha12_seed_4,train_metrics.csv,50,50,reached_planned_epoch,raw/main/d4d28e436336/train_metrics.csv
+main/Semi-supervised-learning-main/results/svhn_lt_ratio100_seed1_5_e50_s512_optimized_v2/dual_alpha12_seed_5,per_class_eval.csv,50,50,reached_planned_epoch,raw/main/e7898f4de885/per_class_eval.csv
+main/Semi-supervised-learning-main/results/svhn_lt_ratio100_seed1_5_e50_s512_optimized_v2/dual_alpha12_seed_5,train_metrics.csv,50,50,reached_planned_epoch,raw/main/e7898f4de885/train_metrics.csv
+main/Semi-supervised-learning-main/results/svhn_lt_ratio100_seed1_5_e50_s512_optimized_v2/minor_only_alpha12_seed_2,per_class_eval.csv,50,50,reached_planned_epoch,raw/main/1840cb741639/per_class_eval.csv
+main/Semi-supervised-learning-main/results/svhn_lt_ratio100_seed1_5_e50_s512_optimized_v2/minor_only_alpha12_seed_2,train_metrics.csv,50,50,reached_planned_epoch,raw/main/1840cb741639/train_metrics.csv
+main/Semi-supervised-learning-main/results/svhn_lt_ratio100_seed1_5_e50_s512_optimized_v2/minor_only_alpha12_seed_3,per_class_eval.csv,50,50,reached_planned_epoch,raw/main/05ae1c87394f/per_class_eval.csv
+main/Semi-supervised-learning-main/results/svhn_lt_ratio100_seed1_5_e50_s512_optimized_v2/minor_only_alpha12_seed_3,train_metrics.csv,50,50,reached_planned_epoch,raw/main/05ae1c87394f/train_metrics.csv
+main/Semi-supervised-learning-main/results/svhn_lt_ratio100_seed1_5_e50_s512_optimized_v2/minor_only_alpha12_seed_4,per_class_eval.csv,50,50,reached_planned_epoch,raw/main/62802ee3f6f2/per_class_eval.csv
+main/Semi-supervised-learning-main/results/svhn_lt_ratio100_seed1_5_e50_s512_optimized_v2/minor_only_alpha12_seed_4,train_metrics.csv,50,50,reached_planned_epoch,raw/main/62802ee3f6f2/train_metrics.csv
+main/Semi-supervised-learning-main/results/svhn_lt_ratio100_seed1_5_e50_s512_optimized_v2/minor_only_alpha12_seed_5,per_class_eval.csv,50,50,reached_planned_epoch,raw/main/8bd24b6703b1/per_class_eval.csv
+main/Semi-supervised-learning-main/results/svhn_lt_ratio100_seed1_5_e50_s512_optimized_v2/minor_only_alpha12_seed_5,train_metrics.csv,50,50,reached_planned_epoch,raw/main/8bd24b6703b1/train_metrics.csv
+main/Semi-supervised-learning-main/results/three_models_matched_fresh_cifar10_seed1/decon,per_class_eval.csv,50,,latest_record_only,raw/main/a17365686814/per_class_eval.csv
+main/Semi-supervised-learning-main/results/three_models_matched_fresh_cifar10_seed1/new_dual,per_class_eval.csv,50,,latest_record_only,raw/main/af6d48b10532/per_class_eval.csv
+main/Semi-supervised-learning-main/results/three_models_matched_fresh_cifar10_seed1/new_dual,train_metrics.csv,50,,latest_record_only,raw/main/af6d48b10532/train_metrics.csv
+main/Semi-supervised-learning-main/results/three_models_matched_fresh_cifar10_seed1/real_last_dual_2,evaluation_metrics.csv,50,,latest_record_only,raw/main/31fd65a22cf9/evaluation_metrics.csv
+main/Semi-supervised-learning-main/results/three_models_matched_fresh_cifar10_seed1/real_last_dual_2,per_class_eval.csv,50,,latest_record_only,raw/main/31fd65a22cf9/per_class_eval.csv
+main/Semi-supervised-learning-main/results/three_models_matched_fresh_cifar10_seed1/real_last_dual_2,train_metrics.csv,50,,latest_record_only,raw/main/31fd65a22cf9/train_metrics.csv
+main/Semi-supervised-learning-main/results/valsplit_ratio100_ours_vs_decon_e50_s512_seed1_2_3/decon/seed_1,per_class_eval.csv,50,50,reached_planned_epoch,raw/main/e3d57a73abf9/per_class_eval.csv
+main/Semi-supervised-learning-main/results/valsplit_ratio100_ours_vs_decon_e50_s512_seed1_2_3/decon/seed_2,per_class_eval.csv,50,50,reached_planned_epoch,raw/main/bc12ba6eeb0e/per_class_eval.csv
+main/Semi-supervised-learning-main/results/valsplit_ratio100_ours_vs_decon_e50_s512_seed1_2_3/decon/seed_3,per_class_eval.csv,50,50,reached_planned_epoch,raw/main/456cd5a356a3/per_class_eval.csv
+main/Semi-supervised-learning-main/results/valsplit_ratio100_ours_vs_decon_e50_s512_seed1_2_3/ours/seed_1,per_class_eval.csv,50,50,reached_planned_epoch,raw/main/bd0de3372f22/per_class_eval.csv
+main/Semi-supervised-learning-main/results/valsplit_ratio100_ours_vs_decon_e50_s512_seed1_2_3/ours/seed_1,train_metrics.csv,50,50,reached_planned_epoch,raw/main/bd0de3372f22/train_metrics.csv
+main/Semi-supervised-learning-main/results/valsplit_ratio100_ours_vs_decon_e50_s512_seed1_2_3/ours/seed_2,per_class_eval.csv,50,50,reached_planned_epoch,raw/main/e9f17ea84234/per_class_eval.csv
+main/Semi-supervised-learning-main/results/valsplit_ratio100_ours_vs_decon_e50_s512_seed1_2_3/ours/seed_2,train_metrics.csv,50,50,reached_planned_epoch,raw/main/e9f17ea84234/train_metrics.csv
+main/Semi-supervised-learning-main/results/valsplit_ratio100_ours_vs_decon_e50_s512_seed1_2_3/ours/seed_3,per_class_eval.csv,50,50,reached_planned_epoch,raw/main/8b1c0de96ece/per_class_eval.csv
+main/Semi-supervised-learning-main/results/valsplit_ratio100_ours_vs_decon_e50_s512_seed1_2_3/ours/seed_3,train_metrics.csv,50,50,reached_planned_epoch,raw/main/8b1c0de96ece/train_metrics.csv
+main/Semi-supervised-learning-main/results/valsplit_ratio100_single_minor_e50_s512_seed1_2_3/seed_1,per_class_eval.csv,50,50,reached_planned_epoch,raw/main/799406063aad/per_class_eval.csv
+main/Semi-supervised-learning-main/results/valsplit_ratio100_single_minor_e50_s512_seed1_2_3/seed_1,train_metrics.csv,50,50,reached_planned_epoch,raw/main/799406063aad/train_metrics.csv
+main/Semi-supervised-learning-main/results/valsplit_ratio100_single_minor_e50_s512_seed1_2_3/seed_2,per_class_eval.csv,50,50,reached_planned_epoch,raw/main/3ff9862e1bdc/per_class_eval.csv
+main/Semi-supervised-learning-main/results/valsplit_ratio100_single_minor_e50_s512_seed1_2_3/seed_2,train_metrics.csv,50,50,reached_planned_epoch,raw/main/3ff9862e1bdc/train_metrics.csv
+main/Semi-supervised-learning-main/results/valsplit_ratio100_single_minor_e50_s512_seed1_2_3/seed_3,per_class_eval.csv,50,50,reached_planned_epoch,raw/main/d2a5a0f4ae63/per_class_eval.csv
+main/Semi-supervised-learning-main/results/valsplit_ratio100_single_minor_e50_s512_seed1_2_3/seed_3,train_metrics.csv,50,50,reached_planned_epoch,raw/main/d2a5a0f4ae63/train_metrics.csv
+decon/results/decon_compare_imb50_100_seed1_2_3_e50_s512/imb100/seed_1/decon,per_class_eval.csv,50,50,reached_planned_epoch,raw/decon/8752686ea3b6/per_class_eval.csv
+decon/results/decon_compare_imb50_100_seed1_2_3_e50_s512/imb100/seed_2/decon,per_class_eval.csv,50,50,reached_planned_epoch,raw/decon/4a2913452c36/per_class_eval.csv
+decon/results/decon_compare_imb50_100_seed1_2_3_e50_s512/imb100/seed_3/decon,per_class_eval.csv,50,50,reached_planned_epoch,raw/decon/1e63ed928696/per_class_eval.csv
+decon/results/decon_compare_imb50_100_seed1_2_3_e50_s512/imb50/seed_1/decon,per_class_eval.csv,50,50,reached_planned_epoch,raw/decon/42498dc3644f/per_class_eval.csv
+decon/results/decon_compare_imb50_100_seed1_2_3_e50_s512/imb50/seed_2/decon,per_class_eval.csv,50,50,reached_planned_epoch,raw/decon/a198fe5d86a4/per_class_eval.csv
+decon/results/decon_compare_imb50_100_seed1_2_3_e50_s512/imb50/seed_3/decon,per_class_eval.csv,50,50,reached_planned_epoch,raw/decon/e4d4350db51d/per_class_eval.csv
+decon/results/smoke_dual_matched_cifar_seed1,per_class_eval.csv,1,,latest_record_only,raw/decon/a7eb7361b881/per_class_eval.csv
+decon/results/svhn_smoke_decon,per_class_eval.csv,1,,latest_record_only,raw/decon/ddaa876414df/per_class_eval.csv
+thesis/baseline compare/result/seed_5/abc,per_class_eval.csv,100,,latest_record_only,raw/thesis/61ddd4251f0a/per_class_eval.csv
+thesis/baseline compare/result/seed_5/abc,train_metrics.csv,100,,latest_record_only,raw/thesis/61ddd4251f0a/train_metrics.csv
+thesis/baseline compare/result/seed_5/crest,per_class_eval.csv,100,,latest_record_only,raw/thesis/8d2d4c6e5639/per_class_eval.csv
+thesis/baseline compare/result/seed_5/crest,train_metrics.csv,100,,latest_record_only,raw/thesis/8d2d4c6e5639/train_metrics.csv
+thesis/baseline compare/result/seed_5/daso,per_class_eval.csv,100,,latest_record_only,raw/thesis/4f959f97323e/per_class_eval.csv
+thesis/baseline compare/result/seed_5/daso,train_metrics.csv,100,,latest_record_only,raw/thesis/4f959f97323e/train_metrics.csv
+thesis/baseline compare/result/seed_5/proposed,per_class_eval.csv,100,,latest_record_only,raw/thesis/c0604064b3dc/per_class_eval.csv
+thesis/baseline compare/result/seed_5/proposed,train_metrics.csv,100,,latest_record_only,raw/thesis/c0604064b3dc/train_metrics.csv
+legacy_machine/졸업논문 코드/baseline compare/result/seed_5/abc,per_class_eval.csv,100,,latest_record_only,raw/thesis/61ddd4251f0a/per_class_eval.csv
+legacy_machine/졸업논문 코드/baseline compare/result/seed_5/abc,train_metrics.csv,100,,latest_record_only,raw/thesis/61ddd4251f0a/train_metrics.csv
+legacy_machine/졸업논문 코드/baseline compare/result/seed_5/crest,per_class_eval.csv,100,,latest_record_only,raw/thesis/8d2d4c6e5639/per_class_eval.csv
+legacy_machine/졸업논문 코드/baseline compare/result/seed_5/crest,train_metrics.csv,100,,latest_record_only,raw/thesis/8d2d4c6e5639/train_metrics.csv
+legacy_machine/졸업논문 코드/baseline compare/result/seed_5/daso,per_class_eval.csv,100,,latest_record_only,raw/thesis/4f959f97323e/per_class_eval.csv
+legacy_machine/졸업논문 코드/baseline compare/result/seed_5/daso,train_metrics.csv,100,,latest_record_only,raw/thesis/4f959f97323e/train_metrics.csv
+legacy_machine/졸업논문 코드/baseline compare/result/seed_5/proposed,per_class_eval.csv,100,,latest_record_only,raw/thesis/c0604064b3dc/per_class_eval.csv
+legacy_machine/졸업논문 코드/baseline compare/result/seed_5/proposed,train_metrics.csv,100,,latest_record_only,raw/thesis/c0604064b3dc/train_metrics.csv
+legacy_machine/졸업논문 코드/baseline compare/result/smoke/seed_5/abc,per_class_eval.csv,1,,latest_record_only,raw/legacy_machine/89439dd365f6/per_class_eval.csv
+legacy_machine/졸업논문 코드/baseline compare/result/smoke/seed_5/abc,train_metrics.csv,1,,latest_record_only,raw/legacy_machine/89439dd365f6/train_metrics.csv
+legacy_machine/졸업논문 코드/baseline compare/result/smoke/seed_5/crest,per_class_eval.csv,1,,latest_record_only,raw/legacy_machine/cc3b047d16b9/per_class_eval.csv
+legacy_machine/졸업논문 코드/baseline compare/result/smoke/seed_5/crest,train_metrics.csv,1,,latest_record_only,raw/legacy_machine/cc3b047d16b9/train_metrics.csv
+legacy_machine/졸업논문 코드/baseline compare/result/smoke/seed_5/daso,per_class_eval.csv,1,,latest_record_only,raw/legacy_machine/f8f30402dea4/per_class_eval.csv
+legacy_machine/졸업논문 코드/baseline compare/result/smoke/seed_5/daso,train_metrics.csv,1,,latest_record_only,raw/legacy_machine/f8f30402dea4/train_metrics.csv
+legacy_machine/졸업논문 코드/baseline compare/result/smoke/seed_5/proposed,per_class_eval.csv,1,,latest_record_only,raw/legacy_machine/a765621eec1b/per_class_eval.csv
+legacy_machine/졸업논문 코드/baseline compare/result/smoke/seed_5/proposed,train_metrics.csv,1,,latest_record_only,raw/legacy_machine/a765621eec1b/train_metrics.csv
+legacy_machine/졸업논문 코드/bc/baseline_compare_3day/seed_5/fixmatch,per_class_eval.csv,40,,latest_record_only,raw/legacy_machine/211284e1dcfd/per_class_eval.csv
+legacy_machine/졸업논문 코드/bc/baseline_compare_3day/seed_5/fixmatch,train_metrics.csv,40,,latest_record_only,raw/legacy_machine/211284e1dcfd/train_metrics.csv
+legacy_machine/졸업논문 코드/bc/baseline_compare_3day_test_resume/seed_5/crest,per_class_eval.csv,1,,latest_record_only,raw/legacy_machine/cc3b047d16b9/per_class_eval.csv
+legacy_machine/졸업논문 코드/bc/baseline_compare_3day_test_resume/seed_5/crest,train_metrics.csv,1,,latest_record_only,raw/legacy_machine/854d2cb1c932/train_metrics.csv
+legacy_machine/졸업논문 코드/bc/baseline_compare_smoke/seed_5/crest,per_class_eval.csv,1,,latest_record_only,raw/legacy_machine/c976cc14a265/per_class_eval.csv
+legacy_machine/졸업논문 코드/bc/baseline_compare_smoke/seed_5/crest,train_metrics.csv,1,,latest_record_only,raw/legacy_machine/c976cc14a265/train_metrics.csv
+legacy_machine/졸업논문 코드/bc/baseline_compare_smoke2/seed_5/crest,per_class_eval.csv,1,,latest_record_only,raw/legacy_machine/9b616a7277ec/per_class_eval.csv
+legacy_machine/졸업논문 코드/bc/baseline_compare_smoke2/seed_5/crest,train_metrics.csv,1,,latest_record_only,raw/legacy_machine/9b616a7277ec/train_metrics.csv
+legacy_machine/졸업논문 코드/bc/baseline_compare_smoke3/seed_5/abc,per_class_eval.csv,1,,latest_record_only,raw/legacy_machine/edf8ca6f426a/per_class_eval.csv
+legacy_machine/졸업논문 코드/bc/baseline_compare_smoke3/seed_5/abc,train_metrics.csv,1,,latest_record_only,raw/legacy_machine/edf8ca6f426a/train_metrics.csv
+legacy_machine/졸업논문 코드/bc/baseline_compare_smoke3/seed_5/daso,per_class_eval.csv,1,,latest_record_only,raw/legacy_machine/3d9890aa4dba/per_class_eval.csv
+legacy_machine/졸업논문 코드/bc/baseline_compare_smoke3/seed_5/daso,train_metrics.csv,1,,latest_record_only,raw/legacy_machine/3d9890aa4dba/train_metrics.csv
+legacy_machine/졸업논문 코드/bc/baseline_compare_startcheck/seed_5/fixmatch,per_class_eval.csv,1,,latest_record_only,raw/legacy_machine/9b413f8db342/per_class_eval.csv
+legacy_machine/졸업논문 코드/bc/baseline_compare_startcheck/seed_5/fixmatch,train_metrics.csv,1,,latest_record_only,raw/legacy_machine/9b413f8db342/train_metrics.csv
+legacy_machine/졸업논문 코드/bc/baseline_compare_startprocess_check/seed_5/fixmatch,per_class_eval.csv,1,,latest_record_only,raw/legacy_machine/45c1efa48249/per_class_eval.csv
+legacy_machine/졸업논문 코드/bc/baseline_compare_startprocess_check/seed_5/fixmatch,train_metrics.csv,1,,latest_record_only,raw/legacy_machine/45c1efa48249/train_metrics.csv
+legacy_machine/졸업논문 코드/dual 수정/results/epoch200_compare/seed_5/00_fixmatch,per_class_eval.csv,67,,latest_record_only,raw/legacy_machine/2ca732d0c04e/per_class_eval.csv
+legacy_machine/졸업논문 코드/dual 수정/results/epoch200_compare/seed_5/00_fixmatch,train_metrics.csv,67,,latest_record_only,raw/legacy_machine/2ca732d0c04e/train_metrics.csv
+legacy_machine/졸업논문 코드/dual 수정/results/factorial_compare/seed_5/00_fixmatch,per_class_eval.csv,4,,latest_record_only,raw/legacy_machine/e8c70e56b219/per_class_eval.csv
+legacy_machine/졸업논문 코드/dual 수정/results/factorial_compare/seed_5/00_fixmatch,train_metrics.csv,4,,latest_record_only,raw/legacy_machine/e8c70e56b219/train_metrics.csv
+legacy_machine/졸업논문 코드/dual 수정/results/factorial_compare/seed_5/01_dual_only,per_class_eval.csv,4,,latest_record_only,raw/legacy_machine/06c6c0267eef/per_class_eval.csv
+legacy_machine/졸업논문 코드/dual 수정/results/factorial_compare/seed_5/01_dual_only,train_metrics.csv,4,,latest_record_only,raw/legacy_machine/06c6c0267eef/train_metrics.csv
+legacy_machine/졸업논문 코드/dual 수정/results/factorial_compare/seed_5/02_dual_sampler,per_class_eval.csv,4,,latest_record_only,raw/legacy_machine/47fc0ef606af/per_class_eval.csv
+legacy_machine/졸업논문 코드/dual 수정/results/factorial_compare/seed_5/02_dual_sampler,train_metrics.csv,4,,latest_record_only,raw/legacy_machine/47fc0ef606af/train_metrics.csv
+legacy_machine/졸업논문 코드/dual 수정/results/factorial_compare/seed_5/03_dual_class_weight,per_class_eval.csv,4,,latest_record_only,raw/legacy_machine/885e27436038/per_class_eval.csv
+legacy_machine/졸업논문 코드/dual 수정/results/factorial_compare/seed_5/03_dual_class_weight,train_metrics.csv,4,,latest_record_only,raw/legacy_machine/885e27436038/train_metrics.csv
+legacy_machine/졸업논문 코드/dual 수정/results/factorial_compare/seed_5/04_dual_semantic_proxy,per_class_eval.csv,4,,latest_record_only,raw/legacy_machine/c763c86109ab/per_class_eval.csv
+legacy_machine/졸업논문 코드/dual 수정/results/factorial_compare/seed_5/04_dual_semantic_proxy,train_metrics.csv,4,,latest_record_only,raw/legacy_machine/c763c86109ab/train_metrics.csv
+legacy_machine/졸업논문 코드/dual 수정/results/factorial_compare/seed_5/05_dual_topk,per_class_eval.csv,4,,latest_record_only,raw/legacy_machine/d8e7bdd5d378/per_class_eval.csv
+legacy_machine/졸업논문 코드/dual 수정/results/factorial_compare/seed_5/05_dual_topk,train_metrics.csv,4,,latest_record_only,raw/legacy_machine/d8e7bdd5d378/train_metrics.csv
+legacy_machine/졸업논문 코드/dual 수정/results/factorial_compare/seed_5/06_dual_sampler_class_weight,per_class_eval.csv,4,,latest_record_only,raw/legacy_machine/f0ece4d96b1d/per_class_eval.csv
+legacy_machine/졸업논문 코드/dual 수정/results/factorial_compare/seed_5/06_dual_sampler_class_weight,train_metrics.csv,4,,latest_record_only,raw/legacy_machine/f0ece4d96b1d/train_metrics.csv
+legacy_machine/졸업논문 코드/dual 수정/results/factorial_compare/seed_5/07_dual_sampler_semantic_proxy,per_class_eval.csv,4,,latest_record_only,raw/legacy_machine/ba053f3b2379/per_class_eval.csv
+legacy_machine/졸업논문 코드/dual 수정/results/factorial_compare/seed_5/07_dual_sampler_semantic_proxy,train_metrics.csv,4,,latest_record_only,raw/legacy_machine/ba053f3b2379/train_metrics.csv
+legacy_machine/졸업논문 코드/dual 수정/results/factorial_compare/seed_5/08_dual_sampler_topk,per_class_eval.csv,4,,latest_record_only,raw/legacy_machine/df66e577687d/per_class_eval.csv
+legacy_machine/졸업논문 코드/dual 수정/results/factorial_compare/seed_5/08_dual_sampler_topk,train_metrics.csv,4,,latest_record_only,raw/legacy_machine/df66e577687d/train_metrics.csv
+legacy_machine/졸업논문 코드/dual 수정/results/factorial_compare/seed_5/09_dual_class_weight_semantic_proxy,per_class_eval.csv,4,,latest_record_only,raw/legacy_machine/f9fc146e5680/per_class_eval.csv
+legacy_machine/졸업논문 코드/dual 수정/results/factorial_compare/seed_5/09_dual_class_weight_semantic_proxy,train_metrics.csv,4,,latest_record_only,raw/legacy_machine/f9fc146e5680/train_metrics.csv
+legacy_machine/졸업논문 코드/dual 수정/results/factorial_compare/seed_5/10_dual_class_weight_topk,per_class_eval.csv,4,,latest_record_only,raw/legacy_machine/04cfe8527aaf/per_class_eval.csv
+legacy_machine/졸업논문 코드/dual 수정/results/factorial_compare/seed_5/10_dual_class_weight_topk,train_metrics.csv,4,,latest_record_only,raw/legacy_machine/04cfe8527aaf/train_metrics.csv
+legacy_machine/졸업논문 코드/dual 수정/results/factorial_compare/seed_5/11_dual_semantic_proxy_topk,per_class_eval.csv,4,,latest_record_only,raw/legacy_machine/2d21d0151796/per_class_eval.csv
+legacy_machine/졸업논문 코드/dual 수정/results/factorial_compare/seed_5/11_dual_semantic_proxy_topk,train_metrics.csv,4,,latest_record_only,raw/legacy_machine/2d21d0151796/train_metrics.csv
+legacy_machine/졸업논문 코드/dual 수정/results/factorial_compare/seed_5/12_dual_sampler_class_weight_semantic_proxy,per_class_eval.csv,4,,latest_record_only,raw/legacy_machine/523bbabfda63/per_class_eval.csv
+legacy_machine/졸업논문 코드/dual 수정/results/factorial_compare/seed_5/12_dual_sampler_class_weight_semantic_proxy,train_metrics.csv,4,,latest_record_only,raw/legacy_machine/523bbabfda63/train_metrics.csv
+legacy_machine/졸업논문 코드/dual 수정/results/factorial_compare/seed_5/13_dual_sampler_class_weight_topk,per_class_eval.csv,4,,latest_record_only,raw/legacy_machine/f82d991d61a5/per_class_eval.csv
+legacy_machine/졸업논문 코드/dual 수정/results/factorial_compare/seed_5/13_dual_sampler_class_weight_topk,train_metrics.csv,4,,latest_record_only,raw/legacy_machine/f82d991d61a5/train_metrics.csv
+legacy_machine/졸업논문 코드/dual 수정/results/factorial_compare/seed_5/14_dual_sampler_semantic_proxy_topk,per_class_eval.csv,4,,latest_record_only,raw/legacy_machine/4ec6f763f6bb/per_class_eval.csv
+legacy_machine/졸업논문 코드/dual 수정/results/factorial_compare/seed_5/14_dual_sampler_semantic_proxy_topk,train_metrics.csv,4,,latest_record_only,raw/legacy_machine/4ec6f763f6bb/train_metrics.csv
+legacy_machine/졸업논문 코드/dual 수정/results/factorial_compare/seed_5/15_dual_class_weight_semantic_proxy_topk,per_class_eval.csv,4,,latest_record_only,raw/legacy_machine/987733805941/per_class_eval.csv
+legacy_machine/졸업논문 코드/dual 수정/results/factorial_compare/seed_5/15_dual_class_weight_semantic_proxy_topk,train_metrics.csv,4,,latest_record_only,raw/legacy_machine/987733805941/train_metrics.csv
+legacy_machine/졸업논문 코드/dual 수정/results/factorial_compare/seed_5/16_dual_sampler_class_weight_semantic_proxy_topk,per_class_eval.csv,4,,latest_record_only,raw/legacy_machine/ed2d5ee50038/per_class_eval.csv
+legacy_machine/졸업논문 코드/dual 수정/results/factorial_compare/seed_5/16_dual_sampler_class_weight_semantic_proxy_topk,train_metrics.csv,4,,latest_record_only,raw/legacy_machine/ed2d5ee50038/train_metrics.csv
+legacy_machine/졸업논문 코드/dual 수정/results/factorial_compare/seed_5/17_full_dual_with_agreement_consistency,per_class_eval.csv,4,,latest_record_only,raw/legacy_machine/57f45cd95348/per_class_eval.csv
+legacy_machine/졸업논문 코드/dual 수정/results/factorial_compare/seed_5/17_full_dual_with_agreement_consistency,train_metrics.csv,4,,latest_record_only,raw/legacy_machine/57f45cd95348/train_metrics.csv
+legacy_machine/졸업논문 코드/dual 수정/results/medium_compare/seed_5/01_fixmatch,per_class_eval.csv,4,,latest_record_only,raw/legacy_machine/3e456f99b880/per_class_eval.csv
+legacy_machine/졸업논문 코드/dual 수정/results/medium_compare/seed_5/01_fixmatch,train_metrics.csv,4,,latest_record_only,raw/legacy_machine/3e456f99b880/train_metrics.csv
+legacy_machine/졸업논문 코드/dual 수정/results/medium_compare/seed_5/02_dual_only,per_class_eval.csv,4,,latest_record_only,raw/legacy_machine/10f2a57b9ad1/per_class_eval.csv
+legacy_machine/졸업논문 코드/dual 수정/results/medium_compare/seed_5/02_dual_only,train_metrics.csv,4,,latest_record_only,raw/legacy_machine/10f2a57b9ad1/train_metrics.csv
+legacy_machine/졸업논문 코드/dual 수정/results/medium_compare/seed_5/03_full,per_class_eval.csv,4,,latest_record_only,raw/legacy_machine/70f041a6d69e/per_class_eval.csv
+legacy_machine/졸업논문 코드/dual 수정/results/medium_compare/seed_5/03_full,train_metrics.csv,4,,latest_record_only,raw/legacy_machine/70f041a6d69e/train_metrics.csv
+legacy_machine/졸업논문 코드/dual 수정/results/quick_compare/seed_5/01_fixmatch,per_class_eval.csv,4,,latest_record_only,raw/legacy_machine/87a91464c91a/per_class_eval.csv
+legacy_machine/졸업논문 코드/dual 수정/results/quick_compare/seed_5/01_fixmatch,train_metrics.csv,4,,latest_record_only,raw/legacy_machine/87a91464c91a/train_metrics.csv
+legacy_machine/졸업논문 코드/dual 수정/results/quick_compare/seed_5/02_dual_only,per_class_eval.csv,4,,latest_record_only,raw/legacy_machine/0056850a5fdd/per_class_eval.csv
+legacy_machine/졸업논문 코드/dual 수정/results/quick_compare/seed_5/02_dual_only,train_metrics.csv,4,,latest_record_only,raw/legacy_machine/0056850a5fdd/train_metrics.csv
+legacy_machine/졸업논문 코드/dual 수정/results/quick_compare/seed_5/03_full,per_class_eval.csv,4,,latest_record_only,raw/legacy_machine/31188968a274/per_class_eval.csv
+legacy_machine/졸업논문 코드/dual 수정/results/quick_compare/seed_5/03_full,train_metrics.csv,4,,latest_record_only,raw/legacy_machine/31188968a274/train_metrics.csv
+legacy_machine/졸업논문 코드/dual 수정/results/quick_compare_pseudo/seed_5/01_fixmatch,per_class_eval.csv,4,,latest_record_only,raw/legacy_machine/33e6dc361df3/per_class_eval.csv
+legacy_machine/졸업논문 코드/dual 수정/results/quick_compare_pseudo/seed_5/01_fixmatch,train_metrics.csv,4,,latest_record_only,raw/legacy_machine/33e6dc361df3/train_metrics.csv
+legacy_machine/졸업논문 코드/dual 수정/results/quick_compare_pseudo/seed_5/02_dual_only,per_class_eval.csv,4,,latest_record_only,raw/legacy_machine/fb940c247ea6/per_class_eval.csv
+legacy_machine/졸업논문 코드/dual 수정/results/quick_compare_pseudo/seed_5/02_dual_only,train_metrics.csv,4,,latest_record_only,raw/legacy_machine/fb940c247ea6/train_metrics.csv
+legacy_machine/졸업논문 코드/dual 수정/results/quick_compare_pseudo/seed_5/03_full,per_class_eval.csv,4,,latest_record_only,raw/legacy_machine/341a760be117/per_class_eval.csv
+legacy_machine/졸업논문 코드/dual 수정/results/quick_compare_pseudo/seed_5/03_full,train_metrics.csv,4,,latest_record_only,raw/legacy_machine/341a760be117/train_metrics.csv
+dual200/.,per_class_eval.csv,200,,latest_record_only,raw/dual200/cdb4ee2aea69/per_class_eval.csv.gz
+dual200/.,train_metrics.csv,200,,latest_record_only,raw/dual200/cdb4ee2aea69/train_metrics.csv
+onedrive_dual/results/minor_weighted_balanced_e50_s512_seed1_2_3/imb100_seed1_e50_s512,per_class_eval.csv,50,50,reached_planned_epoch,raw/onedrive_dual/82256bb959e8/per_class_eval.csv
+onedrive_dual/results/minor_weighted_balanced_e50_s512_seed1_2_3/imb100_seed1_e50_s512,train_metrics.csv,50,50,reached_planned_epoch,raw/onedrive_dual/82256bb959e8/train_metrics.csv
+onedrive_dual/results/minor_weighted_balanced_e50_s512_seed1_2_3/imb100_seed2_e50_s512,per_class_eval.csv,50,50,reached_planned_epoch,raw/onedrive_dual/69d9f4efa815/per_class_eval.csv
+onedrive_dual/results/minor_weighted_balanced_e50_s512_seed1_2_3/imb100_seed2_e50_s512,train_metrics.csv,50,50,reached_planned_epoch,raw/onedrive_dual/69d9f4efa815/train_metrics.csv
+onedrive_dual/results/minor_weighted_balanced_e50_s512_seed1_2_3/imb100_seed3_e50_s512,per_class_eval.csv,50,50,reached_planned_epoch,raw/onedrive_dual/a18bd9b9c33c/per_class_eval.csv
+onedrive_dual/results/minor_weighted_balanced_e50_s512_seed1_2_3/imb100_seed3_e50_s512,train_metrics.csv,50,50,reached_planned_epoch,raw/onedrive_dual/a18bd9b9c33c/train_metrics.csv
+onedrive_dual/results/minor_weighted_balanced_e50_s512_seed1_2_3/imb50_seed1_e50_s512,per_class_eval.csv,50,50,reached_planned_epoch,raw/onedrive_dual/2d6510797a72/per_class_eval.csv
+onedrive_dual/results/minor_weighted_balanced_e50_s512_seed1_2_3/imb50_seed1_e50_s512,train_metrics.csv,50,50,reached_planned_epoch,raw/onedrive_dual/2d6510797a72/train_metrics.csv
+onedrive_dual/results/minor_weighted_balanced_e50_s512_seed1_2_3/imb50_seed2_e50_s512,per_class_eval.csv,50,50,reached_planned_epoch,raw/onedrive_dual/35727cb7b917/per_class_eval.csv
+onedrive_dual/results/minor_weighted_balanced_e50_s512_seed1_2_3/imb50_seed2_e50_s512,train_metrics.csv,50,50,reached_planned_epoch,raw/onedrive_dual/35727cb7b917/train_metrics.csv
+onedrive_dual/results/minor_weighted_balanced_e50_s512_seed1_2_3/imb50_seed3_e50_s512,per_class_eval.csv,50,50,reached_planned_epoch,raw/onedrive_dual/cc607db926b0/per_class_eval.csv
+onedrive_dual/results/minor_weighted_balanced_e50_s512_seed1_2_3/imb50_seed3_e50_s512,train_metrics.csv,50,50,reached_planned_epoch,raw/onedrive_dual/cc607db926b0/train_metrics.csv

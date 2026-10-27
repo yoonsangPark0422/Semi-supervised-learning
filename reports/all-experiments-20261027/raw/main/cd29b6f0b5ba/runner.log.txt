@@ -1,0 +1,38 @@
+[2026-09-16 23:51:54] official test 3-model run started
+[2026-09-16 23:51:54] start dataset=cifar10 method=dual seed=1 out=C:\Users\FORYOUCOM\Desktop\Semi-supervised-learning-main\Semi-supervised-learning-main\results\official_test_finalonly_alpha12_cifar10_svhn10_3models_e50_s512_seed1_2_3\cifar10\dual\seed_1
+[2026-09-17 02:53:35] done dataset=cifar10 method=dual seed=1
+[2026-09-17 02:53:35] start dataset=cifar10 method=minor seed=1 out=C:\Users\FORYOUCOM\Desktop\Semi-supervised-learning-main\Semi-supervised-learning-main\results\official_test_finalonly_alpha12_cifar10_svhn10_3models_e50_s512_seed1_2_3\cifar10\minor\seed_1
+[2026-09-17 04:46:45] done dataset=cifar10 method=minor seed=1
+[2026-09-17 04:46:45] start dataset=cifar10 method=decon seed=1 out=C:\Users\FORYOUCOM\Desktop\Semi-supervised-learning-main\Semi-supervised-learning-main\results\official_test_finalonly_alpha12_cifar10_svhn10_3models_e50_s512_seed1_2_3\cifar10\decon\seed_1
+[2026-09-17 07:33:12] done dataset=cifar10 method=decon seed=1
+[2026-09-17 07:33:12] start dataset=cifar10 method=dual seed=2 out=C:\Users\FORYOUCOM\Desktop\Semi-supervised-learning-main\Semi-supervised-learning-main\results\official_test_finalonly_alpha12_cifar10_svhn10_3models_e50_s512_seed1_2_3\cifar10\dual\seed_2
+[2026-09-17 10:34:49] done dataset=cifar10 method=dual seed=2
+[2026-09-17 10:34:49] start dataset=cifar10 method=minor seed=2 out=C:\Users\FORYOUCOM\Desktop\Semi-supervised-learning-main\Semi-supervised-learning-main\results\official_test_finalonly_alpha12_cifar10_svhn10_3models_e50_s512_seed1_2_3\cifar10\minor\seed_2
+[2026-09-17 12:27:54] done dataset=cifar10 method=minor seed=2
+[2026-09-17 12:27:54] start dataset=cifar10 method=decon seed=2 out=C:\Users\FORYOUCOM\Desktop\Semi-supervised-learning-main\Semi-supervised-learning-main\results\official_test_finalonly_alpha12_cifar10_svhn10_3models_e50_s512_seed1_2_3\cifar10\decon\seed_2
+[2026-09-17 15:13:12] done dataset=cifar10 method=decon seed=2
+[2026-09-17 15:13:12] start dataset=cifar10 method=dual seed=3 out=C:\Users\FORYOUCOM\Desktop\Semi-supervised-learning-main\Semi-supervised-learning-main\results\official_test_finalonly_alpha12_cifar10_svhn10_3models_e50_s512_seed1_2_3\cifar10\dual\seed_3
+[2026-09-17 18:14:36] done dataset=cifar10 method=dual seed=3
+[2026-09-17 18:14:37] start dataset=cifar10 method=minor seed=3 out=C:\Users\FORYOUCOM\Desktop\Semi-supervised-learning-main\Semi-supervised-learning-main\results\official_test_finalonly_alpha12_cifar10_svhn10_3models_e50_s512_seed1_2_3\cifar10\minor\seed_3
+[2026-09-17 20:07:48] done dataset=cifar10 method=minor seed=3
+[2026-09-17 20:07:48] start dataset=cifar10 method=decon seed=3 out=C:\Users\FORYOUCOM\Desktop\Semi-supervised-learning-main\Semi-supervised-learning-main\results\official_test_finalonly_alpha12_cifar10_svhn10_3models_e50_s512_seed1_2_3\cifar10\decon\seed_3
+[2026-09-17 22:53:15] done dataset=cifar10 method=decon seed=3
+[2026-09-17 22:53:15] start dataset=svhn method=dual seed=1 out=C:\Users\FORYOUCOM\Desktop\Semi-supervised-learning-main\Semi-supervised-learning-main\results\official_test_finalonly_alpha12_cifar10_svhn10_3models_e50_s512_seed1_2_3\svhn\dual\seed_1
+[2026-09-18 04:59:10] done dataset=svhn method=dual seed=1
+[2026-09-18 04:59:10] start dataset=svhn method=minor seed=1 out=C:\Users\FORYOUCOM\Desktop\Semi-supervised-learning-main\Semi-supervised-learning-main\results\official_test_finalonly_alpha12_cifar10_svhn10_3models_e50_s512_seed1_2_3\svhn\minor\seed_1
+[2026-09-18 08:46:56] done dataset=svhn method=minor seed=1
+[2026-09-18 08:46:56] start dataset=svhn method=decon seed=1 out=C:\Users\FORYOUCOM\Desktop\Semi-supervised-learning-main\Semi-supervised-learning-main\results\official_test_finalonly_alpha12_cifar10_svhn10_3models_e50_s512_seed1_2_3\svhn\decon\seed_1
+[2026-09-18 14:21:10] done dataset=svhn method=decon seed=1
+[2026-09-18 14:21:10] start dataset=svhn method=dual seed=2 out=C:\Users\FORYOUCOM\Desktop\Semi-supervised-learning-main\Semi-supervised-learning-main\results\official_test_finalonly_alpha12_cifar10_svhn10_3models_e50_s512_seed1_2_3\svhn\dual\seed_2
+[2026-09-18 23:06:33] done dataset=svhn method=dual seed=2
+[2026-09-18 23:06:33] start dataset=svhn method=minor seed=2 out=C:\Users\FORYOUCOM\Desktop\Semi-supervised-learning-main\Semi-supervised-learning-main\results\official_test_finalonly_alpha12_cifar10_svhn10_3models_e50_s512_seed1_2_3\svhn\minor\seed_2
+[2026-09-19 02:54:21] done dataset=svhn method=minor seed=2
+[2026-09-19 02:54:21] start dataset=svhn method=decon seed=2 out=C:\Users\FORYOUCOM\Desktop\Semi-supervised-learning-main\Semi-supervised-learning-main\results\official_test_finalonly_alpha12_cifar10_svhn10_3models_e50_s512_seed1_2_3\svhn\decon\seed_2
+[2026-09-19 08:26:11] done dataset=svhn method=decon seed=2
+[2026-09-19 08:26:11] start dataset=svhn method=dual seed=3 out=C:\Users\FORYOUCOM\Desktop\Semi-supervised-learning-main\Semi-supervised-learning-main\results\official_test_finalonly_alpha12_cifar10_svhn10_3models_e50_s512_seed1_2_3\svhn\dual\seed_3
+[2026-09-19 15:07:29] done dataset=svhn method=dual seed=3
+[2026-09-19 15:07:29] start dataset=svhn method=minor seed=3 out=C:\Users\FORYOUCOM\Desktop\Semi-supervised-learning-main\Semi-supervised-learning-main\results\official_test_finalonly_alpha12_cifar10_svhn10_3models_e50_s512_seed1_2_3\svhn\minor\seed_3
+[2026-09-19 18:56:00] done dataset=svhn method=minor seed=3
+[2026-09-19 18:56:00] start dataset=svhn method=decon seed=3 out=C:\Users\FORYOUCOM\Desktop\Semi-supervised-learning-main\Semi-supervised-learning-main\results\official_test_finalonly_alpha12_cifar10_svhn10_3models_e50_s512_seed1_2_3\svhn\decon\seed_3
+[2026-09-20 00:27:24] done dataset=svhn method=decon seed=3
+[2026-09-20 00:27:24] official test 3-model run finished

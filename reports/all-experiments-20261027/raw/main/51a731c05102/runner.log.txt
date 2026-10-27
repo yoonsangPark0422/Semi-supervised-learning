@@ -1,0 +1,9 @@
+[2026-08-25 14:55:50] waiting for validation comparison runner pid=1296
+[2026-08-25 17:19:51] starting single minor validation split ratio100
+[2026-08-25 17:19:51] start single_minor seed=1
+[2026-08-25 19:15:50] done single_minor seed=1
+[2026-08-25 19:15:50] start single_minor seed=2
+[2026-08-25 21:11:48] done single_minor seed=2
+[2026-08-25 21:11:48] start single_minor seed=3
+[2026-08-25 23:07:32] done single_minor seed=3
+[2026-08-25 23:07:32] single minor validation split ratio100 finished

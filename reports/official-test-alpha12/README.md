@@ -1,5 +1,11 @@
 # Final official-test results (alpha=1.2)
 
+> Historical configuration: the DeCon results in this report used the earlier
+> imbalanced-unlabeled setup. Later Dual-matched balanced-unlabeled DeCon results
+> are different (CIFAR-10 seeds1/2/3:91.11/90.71/90.92%). See the
+> [complete experiment history and corrections](../all-experiments-20261027/README.md).
+> Original tables below are retained as historical records.
+
 These metrics were generated from the final epoch on the official test split
 after validation-based hyperparameter selection. Values are mean +/- sample
 standard deviation over seeds 1, 2, and 3.

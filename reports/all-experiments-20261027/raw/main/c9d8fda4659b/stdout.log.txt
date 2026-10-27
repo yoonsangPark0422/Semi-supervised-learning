@@ -1,0 +1,2 @@
+REDUCED DATA: labeled=400 unique, unlabeled=5000 balanced, shared exact IDs
+ACTUAL DATA AUDIT PASSED: 400 unique labeled, 5000 unlabeled, 10000 official test

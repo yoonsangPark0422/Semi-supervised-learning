@@ -1,0 +1,4 @@
+method,ratio,seed,status,last_epoch,acc,macro_f1,minority_5_9_recall,minority_5_9_precision,minority_5_9_f1,tail_7_9_recall,tail_7_9_precision,tail_7_9_f1,out
+ours,100,1,done,50,88.1200,88.2412,84.6400,94.8195,89.3947,87.8000,97.7642,92.4884,"results/valsplit_ratio100_ours_vs_decon_e50_s512_seed1_2_3/ours/seed_1"
+ours,100,2,done,50,87.8600,87.9439,83.7200,93.5677,88.3183,88.5333,97.2085,92.6659,"results/valsplit_ratio100_ours_vs_decon_e50_s512_seed1_2_3/ours/seed_2"
+ours,100,3,done,50,89.7200,89.8186,86.9200,95.8746,91.1053,89.8000,96.5099,93.0255,"results/valsplit_ratio100_ours_vs_decon_e50_s512_seed1_2_3/ours/seed_3"

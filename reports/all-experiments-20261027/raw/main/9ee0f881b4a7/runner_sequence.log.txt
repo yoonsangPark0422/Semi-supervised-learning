@@ -1,0 +1,17 @@
+NOTE seed1 already exists: dual=new_dual_sampler_alpha12_ratio100_seed1_e50_s512, minor=minor_alpha12_then_dual_alpha125_150.../minor_only_alpha_12
+START minor-only alpha=1.2 seed=2 at 09/01/2026 12:57:52
+END minor-only alpha=1.2 seed=2 code=0 at 09/01/2026 14:54:42
+START minor-only alpha=1.2 seed=3 at 09/01/2026 14:54:42
+END minor-only alpha=1.2 seed=3 code=0 at 09/01/2026 16:52:33
+START minor-only alpha=1.2 seed=4 at 09/01/2026 16:52:33
+END minor-only alpha=1.2 seed=4 code=0 at 09/01/2026 18:49:51
+START minor-only alpha=1.2 seed=5 at 09/01/2026 18:49:51
+END minor-only alpha=1.2 seed=5 code=0 at 09/01/2026 20:45:15
+START dual alpha=1.2 seed=2 at 09/01/2026 20:45:15
+END dual alpha=1.2 seed=2 code=0 at 09/01/2026 23:52:13
+START dual alpha=1.2 seed=3 at 09/01/2026 23:52:13
+END dual alpha=1.2 seed=3 code=0 at 09/02/2026 02:58:56
+START dual alpha=1.2 seed=4 at 09/02/2026 02:58:56
+END dual alpha=1.2 seed=4 code=0 at 09/02/2026 06:05:51
+START dual alpha=1.2 seed=5 at 09/02/2026 06:05:51
+END dual alpha=1.2 seed=5 code=0 at 09/02/2026 09:12:11

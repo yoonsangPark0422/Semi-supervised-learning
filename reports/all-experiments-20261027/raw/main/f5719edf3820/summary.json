@@ -1,0 +1,247 @@
+{
+  "method": "Existing epoch50 EMA clean validation predictions; final thresholds; five batch permutations of 224; no model updates.",
+  "limitations": "This is a counterfactual frozen validation audit, not actual historical weak-aug train masks. Self quota depends on batch; last batch may be smaller. Latest full-train models not used.",
+  "summaries": [
+    {
+      "seed": 1,
+      "group": "all_tail",
+      "n": 1500,
+      "correct": 1357,
+      "cross_reasons": {
+        "sent": 1240,
+        "confidence_below_0.95": 119,
+        "predicted_non_tail": 139,
+        "bidirectional_cross_conflict": 2
+      },
+      "self_reasons": {
+        "selected_all_partitions": 1423,
+        "quota_depends_on_batch": 13,
+        "confidence_below_0.5": 14,
+        "quota_excluded_all_partitions": 47,
+        "correction_gate_suppressed": 3
+      },
+      "correct_not_sent": 119,
+      "wrong_sent": 2,
+      "wrong_self_always_selected": 73,
+      "wrong_prediction_destinations": {
+        "5": 15,
+        "3": 47,
+        "1": 25,
+        "2": 14,
+        "4": 11,
+        "0": 23,
+        "6": 4,
+        "8": 4
+      }
+    },
+    {
+      "seed": 1,
+      "group": "7",
+      "n": 500,
+      "correct": 418,
+      "cross_reasons": {
+        "sent": 369,
+        "predicted_non_tail": 82,
+        "confidence_below_0.95": 49
+      },
+      "self_reasons": {
+        "selected_all_partitions": 479,
+        "quota_depends_on_batch": 10,
+        "confidence_below_0.5": 7,
+        "quota_excluded_all_partitions": 4
+      },
+      "correct_not_sent": 49,
+      "wrong_sent": 0,
+      "wrong_self_always_selected": 64,
+      "wrong_prediction_destinations": {
+        "5": 15,
+        "2": 13,
+        "3": 40,
+        "4": 11,
+        "6": 2,
+        "0": 1
+      }
+    },
+    {
+      "seed": 1,
+      "group": "8",
+      "n": 500,
+      "correct": 476,
+      "cross_reasons": {
+        "confidence_below_0.95": 29,
+        "sent": 446,
+        "predicted_non_tail": 24,
+        "bidirectional_cross_conflict": 1
+      },
+      "self_reasons": {
+        "selected_all_partitions": 476,
+        "confidence_below_0.5": 4,
+        "quota_excluded_all_partitions": 17,
+        "quota_depends_on_batch": 1,
+        "correction_gate_suppressed": 2
+      },
+      "correct_not_sent": 30,
+      "wrong_sent": 0,
+      "wrong_self_always_selected": 2,
+      "wrong_prediction_destinations": {
+        "3": 3,
+        "1": 6,
+        "0": 14,
+        "2": 1
+      }
+    },
+    {
+      "seed": 1,
+      "group": "9",
+      "n": 500,
+      "correct": 463,
+      "cross_reasons": {
+        "sent": 425,
+        "predicted_non_tail": 33,
+        "confidence_below_0.95": 41,
+        "bidirectional_cross_conflict": 1
+      },
+      "self_reasons": {
+        "selected_all_partitions": 468,
+        "quota_depends_on_batch": 2,
+        "quota_excluded_all_partitions": 26,
+        "confidence_below_0.5": 3,
+        "correction_gate_suppressed": 1
+      },
+      "correct_not_sent": 40,
+      "wrong_sent": 2,
+      "wrong_self_always_selected": 7,
+      "wrong_prediction_destinations": {
+        "3": 4,
+        "1": 19,
+        "0": 8,
+        "6": 2,
+        "8": 4
+      }
+    },
+    {
+      "seed": 2,
+      "group": "all_tail",
+      "n": 1500,
+      "correct": 1375,
+      "cross_reasons": {
+        "sent": 1259,
+        "predicted_non_tail": 115,
+        "confidence_below_0.95": 125,
+        "bidirectional_cross_conflict": 1
+      },
+      "self_reasons": {
+        "selected_all_partitions": 1436,
+        "confidence_below_0.5": 10,
+        "quota_depends_on_batch": 9,
+        "quota_excluded_all_partitions": 41,
+        "correction_gate_suppressed": 4
+      },
+      "correct_not_sent": 118,
+      "wrong_sent": 2,
+      "wrong_self_always_selected": 69,
+      "wrong_prediction_destinations": {
+        "5": 22,
+        "2": 5,
+        "0": 18,
+        "1": 28,
+        "4": 17,
+        "6": 5,
+        "3": 20,
+        "8": 1,
+        "9": 6,
+        "7": 3
+      }
+    },
+    {
+      "seed": 2,
+      "group": "7",
+      "n": 500,
+      "correct": 436,
+      "cross_reasons": {
+        "predicted_non_tail": 61,
+        "sent": 390,
+        "confidence_below_0.95": 49
+      },
+      "self_reasons": {
+        "selected_all_partitions": 487,
+        "confidence_below_0.5": 5,
+        "quota_depends_on_batch": 5,
+        "quota_excluded_all_partitions": 3
+      },
+      "correct_not_sent": 46,
+      "wrong_sent": 0,
+      "wrong_self_always_selected": 54,
+      "wrong_prediction_destinations": {
+        "5": 20,
+        "2": 4,
+        "4": 16,
+        "3": 17,
+        "8": 1,
+        "9": 2,
+        "0": 3,
+        "6": 1
+      }
+    },
+    {
+      "seed": 2,
+      "group": "8",
+      "n": 500,
+      "correct": 468,
+      "cross_reasons": {
+        "sent": 437,
+        "predicted_non_tail": 27,
+        "confidence_below_0.95": 35,
+        "bidirectional_cross_conflict": 1
+      },
+      "self_reasons": {
+        "selected_all_partitions": 473,
+        "quota_excluded_all_partitions": 21,
+        "confidence_below_0.5": 3,
+        "correction_gate_suppressed": 3
+      },
+      "correct_not_sent": 32,
+      "wrong_sent": 1,
+      "wrong_self_always_selected": 8,
+      "wrong_prediction_destinations": {
+        "0": 13,
+        "6": 3,
+        "9": 4,
+        "1": 8,
+        "3": 2,
+        "2": 1,
+        "7": 1
+      }
+    },
+    {
+      "seed": 2,
+      "group": "9",
+      "n": 500,
+      "correct": 471,
+      "cross_reasons": {
+        "sent": 432,
+        "predicted_non_tail": 27,
+        "confidence_below_0.95": 41
+      },
+      "self_reasons": {
+        "selected_all_partitions": 476,
+        "quota_excluded_all_partitions": 17,
+        "quota_depends_on_batch": 4,
+        "confidence_below_0.5": 2,
+        "correction_gate_suppressed": 1
+      },
+      "correct_not_sent": 40,
+      "wrong_sent": 1,
+      "wrong_self_always_selected": 7,
+      "wrong_prediction_destinations": {
+        "1": 20,
+        "6": 1,
+        "3": 1,
+        "4": 1,
+        "0": 2,
+        "7": 2,
+        "5": 2
+      }
+    }
+  ]
+}

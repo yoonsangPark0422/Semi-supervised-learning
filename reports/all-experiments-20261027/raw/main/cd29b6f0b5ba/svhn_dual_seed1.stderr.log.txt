@@ -1,0 +1,88 @@
+09/17/2026 22:53:17 - WARNING - __main__ -   Process rank: -1, device: cuda:0, n_gpu: 1, distributed training: False, 16-bits training: False
+09/17/2026 22:53:17 - INFO - __main__ -   {'gpu_id': 0, 'num_workers': 0, 'dataset': 'svhn', 'num_labeled': 4000, 'expand_labels': False, 'arch': 'wideresnet', 'total_steps': 25600, 'eval_step': 512, 'start_epoch': 0, 'batch_size': 64, 'lr': 0.03, 'warmup': 0, 'wdecay': 0.0005, 'nesterov': True, 'use_ema': True, 'no_ema': False, 'ema_decay': 0.999, 'mu': 7, 'lambda_u': 1, 'lambda_cross': 1.0, 'tau_major_cross': 0.95, 'tau_minor_cross': 0.95, 'major_cross_skip_minor_conf_threshold': -1.0, 'minor_balanced_sampler_alpha': 1.2, 'T': 1, 'threshold': 0.95, 'dual_train_mode': 'dual_sampler_weighted_ce', 'imb_ratio': 100.0, 'val_samples_per_class': 0, 'imb_type': 'exp', 'major_top_ratio': 0.2, 'head_class_ratio': 0.3, 'tail_class_ratio': 0.3, 'classwise_quota': 'global', 'minority_threshold_gamma': 1.0, 'min_threshold': 0.5, 'minority_bias_strength': 1.0, 'minority_supervised_gamma': 1.0, 'max_minority_weight': 10.0, 'minority_bias_warmup': 2048, 'ensemble_minor_weight': 0.7, 'unsup_warmup': 1024, 'pseudo_warmup': 512, 'out': 'C:\\Users\\FORYOUCOM\\Desktop\\Semi-supervised-learning-main\\Semi-supervised-learning-main\\results\\official_test_finalonly_alpha12_cifar10_svhn10_3models_e50_s512_seed1_2_3\\svhn\\dual\\seed_1', 'resume': '', 'init_checkpoint': '', 'eval_only': False, 'eval_final_only': True, 'no_save_checkpoint': True, 'seed': 1, 'amp': False, 'opt_level': 'O1', 'local_rank': -1, 'no_progress': True, 'use_minor_balanced_sampler': True, 'use_minor_weighted_ce': True, 'device': device(type='cuda', index=0), 'world_size': 1, 'n_gpu': 1}
+09/17/2026 22:53:19 - INFO - dataset.cifar_val_split -   Using full SVHN train split for training and official test split for evaluation.
+09/17/2026 22:53:19 - INFO - dataset.cifar_val_split -   Labeled class counts: [1612, 967, 580, 348, 209, 124, 74, 44, 26, 16]
+  0%|          | 0.00/64.3M [00:00<?, ?B/s]  0%|          | 32.8k/64.3M [00:00<08:43, 123kB/s]  0%|          | 65.5k/64.3M [00:00<05:55, 181kB/s]  0%|          | 98.3k/64.3M [00:00<05:25, 197kB/s]  0%|          | 131k/64.3M [00:00<06:43, 159kB/s]   0%|          | 197k/64.3M [00:00<04:20, 246kB/s]  0%|          | 229k/64.3M [00:01<04:22, 244kB/s]  0%|          | 262k/64.3M [00:01<04:21, 245kB/s]  1%|          | 328k/64.3M [00:01<03:21, 318kB/s]  1%|          | 393k/64.3M [00:01<02:56, 363kB/s]  1%|          | 459k/64.3M [00:01<02:39, 399kB/s]  1%|          | 524k/64.3M [00:01<02:30, 425kB/s]  1%|          | 623k/64.3M [00:01<01:59, 531kB/s]  1%|1         | 721k/64.3M [00:02<01:49, 583kB/s]  1%|1         | 852k/64.3M [00:02<01:32, 688kB/s]  2%|1         | 983k/64.3M [00:02<01:20, 784kB/s]  2%|1         | 1.11M/64.3M [00:02<01:15, 840kB/s]  2%|1         | 1.28M/64.3M [00:02<01:05, 955kB/s]  2%|2         | 1.47M/64.3M [00:02<00:57, 1.10MB/s]  3%|2         | 1.70M/64.3M [00:02<00:49, 1.27MB/s]  3%|3         | 1.93M/64.3M [00:02<00:44, 1.40MB/s]  3%|3         | 2.23M/64.3M [00:03<00:37, 1.66MB/s]  4%|3         | 2.52M/64.3M [00:03<00:34, 1.79MB/s]  4%|4         | 2.88M/64.3M [00:03<00:29, 2.10MB/s]  5%|5         | 3.28M/64.3M [00:03<00:26, 2.30MB/s]  6%|5         | 3.70M/64.3M [00:03<00:23, 2.56MB/s]  7%|6         | 4.23M/64.3M [00:03<00:20, 2.95MB/s]  7%|7         | 4.78M/64.3M [00:03<00:17, 3.32MB/s]  8%|8         | 5.44M/64.3M [00:04<00:15, 3.81MB/s] 10%|9         | 6.16M/64.3M [00:04<00:13, 4.30MB/s] 11%|#         | 6.98M/64.3M [00:04<00:12, 4.77MB/s] 12%|#2        | 7.86M/64.3M [00:04<00:10, 5.40MB/s] 14%|#3        | 8.88M/64.3M [00:04<00:09, 5.90MB/s] 16%|#5        | 10.0M/64.3M [00:04<00:08, 6.71MB/s] 17%|#7        | 11.2M/64.3M [00:04<00:06, 7.98MB/s] 19%|#8        | 12.1M/64.3M [00:04<00:06, 8.14MB/s] 21%|##        | 13.3M/64.3M [00:05<00:05, 8.85MB/s] 23%|##2       | 14.6M/64.3M [00:05<00:05, 9.75MB/s] 25%|##4       | 15.9M/64.3M [00:05<00:04, 10.4MB/s] 27%|##6       | 17.3M/64.3M [00:05<00:04, 10.9MB/s] 29%|##8       | 18.6M/64.3M [00:05<00:04, 11.2MB/s] 31%|###       | 19.8M/64.3M [00:05<00:03, 11.4MB/s] 33%|###2      | 21.0M/64.3M [00:05<00:03, 11.7MB/s] 35%|###4      | 22.3M/64.3M [00:05<00:03, 11.8MB/s] 37%|###6      | 23.7M/64.3M [00:05<00:03, 11.8MB/s] 39%|###8      | 25.0M/64.3M [00:05<00:03, 11.9MB/s] 41%|####      | 26.2M/64.3M [00:06<00:03, 11.9MB/s] 43%|####2     | 27.4M/64.3M [00:06<00:03, 12.0MB/s] 45%|####4     | 28.6M/64.3M [00:06<00:02, 12.0MB/s] 46%|####6     | 29.9M/64.3M [00:06<00:02, 12.0MB/s] 48%|####8     | 31.2M/64.3M [00:06<00:02, 12.0MB/s] 51%|#####     | 32.5M/64.3M [00:06<00:02, 12.1MB/s] 53%|#####2    | 33.8M/64.3M [00:06<00:02, 12.0MB/s] 54%|#####4    | 35.0M/64.3M [00:06<00:03, 8.45MB/s] 56%|#####6    | 36.2M/64.3M [00:07<00:04, 6.55MB/s] 58%|#####7    | 37.0M/64.3M [00:07<00:04, 5.45MB/s] 62%|######1   | 39.6M/64.3M [00:07<00:02, 8.87MB/s] 63%|######3   | 40.8M/64.3M [00:07<00:02, 8.13MB/s] 65%|######5   | 41.9M/64.3M [00:08<00:03, 7.03MB/s] 68%|######7   | 43.6M/64.3M [00:08<00:02, 8.82MB/s] 70%|######9   | 44.8M/64.3M [00:08<00:02, 8.57MB/s] 71%|#######1  | 45.8M/64.3M [00:08<00:02, 8.13MB/s] 73%|#######2  | 46.7M/64.3M [00:08<00:02, 7.79MB/s] 74%|#######3  | 47.5M/64.3M [00:08<00:02, 7.79MB/s] 75%|#######5  | 48.4M/64.3M [00:08<00:02, 7.48MB/s] 77%|#######6  | 49.2M/64.3M [00:08<00:02, 7.43MB/s] 78%|#######7  | 50.0M/64.3M [00:08<00:01, 7.38MB/s] 79%|#######9  | 50.8M/64.3M [00:09<00:01, 7.05MB/s] 81%|########  | 51.8M/64.3M [00:09<00:01, 7.25MB/s] 82%|########2 | 52.9M/64.3M [00:09<00:01, 7.47MB/s] 84%|########3 | 53.9M/64.3M [00:09<00:01, 7.94MB/s] 85%|########5 | 54.7M/64.3M [00:09<00:01, 7.86MB/s] 86%|########6 | 55.5M/64.3M [00:09<00:01, 7.69MB/s] 88%|########7 | 56.3M/64.3M [00:09<00:01, 7.57MB/s] 89%|########8 | 57.1M/64.3M [00:09<00:00, 7.48MB/s] 90%|######### | 58.1M/64.3M [00:10<00:00, 7.61MB/s] 92%|#########2| 59.2M/64.3M [00:10<00:00, 8.37MB/s] 93%|#########3| 60.0M/64.3M [00:10<00:00, 8.19MB/s] 95%|#########4| 60.9M/64.3M [00:10<00:00, 7.99MB/s] 96%|#########5| 61.7M/64.3M [00:10<00:00, 7.88MB/s] 97%|#########7| 62.5M/64.3M [00:10<00:00, 7.72MB/s] 99%|#########8| 63.6M/64.3M [00:10<00:00, 7.99MB/s]100%|##########| 64.3M/64.3M [00:10<00:00, 5.95MB/s]
+09/17/2026 22:53:33 - INFO - models.wideresnet -   Model: WideResNet 28x2
+09/17/2026 22:53:33 - INFO - __main__ -   Total params: 1.47M
+09/17/2026 22:53:33 - INFO - models.wideresnet -   Model: WideResNet 28x2
+09/17/2026 22:53:33 - INFO - __main__ -   Total params: 1.47M
+09/17/2026 22:53:33 - INFO - __main__ -   ***** Running training *****
+09/17/2026 22:53:33 - INFO - __main__ -     Task = svhn@4000
+09/17/2026 22:53:33 - INFO - __main__ -     Num Epochs = 50
+09/17/2026 22:53:33 - INFO - __main__ -     Batch size per GPU = 64
+09/17/2026 22:53:33 - INFO - __main__ -     Total train batch size = 64
+09/17/2026 22:53:33 - INFO - __main__ -     Total optimization steps = 25600
+09/17/2026 22:53:33 - INFO - __main__ -     Dual train mode = dual_sampler_weighted_ce
+09/17/2026 23:00:58 - INFO - __main__ -   Skipping evaluation until final epoch (1/50).
+09/17/2026 23:08:16 - INFO - __main__ -   Skipping evaluation until final epoch (2/50).
+09/17/2026 23:15:35 - INFO - __main__ -   Skipping evaluation until final epoch (3/50).
+09/17/2026 23:22:53 - INFO - __main__ -   Skipping evaluation until final epoch (4/50).
+09/17/2026 23:30:12 - INFO - __main__ -   Skipping evaluation until final epoch (5/50).
+09/17/2026 23:37:30 - INFO - __main__ -   Skipping evaluation until final epoch (6/50).
+09/17/2026 23:44:48 - INFO - __main__ -   Skipping evaluation until final epoch (7/50).
+09/17/2026 23:52:06 - INFO - __main__ -   Skipping evaluation until final epoch (8/50).
+09/17/2026 23:59:24 - INFO - __main__ -   Skipping evaluation until final epoch (9/50).
+09/18/2026 00:06:43 - INFO - __main__ -   Skipping evaluation until final epoch (10/50).
+09/18/2026 00:14:01 - INFO - __main__ -   Skipping evaluation until final epoch (11/50).
+09/18/2026 00:21:19 - INFO - __main__ -   Skipping evaluation until final epoch (12/50).
+09/18/2026 00:28:37 - INFO - __main__ -   Skipping evaluation until final epoch (13/50).
+09/18/2026 00:35:56 - INFO - __main__ -   Skipping evaluation until final epoch (14/50).
+09/18/2026 00:43:14 - INFO - __main__ -   Skipping evaluation until final epoch (15/50).
+09/18/2026 00:50:32 - INFO - __main__ -   Skipping evaluation until final epoch (16/50).
+09/18/2026 00:57:50 - INFO - __main__ -   Skipping evaluation until final epoch (17/50).
+09/18/2026 01:05:09 - INFO - __main__ -   Skipping evaluation until final epoch (18/50).
+09/18/2026 01:12:27 - INFO - __main__ -   Skipping evaluation until final epoch (19/50).
+09/18/2026 01:19:45 - INFO - __main__ -   Skipping evaluation until final epoch (20/50).
+09/18/2026 01:27:03 - INFO - __main__ -   Skipping evaluation until final epoch (21/50).
+09/18/2026 01:34:21 - INFO - __main__ -   Skipping evaluation until final epoch (22/50).
+09/18/2026 01:41:40 - INFO - __main__ -   Skipping evaluation until final epoch (23/50).
+09/18/2026 01:48:58 - INFO - __main__ -   Skipping evaluation until final epoch (24/50).
+09/18/2026 01:56:16 - INFO - __main__ -   Skipping evaluation until final epoch (25/50).
+09/18/2026 02:03:35 - INFO - __main__ -   Skipping evaluation until final epoch (26/50).
+09/18/2026 02:10:53 - INFO - __main__ -   Skipping evaluation until final epoch (27/50).
+09/18/2026 02:18:11 - INFO - __main__ -   Skipping evaluation until final epoch (28/50).
+09/18/2026 02:25:29 - INFO - __main__ -   Skipping evaluation until final epoch (29/50).
+09/18/2026 02:32:48 - INFO - __main__ -   Skipping evaluation until final epoch (30/50).
+09/18/2026 02:40:06 - INFO - __main__ -   Skipping evaluation until final epoch (31/50).
+09/18/2026 02:47:24 - INFO - __main__ -   Skipping evaluation until final epoch (32/50).
+09/18/2026 02:54:42 - INFO - __main__ -   Skipping evaluation until final epoch (33/50).
+09/18/2026 03:02:00 - INFO - __main__ -   Skipping evaluation until final epoch (34/50).
+09/18/2026 03:09:18 - INFO - __main__ -   Skipping evaluation until final epoch (35/50).
+09/18/2026 03:16:36 - INFO - __main__ -   Skipping evaluation until final epoch (36/50).
+09/18/2026 03:23:55 - INFO - __main__ -   Skipping evaluation until final epoch (37/50).
+09/18/2026 03:31:13 - INFO - __main__ -   Skipping evaluation until final epoch (38/50).
+09/18/2026 03:38:31 - INFO - __main__ -   Skipping evaluation until final epoch (39/50).
+09/18/2026 03:45:49 - INFO - __main__ -   Skipping evaluation until final epoch (40/50).
+09/18/2026 03:53:07 - INFO - __main__ -   Skipping evaluation until final epoch (41/50).
+09/18/2026 04:00:25 - INFO - __main__ -   Skipping evaluation until final epoch (42/50).
+09/18/2026 04:07:43 - INFO - __main__ -   Skipping evaluation until final epoch (43/50).
+09/18/2026 04:15:02 - INFO - __main__ -   Skipping evaluation until final epoch (44/50).
+09/18/2026 04:22:20 - INFO - __main__ -   Skipping evaluation until final epoch (45/50).
+09/18/2026 04:29:39 - INFO - __main__ -   Skipping evaluation until final epoch (46/50).
+09/18/2026 04:36:57 - INFO - __main__ -   Skipping evaluation until final epoch (47/50).
+09/18/2026 04:44:15 - INFO - __main__ -   Skipping evaluation until final epoch (48/50).
+09/18/2026 04:51:33 - INFO - __main__ -   Skipping evaluation until final epoch (49/50).
+09/18/2026 04:58:57 - INFO - __main__ -   top-1 acc: 94.81
+09/18/2026 04:58:57 - INFO - __main__ -   top-5 acc: 99.29
+09/18/2026 04:58:57 - INFO - __main__ -   per-class acc: [98.17, 97.51, 95.93, 91.74, 95.44, 89.51, 92.46, 95.49, 93.01, 95.99]
+09/18/2026 04:58:57 - INFO - __main__ -   macro F1: 94.11
+09/18/2026 04:58:57 - INFO - __main__ -   head/mid/tail acc: 97.20 / 92.23 / 94.24
+09/18/2026 04:59:02 - INFO - __main__ -   top-1 acc: 95.49
+09/18/2026 04:59:02 - INFO - __main__ -   top-5 acc: 99.34
+09/18/2026 04:59:02 - INFO - __main__ -   per-class acc: [97.53, 97.57, 95.97, 93.03, 96.35, 92.2, 95.35, 95.69, 93.01, 95.92]
+09/18/2026 04:59:02 - INFO - __main__ -   macro F1: 94.93
+09/18/2026 04:59:02 - INFO - __main__ -   head/mid/tail acc: 97.03 / 93.86 / 94.99
+09/18/2026 04:59:09 - INFO - __main__ -   ensemble top-1 acc: 95.47
+09/18/2026 04:59:09 - INFO - __main__ -   ensemble top-5 acc: 99.36
+09/18/2026 04:59:09 - INFO - __main__ -   ensemble per-class acc: [98.28, 97.63, 96.02, 92.99, 96.2, 91.48, 94.64, 95.74, 93.37, 96.24]
+09/18/2026 04:59:09 - INFO - __main__ -   ensemble macro F1: 94.92
+09/18/2026 04:59:09 - INFO - __main__ -   ensemble head/mid/tail acc: 97.31 / 93.56 / 95.00
+09/18/2026 04:59:09 - INFO - __main__ -   cross samples pre major->minor: 171.23, pre minor->major: 93.58, conflict: 2.11, skip minor-conf: 0.00, post major->minor: 169.12, post minor->major: 91.47
+09/18/2026 04:59:09 - INFO - __main__ -   Major top-1 acc: 94.81
+09/18/2026 04:59:09 - INFO - __main__ -   Minor top-1 acc: 95.49
+09/18/2026 04:59:09 - INFO - __main__ -   Ensemble top-1 acc: 95.47
+09/18/2026 04:59:09 - INFO - __main__ -   Final top-1 acc: 95.47
+09/18/2026 04:59:09 - INFO - __main__ -   Best final top-1 acc: 95.47
+09/18/2026 04:59:09 - INFO - __main__ -   Mean final top-1 acc: 95.47
+

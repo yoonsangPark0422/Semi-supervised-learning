@@ -1,0 +1,65 @@
+09/18/2026 04:59:12 - WARNING - __main__ -   Process rank: -1, device: cuda:0, n_gpu: 1, distributed training: False
+09/18/2026 04:59:12 - INFO - __main__ -   {'gpu_id': 0, 'num_workers': 0, 'dataset': 'svhn', 'num_labeled': 4000, 'expand_labels': False, 'arch': 'wideresnet', 'total_steps': 25600, 'eval_step': 512, 'start_epoch': 0, 'batch_size': 64, 'lr': 0.03, 'warmup': 0, 'wdecay': 0.0005, 'nesterov': True, 'use_ema': True, 'no_ema': False, 'ema_decay': 0.999, 'mu': 7, 'lambda_u': 1, 'T': 1, 'threshold': 0.95, 'imb_ratio': 100.0, 'val_samples_per_class': 0, 'imb_type': 'exp', 'major_top_ratio': 0.2, 'classwise_quota': 'global', 'minority_threshold_gamma': 1.0, 'min_threshold': 0.5, 'minority_bias_strength': 1.0, 'minority_supervised_gamma': 1.0, 'minor_balanced_sampler_alpha': 1.2, 'max_minority_weight': 10.0, 'minority_bias_warmup': 2048, 'unsup_warmup': 1024, 'pseudo_warmup': 512, 'out': 'C:\\Users\\FORYOUCOM\\Desktop\\Semi-supervised-learning-main\\Semi-supervised-learning-main\\results\\official_test_finalonly_alpha12_cifar10_svhn10_3models_e50_s512_seed1_2_3\\svhn\\minor\\seed_1', 'resume': '', 'init_checkpoint': '', 'eval_only': False, 'eval_final_only': True, 'no_save_checkpoint': True, 'seed': 1, 'amp': False, 'opt_level': 'O1', 'local_rank': -1, 'no_progress': True, 'dual_train_mode': 'single_minor', 'use_minor_balanced_sampler': True, 'use_minor_weighted_ce': True, 'ensemble_minor_weight': 1.0, 'device': device(type='cuda', index=0), 'world_size': 1, 'n_gpu': 1}
+09/18/2026 04:59:14 - INFO - dataset.cifar_val_split -   Using full SVHN train split for training and official test split for evaluation.
+09/18/2026 04:59:14 - INFO - dataset.cifar_val_split -   Labeled class counts: [1612, 967, 580, 348, 209, 124, 74, 44, 26, 16]
+09/18/2026 04:59:16 - INFO - models.wideresnet -   Model: WideResNet 28x2
+09/18/2026 04:59:16 - INFO - train -   Total params: 1.47M
+09/18/2026 04:59:16 - INFO - __main__ -   ***** Running single minor training *****
+09/18/2026 04:59:16 - INFO - __main__ -     Num Epochs = 50
+09/18/2026 04:59:16 - INFO - __main__ -     Total optimization steps = 25600
+09/18/2026 05:03:50 - INFO - __main__ -   Skipping evaluation until final epoch (1/50).
+09/18/2026 05:08:24 - INFO - __main__ -   Skipping evaluation until final epoch (2/50).
+09/18/2026 05:12:58 - INFO - __main__ -   Skipping evaluation until final epoch (3/50).
+09/18/2026 05:17:31 - INFO - __main__ -   Skipping evaluation until final epoch (4/50).
+09/18/2026 05:22:04 - INFO - __main__ -   Skipping evaluation until final epoch (5/50).
+09/18/2026 05:26:37 - INFO - __main__ -   Skipping evaluation until final epoch (6/50).
+09/18/2026 05:31:10 - INFO - __main__ -   Skipping evaluation until final epoch (7/50).
+09/18/2026 05:35:44 - INFO - __main__ -   Skipping evaluation until final epoch (8/50).
+09/18/2026 05:40:17 - INFO - __main__ -   Skipping evaluation until final epoch (9/50).
+09/18/2026 05:44:50 - INFO - __main__ -   Skipping evaluation until final epoch (10/50).
+09/18/2026 05:49:23 - INFO - __main__ -   Skipping evaluation until final epoch (11/50).
+09/18/2026 05:53:56 - INFO - __main__ -   Skipping evaluation until final epoch (12/50).
+09/18/2026 05:58:30 - INFO - __main__ -   Skipping evaluation until final epoch (13/50).
+09/18/2026 06:03:03 - INFO - __main__ -   Skipping evaluation until final epoch (14/50).
+09/18/2026 06:07:37 - INFO - __main__ -   Skipping evaluation until final epoch (15/50).
+09/18/2026 06:12:10 - INFO - __main__ -   Skipping evaluation until final epoch (16/50).
+09/18/2026 06:16:43 - INFO - __main__ -   Skipping evaluation until final epoch (17/50).
+09/18/2026 06:21:15 - INFO - __main__ -   Skipping evaluation until final epoch (18/50).
+09/18/2026 06:25:48 - INFO - __main__ -   Skipping evaluation until final epoch (19/50).
+09/18/2026 06:30:21 - INFO - __main__ -   Skipping evaluation until final epoch (20/50).
+09/18/2026 06:34:54 - INFO - __main__ -   Skipping evaluation until final epoch (21/50).
+09/18/2026 06:39:27 - INFO - __main__ -   Skipping evaluation until final epoch (22/50).
+09/18/2026 06:44:00 - INFO - __main__ -   Skipping evaluation until final epoch (23/50).
+09/18/2026 06:48:33 - INFO - __main__ -   Skipping evaluation until final epoch (24/50).
+09/18/2026 06:53:05 - INFO - __main__ -   Skipping evaluation until final epoch (25/50).
+09/18/2026 06:57:38 - INFO - __main__ -   Skipping evaluation until final epoch (26/50).
+09/18/2026 07:02:11 - INFO - __main__ -   Skipping evaluation until final epoch (27/50).
+09/18/2026 07:06:44 - INFO - __main__ -   Skipping evaluation until final epoch (28/50).
+09/18/2026 07:11:17 - INFO - __main__ -   Skipping evaluation until final epoch (29/50).
+09/18/2026 07:15:50 - INFO - __main__ -   Skipping evaluation until final epoch (30/50).
+09/18/2026 07:20:23 - INFO - __main__ -   Skipping evaluation until final epoch (31/50).
+09/18/2026 07:24:56 - INFO - __main__ -   Skipping evaluation until final epoch (32/50).
+09/18/2026 07:29:29 - INFO - __main__ -   Skipping evaluation until final epoch (33/50).
+09/18/2026 07:34:02 - INFO - __main__ -   Skipping evaluation until final epoch (34/50).
+09/18/2026 07:38:35 - INFO - __main__ -   Skipping evaluation until final epoch (35/50).
+09/18/2026 07:43:08 - INFO - __main__ -   Skipping evaluation until final epoch (36/50).
+09/18/2026 07:47:41 - INFO - __main__ -   Skipping evaluation until final epoch (37/50).
+09/18/2026 07:52:14 - INFO - __main__ -   Skipping evaluation until final epoch (38/50).
+09/18/2026 07:56:47 - INFO - __main__ -   Skipping evaluation until final epoch (39/50).
+09/18/2026 08:01:20 - INFO - __main__ -   Skipping evaluation until final epoch (40/50).
+09/18/2026 08:05:53 - INFO - __main__ -   Skipping evaluation until final epoch (41/50).
+09/18/2026 08:10:26 - INFO - __main__ -   Skipping evaluation until final epoch (42/50).
+09/18/2026 08:14:59 - INFO - __main__ -   Skipping evaluation until final epoch (43/50).
+09/18/2026 08:19:31 - INFO - __main__ -   Skipping evaluation until final epoch (44/50).
+09/18/2026 08:24:04 - INFO - __main__ -   Skipping evaluation until final epoch (45/50).
+09/18/2026 08:28:37 - INFO - __main__ -   Skipping evaluation until final epoch (46/50).
+09/18/2026 08:33:11 - INFO - __main__ -   Skipping evaluation until final epoch (47/50).
+09/18/2026 08:37:44 - INFO - __main__ -   Skipping evaluation until final epoch (48/50).
+09/18/2026 08:42:17 - INFO - __main__ -   Skipping evaluation until final epoch (49/50).
+09/18/2026 08:46:55 - INFO - __main__ -   top-1 acc: 94.94
+09/18/2026 08:46:55 - INFO - __main__ -   per-class acc: [97.25, 95.76, 95.78, 92.96, 96.95, 93.92, 96.81, 92.12, 95.72, 90.03]
+09/18/2026 08:46:55 - INFO - __main__ -   macro F1: 94.62
+09/18/2026 08:46:55 - INFO - __main__ -   Single minor top-1 acc: 94.94
+09/18/2026 08:46:55 - INFO - __main__ -   Best single minor top-1 acc: 94.94
+09/18/2026 08:46:55 - INFO - __main__ -   Mean single minor top-1 acc: 94.94
+

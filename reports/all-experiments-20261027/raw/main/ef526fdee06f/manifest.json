@@ -1,0 +1,23 @@
+﻿[
+    {
+        "Out":  "C:\\Users\\FORYOUCOM\\Desktop\\Semi-supervised-learning-main\\Semi-supervised-learning-main\\results\\dual_real_last_lla_soft_validation_cifar10_e50_s512_seed2",
+        "Variant":  "soft",
+        "Attach":  true,
+        "Seed":  2,
+        "Script":  "C:\\Users\\FORYOUCOM\\Desktop\\Semi-supervised-learning-upload-worktree\\dual real last\\train_head_tail_exchange_sampler_alpha_val_split.py"
+    },
+    {
+        "Out":  "C:\\Users\\FORYOUCOM\\Desktop\\Semi-supervised-learning-main\\Semi-supervised-learning-main\\results\\dual_real_last_2_lla_hard_validation_cifar10_e50_s512_seed1",
+        "Variant":  "hard",
+        "Attach":  false,
+        "Seed":  1,
+        "Script":  "C:\\Users\\FORYOUCOM\\Desktop\\Semi-supervised-learning-upload-worktree\\dual real last\\dual real last-2\\train_head_tail_exchange_sampler_alpha_val_split.py"
+    },
+    {
+        "Out":  "C:\\Users\\FORYOUCOM\\Desktop\\Semi-supervised-learning-main\\Semi-supervised-learning-main\\results\\dual_real_last_2_lla_hard_validation_cifar10_e50_s512_seed2",
+        "Variant":  "hard",
+        "Attach":  false,
+        "Seed":  2,
+        "Script":  "C:\\Users\\FORYOUCOM\\Desktop\\Semi-supervised-learning-upload-worktree\\dual real last\\dual real last-2\\train_head_tail_exchange_sampler_alpha_val_split.py"
+    }
+]

@@ -1,0 +1,4 @@
+dataset,method,ratio,seed,status,last_epoch,acc,macro_f1,minority_5_9_recall,minority_5_9_precision,minority_5_9_f1,tail_7_9_recall,tail_7_9_precision,tail_7_9_f1,out
+cifar10,dual,100,1,done,50,88.4400,88.5425,85.4800,94.6166,89.8007,87.4000,97.5075,92.1734,"results/official_test_finalonly_cifar10_svhn10_3models_e50_s512_seed1_2_3/cifar10/dual/seed_1"
+cifar10,minor,100,1,done,50,88.6800,88.7544,86.7000,94.4364,90.3937,88.2333,96.5335,92.1938,"results/official_test_finalonly_cifar10_svhn10_3models_e50_s512_seed1_2_3/cifar10/minor/seed_1"
+cifar10,decon,100,1,done,50,83.5800,83.5652,84.7600,81.6644,83.0934,87.2000,82.7662,84.8462,"results/official_test_finalonly_cifar10_svhn10_3models_e50_s512_seed1_2_3/cifar10/decon/seed_1"

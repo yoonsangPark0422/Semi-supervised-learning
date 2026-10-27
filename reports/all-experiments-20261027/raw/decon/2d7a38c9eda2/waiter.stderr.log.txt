@@ -1,0 +1,9 @@
+DeCon failed. See C:\Users\FORYOUCOM\Desktop\DeCon\results\decon_compare_imb50_100_seed1_2_3_e50_s512\imb50\seed_1\deco
+n\stderr.log
+위치 C:\Users\FORYOUCOM\Desktop\DeCon\run_decon_compare.ps1:140 문자:13
++             throw "DeCon failed. See $stderr"
++             ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+    + CategoryInfo          : OperationStopped: (DeCon failed. S...econ\stderr.log:String) [], RuntimeException
+    + FullyQualifiedErrorId : DeCon failed. See C:\Users\FORYOUCOM\Desktop\DeCon\results\decon_compare_imb50_100_seed1 
+   _2_3_e50_s512\imb50\seed_1\decon\stderr.log
+ 

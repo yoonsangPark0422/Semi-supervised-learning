@@ -545,6 +545,10 @@ def parse_args():
     parser.add_argument('--mu', default=7, type=int)
     parser.add_argument('--lambda-u', default=1, type=float)
     parser.add_argument('--lambda-cross', default=1.0, type=float)
+    parser.add_argument('--disable-cross', action='store_true',
+                        help='Disable both exchanges and restore all baseline self masks.')
+    parser.add_argument('--minor-self-confidence-weight', action='store_true',
+                        help='Weight Minor hard self CE by detached adjusted confidence; preserve baseline denominator.')
     parser.add_argument('--tau-major-cross', default=0.95, type=float)
     parser.add_argument('--tau-minor-cross', default=0.95, type=float)
     parser.add_argument('--major-cross-skip-minor-conf-threshold', default=-1.0, type=float,
@@ -590,6 +594,12 @@ def parse_args():
     parser.add_argument('--lla-lr', default=0.002, type=float)
     parser.add_argument('--lla-eps', default=1e-8, type=float)
     args = parser.parse_args()
+    args.experiment_variant = ('dual_real_last_2_minor_lla_hard_no_cross'
+                               if args.disable_cross else 'dual_real_last_2_minor_lla_hard')
+    if args.minor_self_confidence_weight:
+        args.experiment_variant += '_self_confidence_weight'
+    if args.disable_cross:
+        args.lambda_cross = 0.0
     if args.T != 1:
         parser.error('This LLA variant requires T=1 (paper adjustment scale).')
     if args.lla_lr <= 0 or args.lla_eps <= 0:
@@ -727,7 +737,7 @@ def main():
     if args.resume:
         logger.info('==> Resuming from checkpoint..')
         checkpoint = torch.load(args.resume, map_location='cpu')
-        if checkpoint.get('variant') != 'dual_real_last_2_minor_lla_hard':
+        if checkpoint.get('variant') != args.experiment_variant:
             raise ValueError('Hard variant resume requires a hard-variant checkpoint; start fresh for comparisons.')
         if 'minor_lla' not in checkpoint or 'lla_optimizer' not in checkpoint:
             raise ValueError('Resume requires a dual real last checkpoint with LLA state.')
@@ -759,10 +769,11 @@ def main():
     if args.eval_only:
         major = ema_model.ema if args.use_ema else model
         minor = ema_model_minor.ema if args.use_ema else model_minor
-        _, acc_major = test(args, test_loader, major, 0, 'major')
-        _, acc_minor = test(args, test_loader, minor, 0, 'minor')
-        test(args, test_loader, minor, 0, 'minor_lla')
-        test_ensemble(args, test_loader, major, minor, adjusted=True)
+        eval_epoch = max(args.start_epoch - 1, 0)
+        _, acc_major = test(args, test_loader, major, eval_epoch, 'major')
+        _, acc_minor = test(args, test_loader, minor, eval_epoch, 'minor')
+        test(args, test_loader, minor, eval_epoch, 'minor_lla')
+        test_ensemble(args, test_loader, major, minor, epoch=eval_epoch, adjusted=True)
         if args.diagnose_disagreement:
             from disagreement_diagnostics import diagnose_validation
             counts = torch.tensor(args.labeled_class_counts, dtype=torch.float)
@@ -770,7 +781,7 @@ def main():
                                 class_group_indices(counts, args), 1.0,
                                 args.start_epoch, args.start_epoch * args.eval_step)
 
-        _, acc_ens = test_ensemble(args, test_loader, major, minor)
+        _, acc_ens = test_ensemble(args, test_loader, major, minor, epoch=eval_epoch)
         logger.info('Eval major/minor/ensemble top-1: %.2f / %.2f / %.2f',
                     acc_major, acc_minor, acc_ens)
         args.writer.close()
@@ -917,6 +928,14 @@ def train_dual_bias(args, labeled_trainloader, minor_labeled_trainloader,
                 ~major_to_minor_skip_minor_conf
             tail_mask_minor = tail_mask_minor_pre & ~cross_conflict
 
+            if args.disable_cross:
+                head_mask_major_pre = torch.zeros_like(head_mask_major_pre)
+                tail_mask_minor_pre = torch.zeros_like(tail_mask_minor_pre)
+                cross_conflict = torch.zeros_like(cross_conflict)
+                major_to_minor_skip_minor_conf = torch.zeros_like(major_to_minor_skip_minor_conf)
+                head_mask_major = torch.zeros_like(head_mask_major)
+                tail_mask_minor = torch.zeros_like(tail_mask_minor)
+
             if global_step < args.pseudo_warmup:
                 mask_major_self = torch.zeros_like(mask_major_self)
                 mask_minor_self = torch.zeros_like(mask_minor_self)
@@ -958,7 +977,8 @@ def train_dual_bias(args, labeled_trainloader, minor_labeled_trainloader,
             # Only the CNN self target is hardened. LLA still learns from soft q.
             L_minor_self = reference_masked_mean(
                 F.cross_entropy(logits_u_s_minor, targets_minor, reduction='none'),
-                mask_minor_self, baseline_minor_self_mask)
+                mask_minor_self, baseline_minor_self_mask,
+                weights=max_minor if args.minor_self_confidence_weight else None)
             L_minor_to_major = masked_mean_loss(
                 F.cross_entropy(logits_u_s_major, targets_minor,
                                 reduction='none'),
@@ -1155,7 +1175,7 @@ def train_dual_bias(args, labeled_trainloader, minor_labeled_trainloader,
         if not args.no_save_checkpoint:
             save_checkpoint({
                 'epoch': epoch + 1,
-                'variant': 'dual_real_last_2_minor_lla_hard',
+                'variant': args.experiment_variant,
                 'minor_lla': args.minor_lla.state_dict(),
                 'lla_optimizer': args.lla_optimizer.state_dict(),
                 'lla_config': {'lr': args.lla_lr, 'eps': args.lla_eps,

@@ -1,0 +1,2 @@
+epoch,pred_js,pred_l1,pred_cosine,accepted_js,accepted_l1,accepted_cosine,agreement_rate,both_accepted_agreement_rate,major_only_accept_count,minor_only_accept_count,both_accept_count
+1,0.15680691599845886,0.8781248927116394,0.7370703816413879,0.0,0.0,9.999999960041972e-12,0.32901785714285714,0.0,0,0,0

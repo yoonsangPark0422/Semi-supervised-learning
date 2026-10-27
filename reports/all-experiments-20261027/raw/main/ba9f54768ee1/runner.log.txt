@@ -1,0 +1,10 @@
+[2026-10-22 20:40:16] Dual-matched DeCon official-test queue started
+[2026-10-22 20:40:16] start dataset=cifar10 seed=1 out=C:\Users\FORYOUCOM\Desktop\Semi-supervised-learning-main\Semi-supervised-learning-main\results\official_test_decon_dual_matched_cifar10_svhn_e50_s512_seed1_2_3\cifar10\decon\seed_1
+[2026-10-22 23:23:34] done dataset=cifar10 seed=1 out=C:\Users\FORYOUCOM\Desktop\Semi-supervised-learning-main\Semi-supervised-learning-main\results\official_test_decon_dual_matched_cifar10_svhn_e50_s512_seed1_2_3\cifar10\decon\seed_1
+[2026-10-22 23:23:34] start dataset=cifar10 seed=2 out=C:\Users\FORYOUCOM\Desktop\Semi-supervised-learning-main\Semi-supervised-learning-main\results\official_test_decon_dual_matched_cifar10_svhn_e50_s512_seed1_2_3\cifar10\decon\seed_2
+[2026-10-23 02:06:35] done dataset=cifar10 seed=2 out=C:\Users\FORYOUCOM\Desktop\Semi-supervised-learning-main\Semi-supervised-learning-main\results\official_test_decon_dual_matched_cifar10_svhn_e50_s512_seed1_2_3\cifar10\decon\seed_2
+[2026-10-23 02:06:35] start dataset=cifar10 seed=3 out=C:\Users\FORYOUCOM\Desktop\Semi-supervised-learning-main\Semi-supervised-learning-main\results\official_test_decon_dual_matched_cifar10_svhn_e50_s512_seed1_2_3\cifar10\decon\seed_3
+[2026-10-23 04:49:39] done dataset=cifar10 seed=3 out=C:\Users\FORYOUCOM\Desktop\Semi-supervised-learning-main\Semi-supervised-learning-main\results\official_test_decon_dual_matched_cifar10_svhn_e50_s512_seed1_2_3\cifar10\decon\seed_3
+[2026-10-23 04:49:39] start dataset=svhn seed=1 out=C:\Users\FORYOUCOM\Desktop\Semi-supervised-learning-main\Semi-supervised-learning-main\results\official_test_decon_dual_matched_cifar10_svhn_e50_s512_seed1_2_3\svhn\decon\seed_1
+[2026-10-23 10:16:16] done dataset=svhn seed=1 out=C:\Users\FORYOUCOM\Desktop\Semi-supervised-learning-main\Semi-supervised-learning-main\results\official_test_decon_dual_matched_cifar10_svhn_e50_s512_seed1_2_3\svhn\decon\seed_1
+[2026-10-23 10:16:16] start dataset=svhn seed=2 out=C:\Users\FORYOUCOM\Desktop\Semi-supervised-learning-main\Semi-supervised-learning-main\results\official_test_decon_dual_matched_cifar10_svhn_e50_s512_seed1_2_3\svhn\decon\seed_2

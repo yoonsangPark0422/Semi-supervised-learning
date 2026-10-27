@@ -114,6 +114,42 @@ class LLATests(unittest.TestCase):
 
 
 class HardIntegrationTests(unittest.TestCase):
+    def test_confidence_weight_keeps_denominator_and_detaches_weights(self):
+        losses = torch.tensor([2., 3., 5.], requires_grad=True)
+        weights = torch.tensor([.6, .95, .8], requires_grad=True)
+        active = torch.tensor([1., 1., 0.])
+        reference = torch.ones(3)
+        value = reference_masked_mean(losses, active, reference, weights=weights)
+        self.assertAlmostEqual(value.item(), (2*.6+3*.95)/3, places=6)
+        value.backward()
+        self.assertIsNone(weights.grad)
+        self.assertTrue(torch.allclose(losses.grad, torch.tensor([.6/3,.95/3,0.])))
+        self.assertEqual(reference_masked_mean(losses, torch.zeros(3), torch.zeros(3), weights).item(), 0.)
+
+    def test_no_cross_restores_self_and_blocks_both_exchanges(self):
+        import ast
+        from pathlib import Path
+        from correction_gate import correction_gate, suppress_conflicting_self
+        tree = ast.parse(Path(__file__).with_name(
+            'train_head_tail_exchange_sampler_alpha_val_split.py').read_text(encoding='utf-8-sig'))
+        block = next(n for n in ast.walk(tree) if isinstance(n, ast.If)
+                     and isinstance(n.test, ast.Attribute) and n.test.attr == 'disable_cross'
+                     and any(isinstance(x, ast.Assign) and any(
+                         isinstance(t, ast.Name) and t.id == 'head_mask_major' for t in x.targets)
+                             for x in n.body))
+        names = ['head_mask_major_pre', 'tail_mask_minor_pre', 'cross_conflict',
+                 'major_to_minor_skip_minor_conf', 'head_mask_major', 'tail_mask_minor']
+        env = dict(torch=torch, args=SimpleNamespace(disable_cross=True))
+        env.update({k: torch.ones(2, dtype=torch.bool) for k in names})
+        exec(compile(ast.Module(body=[block], type_ignores=[]), '<no_cross>', 'exec'), env)
+        for k in names:
+            self.assertFalse(env[k].any())
+        gate = correction_gate(torch.tensor([0,0]), torch.tensor([0,0]), torch.tensor([2,2]),
+                               torch.ones(2, dtype=torch.bool), torch.ones(2, dtype=torch.bool),
+                               env['head_mask_major'])
+        mask = torch.tensor([1.,0.])
+        self.assertTrue(torch.equal(suppress_conflicting_self(mask, gate), mask))
+
     def test_trainer_self_loss_is_hard_and_lambda_unchanged(self):
         import ast
         from pathlib import Path
@@ -132,7 +168,9 @@ class HardIntegrationTests(unittest.TestCase):
         ref = torch.tensor([1., 1.])
         env = dict(F=F, reference_masked_mean=reference_masked_mean,
                    logits_u_s_minor=strong, targets_minor=target,
-                   mask_minor_self=mask, baseline_minor_self_mask=ref)
+                   mask_minor_self=mask, baseline_minor_self_mask=ref,
+                   args=SimpleNamespace(minor_self_confidence_weight=False),
+                   max_minor=q.max(-1).values)
         value = eval(compile(ast.Expression(expression), '<self_loss>', 'eval'), env)
         expected = F.cross_entropy(strong, target, reduction='none')[0] / 2
         self.assertTrue(torch.allclose(value, expected))

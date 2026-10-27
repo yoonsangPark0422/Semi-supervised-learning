@@ -1,0 +1,11 @@
+epoch,model,class,pseudo_hist,accepted_hist,true_count,pseudo_acc,accepted_true_count,accepted_pseudo_acc
+1,daso,0,0,0,0,0.0,0,0.0
+1,daso,1,0,0,0,0.0,0,0.0
+1,daso,2,0,0,0,0.0,0,0.0
+1,daso,3,1,0,2,0.5,0,0.0
+1,daso,4,0,0,0,0.0,0,0.0
+1,daso,5,1,0,0,0.0,0,0.0
+1,daso,6,0,0,0,0.0,0,0.0
+1,daso,7,0,0,0,0.0,0,0.0
+1,daso,8,0,0,0,0.0,0,0.0
+1,daso,9,0,0,0,0.0,0,0.0

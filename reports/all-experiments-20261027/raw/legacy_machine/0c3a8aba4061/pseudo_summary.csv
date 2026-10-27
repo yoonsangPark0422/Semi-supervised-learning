@@ -1,0 +1,2 @@
+epoch,all_accuracy,all_macro_f1,all_tail_accuracy,selected_accuracy,selected_macro_f1,selected_tail_accuracy,selected_ratio,all_prediction_histogram,selected_prediction_histogram,tail_classes
+1,8.482142448425293,5.213647842407227,2.2142858505249023,0.0,0.0,0.0,0.0,"[0, 0, 0, 178, 133, 113, 5, 16, 0, 3]","[0, 0, 0, 0, 0, 0, 0, 0, 0, 0]","[6, 7, 8, 9]"

@@ -1,0 +1,69 @@
+10/27/2026 00:52:03 - WARNING - reduced_experiment_trainer -   Process rank: -1, device: cuda:0, n_gpu: 1, distributed training: False
+10/27/2026 00:52:03 - INFO - reduced_experiment_trainer -   {'gpu_id': 0, 'num_workers': 2, 'dataset': 'cifar10', 'num_labeled': 400, 'match_dual_data': True, 'expand_labels': True, 'val_samples_per_class': 0, 'arch': 'wideresnet', 'total_steps': 25600, 'eval_step': 512, 'start_epoch': 0, 'batch_size': 32, 'lr': 0.03, 'warmup': 0, 'wdecay': 0.0005, 'nesterov': True, 'use_ema': True, 'ema_decay': 0.999, 'mu': 7, 'T': 1, 'threshold': 0.95, 'out': 'C:\\Users\\FORYOUCOM\\Desktop\\Semi-supervised-learning-main\\Semi-supervised-learning-main\\results\\reduced10pct_decon_real_last2_cifar10_seed1\\decon', 'resume': '', 'seed': 1, 'local_rank': -1, 'no_progress': True, 'no_save_checkpoint': False, 'eval_final_only': True, 'num_max': 162, 'num_max_u': 500, 'imb_ratio_label': 100, 'imb_ratio_unlabel': 1, 'flag_reverse_LT': 0, 'ema_mu': 0.99, 'tau2': 2, 'ema_u': 0.99, 'est_epoch': 5, 'img_size': 32, 'tau': 1.0, 'dist_mode': 0, 'emap': 0.999, 'warm_epoch': 50, 'tau3': 2.0, 'tau4': 1.0, 'Tw': 1.0, 'tau_b': 2.0, 'world_size': 1, 'n_gpu': 1, 'device': device(type='cuda', index=0)}
+10/27/2026 00:52:04 - INFO - dataset.data_dual_matched -   Using full CIFAR-10 train split for training and official test split for evaluation.
+10/27/2026 00:52:05 - INFO - reduced_experiment_trainer -   Dataset sizes: labeled=16400, unlabeled=5000, evaluation=10000
+10/27/2026 00:52:12 - INFO - models.wideresnet -   Model: WideResNet 28x2
+10/27/2026 00:52:12 - INFO - reduced_experiment_trainer -   Total params: 1.47M
+10/27/2026 00:52:12 - INFO - reduced_experiment_trainer -   ***** Running training *****
+10/27/2026 00:52:12 - INFO - reduced_experiment_trainer -     Task = cifar10@400
+10/27/2026 00:52:12 - INFO - reduced_experiment_trainer -     Num Epochs = 50
+10/27/2026 00:52:12 - INFO - reduced_experiment_trainer -     Batch size per GPU = 32
+10/27/2026 00:52:12 - INFO - reduced_experiment_trainer -     Total train batch size = 32
+10/27/2026 00:52:12 - INFO - reduced_experiment_trainer -     Total optimization steps = 25600
+10/27/2026 00:56:13 - INFO - reduced_experiment_trainer -   Skipping evaluation until final epoch (1/50).
+10/27/2026 01:00:10 - INFO - reduced_experiment_trainer -   Skipping evaluation until final epoch (2/50).
+10/27/2026 01:04:08 - INFO - reduced_experiment_trainer -   Skipping evaluation until final epoch (3/50).
+10/27/2026 01:08:10 - INFO - reduced_experiment_trainer -   Skipping evaluation until final epoch (4/50).
+10/27/2026 01:12:07 - INFO - reduced_experiment_trainer -   Skipping evaluation until final epoch (5/50).
+10/27/2026 01:16:04 - INFO - reduced_experiment_trainer -   Skipping evaluation until final epoch (6/50).
+10/27/2026 01:20:01 - INFO - reduced_experiment_trainer -   Skipping evaluation until final epoch (7/50).
+10/27/2026 01:24:03 - INFO - reduced_experiment_trainer -   Skipping evaluation until final epoch (8/50).
+10/27/2026 01:28:00 - INFO - reduced_experiment_trainer -   Skipping evaluation until final epoch (9/50).
+10/27/2026 01:31:57 - INFO - reduced_experiment_trainer -   Skipping evaluation until final epoch (10/50).
+10/27/2026 01:35:54 - INFO - reduced_experiment_trainer -   Skipping evaluation until final epoch (11/50).
+10/27/2026 01:39:57 - INFO - reduced_experiment_trainer -   Skipping evaluation until final epoch (12/50).
+10/27/2026 01:43:53 - INFO - reduced_experiment_trainer -   Skipping evaluation until final epoch (13/50).
+10/27/2026 01:47:50 - INFO - reduced_experiment_trainer -   Skipping evaluation until final epoch (14/50).
+10/27/2026 01:51:53 - INFO - reduced_experiment_trainer -   Skipping evaluation until final epoch (15/50).
+10/27/2026 01:55:50 - INFO - reduced_experiment_trainer -   Skipping evaluation until final epoch (16/50).
+10/27/2026 01:59:47 - INFO - reduced_experiment_trainer -   Skipping evaluation until final epoch (17/50).
+10/27/2026 02:03:45 - INFO - reduced_experiment_trainer -   Skipping evaluation until final epoch (18/50).
+10/27/2026 02:07:47 - INFO - reduced_experiment_trainer -   Skipping evaluation until final epoch (19/50).
+10/27/2026 02:11:44 - INFO - reduced_experiment_trainer -   Skipping evaluation until final epoch (20/50).
+10/27/2026 02:15:41 - INFO - reduced_experiment_trainer -   Skipping evaluation until final epoch (21/50).
+10/27/2026 02:19:39 - INFO - reduced_experiment_trainer -   Skipping evaluation until final epoch (22/50).
+10/27/2026 02:23:41 - INFO - reduced_experiment_trainer -   Skipping evaluation until final epoch (23/50).
+10/27/2026 02:27:38 - INFO - reduced_experiment_trainer -   Skipping evaluation until final epoch (24/50).
+10/27/2026 02:31:35 - INFO - reduced_experiment_trainer -   Skipping evaluation until final epoch (25/50).
+10/27/2026 02:35:37 - INFO - reduced_experiment_trainer -   Skipping evaluation until final epoch (26/50).
+10/27/2026 02:39:35 - INFO - reduced_experiment_trainer -   Skipping evaluation until final epoch (27/50).
+10/27/2026 02:43:33 - INFO - reduced_experiment_trainer -   Skipping evaluation until final epoch (28/50).
+10/27/2026 02:47:30 - INFO - reduced_experiment_trainer -   Skipping evaluation until final epoch (29/50).
+10/27/2026 02:51:33 - INFO - reduced_experiment_trainer -   Skipping evaluation until final epoch (30/50).
+10/27/2026 02:55:30 - INFO - reduced_experiment_trainer -   Skipping evaluation until final epoch (31/50).
+10/27/2026 02:59:27 - INFO - reduced_experiment_trainer -   Skipping evaluation until final epoch (32/50).
+10/27/2026 03:03:24 - INFO - reduced_experiment_trainer -   Skipping evaluation until final epoch (33/50).
+10/27/2026 03:07:27 - INFO - reduced_experiment_trainer -   Skipping evaluation until final epoch (34/50).
+10/27/2026 03:11:24 - INFO - reduced_experiment_trainer -   Skipping evaluation until final epoch (35/50).
+10/27/2026 03:15:22 - INFO - reduced_experiment_trainer -   Skipping evaluation until final epoch (36/50).
+10/27/2026 03:19:24 - INFO - reduced_experiment_trainer -   Skipping evaluation until final epoch (37/50).
+10/27/2026 03:23:21 - INFO - reduced_experiment_trainer -   Skipping evaluation until final epoch (38/50).
+10/27/2026 03:27:19 - INFO - reduced_experiment_trainer -   Skipping evaluation until final epoch (39/50).
+10/27/2026 03:31:16 - INFO - reduced_experiment_trainer -   Skipping evaluation until final epoch (40/50).
+10/27/2026 03:35:18 - INFO - reduced_experiment_trainer -   Skipping evaluation until final epoch (41/50).
+10/27/2026 03:39:16 - INFO - reduced_experiment_trainer -   Skipping evaluation until final epoch (42/50).
+10/27/2026 03:43:14 - INFO - reduced_experiment_trainer -   Skipping evaluation until final epoch (43/50).
+10/27/2026 03:47:11 - INFO - reduced_experiment_trainer -   Skipping evaluation until final epoch (44/50).
+10/27/2026 03:51:13 - INFO - reduced_experiment_trainer -   Skipping evaluation until final epoch (45/50).
+10/27/2026 03:55:10 - INFO - reduced_experiment_trainer -   Skipping evaluation until final epoch (46/50).
+10/27/2026 03:59:07 - INFO - reduced_experiment_trainer -   Skipping evaluation until final epoch (47/50).
+10/27/2026 04:03:10 - INFO - reduced_experiment_trainer -   Skipping evaluation until final epoch (48/50).
+10/27/2026 04:07:07 - INFO - reduced_experiment_trainer -   Skipping evaluation until final epoch (49/50).
+10/27/2026 04:11:11 - INFO - reduced_experiment_trainer -   top-1 acc: 53.85
+10/27/2026 04:11:11 - INFO - reduced_experiment_trainer -   top-5 acc: 93.18
+10/27/2026 04:11:11 - INFO - reduced_experiment_trainer -   per-class acc: [85.3, 95.8, 52.6, 47.5, 63.8, 31.5, 67.0, 36.9, 52.5, 5.6]
+10/27/2026 04:11:11 - INFO - reduced_experiment_trainer -   macro F1: 51.22
+10/27/2026 04:11:11 - INFO - reduced_experiment_trainer -   head/mid/tail acc: 77.90 / 52.45 / 31.67
+10/27/2026 04:11:11 - INFO - reduced_experiment_trainer -   Best top-1 acc: 53.85
+10/27/2026 04:11:11 - INFO - reduced_experiment_trainer -   Mean top-1 acc: 53.85
+

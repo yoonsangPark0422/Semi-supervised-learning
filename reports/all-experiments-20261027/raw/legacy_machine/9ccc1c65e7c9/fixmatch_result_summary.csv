@@ -1,0 +1,2 @@
+method,epochs,dataset,imb_ratio,seed,batch_size,mu,eval_step,total_steps,latest_acc,best_acc,pseudo_acc,accepted_pseudo_acc,pseudo_coverage,accepted_conf_mean,pseudo_pred_l1_to_true,accepted_pred_l1_to_true
+fixmatch_original,100,cifar10,100,5,32,7,1024,102400,87.65,87.65,0.8667079380580357,0.9175189903702374,0.8746686662946429,0.9973490408695797,0.1889997273683548,0.13176627457141876
